@@ -14,6 +14,7 @@
         <module>app-service-api</module>
         <module>app-service</module>
         <module>app-test</module>
+        <module>app-rest</module>
     </modules>
 
     <distributionManagement>
@@ -29,6 +30,7 @@
         <log4j2.version>2.1</log4j2.version>
         <spring.version>4.2.1.RELEASE</spring.version>
         <hsqldb.version>2.3.3</hsqldb.version>
+        <jackson.databind-version>2.4.3</jackson.databind-version>
     </properties>
 
     <dependencyManagement>
@@ -81,6 +83,11 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
                 <scope>test</scope>
@@ -94,6 +101,12 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.databind-version}</version>
             </dependency>
 
             <dependency>

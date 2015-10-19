@@ -69,5 +69,12 @@ public class UserServiceImplTest {
         userService.addUser(user);
     }
 
+    /*@Test(expected = IllegalArgumentException.class)
+     public void testAddUserWithNotUniqueLogin() throws Exception {
+        LOGGER.debug("test: addUserWithNotUniqueLogin()");
+        User user = new User("login", "password");
+        userService.addUser(user);
+        userService.addUser(user);
+    }*/
 
 }
