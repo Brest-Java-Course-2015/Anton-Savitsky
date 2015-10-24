@@ -44,6 +44,9 @@ public class UserDaoImpl implements UserDao {
     @Value("${user.deleteUser}")
     private String deleteUser;
 
+    @Value("${user.countUsers}")
+    private String countUser;
+
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -56,6 +59,12 @@ public class UserDaoImpl implements UserDao {
     public List<User> getAllUsers() {
         LOGGER.debug("getAllUsers()");
         return jdbcTemplate.query(userSelect, new UserRowMapper());
+    }
+
+    @Override
+    public Integer getCountUsers(String login) {
+        LOGGER.debug("getCountUsers(): login = {}", login);
+        return jdbcTemplate.queryForObject(countUser, new String[]{login}, Integer.class);
     }
 
     @Override
