@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
-/**
- * Created by antonsavitsky on 09.10.15.
- */
+
 public class User {
 
     private Integer userId;
@@ -31,6 +29,12 @@ public class User {
     }
 
     public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public User(Integer userId, String login, String password) {
+        this.userId = userId;
         this.login = login;
         this.password = password;
     }
@@ -101,6 +105,7 @@ public class User {
 
     }
 
+    public boolean equals(Object obj) {
+        return login.equals(((User) obj).getLogin());
+    }
 }
-
-
