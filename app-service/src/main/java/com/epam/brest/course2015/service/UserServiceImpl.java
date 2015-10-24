@@ -2,6 +2,7 @@ package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.dao.UserDao;
 import com.epam.brest.course2015.domain.User;
+import com.epam.brest.course2015.dto.UserDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,16 +10,14 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 
-
-/**
- * Created by antonsavitsky on 16.10.15.
- */
 @Transactional
 public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     private UserDao userDao;
+
+    private UserDto userDto;
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
@@ -37,6 +36,10 @@ public class UserServiceImpl implements UserService {
         Assert.isNull(user.getUserId(), "User Id should be null.");
         Assert.hasText(user.getLogin(), "User login should not be null.");
         Assert.hasText(user.getPassword(), "User password should not be null.");
+
+        if (userDao.getCountUsers(user.getLogin()) > 0) {
+            throw new IllegalArgumentException("User login should be unique.");
+        }
         return userDao.addUser(user);
     }
 
@@ -70,5 +73,23 @@ public class UserServiceImpl implements UserService {
         Assert.notNull(userId, "User Id should not be null.");
         Assert.isTrue(userId > 0);
         userDao.deleteUser(userId);
+    }
+
+    @Override
+    public void logUser(User user) {
+        LOGGER.debug("logUser(): user id = {} ", user.getUserId());
+    }
+
+    @Override
+    public UserDto getUserDto() {
+        LOGGER.debug("getUserDto()");
+        return userDto;
+    }
+
+    @Override
+    public User findUserByLogin(String login) {
+        LOGGER.debug("findUserByLogin(): user login = {} ", login);
+        Assert.hasText(login, "User login should not be null.");
+        return userDao.getUserByLogin(login);
     }
 }

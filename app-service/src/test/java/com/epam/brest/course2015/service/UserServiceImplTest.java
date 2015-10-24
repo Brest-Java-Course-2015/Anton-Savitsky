@@ -11,9 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by antonsavitsky on 16.10.15.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:test-spring-service.xml"})
 @Transactional()
@@ -69,12 +66,13 @@ public class UserServiceImplTest {
         userService.addUser(user);
     }
 
-    /*@Test(expected = IllegalArgumentException.class)
-     public void testAddUserWithNotUniqueLogin() throws Exception {
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddUserWithNotUniqueLogin() throws Exception {
         LOGGER.debug("test: addUserWithNotUniqueLogin()");
         User user = new User("login", "password");
         userService.addUser(user);
         userService.addUser(user);
-    }*/
+    }
+
 
 }
