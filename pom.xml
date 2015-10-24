@@ -31,6 +31,7 @@
         <spring.version>4.2.1.RELEASE</spring.version>
         <hsqldb.version>2.3.3</hsqldb.version>
         <jackson.databind-version>2.4.3</jackson.databind-version>
+        <easymock.version>3.2</easymock.version>
     </properties>
 
     <dependencyManagement>
@@ -118,6 +119,18 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.11</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>${easymock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
