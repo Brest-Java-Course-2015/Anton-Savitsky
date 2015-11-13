@@ -88,6 +88,7 @@ public class CarDaoImplTest  {
         assertTrue(listOfCars.get(0).getDateOfCreation().equals(expectedDate1));
         assertTrue(listOfCars.get(1).getDateOfCreation().equals(expectedDate2));
     }
+
     @Test
     public void testAddCar() throws Exception {
         car=new Car("9rt", 5, DATE_FORMAT.parse("11/12/2015"));
@@ -102,5 +103,45 @@ public class CarDaoImplTest  {
         assertTrue(car.getCarName().equals(addedCar.getCarName()));
         assertTrue(car.getProducerId().equals(addedCar.getProducerId()));
         assertNotNull(car.getDateOfCreation());
+    }
+
+    @Test
+    public void testGetAllCars() throws Exception {
+        LOGGER.debug("test: getAllCars()");
+        List<Car> cars = carDao.getAllCars();
+        assertTrue(cars.size() == 3);
+    }
+
+    @Test
+    public void testUpdateCar(){
+        LOGGER.debug("test: updateCar()");
+        Car car=carDao.getCarById(2);
+        assertNotNull(car);
+        car.setCarName("6yu");
+        carDao.updateCar(car);
+        Car updatedCar = carDao.getCarById(car.getCarId());
+        assertTrue(car.getCarId().equals(updatedCar.getCarId()));
+        assertTrue(car.getCarName().equals(updatedCar.getCarName()));
+        assertTrue(car.getProducerId().equals(updatedCar.getProducerId()));
+        assertTrue(car.getDateOfCreation().equals(updatedCar.getDateOfCreation()));
+    }
+
+    @Test
+    public void testGetTotalCountCars(){
+        LOGGER.debug("test: getTotalCountCars()");
+        List<Car> cars=carDao.getAllCars();
+        assertNotNull(cars);
+        int total=carDao.getTotalCountCars();
+        assertTrue(cars.size()==total);
+        LOGGER.debug(total);
+    }
+
+    @Test
+    public void testDeleteCar() throws Exception {
+        LOGGER.debug("test :deleteCar()");
+        int sizeBeforeDelete = carDao.getTotalCountCars();
+        assertTrue(sizeBeforeDelete > 0);
+        carDao.deleteCar(1);
+        assertTrue((sizeBeforeDelete - 1) == carDao.getAllCars().size());
     }
 }

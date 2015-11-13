@@ -35,6 +35,14 @@ public class CarDaoImpl implements CarDao {
     private String selectCarsByDateOfCreation;
     @Value("${car.insertCar}")
     private String insertCar;
+    @Value("${car.updateCar}")
+    private String updateCar;
+    @Value("${car.deleteCar}")
+    private String deleteCar;
+    @Value("${car.countAllCars}")
+    private String countAllCars;
+    @Value("${car.selectAll}")
+    private String selectAll;
 
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -42,6 +50,16 @@ public class CarDaoImpl implements CarDao {
     public CarDaoImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
         namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+    }
+
+    public Integer getTotalCountCars(){
+        LOGGER.debug("getTotalCountCars()");
+        return jdbcTemplate.queryForObject(countAllCars, Integer.class);
+    }
+
+    public List<Car> getAllCars(){
+        LOGGER.debug("getAllCars()");
+        return jdbcTemplate.query(selectAll, new CarRowMapper());
     }
 
     public Car getCarById(Integer carId) {
@@ -69,6 +87,16 @@ public class CarDaoImpl implements CarDao {
         KeyHolder keyHolder= new GeneratedKeyHolder();
         namedParameterJdbcTemplate.update(insertCar, getParametersMap(car),keyHolder);
         return keyHolder.getKey().intValue();
+    }
+
+    public void updateCar(Car car){
+        LOGGER.debug("updateCar(): carName={}", car.getCarName());
+        jdbcTemplate.update(updateCar, new Object[]{car.getCarName(), car.getProducerId(), car.getDateOfCreation(), car.getCarId()});
+    }
+
+    public void deleteCar(Integer carId) {
+        LOGGER.debug("deleteCar(): carId={}", carId);
+        jdbcTemplate.update(deleteCar, new Object[]{carId});
     }
 
     private MapSqlParameterSource getParametersMap(Car car) {
