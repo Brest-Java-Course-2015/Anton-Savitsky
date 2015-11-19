@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -44,6 +45,8 @@ public class CarDaoImpl implements CarDao {
     private String countAllCars;
     @Value("${car.selectAll}")
     private String selectAll;
+    @Value("${car.countCarsById}")
+    private String countCarsById;
 
     private JdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -53,48 +56,57 @@ public class CarDaoImpl implements CarDao {
         namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
+    @Override
     public Integer getTotalCountCars(){
         LOGGER.debug("getTotalCountCars()");
         return jdbcTemplate.queryForObject(countAllCars, Integer.class);
     }
 
+    @Override
     public List<Car> getAllCars(){
         LOGGER.debug("getAllCars()");
         return jdbcTemplate.query(selectAll, new CarRowMapper());
     }
 
+    @Override
     public Car getCarById(Integer carId) {
         LOGGER.debug("getCarById()");
         return jdbcTemplate.queryForObject(selectCarById, new Integer[]{carId}, new CarRowMapper());
     }
 
-    public Car getCarByName(String carName) {
-        LOGGER.debug("getCarByName()");
-        return jdbcTemplate.queryForObject(selectCarByName, new String[]{carName}, new CarRowMapper());
+    @Override
+    public Integer getCountCarsById(Integer carId) {
+        LOGGER.debug("getCountCarsById(): carId = {}", carId);
+        return jdbcTemplate.queryForObject(countCarsById, new Integer[]{carId}, Integer.class);
     }
 
+    @Override
     public Integer getCountOfCarsByProducerId(Integer producerId) {
         LOGGER.debug("getCountOfCarsByProducerId()");
         return jdbcTemplate.queryForObject(countOfCarsByProducerId, new Integer[]{producerId}, Integer.class);
     }
 
+    @Override
     public List<Car> getListOfCarsByDateOfCreation(java.util.Date dateBefore, java.util.Date dateAfter) {
         LOGGER.debug("getListOfCarsByDateOfCreation()");
         return jdbcTemplate.query(selectCarsByDateOfCreation, new java.sql.Date[]{new java.sql.Date(dateBefore.getTime()), new java.sql.Date(dateAfter.getTime())}, new CarRowMapper());
     }
 
-    public Integer addCar(Car car){
+    @Override
+    public Integer addCar(Car car) throws DataAccessException {
         LOGGER.debug("addCar(): carName={}", car.getCarName());
         KeyHolder keyHolder= new GeneratedKeyHolder();
         namedParameterJdbcTemplate.update(insertCar, getParametersMap(car),keyHolder);
         return keyHolder.getKey().intValue();
     }
 
+    @Override
     public void updateCar(Car car){
         LOGGER.debug("updateCar(): carName={}", car.getCarName());
         jdbcTemplate.update(updateCar, new Object[]{car.getCarName(), car.getProducerId(), car.getDateOfCreation(), car.getCarId()});
     }
 
+    @Override
     public void deleteCar(Integer carId) {
         LOGGER.debug("deleteCar(): carId={}", carId);
         jdbcTemplate.update(deleteCar, new Object[]{carId});

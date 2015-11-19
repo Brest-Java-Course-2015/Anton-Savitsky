@@ -26,6 +26,10 @@ public class Car {
 
     public Car(){}
 
+    public Car(Integer carId){
+        this.carId=carId;
+    }
+
     public Car(String carName, int producerId, Date dateOfCreation){
         this.carName=carName;
         this.producerId=producerId;

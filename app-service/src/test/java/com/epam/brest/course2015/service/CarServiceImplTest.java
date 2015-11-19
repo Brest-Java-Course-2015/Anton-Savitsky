@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +25,6 @@ import java.text.SimpleDateFormat;
 @Transactional()
 public class CarServiceImplTest {
     SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-
-
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Autowired
@@ -38,5 +38,49 @@ public class CarServiceImplTest {
         Assert.notNull(car);
         Assert.isTrue(car.getCarId().equals(carId));
         LOGGER.debug(car.toString());
+    }
+
+    @Test
+    public void testGetCountOfCarsByProducerId(){
+        int producerId=1;
+        LOGGER.debug("test: getCountOfCarsByProducerId()");
+        int countOfCars=carService.getCountOfCarsByProducerId(producerId);
+        Assert.notNull(countOfCars);
+        Assert.isTrue(countOfCars==2);
+    }
+
+    @Test
+    public void testAddCar() throws ParseException {
+        Car car=new Car("8gh", 2, DATE_FORMAT.parse("13/2/2015"));
+        LOGGER.debug("test: addCar()");
+        int sizeBefore = carService.getAllCars().size();
+        carService.addCar(car);
+        Assert.isTrue(sizeBefore + 1 == carService.getAllCars().size());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testAddCarNotNullId() throws Exception {
+        LOGGER.debug("test: AddCarNotNullId case");
+        carService.addCar(new Car(5));
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testAddNullCar() throws Exception {
+        LOGGER.debug("test: AddNullCar case");
+        carService.addCar(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddCarWithNullName() throws Exception {
+        LOGGER.debug("test: AddCarWithNullName");
+        Car car=new Car("", 2, DATE_FORMAT.parse("12/10/2015"));
+        carService.addCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddCarWithNullDate(){
+        LOGGER.debug("test: AddCarWithNullDate");
+        Car car=new Car("5gt", 2, null);
+        carService.addCar(car);
     }
 }

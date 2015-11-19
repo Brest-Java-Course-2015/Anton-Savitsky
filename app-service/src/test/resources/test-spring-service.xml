@@ -9,8 +9,9 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:app.properties</value>
-                <value>classpath:database.properties</value>
+               <value>classpath:app.properties</value>
+               <value>classpath:database.properties</value>
+               <value>classpath:service.properties</value>
             </list>
         </property>
     </bean>

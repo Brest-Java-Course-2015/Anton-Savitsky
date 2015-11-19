@@ -44,13 +44,11 @@ public class CarDaoImplTest  {
     }
 
     @Test
-    public void testGetCarByName(){
-        LOGGER.debug("test: getCarByName()");
-        String carName="5dr";
-        Car car=carDao.getCarByName(carName);
-        LOGGER.debug(car.getCarId()+car.getCarName()+car.getProducerId()+car.getDateOfCreation());
-        assertNotNull(car);
-        assertTrue(car.getCarName().equals(carName));
+    public void testGetCountCarsById(){
+        LOGGER.debug("test: getCountCarsById()");
+        int countCars;
+        assertNotNull(countCars=carDao.getCountCarsById(1));
+        assertTrue(countCars==1);
     }
 
     @Test
@@ -97,7 +95,7 @@ public class CarDaoImplTest  {
         assertNotNull(carId);
         Car addedCar = carDao.getCarById(carId);
         assertNotNull(addedCar);
-        LOGGER.debug("added car: ");
+        LOGGER.debug("added car: carId={}",carId);
         LOGGER.debug(addedCar.toString());
         assertTrue(carId.equals(addedCar.getCarId()));
         assertTrue(car.getCarName().equals(addedCar.getCarName()));

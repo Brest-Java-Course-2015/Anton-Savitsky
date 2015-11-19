@@ -11,7 +11,6 @@ import java.util.List;
  */
 public interface CarDao {
     Car getCarById(Integer carId);
-    Car getCarByName(String carName);
     Integer getCountOfCarsByProducerId(Integer producerId);
     List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter);
     Integer addCar(Car car);
@@ -19,4 +18,5 @@ public interface CarDao {
     void deleteCar(Integer carId);
     Integer getTotalCountCars();
     List<Car> getAllCars();
+    Integer getCountCarsById(Integer carId);
 }
