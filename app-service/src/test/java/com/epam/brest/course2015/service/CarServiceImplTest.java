@@ -59,19 +59,19 @@ public class CarServiceImplTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testAddCarNotNullId() throws Exception {
+    public void testAddCarNotNullId() throws ParseException {
         LOGGER.debug("test: AddCarNotNullId case");
         carService.addCar(new Car(5));
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testAddNullCar() throws Exception {
+    public void testAddNullCar() throws ParseException {
         LOGGER.debug("test: AddNullCar case");
         carService.addCar(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddCarWithNullName() throws Exception {
+    public void testAddCarWithNullName() throws ParseException {
         LOGGER.debug("test: AddCarWithNullName");
         Car car=new Car("", 2, DATE_FORMAT.parse("12/10/2015"));
         carService.addCar(car);
@@ -82,5 +82,40 @@ public class CarServiceImplTest {
         LOGGER.debug("test: AddCarWithNullDate");
         Car car=new Car("5gt", 2, null);
         carService.addCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddCarWithNullProducerId() throws ParseException {
+        LOGGER.debug("test: AddCarWithNullProducerId");
+        Car car=new Car(null, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
+        carService.addCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateCarWithNullCarId() throws ParseException {
+        LOGGER.debug("test: UpdateCarWithNullCarId");
+        Car car=new Car(null, "5gt", 2, DATE_FORMAT.parse("12/10/2015"));
+        carService.updateCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateCarWithNullName() throws ParseException {
+        LOGGER.debug("test: UpdateCarWithNullName");
+        Car car=new Car(1, "", 2, DATE_FORMAT.parse("12/10/2015"));
+        carService.updateCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateCarWithNullProducerId() throws ParseException {
+        LOGGER.debug("test: UpdateCarWithNullProducerId");
+        Car car=new Car(1, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
+        carService.updateCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateCarWithNullDate() throws ParseException {
+        LOGGER.debug("test: UpdateCarWithNullDate");
+        Car car=new Car(1, "5gt", 2, null);
+        carService.updateCar(car);
     }
 }

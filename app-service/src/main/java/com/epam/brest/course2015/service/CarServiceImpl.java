@@ -94,9 +94,10 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public Integer addCar(Car car) throws DataAccessException {
+        LOGGER.debug("service: addCar(): car:  ", car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
-        LOGGER.debug("service: addCar(): car:  ", car.getCarId());
+        Assert.notNull(car.getProducerId());
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
         return carDao.addCar(car);
@@ -104,7 +105,13 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public void updateCar(Car car) {
-
+        LOGGER.debug("service: updateCar(): car:  ", car.getCarId());
+        Assert.notNull(car, carNotNull);
+        Assert.notNull(car.getCarId(), carIdNotNull);
+        Assert.hasText(car.getCarName(), carNameNotNull);
+        Assert.notNull(car.getDateOfCreation(), dateNotNull);
+        Assert.notNull(car.getProducerId(), producerIdNotNull);
+        carDao.updateCar(car);
     }
 
     @Override
