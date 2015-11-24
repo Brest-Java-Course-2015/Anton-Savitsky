@@ -89,15 +89,19 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter) {
-        return null;
+        LOGGER.debug("service: getListOfCarsByDateOfCreation(): dateBefore={}, dateAfter={}", dateBefore,dateAfter);
+        Assert.notNull(dateBefore, dateNotNull);
+        Assert.notNull(dateAfter, dateNotNull);
+        Assert.isTrue(dateAfter.after(dateBefore), "DateAfter must be after DateBefore!");
+        return carDao.getListOfCarsByDateOfCreation(dateBefore,dateAfter);
     }
 
     @Override
     public Integer addCar(Car car) throws DataAccessException {
-        LOGGER.debug("service: addCar(): car:  ", car.getCarId());
+        LOGGER.debug("service: addCar(): car={}",car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
-        Assert.notNull(car.getProducerId());
+        Assert.notNull(car.getProducerId(), producerIdNotNull);
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
         return carDao.addCar(car);
@@ -105,9 +109,15 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public void updateCar(Car car) {
-        LOGGER.debug("service: updateCar(): car:  ", car.getCarId());
+        LOGGER.debug("service: updateCar(): carId={}  ", car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.notNull(car.getCarId(), carIdNotNull);
+        Integer carIdToUpdate=car.getCarId();
+        try{
+            carDao.getCarById(carIdToUpdate);
+        } catch (DataAccessException dae){
+            throw new IllegalArgumentException("Car doesn't exist!");
+        }
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
         Assert.notNull(car.getProducerId(), producerIdNotNull);
@@ -116,7 +126,14 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public void deleteCar(Integer carId) {
-
+        LOGGER.debug("service: deleteCar(): carId={}", carId);
+        try{
+            carDao.getCarById(carId);
+        } catch (DataAccessException dae){
+            throw new IllegalArgumentException("Car doesn't exist!");
+        }
+        Assert.notNull(carId, carIdNotNull);
+        carDao.deleteCar(carId);
     }
 
     @Override

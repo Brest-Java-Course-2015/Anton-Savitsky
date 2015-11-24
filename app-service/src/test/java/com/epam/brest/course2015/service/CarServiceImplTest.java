@@ -67,7 +67,7 @@ public class CarServiceImplTest {
     @Test (expected = IllegalArgumentException.class)
     public void testAddNullCar() throws ParseException {
         LOGGER.debug("test: AddNullCar case");
-        carService.addCar(null);
+        carService.addCar(new Car());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -113,9 +113,35 @@ public class CarServiceImplTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void testUpdateNonExistingCar() throws ParseException {
+        LOGGER.debug("test: UpdateNonExistingCar");
+        Car car=new Car(10, "456", 3, DATE_FORMAT.parse("23/11/2014"));
+        carService.updateCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullDate() throws ParseException {
         LOGGER.debug("test: UpdateCarWithNullDate");
         Car car=new Car(1, "5gt", 2, null);
         carService.updateCar(car);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDeleteCarWithNullId() throws ParseException {
+        LOGGER.debug("test: DeleteCarWithNullId()");
+        carService.deleteCar(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDeleteNonExistingCar() throws ParseException {
+        LOGGER.debug("test: DeleteNonExistingCar()");
+        Integer carId=10;
+        carService.deleteCar(carId);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetListOfCarsByWrongDateOfCreationInterval() throws ParseException {
+        LOGGER.debug("test: getListOfCarsByDateOfCreation()");
+        carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parse("22/10/2015"), DATE_FORMAT.parse("21/10/2015"));
     }
 }
