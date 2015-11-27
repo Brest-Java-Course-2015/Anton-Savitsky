@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by antonsavitsky on 17.11.15.
  */
-public interface CarService {
+public interface CarProducerService {
     Car getCarById(Integer carId);
     Integer getCountOfCarsByProducerId(Integer producerId);
     List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter);

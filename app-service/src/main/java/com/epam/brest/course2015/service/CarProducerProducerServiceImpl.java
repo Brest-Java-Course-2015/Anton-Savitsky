@@ -17,7 +17,7 @@ import java.util.List;
  * Created by antonsavitsky on 17.11.15.
  */
 @Transactional
-public class CarServiceImpl implements CarService{
+public class CarProducerProducerServiceImpl implements CarProducerService {
     @Value("${getCarById.carIdNotNull}")
     private String carIdNotNull;
     @Value("${getCarById.carIdPositive}")

@@ -22,6 +22,11 @@
             <artifactId>app-service</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.epam.brest.course2015</groupId>
             <artifactId>app-service-api</artifactId>
         </dependency>
