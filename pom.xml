@@ -15,6 +15,7 @@
         <module>app-service-api</module>
         <module>app-service</module>
         <module>app-rest</module>
+        <module>app-web</module>
     </modules>
 
     <properties>

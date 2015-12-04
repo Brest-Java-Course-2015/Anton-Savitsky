@@ -1,8 +1,10 @@
 package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.dto.CarDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hsqldb.rights.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,11 @@ import org.springframework.util.Assert;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by antonsavitsky on 16.11.15.
@@ -140,5 +147,24 @@ public class CarProducerServiceImplTest {
     public void testGetListOfCarsByWrongDateOfCreationInterval() throws ParseException {
         LOGGER.debug("test: getListOfCarsByDateOfCreation()");
         carProducerService.getListOfCarsByDateOfCreation(DATE_FORMAT.parse("22/10/2015"), DATE_FORMAT.parse("21/10/2015"));
+    }
+
+    @Test
+    public void testGetCarsDtoByDate() throws ParseException {
+        CarDto dto = carProducerService.getCarsByDateDto(DATE_FORMAT.parse("12/10/2015"), DATE_FORMAT.parse("15/10/2015"));
+        assertNotNull(dto);
+        assertNotNull(dto.getCars());
+        assertNotNull(dto.getTotal());
+        assertTrue(dto.getCars().size()==2);
+        assertEquals(dto.getCars().get(0).getClass(), Car.class);
+    }
+
+    @Test
+    public void testGetCarsDto(){
+        CarDto dto = carProducerService.getCarsDto();
+        assertNotNull(dto);
+        assertNotNull(dto.getCars());
+        assertNotNull(dto.getTotal());
+        assertEquals(dto.getCars().get(0).getClass(), Car.class);
     }
 }

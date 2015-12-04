@@ -2,6 +2,7 @@ package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.dto.CarDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +11,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by antonsavitsky on 17.11.15.
  */
 @Transactional
-public class CarProducerProducerServiceImpl implements CarProducerService {
+public class CarProducerServiceImpl implements CarProducerService {
     @Value("${getCarById.carIdNotNull}")
     private String carIdNotNull;
     @Value("${getCarById.carIdPositive}")
@@ -49,7 +51,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
     public Car getCarById(Integer carId) {
         Assert.notNull(carId, carIdNotNull);
         Assert.isTrue(carId>0, carIdPositive);
-        LOGGER.debug("service: getCarById(): carId={}",carId);
+        LOGGER.debug("getCarById(): carId={}",carId);
         try {
             return carDao.getCarById(carId);
         } catch (EmptyResultDataAccessException e) {
@@ -63,7 +65,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
     public Integer getCountCarsById(Integer carId){
         Assert.notNull(carId, carIdNotNull);
         Assert.isTrue(carId>0, carIdPositive);
-        LOGGER.debug("service: getCountCarsById(): carId={}",carId);
+        LOGGER.debug("getCountCarsById(): carId={}",carId);
         try {
             return carDao.getCountCarsById(carId);
         } catch (EmptyResultDataAccessException e) {
@@ -77,7 +79,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
     public Integer getCountOfCarsByProducerId(Integer producerId) {
         Assert.notNull(producerId, producerIdNotNull);
         Assert.isTrue(producerId>0, producerIdPositive);
-        LOGGER.debug("service: getCountOfCarsByProducerId(): producerId={}", producerId);
+        LOGGER.debug("getCountOfCarsByProducerId(): producerId={}", producerId);
         try {
             return carDao.getCountOfCarsByProducerId(producerId);
         } catch (EmptyResultDataAccessException e) {
@@ -89,7 +91,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
 
     @Override
     public List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter) {
-        LOGGER.debug("service: getListOfCarsByDateOfCreation(): dateBefore={}, dateAfter={}", dateBefore,dateAfter);
+        LOGGER.debug("getListOfCarsByDateOfCreation(): dateBefore={}, dateAfter={}", dateBefore,dateAfter);
         Assert.notNull(dateBefore, dateNotNull);
         Assert.notNull(dateAfter, dateNotNull);
         Assert.isTrue(dateAfter.after(dateBefore), "DateAfter must be after DateBefore!");
@@ -98,7 +100,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
 
     @Override
     public Integer addCar(Car car) throws DataAccessException {
-        LOGGER.debug("service: addCar(): car={}",car.getCarId());
+        LOGGER.debug("addCar(): car={}",car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
         Assert.notNull(car.getProducerId(), producerIdNotNull);
@@ -109,7 +111,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
 
     @Override
     public void updateCar(Car car) {
-        LOGGER.debug("service: updateCar(): carId={}  ", car.getCarId());
+        LOGGER.debug("updateCar(): carId={}  ", car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.notNull(car.getCarId(), carIdNotNull);
         Integer carIdToUpdate=car.getCarId();
@@ -126,7 +128,7 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
 
     @Override
     public void deleteCar(Integer carId) {
-        LOGGER.debug("service: deleteCar(): carId={}", carId);
+        LOGGER.debug("deleteCar(): carId={}", carId);
         try{
             carDao.getCarById(carId);
         } catch (DataAccessException dae){
@@ -138,13 +140,38 @@ public class CarProducerProducerServiceImpl implements CarProducerService {
 
     @Override
     public Integer getTotalCountCars() {
-        LOGGER.debug("service: getTotalCountCars()");
+        LOGGER.debug("getTotalCountCars()");
         return carDao.getTotalCountCars();
     }
 
     @Override
     public List<Car> getAllCars() {
-        LOGGER.debug("service: getAllCars()");
+        LOGGER.debug("getAllCars()");
         return carDao.getAllCars();
+    }
+
+    @Override
+    public CarDto getCarsDto(){
+        LOGGER.debug("getCarsDto()");
+        CarDto carDto = new CarDto();
+        carDto.setTotal(carDao.getTotalCountCars());
+        if(carDto.getTotal()>0){
+            carDto.setCars(carDao.getAllCars());
+        }
+        else carDto.setCars(Collections.<Car>emptyList());
+        return carDto;
+    }
+
+    @Override
+    public CarDto getCarsByDateDto(Date dateBefore, Date dateAfter) {
+        LOGGER.debug("getCarsByDateDto()");
+        CarDto carDto=new CarDto();
+        carDto.setTotal(getListOfCarsByDateOfCreation(dateBefore, dateAfter).size());
+        if(carDto.getTotal()>0){
+            carDto.setCars(getListOfCarsByDateOfCreation(dateBefore,dateAfter));
+        } else {
+            carDto.setCars(Collections.<Car>emptyList());
+        }
+        return carDto;
     }
 }

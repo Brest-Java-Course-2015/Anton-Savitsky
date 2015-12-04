@@ -109,12 +109,11 @@ public class CarDaoImpl implements CarDao {
     @Override
     public void deleteCar(Integer carId) {
         LOGGER.debug("deleteCar(): carId={}", carId);
-        jdbcTemplate.update(deleteCar, new Object[]{carId});
+        jdbcTemplate.update(deleteCar, carId);
     }
 
     private MapSqlParameterSource getParametersMap(Car car) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-        parameterSource.addValue(CAR_ID.getValue(), car.getCarId());
         parameterSource.addValue(CAR_NAME.getValue(), car.getCarName());
         parameterSource.addValue(PRODUCER_ID.getValue(), car.getProducerId());
         parameterSource.addValue(DATE_OF_CREATION.getValue(), car.getDateOfCreation());

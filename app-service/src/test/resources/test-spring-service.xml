@@ -20,7 +20,7 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="carService" class="com.epam.brest.course2015.service.CarProducerProducerServiceImpl">
+    <bean id="carService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
         <property name="carDao" ref="carDao"/>
     </bean>
 </beans>

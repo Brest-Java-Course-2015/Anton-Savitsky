@@ -13,7 +13,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.epam.brest.course2015.rest"/>
+    <context:component-scan base-package="com.epam.brest.course2015.web"/>
 
     <mvc:annotation-driven/>
 
@@ -47,25 +47,28 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
+    <!--<bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>-->
+
     <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl">
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="carService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
+    <bean id="carProducerService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
         <property name="carDao" ref="carDao"/>
+        <!--<property name="producerDao" ref="producerDao"/>-->
     </bean>
 
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="jsonConverter"/>
-            </list>
-        </property>
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages"/>
+        <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
-    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="supportedMediaTypes" value="application/json" />
-        <property name="prettyPrint" value="true" />
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
+
 
 </beans>

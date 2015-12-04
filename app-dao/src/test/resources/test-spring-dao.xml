@@ -14,8 +14,10 @@
             </list>
         </property>
     </bean>
-
     <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
         <constructor-arg ref="dataSource"/>
     </bean>
 

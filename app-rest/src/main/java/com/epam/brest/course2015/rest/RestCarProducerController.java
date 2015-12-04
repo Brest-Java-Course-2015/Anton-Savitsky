@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.rest;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarProducerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
 /**
  * Created by juga on 16.10.15.
  */
@@ -70,5 +70,20 @@ public class RestCarProducerController {
         carProducerService.deleteCar(id);
     }
 
+    @RequestMapping(value="/carsdto",
+        method = RequestMethod.GET)
+    public @ResponseBody CarDto getCarsDto(){
+        LOGGER.debug("Getting cars dto");
+        return carProducerService.getCarsDto();
+    }
 
+    @RequestMapping(value="/carsdtobydate",
+    method = RequestMethod.GET)
+    public @ResponseBody CarDto getCarsDtoByDate(@RequestParam(value = "dateBefore")
+                                                     String dateBefore,
+                                                 @RequestParam(value = "dateAfter")
+                                                     String dateAfter) throws ParseException {
+        LOGGER.debug("Getting cars dto by date");
+        return carProducerService.getCarsByDateDto(DATE_FORMAT.parse(dateBefore), DATE_FORMAT.parse(dateAfter));
+    }
 }

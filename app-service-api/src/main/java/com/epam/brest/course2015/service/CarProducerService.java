@@ -2,6 +2,8 @@ package com.epam.brest.course2015.service;
 
 import java.util.Date;
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.dto.CarDto;
+
 import java.util.List;
 
 /**
@@ -17,4 +19,6 @@ public interface CarProducerService {
     Integer getTotalCountCars();
     List<Car> getAllCars();
     Integer getCountCarsById(Integer carId);
+    CarDto getCarsDto();
+    CarDto getCarsByDateDto(Date dateBefore, Date dateAfter);
 }

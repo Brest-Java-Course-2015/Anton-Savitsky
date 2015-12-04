@@ -30,7 +30,6 @@ public class CarDaoImplTest  {
     private static final Logger LOGGER = LogManager.getLogger();
     @Autowired
     private CarDao carDao;
-    private Car car;
     SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     @Test
@@ -46,20 +45,20 @@ public class CarDaoImplTest  {
     @Test
     public void testGetCountCarsById(){
         LOGGER.debug("test: getCountCarsById()");
-        int countCars;
-        assertNotNull(countCars=carDao.getCountCarsById(1));
+        int countCars=carDao.getCountCarsById(1);
+        assertNotNull(countCars);
         assertTrue(countCars==1);
     }
 
     @Test
     public void testGetCountOfCarsByProducerId(){
         LOGGER.debug("test: getCountOfCarsByProducerId()");
-        int expectedCountOfCars=2;
-        int producerId=1;
+        int expectedCountOfCars=3;
+        int producerId=0;
         Integer countOfCars=carDao.getCountOfCarsByProducerId(producerId);
         LOGGER.debug("expectedCountOfCars: "+expectedCountOfCars);
-        LOGGER.debug("countOfCars: "+countOfCars);
         assertNotNull(countOfCars);
+        LOGGER.debug("countOfCars: "+countOfCars);
         assertTrue(countOfCars.equals(expectedCountOfCars));
     }
 
@@ -89,7 +88,7 @@ public class CarDaoImplTest  {
 
     @Test
     public void testAddCar() throws Exception {
-        car=new Car("9rt", 5, DATE_FORMAT.parse("11/12/2015"));
+        Car car=new Car("9rt", 0, DATE_FORMAT.parse("11/12/2015"));
         LOGGER.debug("test: addCar()");
         Integer carId = carDao.addCar(car);
         assertNotNull(carId);
