@@ -20,7 +20,13 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+
     <bean id="carService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
         <property name="carDao" ref="carDao"/>
+        <property name="producerDao" ref="producerDao"/>
     </bean>
 </beans>

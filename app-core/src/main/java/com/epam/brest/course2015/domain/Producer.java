@@ -15,17 +15,18 @@ public class Producer {
     }
 
     public Producer(String producerName, String country){
+        this.producerId=null;
         this.producerName=producerName;
         this.country=country;
     }
 
     public Producer(){}
 
-    public int getProducerId() {
+    public Integer getProducerId() {
         return producerId;
     }
 
-    public void setProducerId(int producerId) {
+    public void setProducerId(Integer  producerId) {
         this.producerId = producerId;
     }
 

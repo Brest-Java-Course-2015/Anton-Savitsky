@@ -19,7 +19,7 @@ public class ProducerTest {
     @Test
     public void testGetProducerId(){
         producer.setProducerId(1);
-        assertEquals(producer.getProducerId(), 1);
+        assertEquals(producer.getProducerId(),(Integer)1);
     }
 
     @Test

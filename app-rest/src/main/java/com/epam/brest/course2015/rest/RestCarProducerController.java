@@ -86,4 +86,6 @@ public class RestCarProducerController {
         LOGGER.debug("Getting cars dto by date");
         return carProducerService.getCarsByDateDto(DATE_FORMAT.parse(dateBefore), DATE_FORMAT.parse(dateAfter));
     }
+
+
 }

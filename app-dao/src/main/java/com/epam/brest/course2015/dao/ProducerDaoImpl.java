@@ -103,6 +103,7 @@ public class ProducerDaoImpl implements ProducerDao {
 
     private MapSqlParameterSource getParametersMap(Producer producer) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue(PRODUCER_ID.getValue(), producer.getProducerId());
         parameterSource.addValue(PRODUCER_NAME.getValue(), producer.getProducerName());
         parameterSource.addValue(COUNTRY.getValue(), producer.getCountry());
         return parameterSource;

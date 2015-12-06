@@ -1,7 +1,9 @@
 package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.ProducerDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hsqldb.rights.User;
@@ -45,17 +47,28 @@ public class CarProducerServiceImplTest {
     }
 
     @Test
-    public void testGetCountOfCarsByProducerId(){
-        int producerId=1;
+    public void testGetCountOfCarsByProducerId() throws ParseException {
         LOGGER.debug("test: getCountOfCarsByProducerId()");
-        int countOfCars= carProducerService.getCountOfCarsByProducerId(producerId);
-        Assert.notNull(countOfCars);
-        Assert.isTrue(countOfCars==2);
+        int producerId;
+        int countOfCarsBefore;
+        if(carProducerService.getAllProducers().size()>0) {
+            producerId = carProducerService.getAllProducers().get(0).getProducerId();
+            countOfCarsBefore= carProducerService.getCountOfCarsByProducerId(producerId);
+        }
+        else {
+            LOGGER.debug("There must be at least 1 producer!");
+            return;
+        }
+        carProducerService.addCar(new Car("qw", producerId, DATE_FORMAT.parse("12/12/2015")));
+        int countOfCarsAfter=carProducerService.getCountOfCarsByProducerId(producerId);
+        Assert.notNull(countOfCarsBefore);
+        Assert.notNull(countOfCarsAfter);
+        Assert.isTrue(countOfCarsBefore==countOfCarsAfter-1);
     }
 
     @Test
     public void testAddCar() throws ParseException {
-        Car car=new Car("8gh", 2, DATE_FORMAT.parse("13/2/2015"));
+        Car car=new Car("8gh", carProducerService.getAllProducers().get(0).getProducerId(), DATE_FORMAT.parse("13/2/2015"));
         LOGGER.debug("test: addCar()");
         int sizeBefore = carProducerService.getAllCars().size();
         carProducerService.addCar(car);
@@ -92,7 +105,11 @@ public class CarProducerServiceImplTest {
     public void testAddCarWithNullProducerId() throws ParseException {
         LOGGER.debug("test: AddCarWithNullProducerId");
         Car car=new Car(null, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
-        carProducerService.addCar(car);
+        try {
+            carProducerService.addCar(car);
+        }catch(IllegalArgumentException ex){
+            LOGGER.debug(ex.getMessage());
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -167,4 +184,65 @@ public class CarProducerServiceImplTest {
         assertNotNull(dto.getTotal());
         assertEquals(dto.getCars().get(0).getClass(), Car.class);
     }
+
+    //producer's methods testing
+    @Test
+    public void testGetProducerById() throws Exception {
+        int producerId=0;
+        LOGGER.debug("test: getProducerById()");
+        Producer producer= carProducerService.getProducerById(producerId);
+        Assert.notNull(producer);
+        Assert.isTrue(producer.getProducerId()==0);
+        LOGGER.debug(producer.toString());
+    }
+
+    @Test
+    public void testGetProducersDto(){
+        LOGGER.debug("test: getProducersDto()");
+        ProducerDto producerdto=carProducerService.getProducersDto();
+        Assert.notNull(producerdto);
+        Assert.notNull(producerdto.getProducers());
+        Assert.isTrue(producerdto.getProducers().get(0).getClass().equals(Producer.class));
+    }
+
+    @Test
+    public void testDeleteProducer() {
+        LOGGER.debug("test: deleteProducer()");
+        int sizeBeforeDeleting=carProducerService.getProducersTotalCount();
+        if(sizeBeforeDeleting>0)
+        carProducerService.deleteProducer(0);
+        else {
+            LOGGER.debug("Error: there must be at least one producer!");
+            return;}
+        Assert.isTrue(sizeBeforeDeleting-1==carProducerService.getProducersTotalCount());
+    }
+
+    @Test
+    public void testAddProducer(){
+        LOGGER.debug("test: addProducer()");
+        Producer producer=new Producer("ferrari","italy");
+        carProducerService.addProducer(producer);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddProducerNotNullId(){
+        LOGGER.debug("test: addProducer() for a failure when adding producer with not null id");
+        carProducerService.addProducer(new Producer(1,"ferrari","italy"));
+    }
+
+    @Test
+    public void testUpdateProducer() {
+        LOGGER.debug("test: updateProducer()");
+        Producer producer;
+        if (carProducerService.getProducersTotalCount() > 0){
+            carProducerService.updateProducer(producer=new Producer(carProducerService.getAllProducers().get(0).getProducerId(), "updatedName", "updatedCountry"));
+        }else{
+            LOGGER.debug("There must be at least one producer to be updated!");
+            return;
+        }
+        Assert.isTrue(producer.getProducerId().equals(carProducerService.getAllProducers().get(0).getProducerId()));
+        Assert.isTrue(producer.getCountry().equals(carProducerService.getAllProducers().get(0).getCountry()));
+        Assert.isTrue(producer.getProducerName().equals(carProducerService.getAllProducers().get(0).getProducerName()));
+    }
+
 }

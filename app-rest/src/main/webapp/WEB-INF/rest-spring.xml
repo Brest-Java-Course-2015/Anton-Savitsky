@@ -51,8 +51,13 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="carService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="carProducerService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
         <property name="carDao" ref="carDao"/>
+        <property name="producerDao" ref="producerDao"/>
     </bean>
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
@@ -67,5 +72,4 @@
         <property name="supportedMediaTypes" value="application/json" />
         <property name="prettyPrint" value="true" />
     </bean>
-
 </beans>

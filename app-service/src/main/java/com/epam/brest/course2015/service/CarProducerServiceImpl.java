@@ -1,8 +1,11 @@
 package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.dao.CarDao;
+import com.epam.brest.course2015.dao.ProducerDao;
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.ProducerDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,14 +25,14 @@ import java.util.List;
 public class CarProducerServiceImpl implements CarProducerService {
     @Value("${getCarById.carIdNotNull}")
     private String carIdNotNull;
-    @Value("${getCarById.carIdPositive}")
-    private String carIdPositive;
+    @Value("${getCarById.carIdNotNegative}")
+    private String carIdNotNegative;
     @Value("${getCarByName.carNameNotNull}")
     private String carNameNotNull;
     @Value("${getCountOfCarsByProducerId.producerIdNotNull}")
     private String producerIdNotNull;
-    @Value("${getCountOfCarsByProducerId.producerIdPositive}")
-    private String producerIdPositive;
+    @Value("${getCountOfCarsByProducerId.producerIdNotNegative}")
+    private String producerIdNotNegative;
     @Value("${addCar.carNotNull}")
     private String carNotNull;
     @Value("${addCar.carIdNull}")
@@ -42,15 +45,19 @@ public class CarProducerServiceImpl implements CarProducerService {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private CarDao carDao;
+    private ProducerDao producerDao;
 
     public void setCarDao(CarDao carDao) {
         this.carDao=carDao;
     }
 
+    public void setProducerDao(ProducerDao producerDao) {
+        this.producerDao=producerDao;
+    }
     @Override
     public Car getCarById(Integer carId) {
         Assert.notNull(carId, carIdNotNull);
-        Assert.isTrue(carId>0, carIdPositive);
+        Assert.isTrue(carId>=0, carIdNotNegative);
         LOGGER.debug("getCarById(): carId={}",carId);
         try {
             return carDao.getCarById(carId);
@@ -64,7 +71,7 @@ public class CarProducerServiceImpl implements CarProducerService {
     @Override
     public Integer getCountCarsById(Integer carId){
         Assert.notNull(carId, carIdNotNull);
-        Assert.isTrue(carId>0, carIdPositive);
+        Assert.isTrue(carId>0, carIdNotNegative);
         LOGGER.debug("getCountCarsById(): carId={}",carId);
         try {
             return carDao.getCountCarsById(carId);
@@ -78,7 +85,7 @@ public class CarProducerServiceImpl implements CarProducerService {
     @Override
     public Integer getCountOfCarsByProducerId(Integer producerId) {
         Assert.notNull(producerId, producerIdNotNull);
-        Assert.isTrue(producerId>0, producerIdPositive);
+        Assert.isTrue(producerId>=0, producerIdNotNegative);
         LOGGER.debug("getCountOfCarsByProducerId(): producerId={}", producerId);
         try {
             return carDao.getCountOfCarsByProducerId(producerId);
@@ -100,7 +107,7 @@ public class CarProducerServiceImpl implements CarProducerService {
 
     @Override
     public Integer addCar(Car car) throws DataAccessException {
-        LOGGER.debug("addCar(): car={}",car.getCarId());
+        LOGGER.debug("addCar(): carId={}",car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
         Assert.notNull(car.getProducerId(), producerIdNotNull);
@@ -174,4 +181,72 @@ public class CarProducerServiceImpl implements CarProducerService {
         }
         return carDto;
     }
+
+
+
+    @Override
+    public Producer getProducerById(Integer producerId) {
+        Assert.notNull(producerId, "id should not be null!");
+        Assert.isTrue(producerId>=0, "id should be not negative!");
+        LOGGER.debug("getProducerById(): producerId={}",producerId);
+        try {
+            return producerDao.getProducerById(producerId);
+        } catch (EmptyResultDataAccessException e) {
+            e.printStackTrace();
+            LOGGER.debug("Producer with Id {} does not exist", producerId);
+            throw new IllegalArgumentException();
+        }
+    }
+
+    @Override
+    public Integer addProducer(Producer producer) {
+        Assert.notNull(producer);
+        Assert.isNull(producer.getProducerId(),"Producer must be null before adding! ");
+        LOGGER.debug("addProducer(): producer="+producer.toString());
+        return producerDao.addProducer(producer);
+    }
+
+    @Override
+    public void updateProducer(Producer producer) {
+        Assert.notNull(producer, "producer must not be null!");
+        Assert.notNull(producer.getProducerId(), "id must not be null!");
+        Assert.hasText(producer.getProducerName(), "name must contain some chars!");
+        Assert.hasText(producer.getCountry(), "country must contain some chars!");
+        LOGGER.debug("updateProducer(): producer:" + producer.toString());
+        producerDao.updateProducer(producer);
+    }
+
+    @Override
+    public Integer getProducersTotalCount() {
+        LOGGER.debug("getProducerTotalCount()");
+        return producerDao.getTotalCount();
+    }
+
+    @Override
+    public void deleteProducer(Integer producerId) {
+        LOGGER.debug("deleteProducer(): producerId={}",producerId);
+        Assert.notNull(producerId, "id should be not null!");
+        Assert.isTrue(producerId>=0,"id should be not negative!");
+        producerDao.deleteProducer(producerId);
+    }
+
+    @Override
+    public List<Producer> getAllProducers() {
+        LOGGER.debug("getAllProducers()");
+        return producerDao.getAllProducers();
+    }
+
+    @Override
+    public ProducerDto getProducersDto() {
+        LOGGER.debug("getProducersDto()");
+        ProducerDto producerDto = new ProducerDto();
+        producerDto.setTotal(producerDao.getTotalCount());
+        if(producerDto.getTotal()>0){
+            producerDto.setProducers(producerDao.getAllProducers());
+        }
+        else producerDto.setProducers(Collections.<Producer>emptyList());
+        return producerDto;
+    }
+
+
 }

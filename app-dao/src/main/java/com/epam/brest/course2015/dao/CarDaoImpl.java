@@ -114,6 +114,7 @@ public class CarDaoImpl implements CarDao {
 
     private MapSqlParameterSource getParametersMap(Car car) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue(CAR_ID.getValue(), car.getCarId());
         parameterSource.addValue(CAR_NAME.getValue(), car.getCarName());
         parameterSource.addValue(PRODUCER_ID.getValue(), car.getProducerId());
         parameterSource.addValue(DATE_OF_CREATION.getValue(), car.getDateOfCreation());
