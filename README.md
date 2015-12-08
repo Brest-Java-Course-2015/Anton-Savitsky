@@ -3,6 +3,7 @@ CAR - PRODUCER
 
 Version 1.0
 This is a short description of how you can run this application.
+
 1. Software you'll need: JRE 7 or higher, Tomcat server, browser.
 2. Startup of the application:
     -Download the app
