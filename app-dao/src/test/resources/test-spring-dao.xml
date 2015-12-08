@@ -14,11 +14,11 @@
             </list>
         </property>
     </bean>
-    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
     </bean>
 
+    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl"/>
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl"/>
 </beans>

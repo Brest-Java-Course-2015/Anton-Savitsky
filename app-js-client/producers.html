@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Список автомобилей</title>
+    <title>Автомобильный каталог</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,33 +20,23 @@
 </head>
 <body>
 <h1><a href="index.html">Автомобили</a> / <a href="producers.html">Производители</a></h1>
-<div class="dateBox">
-<form>
-    <label>C</label>
-    <input id="dateBefore" name="dateBefore" type="date" placeholder="dd/MM/yyyy"/>
-    <label>По</label>
-    <input id="dateAfter" name="dateAfter" type="date" placeholder="dd/MM/yyyy"/>
-    <button type="button" onclick="lookupCarsByDate()">Найти</button>
-    <button type="button" onclick="undoLookUp()">Сброс</button>
-</form>
-</div>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>CarId</th>
-            <th>CarName</th>
             <th>ProducerId</th>
-            <th>DateOfCreation</th>
+            <th>ProducerName</th>
+            <th>Country</th>
+            <th>NumberOfCars</th>
         </tr>
         </thead>
-        <tbody id="carList">
+        <tbody id="producerList">
         </tbody>
     </table>
 </div>
 
-<div id="carTotal">
-    <button id="addCar" style="float: right; position:relative; right: 50px" onclick="gotoAddCar()">Add car</button>
+<div id="producerTotal">
+    <button id="addProducer" style="float: right; position:relative; right: 50px" onclick="gotoAddProducer()">Add producer</button>
 </div>
 
 
@@ -55,6 +45,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
 
-<script src="js/main.js"></script>
+<script src="js/producermain.js"></script>
 </body>
 </html>

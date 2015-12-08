@@ -1,7 +1,9 @@
 package com.epam.brest.course2015.rest;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.ProducerDto;
 import com.epam.brest.course2015.service.CarProducerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,5 +89,55 @@ public class RestCarProducerController {
         return carProducerService.getCarsByDateDto(DATE_FORMAT.parse(dateBefore), DATE_FORMAT.parse(dateAfter));
     }
 
+    @RequestMapping(value="/producers",
+    method = RequestMethod.GET)
+    public @ResponseBody List<Producer> getAllProducers(){
+        LOGGER.debug("Getting all producers'");
+        return carProducerService.getAllProducers();
+    }
 
+    @RequestMapping(value="/producer",
+    method = RequestMethod.GET)
+    public @ResponseBody Producer getProducerById(@RequestParam(value="id") Integer id){
+        LOGGER.debug("Getting producer by id={}",id);
+        return carProducerService.getProducerById(id);
+    }
+
+    @RequestMapping(value = "/producer",
+            method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public Integer addProducer(@RequestBody Producer producer) throws ParseException {
+        LOGGER.debug("Adding new producer with id={}", producer.getProducerId());
+        return carProducerService.addProducer(producer);
+    }
+
+    @RequestMapping(value="/producer", method = RequestMethod.PUT)
+    public void updateProducer(@RequestBody Producer producer){
+        LOGGER.debug("Updating producer with id={}", producer.getProducerId());
+        carProducerService.updateProducer(producer);
+    }
+
+    @RequestMapping(value = "/producer",
+            method = RequestMethod.DELETE)
+    public void deleteProducer(@RequestParam(value = "id")
+                          Integer id) {
+        LOGGER.debug("Deleting a producer {}", id);
+        carProducerService.deleteProducer(id);
+    }
+
+    @RequestMapping(value="/producersdto",
+            method = RequestMethod.GET)
+    public @ResponseBody ProducerDto getProducersDto(){
+        LOGGER.debug("Getting producers dto");
+        return carProducerService.getProducersDto();
+    }
+/*
+    @RequestMapping(value="/cars",
+            method = RequestMethod.GET)
+    public @ResponseBody Integer getCountOfCarsByProducerId(@RequestParam(value="pid") Integer pid){
+        LOGGER.debug("Get count Of cars by producerid");
+        return carProducerService.getCountOfCarsByProducerId(pid);
+
+    }
+    */
 }

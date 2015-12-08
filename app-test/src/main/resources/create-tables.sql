@@ -11,9 +11,9 @@ CREATE TABLE PRODUCER (
 CREATE TABLE CAR (
     carId INT IDENTITY primary key NOT NULL,
     carName VARCHAR(30) NOT NULL,
-    producer_producer_id INT NOT NULL,
+    producerId INT NOT NULL,
     dateOfCreation date NOT NULL,
-    FOREIGN KEY (producer_producer_id) REFERENCES PRODUCER(producerId)
+    FOREIGN KEY (producerId) REFERENCES PRODUCER(producerId)
 );
 
 

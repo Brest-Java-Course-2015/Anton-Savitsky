@@ -105,11 +105,7 @@ public class CarProducerServiceImplTest {
     public void testAddCarWithNullProducerId() throws ParseException {
         LOGGER.debug("test: AddCarWithNullProducerId");
         Car car=new Car(null, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
-        try {
             carProducerService.addCar(car);
-        }catch(IllegalArgumentException ex){
-            LOGGER.debug(ex.getMessage());
-        }
     }
 
     @Test(expected = IllegalArgumentException.class)

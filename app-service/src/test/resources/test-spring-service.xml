@@ -16,16 +16,16 @@
         </property>
     </bean>
 
-    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl">
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
-        <constructor-arg ref="dataSource"/>
-    </bean>
+    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl"/>
 
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl"/>
 
-    <bean id="carService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
+    <bean id="carProducerService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
         <property name="carDao" ref="carDao"/>
         <property name="producerDao" ref="producerDao"/>
     </bean>

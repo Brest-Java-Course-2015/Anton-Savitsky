@@ -8,7 +8,5 @@
     <bean id="carService" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.service.CarProducerService"/>
     </bean>
-
     <context:component-scan base-package="com.epam.brest.course2015.rest"/>
-
 </beans>

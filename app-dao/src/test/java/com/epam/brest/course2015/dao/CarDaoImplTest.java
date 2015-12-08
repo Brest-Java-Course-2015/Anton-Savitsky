@@ -82,8 +82,8 @@ public class CarDaoImplTest  {
         for(int i=0;i<listOfCars.size();i++)
             LOGGER.debug(listOfCars.get(i).toString());
         assertNotNull(listOfCars);
-        assertTrue(listOfCars.get(0).getDateOfCreation().equals(expectedDate1));
-        assertTrue(listOfCars.get(1).getDateOfCreation().equals(expectedDate2));
+        assertTrue(listOfCars.get(0).getDateOfCreation().compareTo(expectedDate1)==0);
+        assertTrue(listOfCars.get(1).getDateOfCreation().compareTo(expectedDate2)==0);
     }
 
     @Test

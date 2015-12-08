@@ -71,7 +71,7 @@ public class Car {
     public enum CarFields {
         CAR_ID("carId"),
         CAR_NAME("carName"),
-        PRODUCER_ID("producer_producer_id"),
+        PRODUCER_ID("producerId"),
         DATE_OF_CREATION("dateOfCreation");
 
         CarFields(String value) {

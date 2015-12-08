@@ -3,9 +3,6 @@ var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
 var CAR_URL = "/car";
 var CARDTO_URL = "/carsdto";
 var CARDTOBYDATE_URL="/carsdtobydate";
-var CARS_URL = "/cars";
-//var FRIENDS_URL = "/friends";
-//var FRIENDSHIP_URL = "/friendship";
 
 findAll();
 

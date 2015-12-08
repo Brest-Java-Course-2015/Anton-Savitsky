@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Автомобильный каталог - обновление автомобиля</title>
+    <title>Автомобильный каталог - добавление нового производителя</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,22 +18,17 @@
     <![endif]-->
 </head>
 <body>
-<h1>Обновление автомобиля</h1>
+<h1>Добавление нового производителя</h1>
 
-<form id="carForm">
+<form id="producerForm">
     <div class="mainArea">
-        <label>Id:</label><br>
-        <input type="text" id="carId" name="carId" readonly><br>
         <label>Name:</label><br>
-        <input type="text" id="carName" name="carName" required>
+        <input type="text" id="producerName" name="producerName" required>
         <br>
-        <label>Producer Id:</label><br>
-        <input type="text" id="producerId" name="producerId" required>
+        <label>Country:</label><br>
+        <input type="text" id="country" name="country" required>
         <br>
-        <label>DateOfCreation:</label><br>
-        <input type="text" id="dateOfCreation" name="dateOfCreation"  placeholder="dd/MM/yyyy" required>
-        <br>
-        <button id="updateCar" type="button">Обновить</span></button>
+        <button id="addProducer" type="button">Добавить</span></button>
     </div>
 </form>
 
@@ -41,7 +36,7 @@
 <script src="js/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
-<script src="js/updatecar.js"></script>
 
+<script src="js/addproducer.js"></script>
 </body>
 </html>
