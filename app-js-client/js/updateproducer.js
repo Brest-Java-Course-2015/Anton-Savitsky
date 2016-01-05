@@ -5,6 +5,13 @@
 var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
 var PRODUCER_URL = "/producer";
 
+/*
+insertValues();
+
+function insertValues(){
+
+}
+*/
 // Register listeners
 $('#updateProducer').click(function () {
     updateProducer(sessionStorage.getItem('producerId'));

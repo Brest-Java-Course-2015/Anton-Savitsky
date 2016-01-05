@@ -25,8 +25,11 @@
 
     <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl"/>
 
-    <bean id="carProducerService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
+    <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
         <property name="carDao" ref="carDao"/>
+    </bean>
+
+    <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
         <property name="producerDao" ref="producerDao"/>
     </bean>
 </beans>

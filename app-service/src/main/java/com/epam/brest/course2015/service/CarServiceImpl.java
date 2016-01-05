@@ -22,7 +22,7 @@ import java.util.List;
  * Created by antonsavitsky on 17.11.15.
  */
 @Transactional
-public class CarProducerServiceImpl implements CarProducerService {
+public class CarServiceImpl implements CarService {
     @Value("${getCarById.carIdNotNull}")
     private String carIdNotNull;
     @Value("${getCarById.carIdNotNegative}")
@@ -45,15 +45,11 @@ public class CarProducerServiceImpl implements CarProducerService {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private CarDao carDao;
-    private ProducerDao producerDao;
 
     public void setCarDao(CarDao carDao) {
         this.carDao=carDao;
     }
 
-    public void setProducerDao(ProducerDao producerDao) {
-        this.producerDao=producerDao;
-    }
     @Override
     public Car getCarById(Integer carId) {
         Assert.notNull(carId, carIdNotNull);
@@ -61,20 +57,6 @@ public class CarProducerServiceImpl implements CarProducerService {
         LOGGER.debug("getCarById(): carId={}",carId);
         try {
             return carDao.getCarById(carId);
-        } catch (EmptyResultDataAccessException e) {
-            e.printStackTrace();
-            LOGGER.debug("Car with Id {} does not exist", carId);
-            throw new IllegalArgumentException();
-        }
-    }
-
-    @Override
-    public Integer getCountCarsById(Integer carId){
-        Assert.notNull(carId, carIdNotNull);
-        Assert.isTrue(carId>0, carIdNotNegative);
-        LOGGER.debug("getCountCarsById(): carId={}",carId);
-        try {
-            return carDao.getCountCarsById(carId);
         } catch (EmptyResultDataAccessException e) {
             e.printStackTrace();
             LOGGER.debug("Car with Id {} does not exist", carId);
@@ -124,7 +106,7 @@ public class CarProducerServiceImpl implements CarProducerService {
         Integer carIdToUpdate=car.getCarId();
         try{
             carDao.getCarById(carIdToUpdate);
-        } catch (DataAccessException dae){
+        } catch (EmptyResultDataAccessException erdae){
             throw new IllegalArgumentException("Car doesn't exist!");
         }
         Assert.hasText(car.getCarName(), carNameNotNull);
@@ -136,19 +118,13 @@ public class CarProducerServiceImpl implements CarProducerService {
     @Override
     public void deleteCar(Integer carId) {
         LOGGER.debug("deleteCar(): carId={}", carId);
-        try{
+        try {
             carDao.getCarById(carId);
-        } catch (DataAccessException dae){
+        } catch (DataAccessException dae) {
             throw new IllegalArgumentException("Car doesn't exist!");
         }
         Assert.notNull(carId, carIdNotNull);
         carDao.deleteCar(carId);
-    }
-
-    @Override
-    public Integer getTotalCountCars() {
-        LOGGER.debug("getTotalCountCars()");
-        return carDao.getTotalCountCars();
     }
 
     @Override
@@ -173,80 +149,13 @@ public class CarProducerServiceImpl implements CarProducerService {
     public CarDto getCarsByDateDto(Date dateBefore, Date dateAfter) {
         LOGGER.debug("getCarsByDateDto()");
         CarDto carDto=new CarDto();
-        carDto.setTotal(getListOfCarsByDateOfCreation(dateBefore, dateAfter).size());
+        List<Car> carList=getListOfCarsByDateOfCreation(dateBefore, dateAfter);
+        carDto.setTotal(carList.size());
         if(carDto.getTotal()>0){
-            carDto.setCars(getListOfCarsByDateOfCreation(dateBefore,dateAfter));
+            carDto.setCars(carList);
         } else {
             carDto.setCars(Collections.<Car>emptyList());
         }
         return carDto;
     }
-
-
-
-    @Override
-    public Producer getProducerById(Integer producerId) {
-        Assert.notNull(producerId, "id should not be null!");
-        Assert.isTrue(producerId>=0, "id should be not negative!");
-        LOGGER.debug("getProducerById(): producerId={}",producerId);
-        try {
-            return producerDao.getProducerById(producerId);
-        } catch (EmptyResultDataAccessException e) {
-            e.printStackTrace();
-            LOGGER.debug("Producer with Id {} does not exist", producerId);
-            throw new IllegalArgumentException();
-        }
-    }
-
-    @Override
-    public Integer addProducer(Producer producer) {
-        Assert.notNull(producer);
-        Assert.isNull(producer.getProducerId(),"Producer must be null before adding! ");
-        LOGGER.debug("addProducer(): producer="+producer.toString());
-        return producerDao.addProducer(producer);
-    }
-
-    @Override
-    public void updateProducer(Producer producer) {
-        Assert.notNull(producer, "producer must not be null!");
-        Assert.notNull(producer.getProducerId(), "id must not be null!");
-        Assert.hasText(producer.getProducerName(), "name must contain some chars!");
-        Assert.hasText(producer.getCountry(), "country must contain some chars!");
-        LOGGER.debug("updateProducer(): producer:" + producer.toString());
-        producerDao.updateProducer(producer);
-    }
-
-    @Override
-    public Integer getProducersTotalCount() {
-        LOGGER.debug("getProducerTotalCount()");
-        return producerDao.getTotalCount();
-    }
-
-    @Override
-    public void deleteProducer(Integer producerId) {
-        LOGGER.debug("deleteProducer(): producerId={}",producerId);
-        Assert.notNull(producerId, "id should be not null!");
-        Assert.isTrue(producerId>=0,"id should be not negative!");
-        producerDao.deleteProducer(producerId);
-    }
-
-    @Override
-    public List<Producer> getAllProducers() {
-        LOGGER.debug("getAllProducers()");
-        return producerDao.getAllProducers();
-    }
-
-    @Override
-    public ProducerDto getProducersDto() {
-        LOGGER.debug("getProducersDto()");
-        ProducerDto producerDto = new ProducerDto();
-        producerDto.setTotal(producerDao.getTotalCount());
-        if(producerDto.getTotal()>0){
-            producerDto.setProducers(producerDao.getAllProducers());
-        }
-        else producerDto.setProducers(Collections.<Producer>emptyList());
-        return producerDto;
-    }
-
-
 }

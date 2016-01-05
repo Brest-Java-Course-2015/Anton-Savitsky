@@ -32,11 +32,11 @@ function deleteProducer(producerId) {
             type: 'DELETE',
             url: url,
             success: function (data, textStatus, jqXHR) {
-                alert('Producer deleted successfully!');
+                alert('Производитель успешно удален');
                 findAll();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert('deleteProducer error: ' + textStatus + " for producerId="+producerId);
+                alert('Ошибка удаления!' +'\n'+textStatus);
             }
         });
     }

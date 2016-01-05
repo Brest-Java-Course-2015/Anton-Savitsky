@@ -29,7 +29,7 @@ import java.util.List;
  * Created by antonsavitsky on 09.11.15.
  */
 public class CarDaoImpl implements CarDao {
-    private static final Logger LOGGER = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
 
     @Value("${car.selectCarById}")
     private String selectCarById;

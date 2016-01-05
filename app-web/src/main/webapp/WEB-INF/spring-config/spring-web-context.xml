@@ -47,21 +47,19 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <!--<bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl">
-        <constructor-arg ref="dataSource"/>
-    </bean>-->
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl"/>
 
-    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl">
-        <constructor-arg ref="dataSource"/>
+    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl"/>
+
+    <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
+        <property name="carDao" ref="carDao"/>
     </bean>
 
-    <bean id="carProducerService" class="com.epam.brest.course2015.service.CarProducerServiceImpl">
-        <property name="carDao" ref="carDao"/>
-        <!--<property name="producerDao" ref="producerDao"/>-->
+    <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
+        <property name="producerDao" ref="producerDao"/>
     </bean>
 
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="classpath:messages"/>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 

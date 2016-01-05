@@ -4,3 +4,8 @@
     border: 0;
     background: transparent;
 }
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}

@@ -3,7 +3,10 @@ var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
 var CAR_URL = "/car";
 var CARDTO_URL = "/carsdto";
 var CARDTOBYDATE_URL="/carsdtobydate";
+var PRODUCERDTO_URL="/producersdto";
+var producerdto=null;
 
+getProducerDto();
 findAll();
 
 function gotoAddCar() {
@@ -12,7 +15,12 @@ function gotoAddCar() {
 
 function gotoUpdateCar(carId)
 {
+
     sessionStorage.setItem('carId', carId);
+     /*sessionStorage.setItem('carName', carName);
+    sessionStorage.setItem('producerId', producerId);
+    sessionStorage.setItem('dateOfCreation', dateOfCreation);
+    */
     window.location="updateCar.html";
 }
 
@@ -29,11 +37,11 @@ function deleteCar(carId) {
         type: 'DELETE',
         url: url,
         success: function (data, textStatus, jqXHR) {
-                    alert('Car deleted successfully!');
+                    alert('Автомобиль успешно удален!');
                     findAll();
                 },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('deleteCar error: ' + textStatus + " for carId="+carId);
+            alert('Ошибка удаления автомобиля!'+'\n'+textStatus);
         }
     });
     }
@@ -54,16 +62,45 @@ function findAll() {
     });
 }
 
+function getProducerDto(){
+    console.log('getProducerDto');
+    var url = PREFIX_URL + PRODUCERDTO_URL;
+    $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: "json", // data type of response
+        success: function(data){
+            producerdto= data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+            alert('findAll: ' + textStatus);
+        }
+    });
+}
+
+function getProducerNameById(producerid){
+    var retval="---";
+    $.each(producerdto, function (index, producer) {
+       if(producer.producerId==producerid) {
+           retval=producer.producerName;
+           return;
+       }
+    });
+    return retval;
+}
+
 function drawRow(car) {
     var row = $("<tr />")
     $("#carList").append(row);
     row.append($("<td>" + car.carId + "</td>"));
     row.append($("<td>" + car.carName+"</td>"));
+    row.append($("<td>" + getProducerNameById(car.producerId)+"</td>"));
     row.append($("<td>" + car.producerId + "</td>"));
-    row.append($("<td>" + car.dateOfCreation +"</td>"));
+    console.log('data='+car.dateOfCreation);
+    row.append($("<td>" + car.dateOfCreation.toString() +"</td>"));
     row.append($("<td>" + '<button class="mybutton" onclick="deleteCar('+ car.carId +')"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
-    row.append($("<td>"+'<button id="updateButton" class="mybutton" type="button" onclick="gotoUpdateCar('+ car.carId +')"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
-
+    row.append($("<td>"+'<button id="updateButton" class="mybutton" type="button" onclick="gotoUpdateCar('+ car.carId+')"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
 }
 
 function renderList(data) {
@@ -80,25 +117,6 @@ function cleanOldData(){
     $("#carList tr").remove();
     $('#carTotal p').remove();
 }
-
-/*
-function updateCar() {
-    console.log('updateCar');
-    var url = PREFIX_URL + CAR_URL + "";
-    $.ajax({
-        type: 'PUT',
-        contentType: 'application/json',
-        url: url,
-        data: formToJSON(),
-        success: function (data, textStatus, jqXHR) {
-            alert('User updated successfully');
-            findAll();
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            alert('updateUser error: ' + textStatus);
-        }
-    });
-}*/
 
 function formToJSON() {
     return JSON.stringify({
@@ -120,7 +138,7 @@ function formToJSON() {
             success: renderList,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR, textStatus, errorThrown);
-                alert('lookupCarsByDate: ' + textStatus);
+                alert('Ошибка поиска по дате!\nПроверьте введенные даты' + textStatus);
             }
         });
     }

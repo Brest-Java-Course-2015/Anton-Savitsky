@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="carDao" class="org.easymock.EasyMock" factory-method="createMock">
+              <constructor-arg value="com.epam.brest.course2015.dao.CarDao"/>
+       </bean>
+
+       <bean id="producerDao" class="org.easymock.EasyMock" factory-method="createMock">
+              <constructor-arg value="com.epam.brest.course2015.dao.ProducerDao"/>
+       </bean>
+
+       <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
+              <property name="carDao" ref="carDao"/>
+       </bean>
+
+       <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
+              <property name="producerDao" ref="producerDao"/>
+       </bean>
+
+</beans>
