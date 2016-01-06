@@ -15,3 +15,5 @@ CREATE TABLE CAR (
     dateOfCreation date NOT NULL,
     FOREIGN KEY (producerId) REFERENCES PRODUCER(producerId)
 );
+
+

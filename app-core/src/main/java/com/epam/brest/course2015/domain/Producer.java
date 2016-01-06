@@ -22,6 +22,10 @@ public class Producer {
 
     public Producer(){}
 
+    public Producer(Integer producerId){
+        this.producerId=producerId;
+    }
+
     public Integer getProducerId() {
         return producerId;
     }

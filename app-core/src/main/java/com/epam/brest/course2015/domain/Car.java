@@ -14,7 +14,7 @@ public class Car {
     private Integer carId;
     private Integer producerId;
     private String carName;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private Date dateOfCreation;
 
     public Car(Integer carId, String carName, Integer producerId, Date dateOfCreation){

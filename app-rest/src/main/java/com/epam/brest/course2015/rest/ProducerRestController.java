@@ -43,7 +43,7 @@ public class ProducerRestController {
             method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Integer addProducer(@RequestBody Producer producer) throws ParseException {
-        LOGGER.debug("Adding new producer with id={}", producer.getProducerId());
+        LOGGER.debug("Adding new producer '{}' '{}'", producer.getProducerName(),producer.getCountry());
         return producerService.addProducer(producer);
     }
 

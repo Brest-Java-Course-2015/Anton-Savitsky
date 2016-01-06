@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.rest;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
@@ -19,11 +20,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import javax.annotation.Resource;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.EasyMock.replay;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -38,12 +41,13 @@ public class CarRestControllerMockTest {
     SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     private static final Logger LOGGER = LogManager.getLogger();
-    @Resource
+    @Autowired
     private CarRestController carRestController;
+
     private MockMvc mockMvc;
 
     @Autowired
-    private CarService carService;
+    private CarService carServiceMock;
 
     @Before
     public void setUp() {
@@ -53,14 +57,14 @@ public class CarRestControllerMockTest {
 
     @After
     public void tearDown() {
-        verify(carService);
-        reset(carService);
+        verify(carServiceMock);
+        reset(carServiceMock);
     }
 
     @Test
     public void testAddCar() throws Exception {
-        expect(carService.addCar(anyObject(Car.class))).andReturn(4);
-        replay(carService);
+        expect(carServiceMock.addCar(anyObject(Car.class))).andReturn(3);
+        replay(carServiceMock);
         String car = new ObjectMapper().writeValueAsString(new Car("ert",2,DATE_FORMAT.parse("15/09/2013")));
         mockMvc.perform(
                 post("/car")
@@ -69,17 +73,96 @@ public class CarRestControllerMockTest {
                         .content(car))
                 .andDo(print())
                 .andExpect(status().isCreated())
-                .andExpect(content().string("4"));
+                .andExpect(content().string("3"));
+    }
+
+    @Test
+    public void testUpdateCar() throws Exception {
+        carServiceMock.updateCar(anyObject(Car.class));
+        expectLastCall().once();
+        replay(carServiceMock);
+        String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",2,DATE_FORMAT.parse("15/09/2013")));
+        mockMvc.perform(
+                put("/car")
+                .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(car))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
 
     @Test
     public void testGetCarById() throws Exception {
-        expect(carService.getCarById(1)).andReturn(new Car(1));
-        replay(carService);
+        expect(carServiceMock.getCarById(1)).andReturn(new Car(1));
+        replay(carServiceMock);
+        String car=new ObjectMapper().writeValueAsString(new Car(1));
         mockMvc.perform(
                 get("/car?id=1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(car));
+    }
+
+    @Test
+    public void testDeleteCar() throws Exception {
+        carServiceMock.deleteCar(1);
+        expectLastCall().once();
+        replay(carServiceMock);
+        mockMvc.perform(
+                delete("/car?id=1")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testGetAllCars() throws Exception {
+        expect(carServiceMock.getAllCars()).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
+        replay(carServiceMock);
+        String cars="["+new ObjectMapper().writeValueAsString(new Car(0))+","+new ObjectMapper().writeValueAsString(new Car(1))+"]";
+        mockMvc.perform(
+                get("/cars")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+        .andExpect(content().string(cars));
+    }
+
+    @Test
+    public void testGetCarsByDateDto() throws Exception {
+        expect(carServiceMock.getCarsByDateDto(anyObject(Date.class), anyObject(Date.class))).andReturn(new CarDto());
+        replay(carServiceMock);
+        mockMvc.perform(
+                get("/carsdtobydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("{\"cars\":null,\"total\":null}"));
+    }
+
+    @Test
+    public void getCarsDto() throws Exception {
+        expect(carServiceMock.getCarsDto()).andReturn(new CarDto());
+        replay(carServiceMock);
+        mockMvc.perform(
+                get("/carsdto")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("{\"cars\":null,\"total\":null}"));
+    }
+
+    @Test
+    public void getCarsByDateOfCreation() throws Exception {
+        expect(carServiceMock.getListOfCarsByDateOfCreation(anyObject(Date.class),anyObject(Date.class))).andReturn(Arrays.<Car>asList(new Car(0),new Car(1)));
+        replay(carServiceMock);
+        String cars="["+new ObjectMapper().writeValueAsString(new Car(0))+","+new ObjectMapper().writeValueAsString(new Car(1))+"]";
+        mockMvc.perform(
+                get("/car/date?dateBefore=10/10/2015&dateAfter=15/10/2015")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(cars));
     }
 }

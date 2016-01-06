@@ -138,7 +138,7 @@ function formToJSON() {
             success: renderList,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR, textStatus, errorThrown);
-                alert('Ошибка поиска по дате!\nПроверьте введенные даты' + textStatus);
+                alert('Ошибка поиска по дате!\nПроверьте введенные даты.');
             }
         });
     }
