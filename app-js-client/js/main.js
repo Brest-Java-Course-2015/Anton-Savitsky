@@ -13,14 +13,12 @@ function gotoAddCar() {
     window.location = "addCar.html";
 }
 
-function gotoUpdateCar(carId)
+function gotoUpdateCar(carId,carName,producerId,dateOfCreation)
 {
-
     sessionStorage.setItem('carId', carId);
-     /*sessionStorage.setItem('carName', carName);
+    sessionStorage.setItem('carName', carName);
     sessionStorage.setItem('producerId', producerId);
     sessionStorage.setItem('dateOfCreation', dateOfCreation);
-    */
     window.location="updateCar.html";
 }
 
@@ -41,7 +39,7 @@ function deleteCar(carId) {
                     findAll();
                 },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Ошибка удаления автомобиля!'+'\n'+textStatus);
+            alert('Ошибка удаления автомобиля!');
         }
     });
     }
@@ -99,8 +97,14 @@ function drawRow(car) {
     row.append($("<td>" + car.producerId + "</td>"));
     console.log('data='+car.dateOfCreation);
     row.append($("<td>" + car.dateOfCreation.toString() +"</td>"));
-    row.append($("<td>" + '<button class="mybutton" onclick="deleteCar('+ car.carId +')"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
-    row.append($("<td>"+'<button id="updateButton" class="mybutton" type="button" onclick="gotoUpdateCar('+ car.carId+')"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
+    row.append($("<td>" + '<button id="delete'+car.carId+'" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
+    $("#delete"+car.carId).click(function(){
+        deleteCar(car.carId);
+    });
+    row.append($("<td>"+'<button id="update'+car.carId+'"updateButton" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
+    $("#update"+car.carId).click(function(){
+        gotoUpdateCar(car.carId, car.carName, car.producerId, car.dateOfCreation);
+    });
 }
 
 function renderList(data) {

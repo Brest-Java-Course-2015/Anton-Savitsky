@@ -23,18 +23,16 @@
 
 <form id="carForm">
     <div class="mainArea">
-        <div class="form-group required">
-        <label class='control-label'>Name:</label><br>
+        <label>Id:</label><br>
+        <input type="text" id="carId" name="carId" required="required">
+        <br>
+        <label>Name:</label><br>
         <input type="text" id="carName" name="carName" required="required">
         <br>
-        </div>
-        <!--<label>Producer Name:</label><br>
-        <input type="text" id="producerName" name="producerName" required>
-        <br>-->
         <label>Producer Id:</label><br>
         <select name="producerId" class="prodidselect" required="required"></select><br>
         <label>Producer Name:</label><br>
-        <input type="text" id="producerName" name="producerName" required readonly>
+        <input type="text" id="producerName" name="producerName" required>
         <br>
         <label>DateOfCreation:</label><br>
         <input type="text" id="dateOfCreation" name="dateOfCreation"  placeholder="dd/MM/yyyy" required>

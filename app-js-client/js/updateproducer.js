@@ -5,28 +5,29 @@
 var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
 var PRODUCER_URL = "/producer";
 
-/*
-insertValues();
-
-function insertValues(){
-
+function insertVals() {
+    $('#producerId').val(sessionStorage.getItem('producerId'));
+    $('#producerName').val(sessionStorage.getItem('name'));
+    $('#country').val(sessionStorage.getItem('country'));
 }
-*/
+
+insertVals();
+
 // Register listeners
 $('#updateProducer').click(function () {
     updateProducer(sessionStorage.getItem('producerId'));
     console.log(sessionStorage.getItem('producerId'));
-    //goHome();
+    goHome();
 });
 
 
 function goHome() {
-    window.location="index.html";
+    window.location="producers.html";
 }
 
 function updateProducer(producerId) {
     if(confirm("Хотите обновить производителя?")){
-        console.log('updateProducer');
+        console.log('updateProducer id='+producerId);
         var url = PREFIX_URL + PRODUCER_URL;
         $.ajax({
             type: 'PUT',
@@ -34,11 +35,10 @@ function updateProducer(producerId) {
             url: url,
             data: formToJSON(),
             success: function (data, textStatus, jqXHR) {
-                alert('Producer updated successfully');
-                goHome();
+                alert('Производитель успешно обновлен!');
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert('updateProducer error: ' + textStatus);
+                alert('Возникла ошибка обновления производителя!\nПроверьте введенные данные и попробуйте снова');
             }
         });
     }else{goHome();}

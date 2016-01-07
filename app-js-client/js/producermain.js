@@ -13,20 +13,24 @@ function gotoAddProducer() {
     window.location = "addproducer.html";
 }
 
-function gotoUpdateProducer(producerId)
+function gotoUpdateProducer(producerId,producerName,country)
 {
     sessionStorage.setItem('producerId', producerId);
+    sessionStorage.setItem('name', producerName);
+    sessionStorage.setItem('country', country);
     window.location="updateproducer.html";
 }
 
 function goHome() {
-    window.location="index.html";
+    window.location="producers.html";
 }
 
 function deleteProducer(producerId) {
-    if (confirm("Вы уверены, что хотите удалить производителя с id=" + producerId + "?"))
+    var mes="Вы уверены, что хотите удалить производителя с id=" + producerId + "?";
+    if (getCountOfCarsByProducer(producerId)>0) mes="Существуют автомобили принадлежащие данному производителю!\nВы уверены, что хотите удалить производителя с id=" + producerId + "?";
+    if (confirm(mes))
     {
-        console.log('deleteProducer' + producerId);
+        console.log('deleteProducer id=' + producerId);
         var url = PREFIX_URL + PRODUCER_URL + "?id=" + producerId;
         $.ajax({
             type: 'DELETE',
@@ -36,7 +40,7 @@ function deleteProducer(producerId) {
                 findAll();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert('Ошибка удаления!' +'\n'+textStatus);
+                alert('Ошибка удаления!');
             }
         });
     }
@@ -77,6 +81,7 @@ function getCountOfCarsByProducer(id) {
             alert('getCountOfCarsByProducer: ' + textStatus);
         }
     });
+    console.log("countofcars="+i);
     return i;
 }
 
@@ -87,8 +92,10 @@ function drawRow(producer) {
     row.append($("<td>" + producer.producerName+"</td>"));
     row.append($("<td>" + producer.country+"</td>"));
     row.append($("<td>" + getCountOfCarsByProducer(producer.producerId) + "</td>"));
-    row.append($("<td>" + '<button class="mybutton" onclick="deleteProducer('+ producer.producerId +')"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
-    row.append($("<td>"+'<button id="updateButton" class="mybutton" type="button" onclick="gotoUpdateProducer('+ producer.producerId +')"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
+    row.append($("<td>" + '<button id="deleteButton" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
+    $("#deleteButton").click(function(){deleteProducer(producer.producerId);});
+    row.append($("<td>"+'<button id="updateButton" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
+    $("#updateButton").click(function(){gotoUpdateProducer(producer.producerId, producer.producerName, producer.country);});
 }
 
 function renderList(data) {

@@ -7,20 +7,26 @@ var CAR_URL = "/car";
 var PRODUCERDTO_URL = "/producersdto";
 
 
-
-
 // Register listeners
 $('#updateCar').click(function () {
     updateCar(sessionStorage.getItem('carId'));
     console.log(sessionStorage.getItem('carId'));
 });
 
-
-fillSelectList();
-
 function fillSelectList(){
     getProducers();
 }
+
+fillSelectList();
+function insertValues(){
+    $('#carId').val(sessionStorage.getItem('carId'));
+    $('#carName').val(sessionStorage.getItem('carName'));
+    $('#producerId').val(sessionStorage.getItem('producerId'));
+    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
+    $('#producerName').val($(".prodidselect").val());
+}
+
+insertValues();
 
 function getProducers() {
     console.log('getProducers');
@@ -46,17 +52,6 @@ $(".prodidselect").click(function() {
     console.log('$(".prodidselect").change');
     $('#producerName').val($(".prodidselect").val());
 });
-
-/*
-insertValues();
-
-function insertValues(){
-    $('#carId').val(sessionStorage.getItem('carId'));
-    $('#carName').val(sessionStorage.getItem('carName'));
-    $('#producerId').val(sessionStorage.getItem('producerId'));
-    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
-}
-*/
 
 function goHome() {
     window.location="index.html";
@@ -84,7 +79,7 @@ function updateCar(carId) {
 
 function formToJSON() {
     return JSON.stringify({
-        "carId": sessionStorage.getItem("carId"),
+        "carId": $('#carId').val(),
         "carName": $('#carName').val(),
         "producerId": $(".prodidselect option:selected").text(),
         "dateOfCreation": $('#dateOfCreation').val()
