@@ -1,16 +1,13 @@
 /**
  * Created by antonsavitsky on 08.12.15.
  */
-// The root URL for the RESTful services
 var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT"
 var PRODUCER_URL = "/producer";
 
-// Register listeners
 $('#addProducer').click(function () {
     addProducer();
     //goHome();
 });
-
 
 function goHome() {
     window.location="producers.html";
@@ -32,7 +29,7 @@ function addProducer() {
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('addProducer error: ' + textStatus);
+            alert('Ошибка добавления!');
         }
     });
 }

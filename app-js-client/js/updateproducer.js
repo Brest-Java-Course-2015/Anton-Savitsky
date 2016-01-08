@@ -7,16 +7,18 @@ var PRODUCER_URL = "/producer";
 
 function insertVals() {
     $('#producerId').val(sessionStorage.getItem('producerId'));
+    console.log(sessionStorage.getItem('producerId'));
     $('#producerName').val(sessionStorage.getItem('name'));
+    console.log(sessionStorage.getItem('name'));
     $('#country').val(sessionStorage.getItem('country'));
+    console.log(sessionStorage.getItem('country'));
 }
 
 insertVals();
 
 // Register listeners
 $('#updateProducer').click(function () {
-    updateProducer(sessionStorage.getItem('producerId'));
-    console.log(sessionStorage.getItem('producerId'));
+    updateProducer();
     goHome();
 });
 
@@ -25,9 +27,8 @@ function goHome() {
     window.location="producers.html";
 }
 
-function updateProducer(producerId) {
+function updateProducer() {
     if(confirm("Хотите обновить производителя?")){
-        console.log('updateProducer id='+producerId);
         var url = PREFIX_URL + PRODUCER_URL;
         $.ajax({
             type: 'PUT',
@@ -36,6 +37,7 @@ function updateProducer(producerId) {
             data: formToJSON(),
             success: function (data, textStatus, jqXHR) {
                 alert('Производитель успешно обновлен!');
+                goHome();
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('Возникла ошибка обновления производителя!\nПроверьте введенные данные и попробуйте снова');

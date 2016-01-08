@@ -19,12 +19,13 @@
     <![endif]-->
 </head>
 <body>
+<h1><a href="index.html">Автомобили</a> / <a href="producers.html">Производители</a></h1>
 <h1>Обновление автомобиля</h1>
 
 <form id="carForm">
     <div class="mainArea">
         <label>Id:</label><br>
-        <input type="text" id="carId" name="carId" required="required">
+        <input type="text" id="carId" name="carId" required="required" readonly="readonly">
         <br>
         <label>Name:</label><br>
         <input type="text" id="carName" name="carName" required="required">
@@ -32,12 +33,15 @@
         <label>Producer Id:</label><br>
         <select name="producerId" class="prodidselect" required="required"></select><br>
         <label>Producer Name:</label><br>
-        <input type="text" id="producerName" name="producerName" required>
+        <input type="text" id="producerName" name="producerName" readonly>
         <br>
         <label>DateOfCreation:</label><br>
         <input type="text" id="dateOfCreation" name="dateOfCreation"  placeholder="dd/MM/yyyy" required>
         <br>
-        <button id="updateCar" type="button">Обновить</span></button>
+        <div>
+            <button id="updateCar" type="button">Обновить</span></button>
+            <button id="cancel" type="button" onclick="goHome()">Отмена</button>
+        </div>
     </div>
 </form>
 

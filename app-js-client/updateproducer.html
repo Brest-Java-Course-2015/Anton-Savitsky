@@ -23,12 +23,15 @@
 <form id="producerForm">
     <div class="mainArea">
         <label>Id:</label><br>
-        <input type="text" id="producerId" name="producerId" required><br>
+        <input type="text" id="producerId" name="producerId" required readonly><br>
         <label>Name:</label><br>
         <input type="text" id="producerName" name="producerName" required><br>
         <label>Country:</label><br>
         <input type="text" id="country" name="country" required><br>
-        <button id="updateProducer" type="button">Обновить</span></button>
+        <div>
+            <button id="updateProducer" type="button">Обновить</span></button>
+            <button id="cancel" type="button" onclick="goHome()">Отмена</button>
+        </div>
     </div>
 </form>
 

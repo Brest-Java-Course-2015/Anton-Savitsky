@@ -13,12 +13,13 @@ function gotoAddCar() {
     window.location = "addCar.html";
 }
 
-function gotoUpdateCar(carId,carName,producerId,dateOfCreation)
+function gotoUpdateCar(carId,carName,producerId,dateOfCreation, producerName)
 {
     sessionStorage.setItem('carId', carId);
     sessionStorage.setItem('carName', carName);
     sessionStorage.setItem('producerId', producerId);
     sessionStorage.setItem('dateOfCreation', dateOfCreation);
+    sessionStorage.setItem('producerName', producerName)
     window.location="updateCar.html";
 }
 
@@ -93,7 +94,8 @@ function drawRow(car) {
     $("#carList").append(row);
     row.append($("<td>" + car.carId + "</td>"));
     row.append($("<td>" + car.carName+"</td>"));
-    row.append($("<td>" + getProducerNameById(car.producerId)+"</td>"));
+    var prodName=getProducerNameById(car.producerId);
+    row.append($("<td>" + prodName.toString()+"</td>"));
     row.append($("<td>" + car.producerId + "</td>"));
     console.log('data='+car.dateOfCreation);
     row.append($("<td>" + car.dateOfCreation.toString() +"</td>"));
@@ -103,7 +105,7 @@ function drawRow(car) {
     });
     row.append($("<td>"+'<button id="update'+car.carId+'"updateButton" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
     $("#update"+car.carId).click(function(){
-        gotoUpdateCar(car.carId, car.carName, car.producerId, car.dateOfCreation);
+        gotoUpdateCar(car.carId, car.carName, car.producerId, car.dateOfCreation, prodName.toString());
     });
 }
 

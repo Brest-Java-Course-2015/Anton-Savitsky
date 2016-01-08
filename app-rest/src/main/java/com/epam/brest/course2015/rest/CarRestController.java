@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Created by juga on 16.10.15.
  */
+@CrossOrigin
 @RestController
 public class CarRestController {
     // При использовании методов put, post указывать request headers:

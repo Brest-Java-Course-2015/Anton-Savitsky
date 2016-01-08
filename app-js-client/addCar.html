@@ -18,6 +18,7 @@
     <![endif]-->
 </head>
 <body>
+<h1><a href="index.html">Автомобили</a> / <a href="producers.html">Производители</a></h1>
 <h1>Добавление нового автомобиля</h1>
 
 <form id="carForm">
@@ -31,7 +32,10 @@
         <label>Date Of Creation:</label><br>
         <input type="text" id="dateOfCreation" name="dateOfCreation" placeholder="dd/MM/yyyy" required>
         <br>
-        <button id="addCar" type="button">Добавить</span></button>
+        <div>
+            <button id="addCar" type="button">Добавить</span></button>
+            <button id="cancel" type="button" onclick="goHome()">Отмена</button>
+        </div>
     </div>
 </form>
 

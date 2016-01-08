@@ -1,32 +1,9 @@
 /**
  * Created by antonsavitsky on 01.12.15.
  */
-// The root URL for the RESTful services
 var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
 var CAR_URL = "/car";
 var PRODUCERDTO_URL = "/producersdto";
-
-
-// Register listeners
-$('#updateCar').click(function () {
-    updateCar(sessionStorage.getItem('carId'));
-    console.log(sessionStorage.getItem('carId'));
-});
-
-function fillSelectList(){
-    getProducers();
-}
-
-fillSelectList();
-function insertValues(){
-    $('#carId').val(sessionStorage.getItem('carId'));
-    $('#carName').val(sessionStorage.getItem('carName'));
-    $('#producerId').val(sessionStorage.getItem('producerId'));
-    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
-    $('#producerName').val($(".prodidselect").val());
-}
-
-insertValues();
 
 function getProducers() {
     console.log('getProducers');
@@ -43,13 +20,28 @@ function getProducers() {
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
-            alert('getProducers: ' + textStatus);
         }
     });
 }
+$('#updateCar').click(function () {
+    updateCar();
+});
+
+function fillSelectList(){
+    getProducers();
+}
+
+fillSelectList();
+function insertValues(){
+    $('#carId').val(sessionStorage.getItem('carId'));
+    $('#carName').val(sessionStorage.getItem('carName'));
+    $('#producerId').val(sessionStorage.getItem('producerId'));
+    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
+    $('#producerName').val(sessionStorage.getItem('producerName'));
+}
+insertValues();
 
 $(".prodidselect").click(function() {
-    console.log('$(".prodidselect").change');
     $('#producerName').val($(".prodidselect").val());
 });
 
@@ -57,9 +49,8 @@ function goHome() {
     window.location="index.html";
 }
 
-function updateCar(carId) {
+function updateCar() {
     if(confirm("Хотите обновить автомобиль?")){
-        console.log('updateCar');
         var url = PREFIX_URL + CAR_URL;
         $.ajax({
             type: 'PUT',

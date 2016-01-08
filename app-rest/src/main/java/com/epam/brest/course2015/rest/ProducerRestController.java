@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * Created by antonsavitsky on 04.01.16.
  */
+@CrossOrigin
 @RestController
 public class ProducerRestController {
     // При использовании методов put, post указывать request headers:

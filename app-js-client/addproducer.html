@@ -18,6 +18,7 @@
     <![endif]-->
 </head>
 <body>
+<h1><a href="index.html">Автомобили</a> / <a href="producers.html">Производители</a></h1>
 <h1>Добавление нового производителя</h1>
 
 <form id="producerForm">
@@ -28,7 +29,10 @@
         <label>Country:</label><br>
         <input type="text" id="country" name="country" required>
         <br>
-        <button id="addProducer" type="button">Добавить</button>
+        <div>
+            <button id="addProducer" type="button">Добавить</button>
+            <button id="cancel" type="button" onclick="goHome()">Отмена</button>
+        </div>
     </div>
 </form>
 
