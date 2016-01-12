@@ -1,5 +1,7 @@
 // The root URL for the RESTful services
-var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
+console.log(location.hostname);
+console.log(location.port);
+var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
 var CAR_URL = "/car";
 var CARDTO_URL = "/carsdto";
 var CARDTOBYDATE_URL="/carsdtobydate";
@@ -56,7 +58,7 @@ function findAll() {
         success: renderList,
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
-            alert('findAll: ' + textStatus);
+            alert('Произошла ошибка получения данных из БД!');
         }
     });
 }
@@ -73,7 +75,6 @@ function getProducerDto(){
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
-            alert('findAll: ' + textStatus);
         }
     });
 }

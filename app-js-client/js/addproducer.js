@@ -1,12 +1,11 @@
 /**
  * Created by antonsavitsky on 08.12.15.
  */
-var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT"
+var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
 var PRODUCER_URL = "/producer";
 
 $('#addProducer').click(function () {
     addProducer();
-    //goHome();
 });
 
 function goHome() {
@@ -29,12 +28,13 @@ function addProducer() {
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Ошибка добавления!');
+            alert('Данные введены некорректно!\nПроверьте правильность введенных данных!');
         }
     });
 }
 
 function formToJSON() {
+    console.log($('#producerName').val());
     return JSON.stringify({
         "producerName": $('#producerName').val(),
         "country": $('#country').val()

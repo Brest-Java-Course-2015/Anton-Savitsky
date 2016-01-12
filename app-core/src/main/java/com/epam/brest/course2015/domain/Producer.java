@@ -15,9 +15,12 @@ public class Producer {
     }
 
     public Producer(String producerName, String country){
-        this.producerId=null;
         this.producerName=producerName;
         this.country=country;
+    }
+
+    public Producer(String producerName){
+        this.producerName=producerName;
     }
 
     public Producer(){}

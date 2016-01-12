@@ -38,9 +38,9 @@ public class ProducerDaoImplTest {
     @Test
     public void testAddProducer(){
         LOGGER.debug("testAddProducer()");
-        Producer producer=new Producer("toyota","Korea");
+        Producer producer=new Producer("toyota","korea");
         int id=producerDao.addProducer(producer);
-        assertNotNull(producer);
+        assertNotNull(id);
         LOGGER.debug("Id of added producer:{}",id);
     }
 

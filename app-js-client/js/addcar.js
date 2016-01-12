@@ -1,5 +1,5 @@
 // The root URL for the RESTful services
-var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT"
+var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
 var CAR_URL = "/car";
 
 $('#addCar').click(function () {
@@ -27,12 +27,15 @@ function addCar() {
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('addCar error: ' + textStatus);
+            alert('Данные введены некорректно!\nПроверьте правильность введенных данных!');
+            console.log('addCar error: ' + textStatus + "\n" +errorThrown);
         }
     });
 }
 
 function formToJSON() {
+    console.log($('#carName').val());
+    if($('#carName').val()=="") $('#carName').val()==null;
     return JSON.stringify({
         "carName": $('#carName').val(),
         "producerId": $('#producerId').val(),

@@ -14,15 +14,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <filter>
-        <filter-name>optionsFilter</filter-name>
-        <filter-class>com.epam.brest.course2015.rest.OptionsFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>optionsFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
     <servlet-mapping>
         <servlet-name>restDispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>

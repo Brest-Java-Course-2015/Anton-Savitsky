@@ -51,6 +51,8 @@ public class ProducerServiceImpl implements ProducerService {
     public Integer addProducer(Producer producer) {
         Assert.notNull(producer);
         Assert.isNull(producer.getProducerId(),"Producer must be null before adding! ");
+        Assert.hasText(producer.getProducerName());
+        Assert.hasText(producer.getCountry());
         LOGGER.debug("addProducer(): producer="+producer.toString());
         return producerDao.addProducer(producer);
     }

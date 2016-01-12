@@ -1,7 +1,7 @@
 /**
  * Created by antonsavitsky on 07.12.15.
  */
-var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
+var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
 var PRODUCER_URL = "/producer";
 var PRODUCERDTO_URL = "/producersdto";
 var CARSDTO_URL="/carsdto";

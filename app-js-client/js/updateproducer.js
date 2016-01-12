@@ -2,7 +2,7 @@
  * Created by antonsavitsky on 07.12.15.
  */
 // The root URL for the RESTful services
-var PREFIX_URL = "http://localhost:8080/app-rest-1.0.0-SNAPSHOT";
+var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
 var PRODUCER_URL = "/producer";
 
 function insertVals() {
@@ -19,7 +19,6 @@ insertVals();
 // Register listeners
 $('#updateProducer').click(function () {
     updateProducer();
-    goHome();
 });
 
 
