@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Автомобильный каталог - обновление производителя</title>
+    <title>Автомобильный каталог</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/myFixes.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,18 +19,17 @@
     <![endif]-->
 </head>
 <body>
+<h1><a href="index.html">Автомобили</a> / <a href="producers.html">Производители</a></h1>
 <h1>Обновление производителя</h1>
 
 <form id="producerForm">
     <div class="mainArea">
-        <label>Id:</label><br>
-        <input type="text" id="producerId" name="producerId" required readonly><br>
-        <label>Name:</label><br>
-        <input type="text" id="producerName" name="producerName" required><br>
-        <label>Country:</label><br>
-        <input type="text" id="country" name="country" required><br>
+        <label>Производитель:</label><br>
+        <span><input type="text" id="producerName" name="producerName" required></span><br>
+        <label>Страна:</label><br>
+        <span><input type="text" id="country" name="country" required></span><br>
         <div>
-            <button id="updateProducer" type="button">Обновить</span></button>
+            <button id="updateProducer" type="button" onclick="validateAndSubmit(this.form)">Обновить</span></button>
             <button id="cancel" type="button" onclick="goHome()">Отмена</button>
         </div>
     </div>
@@ -39,6 +39,7 @@
 <script src="js/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
+<script src="js/producervalidator.js"></script>
 <script src="js/updateproducer.js"></script>
 
 </body>

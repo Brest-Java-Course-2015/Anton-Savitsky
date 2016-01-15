@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Автомобильный каталог - добавление нового производителя</title>
+    <title>Автомобильный каталог</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/myFixes.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,14 +24,14 @@
 
 <form id="producerForm">
     <div class="mainArea">
-        <label>Name:</label><br>
-        <input type="text" id="producerName" name="producerName" required>
+        <label>Производитель:</label><br>
+        <span><input type="text" id="producerName" name="producerName" required></span>
         <br>
-        <label>Country:</label><br>
-        <input type="text" id="country" name="country" required>
+        <label>Страна:</label><br>
+        <span><input type="text" id="country" name="country" required></span>
         <br>
         <div>
-            <button id="addProducer" type="button">Добавить</button>
+            <button id="addProducer" type="button" onclick="validateAndSubmit(this.form)">Добавить</button>
             <button id="cancel" type="button" onclick="goHome()">Отмена</button>
         </div>
     </div>
@@ -40,7 +41,7 @@
 <script src="js/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
-
+<script src="js/producervalidator.js"></script>
 <script src="js/addproducer.js"></script>
 </body>
 </html>

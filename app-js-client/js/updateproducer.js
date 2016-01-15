@@ -2,8 +2,12 @@
  * Created by antonsavitsky on 07.12.15.
  */
 // The root URL for the RESTful services
-var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
+$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
 var PRODUCER_URL = "/producer";
+
+function validateAndSubmit(form){
+    if(validate(form)) updateProducer();
+}
 
 function insertVals() {
     $('#producerId').val(sessionStorage.getItem('producerId'));
@@ -16,18 +20,12 @@ function insertVals() {
 
 insertVals();
 
-// Register listeners
-$('#updateProducer').click(function () {
-    updateProducer();
-});
-
-
 function goHome() {
     window.location="producers.html";
 }
 
 function updateProducer() {
-    if(confirm("Хотите обновить производителя?")){
+    if(confirm("Вы уверены, что хотите обновить производителя?")){
         var url = PREFIX_URL + PRODUCER_URL;
         $.ajax({
             type: 'PUT',
@@ -42,7 +40,7 @@ function updateProducer() {
                 alert('Возникла ошибка обновления производителя!\nПроверьте введенные данные и попробуйте снова');
             }
         });
-    }else{goHome();}
+    }
 }
 
 function formToJSON() {

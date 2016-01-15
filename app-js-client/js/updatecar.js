@@ -1,9 +1,27 @@
 /**
  * Created by antonsavitsky on 01.12.15.
  */
-var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
+// The root URL for the RESTful services
+$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
 var CAR_URL = "/car";
 var PRODUCERDTO_URL = "/producersdto";
+var idproducerselected=null;
+var carid=null;
+
+function validateAndSubmit(form){
+    if(validate(form)) updateCar();
+}
+
+function insertValues(){
+    console.log("insertValues");
+    carid=sessionStorage.getItem('carId');
+    $('#carName').val(sessionStorage.getItem('carName'));
+    $('#producerName').val(sessionStorage.getItem('producerName'));
+    idproducerselected=sessionStorage.getItem('producerId');
+    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
+
+}
+insertValues();
 
 function getProducers() {
     console.log('getProducers');
@@ -11,11 +29,11 @@ function getProducers() {
     $.ajax({
         type: 'GET',
         url: url,
-        dataType: "json", // data type of response
+        dataType: "json",
         success: function(data){
-            var dto = data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
-            $.each(dto, function (index, producer) {
-                $(".prodidselect").append("<option value="+producer.producerName+">"+producer.producerId+"</option>");
+            var producerdto = data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
+            $.each(producerdto, function(index, producer){
+                $(".prodnameselect").append("<option value="+producer.producerId+">"+producer.producerName+"</option>");
             });
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -23,34 +41,22 @@ function getProducers() {
         }
     });
 }
-$('#updateCar').click(function () {
-    updateCar();
-});
+
 
 function fillSelectList(){
     getProducers();
 }
 
 fillSelectList();
-function insertValues(){
-    $('#carId').val(sessionStorage.getItem('carId'));
-    $('#carName').val(sessionStorage.getItem('carName'));
-    $('#producerId').val(sessionStorage.getItem('producerId'));
-    $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
-    $('#producerName').val(sessionStorage.getItem('producerName'));
-}
-insertValues();
 
-$(".prodidselect").click(function() {
-    $('#producerName').val($(".prodidselect").val());
-});
+$(".prodnameselect").click(function() { idproducerselected=$(".prodnameselect").val(); } );
 
 function goHome() {
     window.location="index.html";
 }
 
 function updateCar() {
-    if(confirm("Хотите обновить автомобиль?")){
+    if(confirm("Вы уверены, что хотите обновить автомобиль?")){
         var url = PREFIX_URL + CAR_URL;
         $.ajax({
             type: 'PUT',
@@ -65,14 +71,14 @@ function updateCar() {
                 alert('Ошибка обновления! Проверьте поля ввода!');
             }
         });
-    }else{goHome();}
+    }
 }
 
 function formToJSON() {
     return JSON.stringify({
-        "carId": $('#carId').val(),
+        "carId": carid.toString(),
         "carName": $('#carName').val(),
-        "producerId": $(".prodidselect option:selected").text(),
+        "producerId": idproducerselected.toString(),
         "dateOfCreation": $('#dateOfCreation').val()
     });
 }

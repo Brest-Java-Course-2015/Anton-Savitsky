@@ -6,6 +6,13 @@
 }
 
 .form-group.required .control-label:after {
-    content:"*";
     color:red;
+}
+.error input
+{
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
 }

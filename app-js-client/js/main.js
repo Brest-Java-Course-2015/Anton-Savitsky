@@ -1,7 +1,5 @@
 // The root URL for the RESTful services
-console.log(location.hostname);
-console.log(location.port);
-var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
+$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
 var CAR_URL = "/car";
 var CARDTO_URL = "/carsdto";
 var CARDTOBYDATE_URL="/carsdtobydate";
@@ -21,16 +19,12 @@ function gotoUpdateCar(carId,carName,producerId,dateOfCreation, producerName)
     sessionStorage.setItem('carName', carName);
     sessionStorage.setItem('producerId', producerId);
     sessionStorage.setItem('dateOfCreation', dateOfCreation);
-    sessionStorage.setItem('producerName', producerName)
+    sessionStorage.setItem('producerName', producerName);
     window.location="updateCar.html";
 }
 
-function goHome() {
-    window.location="index.html";
-}
-
-function deleteCar(carId) {
-    if (confirm("Вы уверены, что хотите удалить автомобиль с id=" + carId + "?"))
+function deleteCar(carId, carName) {
+    if (confirm("Вы уверены, что хотите удалить автомобиль "+carName+"?"))
     {
     console.log('deleteCar' + carId);
     var url = PREFIX_URL + CAR_URL + "?id=" + carId;
@@ -54,7 +48,7 @@ function findAll() {
     $.ajax({
         type: 'GET',
         url: url,
-        dataType: "json", // data type of response
+        dataType: "json",
         success: renderList,
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
@@ -66,16 +60,20 @@ function findAll() {
 function getProducerDto(){
     console.log('getProducerDto');
     var url = PREFIX_URL + PRODUCERDTO_URL;
+    var isLoaded=0;
     $.ajax({
         type: 'GET',
         url: url,
-        dataType: "json", // data type of response
+        dataType: "json",
+        async: false,
         success: function(data){
             producerdto= data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
+            isLoaded=1;
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
         }
+
     });
 }
 
@@ -84,7 +82,6 @@ function getProducerNameById(producerid){
     $.each(producerdto, function (index, producer) {
        if(producer.producerId==producerid) {
            retval=producer.producerName;
-           return;
        }
     });
     return retval;
@@ -93,16 +90,13 @@ function getProducerNameById(producerid){
 function drawRow(car) {
     var row = $("<tr />")
     $("#carList").append(row);
-    row.append($("<td>" + car.carId + "</td>"));
     row.append($("<td>" + car.carName+"</td>"));
     var prodName=getProducerNameById(car.producerId);
     row.append($("<td>" + prodName.toString()+"</td>"));
-    row.append($("<td>" + car.producerId + "</td>"));
-    console.log('data='+car.dateOfCreation);
     row.append($("<td>" + car.dateOfCreation.toString() +"</td>"));
     row.append($("<td>" + '<button id="delete'+car.carId+'" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
     $("#delete"+car.carId).click(function(){
-        deleteCar(car.carId);
+        deleteCar(car.carId, car.carName);
     });
     row.append($("<td>"+'<button id="update'+car.carId+'"updateButton" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
     $("#update"+car.carId).click(function(){
@@ -125,23 +119,14 @@ function cleanOldData(){
     $('#carTotal p').remove();
 }
 
-function formToJSON() {
-    return JSON.stringify({
-        "carId": $('#carId').val(),
-        "carName": $('#carName').val(),
-        "producerId": $('#producerId').val(),
-        "dateOfCreation": $('#dateOfCreation').val()
-    });
-}
-
-    function lookupCarsByDate(){
+function lookupCarsByDate(){
         var dateBefore=$("#dateBefore").val();
         var dateAfter=$("#dateAfter").val();
         var url=PREFIX_URL+CARDTOBYDATE_URL+"?dateBefore="+dateBefore.toString()+"&dateAfter="+dateAfter.toString();
         $.ajax({
             type: 'GET',
             url: url,
-            dataType: "json", // data type of response
+            dataType: "json",
             success: renderList,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR, textStatus, errorThrown);

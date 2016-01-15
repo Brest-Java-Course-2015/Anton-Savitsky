@@ -1,7 +1,8 @@
 /**
  * Created by antonsavitsky on 07.12.15.
  */
-var PREFIX_URL = "http://"+ location.hostname+ ":"+location.port +"/app-rest-1.0.0-SNAPSHOT";
+// The root URL for the RESTful services
+$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
 var PRODUCER_URL = "/producer";
 var PRODUCERDTO_URL = "/producersdto";
 var CARSDTO_URL="/carsdto";
@@ -20,13 +21,9 @@ function gotoUpdateProducer(producerId,producerName,country)
     window.location="updateproducer.html";
 }
 
-function goHome() {
-    window.location="producers.html";
-}
-
-function deleteProducer(producerId) {
-    var mes="Вы уверены, что хотите удалить производителя с id=" + producerId + "?";
-    if (getCountOfCarsByProducer(producerId)>0) mes="Существуют автомобили принадлежащие данному производителю! Они будут удалены!\nВы уверены, что хотите удалить производителя с id=" + producerId + "?";
+function deleteProducer(producerId, producerName) {
+    var mes="Вы уверены, что хотите удалить производителя "+producerName+"?";
+    if (getCountOfCarsByProducer(producerId)>0) mes="Существуют автомобили принадлежащие данному производителю! Они будут удалены!\n"+mes;
     if (confirm(mes))
     {
         console.log('deleteProducer id=' + producerId);
@@ -34,6 +31,7 @@ function deleteProducer(producerId) {
         $.ajax({
             type: 'DELETE',
             url: url,
+            async: false,
             success: function (data, textStatus, jqXHR) {
                 alert('Производитель успешно удален!');
                 findAll();
@@ -51,7 +49,7 @@ function findAll() {
     $.ajax({
         type: 'GET',
         url: url,
-        dataType: "json", // data type of response
+        dataType: "json",
         success: renderList,
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
@@ -68,7 +66,7 @@ function getCountOfCarsByProducer(id) {
         type: 'GET',
         url: url,
         async: false,
-        dataType: "json", // data type of response
+        dataType: "json",
         success: function (data){
             var dto = data.cars == null ? [] : (data.cars instanceof Array ? data.cars : [data.cars]);
             $.each(dto, function (index, car) {
@@ -86,13 +84,12 @@ function getCountOfCarsByProducer(id) {
 function drawRow(producer) {
     var row = $("<tr />")
     $("#producerList").append(row);
-    row.append($("<td>" + producer.producerId + "</td>"));
     row.append($("<td>" + producer.producerName+"</td>"));
     row.append($("<td>" + producer.country+"</td>"));
     row.append($("<td>" + getCountOfCarsByProducer(producer.producerId) + "</td>"));
     row.append($("<td>" + '<button id="delete'+producer.producerId+'" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
     $("#delete"+producer.producerId).click(function(){
-        deleteProducer(producer.producerId);
+        deleteProducer(producer.producerId, producer.producerName);
     });
     row.append($("<td>"+'<button id="update'+producer.producerId+'" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
     $("#update"+producer.producerId).click(function(){

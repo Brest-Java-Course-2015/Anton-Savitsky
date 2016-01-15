@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Автомобильный каталог - обновление автомобиля</title>
+    <title>Автомобильный каталог</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,22 +24,16 @@
 
 <form id="carForm">
     <div class="mainArea">
-        <label>Id:</label><br>
-        <input type="text" id="carId" name="carId" required="required" readonly="readonly">
+        <label>Модель:</label><br>
+        <span><input type="text" id="carName" name="carName" required="required"></span>
         <br>
-        <label>Name:</label><br>
-        <input type="text" id="carName" name="carName" required="required">
-        <br>
-        <label>Producer Id:</label><br>
-        <select name="producerId" class="prodidselect" required="required"></select><br>
-        <label>Producer Name:</label><br>
-        <input type="text" id="producerName" name="producerName" readonly>
-        <br>
-        <label>DateOfCreation:</label><br>
-        <input type="text" id="dateOfCreation" name="dateOfCreation"  placeholder="dd/MM/yyyy" required>
+        <label>Производитель:</label><br>
+        <span><select name="producerName" class="prodnameselect" required="required"></select></span><br>
+        <label>Дата выпуска:</label><br>
+        <span><input type="text" id="dateOfCreation" name="dateOfCreation"  placeholder="dd/MM/yyyy" required></span>
         <br>
         <div>
-            <button id="updateCar" type="button">Обновить</span></button>
+            <button id="updateCar" type="button" onclick="validateAndSubmit(this.form)">Обновить</span></button>
             <button id="cancel" type="button" onclick="goHome()">Отмена</button>
         </div>
     </div>
@@ -49,6 +43,7 @@
 <script src="js/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
+<script src="js/carvalidator.js"></script>
 <script src="js/updatecar.js"></script>
 
 </body>
