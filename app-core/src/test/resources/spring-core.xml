@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+       <aop:aspectj-autoproxy/>
+
+       <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+       <bean id="car" class="com.epam.brest.course2015.domain.Car"/>
+       <bean id="producer" class="com.epam.brest.course2015.domain.Producer"/>
+       <bean id="carDto" class="com.epam.brest.course2015.dto.CarDto"/>
+       <bean id="producerDto" class="com.epam.brest.course2015.dto.ProducerDto"/>
+</beans>

@@ -7,7 +7,7 @@ var PRODUCERDTO_URL="/producersdto";
 var producerdto=null;
 
 getProducerDto();
-findAll();
+$(document).ready(findAll);
 
 function gotoAddCar() {
     window.location = "addCar.html";
@@ -65,7 +65,6 @@ function getProducerDto(){
         type: 'GET',
         url: url,
         dataType: "json",
-        async: false,
         success: function(data){
             producerdto= data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
             isLoaded=1;

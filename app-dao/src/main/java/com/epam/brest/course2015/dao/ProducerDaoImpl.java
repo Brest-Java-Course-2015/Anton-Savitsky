@@ -2,6 +2,7 @@ package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
+import com.epam.brest.course2015.test.Loggable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,15 +52,15 @@ public class ProducerDaoImpl implements ProducerDao {
     private RowMapper<Producer> producerMapper = new BeanPropertyRowMapper<>(Producer.class);
 
     @Override
+    @Loggable
     public Producer getProducerById(Integer producerId) {
-        LOGGER.debug("Getting producer by Id={}",producerId);
         SqlParameterSource parameterSource=new MapSqlParameterSource("producerId",producerId);
         return namedParameterJdbcTemplate.queryForObject(selectProducerById, parameterSource, producerMapper);
     }
 
     @Override
+    @Loggable
     public Integer addProducer(Producer producer) {
-        LOGGER.debug("addProducer(): producerName={}", producer.getProducerName());
         KeyHolder keyHolder= new GeneratedKeyHolder();
         BeanPropertySqlParameterSource parameterSource=new BeanPropertySqlParameterSource(producer);
         namedParameterJdbcTemplate.update(insertProducer, parameterSource,keyHolder);
@@ -67,45 +68,45 @@ public class ProducerDaoImpl implements ProducerDao {
     }
 
     @Override
+    @Loggable
     public void updateProducer(Producer producer) {
-        LOGGER.debug("UpdateProducer(): producerId={}", producer.getProducerId());
         BeanPropertySqlParameterSource parameterSource =
                 new BeanPropertySqlParameterSource(producer);
         namedParameterJdbcTemplate.update(updateProducer, parameterSource);
     }
 
     @Override
+    @Loggable
     public Integer getTotalCount(){
-        LOGGER.debug("getTotalCount()");
         SqlParameterSource parameterSource=new MapSqlParameterSource();
         return namedParameterJdbcTemplate.queryForObject(totalCount, parameterSource, Integer.class);
     }
 
     @Override
+    @Loggable
     public void deleteProducer(Integer producerId) {
-        LOGGER.debug("DeleteProducer(): producerId={}",producerId);
         deleteAllCarsWithProducerId(producerId);
         SqlParameterSource parameterSource=new MapSqlParameterSource("producerId",producerId);
         namedParameterJdbcTemplate.update(deleteProducer, parameterSource);
     }
 
     @Override
+    @Loggable
     public void deleteAllCarsWithProducerId(Integer producerId) {
-        LOGGER.debug("deleteAllCarsWithProducerId(): producerId={}",producerId);
         SqlParameterSource parameterSource=new MapSqlParameterSource("producerId",producerId);
         namedParameterJdbcTemplate.update(deleteAllCarsWithProducerId, parameterSource);
     }
 
     @Override
+    @Loggable
     public Integer countCarsByProducerId(Integer producerId){
-        LOGGER.debug("countCarsByProducerId(): producerId={}",producerId);
         SqlParameterSource parameterSource=new MapSqlParameterSource("producerId",producerId);
         return namedParameterJdbcTemplate.queryForObject(countOfCarsByProducerId, parameterSource, Integer.class);
     }
 
     @Override
+    @Loggable
     public List<Producer> getAllProducers() {
-        LOGGER.debug("getAllProducers()");
         return namedParameterJdbcTemplate.query(selectAll,producerMapper);
     }
 }

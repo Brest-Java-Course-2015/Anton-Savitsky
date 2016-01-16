@@ -2,6 +2,10 @@ package com.epam.brest.course2015.domain;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,15 +17,13 @@ import static org.junit.Assert.*;
 /**
  * Created by antonsavitsky on 09.11.15.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:spring-core.xml"})
 public class CarTest {
     SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
+    @Autowired
     private Car car;
-
-    @Before
-    public void setUp(){
-        car=new Car();
-    }
 
     @Test
     public void testGetCarId(){

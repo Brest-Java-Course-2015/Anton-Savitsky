@@ -1,5 +1,6 @@
 package com.epam.brest.course2015.domain;
 
+import com.epam.brest.course2015.test.Loggable;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.text.SimpleDateFormat;
@@ -35,35 +36,36 @@ public class Car {
         this.producerId=producerId;
         this.dateOfCreation=dateOfCreation;
     }
-
+    @Loggable
     public Integer getProducerId() {
+
         return producerId;
     }
-
+    @Loggable
     public void setProducerId(Integer producerId) {
         this.producerId = producerId;
     }
-
+    @Loggable
     public Integer getCarId() {
         return carId;
     }
-
+    @Loggable
     public void setCarId(Integer carId) {
         this.carId = carId;
     }
-
+    @Loggable
     public String getCarName() {
         return carName;
     }
-
+    @Loggable
     public void setCarName(String carName) {
         this.carName = carName;
     }
-
+    @Loggable
     public Date getDateOfCreation() {
         return dateOfCreation;
     }
-
+    @Loggable
     public void setDateOfCreation(Date dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
     }
@@ -87,7 +89,7 @@ public class Car {
                 "carId=" + carId +
                 ", carName='" + carName +
                 ", producerId=" + producerId +
-                ", dateOfCreation=" + DATE_FORMAT.format(dateOfCreation) +
+                ", dateOfCreation=" + dateOfCreation +
                 '}');
     }
 }

@@ -2,6 +2,7 @@ package com.epam.brest.course2015.dto;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
+import com.epam.brest.course2015.test.Loggable;
 
 import java.util.List;
 
@@ -11,15 +12,19 @@ import java.util.List;
 public class ProducerDto {
     private List<Producer> producers;
     private Integer total;
+    @Loggable
     public Integer getTotal() {
         return total;
     }
+    @Loggable
     public void setTotal(Integer total) {
         this.total = total;
     }
+    @Loggable
     public List<Producer> getProducers() {
         return producers;
     }
+    @Loggable
     public void setProducers(List<Producer> producers) {
         this.producers = producers;
     }
