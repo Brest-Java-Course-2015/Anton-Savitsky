@@ -4,6 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/jdbc
@@ -11,7 +12,9 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
     <context:component-scan base-package="com.epam.brest.course2015.rest"/>
 
@@ -20,8 +23,8 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:app.properties</value>
                 <value>classpath:database.properties</value>
+                <value>classpath:app.properties</value>
                 <value>classpath:service.properties</value>
             </list>
         </property>
@@ -68,4 +71,9 @@
         <property name="supportedMediaTypes" value="application/json" />
         <property name="prettyPrint" value="true" />
     </bean>
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="socialLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+
 </beans>

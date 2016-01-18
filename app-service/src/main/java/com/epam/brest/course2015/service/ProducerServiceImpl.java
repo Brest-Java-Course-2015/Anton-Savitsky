@@ -1,22 +1,15 @@
 package com.epam.brest.course2015.service;
 
-import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.dao.ProducerDao;
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
-import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.dto.ProducerDto;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.epam.brest.course2015.test.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,83 +17,92 @@ import java.util.List;
  */
 @Transactional
 public class ProducerServiceImpl implements ProducerService {
-    private static final Logger LOGGER = LogManager.getLogger();
+    @Value("${producer.IdNotNull}")
+    private String producerIdNotNull;
+    @Value("${producer.IdNotNegative}")
+    private String producerIdNotNegative;
+    @Value("${producer.ProducerNotNull}")
+    private String producerNotNull;
+    @Value("${producer.IdNull}")
+    private String producerIdNull;
+    @Value("${producer.NameNotNull}")
+    private String producerNameNotNull;
+    @Value("${producer.CountryNotNull}")
+    private String producerCountryNotNull;
 
     private ProducerDao producerDao;
 
     @Autowired
     public void setProducerDao(ProducerDao producerDao) {
-        this.producerDao=producerDao;
+        this.producerDao = producerDao;
     }
-
+    @Loggable
     @Override
     public Producer getProducerById(Integer producerId) {
-        Assert.notNull(producerId, "id should not be null!");
-        Assert.isTrue(producerId>=0, "id should be not negative!");
-        LOGGER.debug("getProducerById(): producerId={}",producerId);
+        Assert.notNull(producerId, producerIdNotNull );
+        Assert.isTrue(producerId >= 0, producerIdNotNegative);
         try {
             return producerDao.getProducerById(producerId);
         } catch (EmptyResultDataAccessException e) {
             e.printStackTrace();
-            LOGGER.debug("Producer with Id {} does not exist", producerId);
             throw new IllegalArgumentException();
         }
     }
 
+    @Loggable
     @Override
     public Integer addProducer(Producer producer) {
         Assert.notNull(producer);
-        Assert.isNull(producer.getProducerId(),"Producer must be null before adding! ");
-        Assert.hasText(producer.getProducerName());
-        Assert.hasText(producer.getCountry());
-        LOGGER.debug("addProducer(): producer="+producer.toString());
+        Assert.isNull(producer.getProducerId(), producerIdNull);
+        Assert.hasText(producer.getProducerName(), producerNameNotNull);
+        Assert.hasText(producer.getCountry(), producerCountryNotNull);
         return producerDao.addProducer(producer);
     }
 
+    @Loggable
     @Override
     public void updateProducer(Producer producer) {
-        Assert.notNull(producer, "producer must not be null!");
+        Assert.notNull(producer, producerNotNull);
         Integer producerToUpdate=producer.getProducerId();
-        Assert.notNull(producerToUpdate, "id must not be null!");
+        Assert.notNull(producerToUpdate, producerIdNotNull);
         try{
             producerDao.getProducerById(producerToUpdate);
         }catch (EmptyResultDataAccessException ex){
-            throw new IllegalArgumentException("Producer doesn't exist!");
+            throw new IllegalArgumentException();
         }
-        Assert.hasText(producer.getProducerName(), "name must contain some chars!");
-        Assert.hasText(producer.getCountry(), "country must contain some chars!");
-        LOGGER.debug("updateProducer(): producer:" + producer.toString());
+        Assert.hasText(producer.getProducerName(), producerNameNotNull);
+        Assert.hasText(producer.getCountry(), producerCountryNotNull);
         producerDao.updateProducer(producer);
     }
 
+    @Loggable
     @Override
     public Integer getProducersTotalCount() {
-        LOGGER.debug("getProducerTotalCount()");
         return producerDao.getTotalCount();
     }
 
+    @Loggable
     @Override
     public void deleteProducer(Integer producerId) {
-        LOGGER.debug("deleteProducer(): producerId={}",producerId);
-        Assert.notNull(producerId, "id should be not null!");
-        Assert.isTrue(producerId>=0,"id should be not negative!");
+        Assert.notNull(producerId, producerIdNotNull);
+        Assert.isTrue(producerId >= 0, producerIdNotNegative);
         try{
             producerDao.getProducerById(producerId);
         }catch (EmptyResultDataAccessException ex){
-            throw new IllegalArgumentException("Producer must be existing to be deleted!");
+            throw new IllegalArgumentException();
         }
         producerDao.deleteProducer(producerId);
     }
 
+    @Loggable
     @Override
     public List<Producer> getAllProducers() {
-        LOGGER.debug("getAllProducers()");
         return producerDao.getAllProducers();
     }
 
+    @Loggable
     @Override
     public ProducerDto getProducersDto() {
-        LOGGER.debug("getProducersDto()");
         ProducerDto producerDto = new ProducerDto();
         producerDto.setTotal(producerDao.getTotalCount());
         if(producerDto.getTotal()>0){

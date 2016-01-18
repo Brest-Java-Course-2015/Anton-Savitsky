@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
     <import resource="classpath*:test-spring-db.xml"/>
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-               <value>classpath:app.properties</value>
                <value>classpath:database.properties</value>
-               <value>classpath:service.properties</value>
+                <value>classpath:app.properties</value>
+                <value>classpath:service.properties</value>
             </list>
         </property>
     </bean>
-
 
     <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
@@ -32,4 +34,7 @@
     <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
         <property name="producerDao" ref="producerDao"/>
     </bean>
+
+    <aop:aspectj-autoproxy/>
+    <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 </beans>

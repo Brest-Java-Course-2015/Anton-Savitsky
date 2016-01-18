@@ -1,14 +1,9 @@
 package com.epam.brest.course2015.rest;
 
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.ProducerDto;
-import com.epam.brest.course2015.service.CarService;
 import com.epam.brest.course2015.service.ProducerService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +16,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import javax.annotation.Resource;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import static org.easymock.EasyMock.*;
@@ -38,9 +32,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
 public class ProducerRestControllerMockTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-
-    private static final Logger LOGGER = LogManager.getLogger();
     @Resource
     private ProducerRestController producerRestController;
 

@@ -4,6 +4,8 @@ import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +31,7 @@ import static org.easymock.EasyMock.*;
 @ContextConfiguration(locations = {"classpath:spring-service-mock-test.xml"})
 @Transactional
 public class CarServiceImplMockTest {
-    private SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
     private  Car testCar1;
     private Car testCar2;
     private Producer testProducer1;
@@ -139,5 +141,4 @@ public class CarServiceImplMockTest {
         Assert.isTrue(carDto.getCars().get(0)==testCar1);
         Assert.isTrue(carDto.getCars().get(1)==testCar2);
     }
-
 }

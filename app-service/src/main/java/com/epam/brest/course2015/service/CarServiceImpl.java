@@ -1,13 +1,11 @@
 package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.dao.CarDao;
-import com.epam.brest.course2015.dao.ProducerDao;
 import com.epam.brest.course2015.domain.Car;
-import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
-import com.epam.brest.course2015.dto.ProducerDto;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.epam.brest.course2015.test.Loggable;
+import org.joda.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -23,73 +21,67 @@ import java.util.List;
  */
 @Transactional
 public class CarServiceImpl implements CarService {
-    @Value("${getCarById.carIdNotNull}")
+    @Value("${car.IdNotNull}")
     private String carIdNotNull;
-    @Value("${getCarById.carIdNotNegative}")
+    @Value("${car.IdNotNegative}")
     private String carIdNotNegative;
-    @Value("${getCarByName.carNameNotNull}")
+    @Value("${car.NameNotNull}")
     private String carNameNotNull;
-    @Value("${getCountOfCarsByProducerId.producerIdNotNull}")
+    @Value("${producer.IdNotNull}")
     private String producerIdNotNull;
-    @Value("${getCountOfCarsByProducerId.producerIdNotNegative}")
+    @Value("${producer.IdNotNegative}")
     private String producerIdNotNegative;
-    @Value("${addCar.carNotNull}")
+    @Value("${car.CarNotNull}")
     private String carNotNull;
-    @Value("${addCar.carIdNull}")
+    @Value("${car.IdNull}")
     private String carIdNull;
-    @Value("${addCar.carNameNotNull}")
-    private String getCarNameNotNull;
-    @Value("${addCar.dateNotNull}")
+    @Value("${car.DateNotNull}")
     private String dateNotNull;
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
     private CarDao carDao;
-
+    @Autowired
     public void setCarDao(CarDao carDao) {
-        this.carDao=carDao;
+        this.carDao = carDao;
     }
 
+    @Loggable
     @Override
     public Car getCarById(Integer carId) {
         Assert.notNull(carId, carIdNotNull);
-        Assert.isTrue(carId>=0, carIdNotNegative);
-        LOGGER.debug("getCarById(): carId={}",carId);
+        Assert.isTrue(carId >= 0, carIdNotNegative);
         try {
             return carDao.getCarById(carId);
         } catch (EmptyResultDataAccessException e) {
             e.printStackTrace();
-            LOGGER.debug("Car with Id {} does not exist", carId);
             throw new IllegalArgumentException();
         }
     }
 
+    @Loggable
     @Override
     public Integer getCountOfCarsByProducerId(Integer producerId) {
         Assert.notNull(producerId, producerIdNotNull);
-        Assert.isTrue(producerId>=0, producerIdNotNegative);
-        LOGGER.debug("getCountOfCarsByProducerId(): producerId={}", producerId);
+        Assert.isTrue(producerId >= 0, producerIdNotNegative);
         try {
             return carDao.getCountOfCarsByProducerId(producerId);
         } catch (EmptyResultDataAccessException e) {
             e.printStackTrace();
-            LOGGER.debug("Car with producerId {} does not exist", producerId);
             throw new IllegalArgumentException();
         }
     }
 
+    @Loggable
     @Override
     public List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter) {
-        LOGGER.debug("getListOfCarsByDateOfCreation(): dateBefore={}, dateAfter={}", dateBefore,dateAfter);
         Assert.notNull(dateBefore, dateNotNull);
         Assert.notNull(dateAfter, dateNotNull);
         Assert.isTrue(dateAfter.after(dateBefore), "DateAfter must be after DateBefore!");
         return carDao.getListOfCarsByDateOfCreation(dateBefore,dateAfter);
     }
 
+    @Loggable
     @Override
     public Integer addCar(Car car) throws DataAccessException {
-        LOGGER.debug("addCar(): carId={}",car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
         Assert.notNull(car.getProducerId(), producerIdNotNull);
@@ -98,16 +90,16 @@ public class CarServiceImpl implements CarService {
         return carDao.addCar(car);
     }
 
+    @Loggable
     @Override
     public void updateCar(Car car) {
-        LOGGER.debug("updateCar(): carId={}  ", car.getCarId());
         Assert.notNull(car, carNotNull);
         Assert.notNull(car.getCarId(), carIdNotNull);
         Integer carIdToUpdate=car.getCarId();
         try{
             carDao.getCarById(carIdToUpdate);
         } catch (EmptyResultDataAccessException erdae){
-            throw new IllegalArgumentException("Car doesn't exist!");
+            throw new IllegalArgumentException();
         }
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
@@ -115,27 +107,27 @@ public class CarServiceImpl implements CarService {
         carDao.updateCar(car);
     }
 
+    @Loggable
     @Override
     public void deleteCar(Integer carId) {
-        LOGGER.debug("deleteCar(): carId={}", carId);
         try {
             carDao.getCarById(carId);
         } catch (DataAccessException dae) {
-            throw new IllegalArgumentException("Car doesn't exist!");
+            throw new IllegalArgumentException();
         }
         Assert.notNull(carId, carIdNotNull);
         carDao.deleteCar(carId);
     }
 
+    @Loggable
     @Override
     public List<Car> getAllCars() {
-        LOGGER.debug("getAllCars()");
         return carDao.getAllCars();
     }
 
+    @Loggable
     @Override
     public CarDto getCarsDto(){
-        LOGGER.debug("getCarsDto()");
         CarDto carDto = new CarDto();
         carDto.setTotal(carDao.getTotalCountCars());
         if(carDto.getTotal()>0){
@@ -145,9 +137,9 @@ public class CarServiceImpl implements CarService {
         return carDto;
     }
 
+    @Loggable
     @Override
     public CarDto getCarsByDateDto(Date dateBefore, Date dateAfter) {
-        LOGGER.debug("getCarsByDateDto()");
         CarDto carDto=new CarDto();
         List<Car> carList=getListOfCarsByDateOfCreation(dateBefore, dateAfter);
         carDto.setTotal(carList.size());

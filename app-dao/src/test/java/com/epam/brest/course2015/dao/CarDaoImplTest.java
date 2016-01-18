@@ -3,6 +3,9 @@ package com.epam.brest.course2015.dao;
 import com.epam.brest.course2015.domain.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +30,8 @@ import static org.junit.Assert.assertTrue;
 public class CarDaoImplTest  {
     @Autowired
     private CarDao carDao;
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+
+    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
 
     @Test
     public void testGetCarById(){
@@ -64,7 +68,7 @@ public class CarDaoImplTest  {
             dateAfter = DATE_FORMAT.parse("15/10/2015");
             expectedDate1=DATE_FORMAT.parse("14/10/2015");
             expectedDate2=DATE_FORMAT.parse("13/10/2015");
-        } catch (ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         List<Car> listOfCars=carDao.getListOfCarsByDateOfCreation(dateBefore, dateAfter);

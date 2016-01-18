@@ -4,6 +4,7 @@ import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.test.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
@@ -15,14 +16,14 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by antonsavitsky on 09.11.15.
  */
 public class CarDaoImpl implements CarDao {
-   private static final Logger LOGGER = LogManager.getLogger();
-
     @Value("${car.selectCarById}")
     private String selectCarById;
     @Value("${car.selectCarByName}")
@@ -87,10 +88,10 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     @Loggable
-    public List<Car> getListOfCarsByDateOfCreation(java.util.Date dateBefore, java.util.Date dateAfter) {
+    public List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter) {
         MapSqlParameterSource parameterSource =
-                new MapSqlParameterSource("dateBefore", new java.sql.Date(dateBefore.getTime()));
-        parameterSource.addValue("dateAfter", new java.sql.Date(dateAfter.getTime()));
+                new MapSqlParameterSource("dateBefore", dateBefore);
+        parameterSource.addValue("dateAfter", dateAfter);
         return namedParameterJdbcTemplate.query(selectCarsByDateOfCreation, parameterSource, carMapper);
     }
 

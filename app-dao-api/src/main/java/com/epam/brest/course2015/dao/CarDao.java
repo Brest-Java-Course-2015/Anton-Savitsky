@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
+import org.joda.time.LocalDate;
 
 import java.util.Calendar;
 import java.util.Date;

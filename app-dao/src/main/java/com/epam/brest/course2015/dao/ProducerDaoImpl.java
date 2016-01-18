@@ -28,8 +28,6 @@ import static com.epam.brest.course2015.domain.Producer.ProducerFields.*;
  * Created by antonsavitsky on 02.12.15.
  */
 public class ProducerDaoImpl implements ProducerDao {
-    private static final Logger LOGGER = LogManager.getLogger();
-
     @Value("${producer.selectProducerById}")
     private String selectProducerById;
     @Value("${producer.insertProducer}")

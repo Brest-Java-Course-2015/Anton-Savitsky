@@ -14,19 +14,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  */
 @ControllerAdvice
 public class RestErrorHandler {
-    private static final Logger LOGGER = LogManager.getLogger();
-
     @ExceptionHandler(DataAccessException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody String handleDataAccessException(DataAccessException ex) {
-        LOGGER.debug("Handling DataAccessException: " + ex);
         return "DataAccessException: " + ex.getLocalizedMessage();
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public @ResponseBody String handleIllegalArgumentException(IllegalArgumentException ex) {
-        LOGGER.debug("Handling IllegalArgumentException: " + ex);
         return "IllegalArgumentException: " + ex.getLocalizedMessage();
     }
 }

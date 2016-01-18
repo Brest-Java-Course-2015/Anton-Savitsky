@@ -6,6 +6,9 @@ import com.epam.brest.course2015.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,9 +41,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
 public class CarRestControllerMockTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-
-    private static final Logger LOGGER = LogManager.getLogger();
+    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
     @Autowired
     private CarRestController carRestController;
 
@@ -155,7 +156,7 @@ public class CarRestControllerMockTest {
 
     @Test
     public void getCarsByDateOfCreation() throws Exception {
-        expect(carServiceMock.getListOfCarsByDateOfCreation(anyObject(Date.class),anyObject(Date.class))).andReturn(Arrays.<Car>asList(new Car(0),new Car(1)));
+        expect(carServiceMock.getListOfCarsByDateOfCreation(anyObject(Date.class),anyObject(Date.class))).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
         replay(carServiceMock);
         String cars="["+new ObjectMapper().writeValueAsString(new Car(0))+","+new ObjectMapper().writeValueAsString(new Car(1))+"]";
         mockMvc.perform(
