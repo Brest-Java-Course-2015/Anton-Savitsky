@@ -9,11 +9,8 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cglib.core.Local;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -22,19 +19,13 @@ import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 /**
  * Created by antonsavitsky on 09.11.15.
  */
 public class CarDaoImpl implements CarDao {
-    DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Value("${car.updateCar}")
     private String updateCar;
     @Value("${car.selectCarById}")
@@ -112,8 +103,6 @@ public class CarDaoImpl implements CarDao {
     @Loggable
     public Integer addCar(Car car) throws DataAccessException {
         KeyHolder keyHolder= new GeneratedKeyHolder();
-        BeanPropertySqlParameterSource parameterSource =
-                new BeanPropertySqlParameterSource(car);
         namedParameterJdbcTemplate.update(insertCar, getParametersMap(car), keyHolder);
         return keyHolder.getKey().intValue();
     }
@@ -132,8 +121,6 @@ public class CarDaoImpl implements CarDao {
     @Override
     @Loggable
     public void updateCar(Car car){
-        BeanPropertySqlParameterSource parameterSource =
-                new BeanPropertySqlParameterSource(car);
         namedParameterJdbcTemplate.update(updateCar, getParametersMap(car));
     }
 
@@ -149,7 +136,6 @@ public class CarDaoImpl implements CarDao {
         public Car mapRow(ResultSet resultSet, int i) throws SQLException {
             Date date=resultSet.getTimestamp("dateOfCreation");
             LocalDate lDate=new LocalDate(date);
-             LOGGER.debug(lDate.toString());
             Car car = new Car(resultSet.getInt("carId"),
                     resultSet.getString("carName"),
                     resultSet.getInt("producerId"),

@@ -55,14 +55,9 @@
     <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
         <property name="carDao" ref="carDao"/>
     </bean>
+
     <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
         <property name="producerDao" ref="producerDao"/>
-    </bean>
-
-    <bean id="myjsonconverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="objectMapper">
-            <bean class="com.epam.brest.course2015.test.JodaObjectMapper"/>
-        </property>
     </bean>
 
     <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -74,7 +69,6 @@
         <property name="messageConverters">
             <list>
                 <ref bean="jsonConverter"/>
-                <ref bean="myjsonconverter"/>
             </list>
         </property>
     </bean>

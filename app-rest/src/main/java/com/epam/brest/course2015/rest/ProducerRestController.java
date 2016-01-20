@@ -4,14 +4,11 @@ import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.ProducerDto;
 import com.epam.brest.course2015.service.ProducerService;
 import com.epam.brest.course2015.test.Loggable;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**

@@ -4,6 +4,7 @@ import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
+import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.junit.After;
@@ -31,7 +32,6 @@ import static org.easymock.EasyMock.*;
 @ContextConfiguration(locations = {"classpath:spring-service-mock-test.xml"})
 @Transactional
 public class CarServiceImplMockTest {
-    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     private  Car testCar1;
     private Car testCar2;
     private Producer testProducer1;
@@ -44,8 +44,8 @@ public class CarServiceImplMockTest {
 
     @Before
     public void setUp() throws ParseException {
-        testCar1=new Car(1,"name1",1,DATE_FORMAT.parseLocalDate("11/11/2011"));
-        testCar2=new Car("name2",1,DATE_FORMAT.parseLocalDate("11/11/2012"));
+        testCar1=new Car(1,"name1",1,convertToDate("11/11/2011"));
+        testCar2=new Car("name2",1,convertToDate("11/11/2012"));
         testProducer1=new Producer(1, "producer1", "country1");
     }
 
@@ -140,5 +140,10 @@ public class CarServiceImplMockTest {
         CarDto carDto=carService.getCarsByDateDto(testCar1.getDateOfCreation(), testCar2.getDateOfCreation());
         Assert.isTrue(carDto.getCars().get(0)==testCar1);
         Assert.isTrue(carDto.getCars().get(1)==testCar2);
+    }
+
+    private static LocalDate convertToDate(String s){
+        DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
+        return DATE_FORMAT.parseLocalDate(s);
     }
 }

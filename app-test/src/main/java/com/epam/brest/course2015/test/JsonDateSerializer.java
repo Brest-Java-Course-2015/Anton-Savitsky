@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 public class JsonDateSerializer extends JsonSerializer<LocalDate> {
     @Override
     public void serialize(LocalDate date, JsonGenerator gen, SerializerProvider provider)
-            throws IOException, JsonProcessingException {
+            throws IOException{
         String formattedDate =date.toString("dd/MM/yyyy");
         gen.writeString(formattedDate);
     }

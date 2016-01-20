@@ -16,9 +16,8 @@ public class Car {
     private Integer carId;
     private Integer producerId;
     private String carName;
-    //@JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using=com.epam.brest.course2015.test.JsonDateDeserializer.class)
-    @JsonSerialize(using= com.epam.brest.course2015.test.JsonDateSerializer.class)
+    @JsonSerialize(using=com.epam.brest.course2015.test.JsonDateSerializer.class)
     private LocalDate dateOfCreation;
 
     public Car(Integer carId, String carName, Integer producerId, LocalDate dateOfCreation){

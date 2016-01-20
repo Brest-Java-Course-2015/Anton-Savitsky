@@ -18,7 +18,7 @@ import java.io.IOException;
 public class JsonDateDeserializer extends JsonDeserializer<LocalDate> {
     @Override
     public LocalDate deserialize(JsonParser jp, DeserializationContext ctxt)
-            throws IOException, JsonProcessingException {
+            throws IOException{
         DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy");
         return fmt.parseLocalDate(jp.getValueAsString());
     }

@@ -22,7 +22,6 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
 @Transactional()
 public class ProducerDaoImplTest {
-    private static final Logger LOGGER = LogManager.getLogger();
     @Autowired
     private ProducerDao producerDao;
 

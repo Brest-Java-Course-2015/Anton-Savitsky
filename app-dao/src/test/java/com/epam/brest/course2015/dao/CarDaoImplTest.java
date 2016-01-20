@@ -1,8 +1,6 @@
 package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -12,11 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
@@ -29,7 +22,6 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
 @Transactional()
 public class CarDaoImplTest  {
-    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Autowired
     private CarDao carDao;
 
@@ -59,18 +51,10 @@ public class CarDaoImplTest  {
 
     @Test
     public void testGetListOfCarsByDateOfCreation(){
-        LocalDate dateBefore=null;
-        LocalDate dateAfter=null;
-        LocalDate expectedDate1=null;
-        LocalDate expectedDate2=null;
-        try {
-            dateBefore = DATE_FORMAT.parseLocalDate("12/10/2015");
-            dateAfter = DATE_FORMAT.parseLocalDate("15/10/2015");
-            expectedDate1=DATE_FORMAT.parseLocalDate("14/10/2015");
-            expectedDate2=DATE_FORMAT.parseLocalDate("13/10/2015");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        LocalDate dateBefore=convertToDate("12/10/2015");
+        LocalDate dateAfter=convertToDate("15/10/2015");
+        LocalDate expectedDate1=convertToDate("14/10/2015");
+        LocalDate expectedDate2=convertToDate("13/10/2015");
         List<Car> listOfCars=carDao.getListOfCarsByDateOfCreation(dateBefore, dateAfter);
         assertNotNull(listOfCars);
         assertTrue(listOfCars.get(0).getDateOfCreation().compareTo(expectedDate1)==0);
@@ -79,7 +63,7 @@ public class CarDaoImplTest  {
 
     @Test
     public void testAddCar() throws Exception {
-        Car car=new Car("9rt", 0, DATE_FORMAT.parseLocalDate("11/12/2015"));
+        Car car=new Car("9rt", 0, convertToDate("11/12/2015"));
         Integer carId = carDao.addCar(car);
         assertNotNull(carId);
         Car addedCar = carDao.getCarById(carId);
@@ -123,5 +107,10 @@ public class CarDaoImplTest  {
         assertTrue(sizeBeforeDelete > 0);
         carDao.deleteCar(1);
         assertTrue((sizeBeforeDelete - 1) == carDao.getAllCars().size());
+    }
+
+    private static LocalDate convertToDate(String s){
+        DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
+        return DATE_FORMAT.parseLocalDate(s);
     }
 }
