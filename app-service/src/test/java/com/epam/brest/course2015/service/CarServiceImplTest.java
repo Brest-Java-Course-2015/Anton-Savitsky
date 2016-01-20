@@ -28,7 +28,7 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath*:test-spring-service.xml"})
 @Transactional()
 public class CarServiceImplTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Autowired
     private CarService carService;
 
@@ -44,7 +44,7 @@ public class CarServiceImplTest {
     public void testGetCountOfCarsByProducerId() throws ParseException {
         int producerId=0;
         int countOfCarsBefore=carService.getCountOfCarsByProducerId(producerId);
-        carService.addCar(new Car("qw", producerId, DATE_FORMAT.parse("12/12/2015")));
+        carService.addCar(new Car("qw", producerId, DATE_FORMAT.parseLocalDate("12/12/2015")));
         int countOfCarsAfter=carService.getCountOfCarsByProducerId(producerId);
         Assert.notNull(countOfCarsBefore);
         Assert.notNull(countOfCarsAfter);
@@ -53,7 +53,7 @@ public class CarServiceImplTest {
 
     @Test
     public void testAddCar() throws ParseException {
-        Car car=new Car("8gh", 0, DATE_FORMAT.parse("13/2/2015"));
+        Car car=new Car("8gh", 0, DATE_FORMAT.parseLocalDate("13/2/2015"));
         int sizeBefore = carService.getAllCars().size();
         carService.addCar(car);
         Assert.isTrue(sizeBefore + 1 == carService.getAllCars().size());
@@ -71,7 +71,7 @@ public class CarServiceImplTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddCarWithNullName() throws ParseException {
-        Car car=new Car("", 2, DATE_FORMAT.parse("12/10/2015"));
+        Car car=new Car("", 2, DATE_FORMAT.parseLocalDate("12/10/2015"));
         carService.addCar(car);
     }
 
@@ -83,31 +83,31 @@ public class CarServiceImplTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddCarWithNullProducerId() throws ParseException {
-        Car car=new Car(null, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
+        Car car=new Car(null, "5gt", null, DATE_FORMAT.parseLocalDate("12/10/2015"));
         carService.addCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullCarId() throws ParseException {
-        Car car=new Car(null, "5gt", 2, DATE_FORMAT.parse("12/10/2015"));
+        Car car=new Car(null, "5gt", 2, DATE_FORMAT.parseLocalDate("12/10/2015"));
         carService.updateCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullName() throws ParseException {
-        Car car=new Car(1, "", 2, DATE_FORMAT.parse("12/10/2015"));
+        Car car=new Car(1, "", 2, DATE_FORMAT.parseLocalDate("12/10/2015"));
         carService.updateCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullProducerId() throws ParseException {
-        Car car=new Car(1, "5gt", null, DATE_FORMAT.parse("12/10/2015"));
+        Car car=new Car(1, "5gt", null, DATE_FORMAT.parseLocalDate("12/10/2015"));
         carService.updateCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateNonExistingCar() throws ParseException {
-        Car car=new Car(10, "456", 3, DATE_FORMAT.parse("23/11/2014"));
+        Car car=new Car(10, "456", 3, DATE_FORMAT.parseLocalDate("23/11/2014"));
         carService.updateCar(car);
     }
 
@@ -130,12 +130,12 @@ public class CarServiceImplTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetListOfCarsByWrongDateOfCreationInterval() throws ParseException {
-        carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parse("22/10/2015"), DATE_FORMAT.parse("21/10/2015"));
+        carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parseLocalDate("22/10/2015"), DATE_FORMAT.parseLocalDate("21/10/2015"));
     }
 
     @Test
     public void testGetCarsDtoByDate() throws ParseException {
-        CarDto dto = carService.getCarsByDateDto(DATE_FORMAT.parse("12/10/2015"), DATE_FORMAT.parse("15/10/2015"));
+        CarDto dto = carService.getCarsByDateDto(DATE_FORMAT.parseLocalDate("12/10/2015"), DATE_FORMAT.parseLocalDate("15/10/2015"));
         assertNotNull(dto);
         assertNotNull(dto.getCars());
         assertNotNull(dto.getTotal());

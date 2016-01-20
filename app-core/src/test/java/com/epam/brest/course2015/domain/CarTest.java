@@ -42,16 +42,4 @@ public class CarTest {
         car.setProducerId(1);
         assertEquals((Integer)1, car.getProducerId());
     }
-
-    @Test
-    public void testGetDateOfCreation(){
-        Date date=null;
-        try {
-            date=DATE_FORMAT.parse("11/12/2015");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        car.setDateOfCreation(date);
-        assertEquals(date, car.getDateOfCreation());
-    }
 }

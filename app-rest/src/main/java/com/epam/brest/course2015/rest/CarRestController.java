@@ -20,7 +20,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class CarRestController {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Autowired
     private CarService carService;
 
@@ -56,7 +56,7 @@ public class CarRestController {
                                                                  @RequestParam(value = "dateAfter")
                                                                  String dateAfter) throws ParseException {
 
-        return carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parse(dateBefore), DATE_FORMAT.parse(dateAfter));
+        return carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parseLocalDate(dateBefore), DATE_FORMAT.parseLocalDate(dateAfter));
     }
 
     @RequestMapping(value = "/car",
@@ -81,6 +81,6 @@ public class CarRestController {
                                                  String dateBefore,
                                                  @RequestParam(value = "dateAfter")
                                                  String dateAfter) throws ParseException {
-        return carService.getCarsByDateDto(DATE_FORMAT.parse(dateBefore), DATE_FORMAT.parse(dateAfter));
+        return carService.getCarsByDateDto(DATE_FORMAT.parseLocalDate(dateBefore), DATE_FORMAT.parseLocalDate(dateAfter));
     }
 }

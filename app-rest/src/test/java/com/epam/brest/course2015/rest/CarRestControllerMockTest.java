@@ -41,7 +41,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
 public class CarRestControllerMockTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
+    //SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
     @Autowired
     private CarRestController carRestController;
 
@@ -66,7 +67,7 @@ public class CarRestControllerMockTest {
     public void testAddCar() throws Exception {
         expect(carServiceMock.addCar(anyObject(Car.class))).andReturn(3);
         replay(carServiceMock);
-        String car = new ObjectMapper().writeValueAsString(new Car("ert",2,DATE_FORMAT.parse("15/09/2013")));
+        String car = new ObjectMapper().writeValueAsString(new Car("ert",2,DATE_FORMAT.parseLocalDate("15/09/2013")));
         mockMvc.perform(
                 post("/car")
                         .accept(MediaType.APPLICATION_JSON)
@@ -82,7 +83,7 @@ public class CarRestControllerMockTest {
         carServiceMock.updateCar(anyObject(Car.class));
         expectLastCall().once();
         replay(carServiceMock);
-        String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",2,DATE_FORMAT.parse("15/09/2013")));
+        String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",2,DATE_FORMAT.parseLocalDate("15/09/2013")));
         mockMvc.perform(
                 put("/car")
                 .accept(MediaType.APPLICATION_JSON)
@@ -132,7 +133,7 @@ public class CarRestControllerMockTest {
 
     @Test
     public void testGetCarsByDateDto() throws Exception {
-        expect(carServiceMock.getCarsByDateDto(anyObject(Date.class), anyObject(Date.class))).andReturn(new CarDto());
+        expect(carServiceMock.getCarsByDateDto(anyObject(LocalDate.class), anyObject(LocalDate.class))).andReturn(new CarDto());
         replay(carServiceMock);
         mockMvc.perform(
                 get("/carsdtobydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
@@ -156,7 +157,7 @@ public class CarRestControllerMockTest {
 
     @Test
     public void getCarsByDateOfCreation() throws Exception {
-        expect(carServiceMock.getListOfCarsByDateOfCreation(anyObject(Date.class),anyObject(Date.class))).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
+        expect(carServiceMock.getListOfCarsByDateOfCreation(anyObject(LocalDate.class),anyObject(LocalDate.class))).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
         replay(carServiceMock);
         String cars="["+new ObjectMapper().writeValueAsString(new Car(0))+","+new ObjectMapper().writeValueAsString(new Car(1))+"]";
         mockMvc.perform(

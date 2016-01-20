@@ -15,11 +15,11 @@ import java.util.List;
 public interface CarService {
     Car getCarById(Integer carId);
     Integer getCountOfCarsByProducerId(Integer producerId);
-    List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter);
+    List<Car> getListOfCarsByDateOfCreation(LocalDate dateBefore, LocalDate dateAfter);
     Integer addCar(Car car);
     void updateCar(Car car);
     void deleteCar(Integer carId);
     List<Car> getAllCars();
     CarDto getCarsDto();
-    CarDto getCarsByDateDto(Date dateBefore, Date dateAfter);
+    CarDto getCarsByDateDto(LocalDate dateBefore, LocalDate dateAfter);
 }

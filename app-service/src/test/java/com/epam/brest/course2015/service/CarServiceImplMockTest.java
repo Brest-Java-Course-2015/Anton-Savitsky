@@ -31,7 +31,7 @@ import static org.easymock.EasyMock.*;
 @ContextConfiguration(locations = {"classpath:spring-service-mock-test.xml"})
 @Transactional
 public class CarServiceImplMockTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     private  Car testCar1;
     private Car testCar2;
     private Producer testProducer1;
@@ -44,8 +44,8 @@ public class CarServiceImplMockTest {
 
     @Before
     public void setUp() throws ParseException {
-        testCar1=new Car(1,"name1",1,DATE_FORMAT.parse("11/11/2011"));
-        testCar2=new Car("name2",1,DATE_FORMAT.parse("11/11/2012"));
+        testCar1=new Car(1,"name1",1,DATE_FORMAT.parseLocalDate("11/11/2011"));
+        testCar2=new Car("name2",1,DATE_FORMAT.parseLocalDate("11/11/2012"));
         testProducer1=new Producer(1, "producer1", "country1");
     }
 

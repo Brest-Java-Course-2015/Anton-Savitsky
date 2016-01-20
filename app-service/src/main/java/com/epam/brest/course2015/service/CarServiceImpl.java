@@ -72,10 +72,10 @@ public class CarServiceImpl implements CarService {
 
     @Loggable
     @Override
-    public List<Car> getListOfCarsByDateOfCreation(Date dateBefore, Date dateAfter) {
+    public List<Car> getListOfCarsByDateOfCreation(LocalDate dateBefore, LocalDate dateAfter) {
         Assert.notNull(dateBefore, dateNotNull);
         Assert.notNull(dateAfter, dateNotNull);
-        Assert.isTrue(dateAfter.after(dateBefore), "DateAfter must be after DateBefore!");
+        Assert.isTrue(dateAfter.isAfter(dateBefore), "DateAfter must be after DateBefore!");
         return carDao.getListOfCarsByDateOfCreation(dateBefore,dateAfter);
     }
 
@@ -139,7 +139,7 @@ public class CarServiceImpl implements CarService {
 
     @Loggable
     @Override
-    public CarDto getCarsByDateDto(Date dateBefore, Date dateAfter) {
+    public CarDto getCarsByDateDto(LocalDate dateBefore, LocalDate dateAfter) {
         CarDto carDto=new CarDto();
         List<Car> carList=getListOfCarsByDateOfCreation(dateBefore, dateAfter);
         carDto.setTotal(carList.size());

@@ -60,19 +60,16 @@ function findAll() {
 function getProducerDto(){
     console.log('getProducerDto');
     var url = PREFIX_URL + PRODUCERDTO_URL;
-    var isLoaded=0;
     $.ajax({
         type: 'GET',
         url: url,
         dataType: "json",
         success: function(data){
             producerdto= data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
-            isLoaded=1;
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
         }
-
     });
 }
 
@@ -92,7 +89,7 @@ function drawRow(car) {
     row.append($("<td>" + car.carName+"</td>"));
     var prodName=getProducerNameById(car.producerId);
     row.append($("<td>" + prodName.toString()+"</td>"));
-    row.append($("<td>" + car.dateOfCreation.toString() +"</td>"));
+    row.append($("<td>" + car.dateOfCreation +"</td>"));
     row.append($("<td>" + '<button id="delete'+car.carId+'" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
     $("#delete"+car.carId).click(function(){
         deleteCar(car.carId, car.carName);

@@ -12,7 +12,7 @@ CREATE TABLE CAR (
     carId INT IDENTITY primary key NOT NULL,
     carName VARCHAR(30) NOT NULL,
     producerId INT NOT NULL,
-    dateOfCreation date NOT NULL,
+    dateOfCreation DATE NOT NULL,
     FOREIGN KEY (producerId) REFERENCES PRODUCER(producerId)
 );
 

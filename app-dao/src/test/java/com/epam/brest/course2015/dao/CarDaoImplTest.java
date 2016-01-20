@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -28,10 +29,9 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
 @Transactional()
 public class CarDaoImplTest  {
+    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Autowired
     private CarDao carDao;
-
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
 
     @Test
     public void testGetCarById(){
@@ -59,15 +59,15 @@ public class CarDaoImplTest  {
 
     @Test
     public void testGetListOfCarsByDateOfCreation(){
-        Date dateBefore= null;
-        Date dateAfter= null;
-        Date expectedDate1=null;
-        Date expectedDate2=null;
+        LocalDate dateBefore=null;
+        LocalDate dateAfter=null;
+        LocalDate expectedDate1=null;
+        LocalDate expectedDate2=null;
         try {
-            dateBefore = DATE_FORMAT.parse("12/10/2015");
-            dateAfter = DATE_FORMAT.parse("15/10/2015");
-            expectedDate1=DATE_FORMAT.parse("14/10/2015");
-            expectedDate2=DATE_FORMAT.parse("13/10/2015");
+            dateBefore = DATE_FORMAT.parseLocalDate("12/10/2015");
+            dateAfter = DATE_FORMAT.parseLocalDate("15/10/2015");
+            expectedDate1=DATE_FORMAT.parseLocalDate("14/10/2015");
+            expectedDate2=DATE_FORMAT.parseLocalDate("13/10/2015");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class CarDaoImplTest  {
 
     @Test
     public void testAddCar() throws Exception {
-        Car car=new Car("9rt", 0, DATE_FORMAT.parse("11/12/2015"));
+        Car car=new Car("9rt", 0, DATE_FORMAT.parseLocalDate("11/12/2015"));
         Integer carId = carDao.addCar(car);
         assertNotNull(carId);
         Car addedCar = carDao.getCarById(carId);

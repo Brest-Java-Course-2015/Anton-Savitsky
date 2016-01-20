@@ -3,9 +3,11 @@ package com.epam.brest.course2015.domain;
 import com.epam.brest.course2015.test.Loggable;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.joda.ser.LocalDateSerializer;
 import org.joda.time.LocalDate;
-
-import java.util.Date;
 
 /**
  * Created by antonsavitsky on 09.11.15.
@@ -14,10 +16,12 @@ public class Car {
     private Integer carId;
     private Integer producerId;
     private String carName;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private Date dateOfCreation;
+    //@JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using=com.epam.brest.course2015.test.JsonDateDeserializer.class)
+    @JsonSerialize(using= com.epam.brest.course2015.test.JsonDateSerializer.class)
+    private LocalDate dateOfCreation;
 
-    public Car(Integer carId, String carName, Integer producerId, Date dateOfCreation){
+    public Car(Integer carId, String carName, Integer producerId, LocalDate dateOfCreation){
         this.carId=carId;
         this.producerId=producerId;
         this.carName=carName;
@@ -30,14 +34,13 @@ public class Car {
         this.carId=carId;
     }
 
-    public Car(String carName, int producerId, Date dateOfCreation){
+    public Car(String carName, int producerId, LocalDate dateOfCreation){
         this.carName=carName;
         this.producerId=producerId;
         this.dateOfCreation=dateOfCreation;
     }
     @Loggable
     public Integer getProducerId() {
-
         return producerId;
     }
     @Loggable
@@ -61,11 +64,11 @@ public class Car {
         this.carName = carName;
     }
     @Loggable
-    public Date getDateOfCreation() {
+    public LocalDate getDateOfCreation() {
         return dateOfCreation;
     }
     @Loggable
-    public void setDateOfCreation(Date dateOfCreation) {
+    public void setDateOfCreation(LocalDate dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
     }
 

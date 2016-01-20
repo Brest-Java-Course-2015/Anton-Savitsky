@@ -13,6 +13,7 @@
                 <value>classpath:database.properties</value>
             </list>
         </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 
     <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">

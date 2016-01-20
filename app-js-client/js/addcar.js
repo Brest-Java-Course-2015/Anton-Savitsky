@@ -64,6 +64,7 @@ function addCar() {
 }
 
 function formToJSON() {
+    console.log($('#dateOfCreation').val());
     return JSON.stringify({
         "carName": $('#carName').val(),
         "producerId": idproducerselected.toString(),
