@@ -9,11 +9,19 @@ public class Producer {
     private Integer producerId;
     private String producerName;
     private String country;
+    private Integer countOfCars;
 
     public Producer(Integer producerId, String producerName, String country){
         this.producerId=producerId;
         this.producerName=producerName;
         this.country=country;
+    }
+
+    public Producer(Integer producerId, String producerName, String country, Integer countOfCars){
+        this.producerId=producerId;
+        this.producerName=producerName;
+        this.country=country;
+        this.countOfCars=countOfCars;
     }
 
     public Producer(String producerName, String country){
@@ -53,11 +61,16 @@ public class Producer {
     public void setCountry(String country) {
         this.country = country;
     }
+    @Loggable
+    public Integer getCountOfCars(){ return countOfCars;}
+    @Loggable
+    public void setCountOfCars(Integer countOfCars){this.countOfCars=countOfCars;}
 
     public enum ProducerFields {
         PRODUCER_ID("producerId"),
         PRODUCER_NAME("producerName"),
-        COUNTRY("country");
+        COUNTRY("country"),
+        COUNTOFCARS("countOfCars");
         ProducerFields(String value) {
             this.value = value;
         }
@@ -71,6 +84,7 @@ public class Producer {
                 "producerId=" + producerId +
                 ", producerName='" + producerName +
                 ", country=" + country +
+                ", countOfCars="+ countOfCars+
                 '}');
     }
 }

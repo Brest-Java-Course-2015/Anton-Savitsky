@@ -5,7 +5,6 @@
 $("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
 var PRODUCER_URL = "/producer";
 var PRODUCERDTO_URL = "/producersdto";
-var CARSDTO_URL="/carsdto";
 
 findAll();
 
@@ -21,9 +20,9 @@ function gotoUpdateProducer(producerId,producerName,country)
     window.location="updateproducer.html";
 }
 
-function deleteProducer(producerId, producerName) {
+function deleteProducer(producerId, producerName, countOfCars) {
     var mes="Вы уверены, что хотите удалить производителя "+producerName+"?";
-    if (getCountOfCarsByProducer(producerId)>0) mes="Существуют автомобили принадлежащие данному производителю! Они будут удалены!\n"+mes;
+    if (countOfCars>0) mes="Существуют автомобили принадлежащие данному производителю! Они будут удалены!\n"+mes;
     if (confirm(mes))
     {
         console.log('deleteProducer id=' + producerId);
@@ -58,38 +57,15 @@ function findAll() {
     });
 }
 
-function getCountOfCarsByProducer(id) {
-    console.log('getCountOfCarsByProducer id='+id);
-    var i=0;
-    var url = PREFIX_URL + CARSDTO_URL;
-    $.ajax({
-        type: 'GET',
-        url: url,
-        async: false,
-        dataType: "json",
-        success: function (data){
-            var dto = data.cars == null ? [] : (data.cars instanceof Array ? data.cars : [data.cars]);
-            $.each(dto, function (index, car) {
-                if(car.producerId==id) i++;
-            });
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR, textStatus, errorThrown);
-        }
-    });
-    console.log("countofcars="+i);
-    return i;
-}
-
 function drawRow(producer) {
     var row = $("<tr />")
     $("#producerList").append(row);
     row.append($("<td>" + producer.producerName+"</td>"));
     row.append($("<td>" + producer.country+"</td>"));
-    row.append($("<td>" + getCountOfCarsByProducer(producer.producerId) + "</td>"));
+    row.append($("<td>" + producer.countOfCars + "</td>"));
     row.append($("<td>" + '<button id="delete'+producer.producerId+'" class="mybutton"><span class="glyphicon glyphicon-trash"></span></button>' + "</td>"));
     $("#delete"+producer.producerId).click(function(){
-        deleteProducer(producer.producerId, producer.producerName);
+        deleteProducer(producer.producerId, producer.producerName, producer.countOfCars);
     });
     row.append($("<td>"+'<button id="update'+producer.producerId+'" class="mybutton" type="button"><span class="glyphicon glyphicon-pencil"></span></button>' + "</td>"));
     $("#update"+producer.producerId).click(function(){

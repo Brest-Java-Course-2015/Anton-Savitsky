@@ -27,9 +27,9 @@ public class ProducerDaoImplTest {
 
     @Test
     public void testGetProducerById(){
-        Producer producer=producerDao.getProducerById(0);
+        Producer producer=producerDao.getProducerById(1);
         assertNotNull(producer);
-        assertTrue(producer.getProducerId()==0);
+        assertTrue(producer.getProducerId()==1);
     }
 
     @Test
@@ -67,6 +67,6 @@ public class ProducerDaoImplTest {
     public void testGetAllProducers(){
         List<Producer> producers=producerDao.getAllProducers();
         assertNotNull(producers);
-        assertTrue(producers.size()==1);
+        assertTrue(producers.size()==2);
     }
 }
