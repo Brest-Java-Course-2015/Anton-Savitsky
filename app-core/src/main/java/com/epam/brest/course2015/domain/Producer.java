@@ -66,18 +66,6 @@ public class Producer {
     @Loggable
     public void setCountOfCars(Integer countOfCars){this.countOfCars=countOfCars;}
 
-    public enum ProducerFields {
-        PRODUCER_ID("producerId"),
-        PRODUCER_NAME("producerName"),
-        COUNTRY("country"),
-        COUNTOFCARS("countOfCars");
-        ProducerFields(String value) {
-            this.value = value;
-        }
-        private final String value;
-        public String getValue() { return value; }
-    }
-
     @Override
     public String toString() {
         return String.format("Producer: {" +

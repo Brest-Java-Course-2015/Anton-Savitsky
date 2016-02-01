@@ -7,6 +7,9 @@ var CAR_URL = "/car";
 var PRODUCERDTO_URL = "/producersdto";
 var idproducerselected=null;
 var carid=null;
+//set id of selected producer onclick
+$(".prodnameselect").click(function() { idproducerselected=$(".prodnameselect").val(); } );
+
 
 function validateAndSubmit(form){
     if(validate(form)) updateCar();
@@ -19,11 +22,10 @@ function insertValues(){
     $('#producerName').val(sessionStorage.getItem('producerName'));
     idproducerselected=sessionStorage.getItem('producerId');
     $('#dateOfCreation').val(sessionStorage.getItem('dateOfCreation'));
-
 }
 insertValues();
 
-function getProducers() {
+function getProducersDto() {
     console.log('getProducers');
     var url = PREFIX_URL + PRODUCERDTO_URL;
     $.ajax({
@@ -44,12 +46,11 @@ function getProducers() {
 
 
 function fillSelectList(){
-    getProducers();
+    getProducersDto();
 }
 
 fillSelectList();
 
-$(".prodnameselect").click(function() { idproducerselected=$(".prodnameselect").val(); } );
 
 function goHome() {
     window.location="index.html";

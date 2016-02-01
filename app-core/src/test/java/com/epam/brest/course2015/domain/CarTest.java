@@ -1,17 +1,13 @@
 package com.epam.brest.course2015.domain;
 
-import org.junit.Before;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import static org.junit.Assert.*;
 
 /**
@@ -20,8 +16,6 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-core.xml"})
 public class CarTest {
-    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-
     @Autowired
     private Car car;
 
@@ -41,5 +35,13 @@ public class CarTest {
     public void testGetProducerId(){
         car.setProducerId(1);
         assertEquals((Integer)1, car.getProducerId());
+    }
+
+    @Test
+    public void testGetDateOfCreation(){
+        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy");
+        LocalDate ld=fmt.parseLocalDate("10/10/2015");
+        car.setDateOfCreation(ld);
+        assertEquals(ld, car.getDateOfCreation());
     }
 }

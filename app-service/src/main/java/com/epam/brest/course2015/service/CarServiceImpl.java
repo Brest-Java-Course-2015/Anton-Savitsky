@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * Created by antonsavitsky on 17.11.15.
  */
+//Transactions are supported for all methods defined in this class
 @Transactional
 public class CarServiceImpl implements CarService {
     @Value("${car.IdNotNull}")
@@ -128,11 +129,15 @@ public class CarServiceImpl implements CarService {
     @Override
     public CarDto getCarsDto(){
         CarDto carDto = new CarDto();
-        carDto.setTotal(carDao.getTotalCountCars());
-        if(carDto.getTotal()>0){
-            carDto.setCars(carDao.getAllCars());
+        List<Car> carList=carDao.getAllCars();
+        if(carList.size()>0){
+            carDto.setCars(carList);
+            carDto.setTotal(carList.size());
         }
-        else carDto.setCars(Collections.<Car>emptyList());
+        else {
+            carDto.setCars(Collections.<Car>emptyList());
+            carDto.setTotal(0);
+        }
         return carDto;
     }
 
@@ -141,11 +146,12 @@ public class CarServiceImpl implements CarService {
     public CarDto getCarsByDateDto(LocalDate dateBefore, LocalDate dateAfter) {
         CarDto carDto=new CarDto();
         List<Car> carList=getListOfCarsByDateOfCreation(dateBefore, dateAfter);
-        carDto.setTotal(carList.size());
-        if(carDto.getTotal()>0){
+        if(carList.size()>0){
             carDto.setCars(carList);
+            carDto.setTotal(carList.size());
         } else {
             carDto.setCars(Collections.<Car>emptyList());
+            carDto.setTotal(0);
         }
         return carDto;
     }

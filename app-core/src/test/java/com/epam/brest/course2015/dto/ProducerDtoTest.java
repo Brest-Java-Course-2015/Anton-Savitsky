@@ -1,6 +1,5 @@
 package com.epam.brest.course2015.dto;
 
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

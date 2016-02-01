@@ -2,13 +2,14 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns="http://www.springframework.org/schema/beans"
-       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
 
     <bean id="carService" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.service.CarService"/>
@@ -17,9 +18,7 @@
     <bean id="producerService" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.service.ProducerService"/>
     </bean>
-
-    <aop:aspectj-autoproxy/>
-
-    <bean id="socialLogger" class="com.epam.brest.course2015.test.MyLogger"/>
     <context:component-scan base-package="com.epam.brest.course2015.rest"/>
+    <aop:aspectj-autoproxy/>
+    <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 </beans>

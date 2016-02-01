@@ -1,8 +1,6 @@
 package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Producer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,7 @@ import static org.junit.Assert.assertTrue;
  * Created by antonsavitsky on 02.12.15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
+@ContextConfiguration(locations = {"classpath:test-spring-dao.xml"})
 @Transactional()
 public class ProducerDaoImplTest {
     @Autowired

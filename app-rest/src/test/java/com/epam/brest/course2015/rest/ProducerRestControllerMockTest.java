@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
 public class ProducerRestControllerMockTest {
-    @Resource
+    @Autowired
     private ProducerRestController producerRestController;
 
     private MockMvc mockMvc;

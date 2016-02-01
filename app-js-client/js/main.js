@@ -6,8 +6,7 @@ var CARDTOBYDATE_URL="/carsdtobydate";
 var PRODUCERDTO_URL="/producersdto";
 var producerdto=null;
 
-getProducerDto();
-$(document).ready(findAll);
+initData();
 
 function gotoAddCar() {
     window.location = "addCar.html";
@@ -57,7 +56,7 @@ function findAll() {
     });
 }
 
-function getProducerDto(){
+function initData(){
     console.log('getProducerDto');
     var url = PREFIX_URL + PRODUCERDTO_URL;
     $.ajax({
@@ -66,6 +65,7 @@ function getProducerDto(){
         dataType: "json",
         success: function(data){
             producerdto= data.producers == null ? [] : (data.producers instanceof Array ? data.producers : [data.producers]);
+            findAll();
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);

@@ -1,18 +1,16 @@
 package com.epam.brest.course2015.rest;
+
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarService;
 import com.epam.brest.course2015.test.Loggable;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 /**
  * Created by juga on 16.10.15.
@@ -20,7 +18,6 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class CarRestController {
-    DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
     @Autowired
     private CarService carService;
 
@@ -32,13 +29,13 @@ public class CarRestController {
 
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     @Loggable
-    public  List<Car> getAllCars() {
+    public  @ResponseBody List<Car> getAllCars() {
         return carService.getAllCars();
     }
 
     @RequestMapping(value="/car", method = RequestMethod.GET)
     @Loggable
-    public Car getCarById(@RequestParam(value="id") Integer id){
+    public @ResponseBody Car getCarById(@RequestParam(value="id") Integer id){
         return carService.getCarById(id);
     }
 
@@ -56,7 +53,7 @@ public class CarRestController {
                                                                  @RequestParam(value = "dateAfter")
                                                                  String dateAfter) throws ParseException {
 
-        return carService.getListOfCarsByDateOfCreation(DATE_FORMAT.parseLocalDate(dateBefore), DATE_FORMAT.parseLocalDate(dateAfter));
+        return carService.getListOfCarsByDateOfCreation(convertToDate(dateBefore), convertToDate(dateAfter));
     }
 
     @RequestMapping(value = "/car",
@@ -81,6 +78,11 @@ public class CarRestController {
                                                  String dateBefore,
                                                  @RequestParam(value = "dateAfter")
                                                  String dateAfter) throws ParseException {
-        return carService.getCarsByDateDto(DATE_FORMAT.parseLocalDate(dateBefore), DATE_FORMAT.parseLocalDate(dateAfter));
+        return carService.getCarsByDateDto(convertToDate(dateBefore), convertToDate(dateAfter));
+    }
+
+    public LocalDate convertToDate(String s){
+        DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
+        return DATE_FORMAT.parseLocalDate(s);
     }
 }

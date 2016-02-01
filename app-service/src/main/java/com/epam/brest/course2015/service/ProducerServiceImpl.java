@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * Created by antonsavitsky on 17.11.15.
  */
+//Transactions are supported for all methods defined in this class
 @Transactional
 public class ProducerServiceImpl implements ProducerService {
     @Value("${producer.IdNotNull}")
@@ -31,11 +32,11 @@ public class ProducerServiceImpl implements ProducerService {
     private String producerCountryNotNull;
 
     private ProducerDao producerDao;
-
     @Autowired
     public void setProducerDao(ProducerDao producerDao) {
         this.producerDao = producerDao;
     }
+
     @Loggable
     @Override
     public Producer getProducerById(Integer producerId) {
@@ -104,11 +105,15 @@ public class ProducerServiceImpl implements ProducerService {
     @Override
     public ProducerDto getProducersDto() {
         ProducerDto producerDto = new ProducerDto();
-        producerDto.setTotal(producerDao.getTotalCount());
-        if(producerDto.getTotal()>0){
-            producerDto.setProducers(producerDao.getAllProducers());
+        List<Producer> producerList=producerDao.getAllProducers();
+        if(producerList.size()>0){
+            producerDto.setProducers(producerList);
+            producerDto.setTotal(producerList.size());
         }
-        else producerDto.setProducers(Collections.<Producer>emptyList());
+        else {
+            producerDto.setProducers(Collections.<Producer>emptyList());
+            producerDto.setTotal(0);
+        }
         return producerDto;
     }
 }

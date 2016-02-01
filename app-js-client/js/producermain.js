@@ -49,6 +49,7 @@ function findAll() {
         type: 'GET',
         url: url,
         dataType: "json",
+        async: true,
         success: renderList,
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);

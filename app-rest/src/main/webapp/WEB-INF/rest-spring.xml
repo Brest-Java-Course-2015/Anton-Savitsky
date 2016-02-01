@@ -23,7 +23,7 @@
         <property name="locations">
             <list>
                 <value>classpath:database.properties</value>
-                <value>classpath:app.properties</value>
+                <value>classpath:dao.properties</value>
                 <value>classpath:service.properties</value>
             </list>
         </property>
@@ -75,6 +75,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean id="socialLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+    <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
 </beans>

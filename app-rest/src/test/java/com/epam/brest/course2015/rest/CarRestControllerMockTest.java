@@ -4,8 +4,6 @@ import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -21,12 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import javax.annotation.Resource;
-
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
 import static org.easymock.EasyMock.*;
 import static org.easymock.EasyMock.replay;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -42,7 +35,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
 public class CarRestControllerMockTest {
     DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
-    //SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
     @Autowired
     private CarRestController carRestController;
 

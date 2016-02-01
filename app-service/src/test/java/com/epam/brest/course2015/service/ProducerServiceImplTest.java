@@ -2,8 +2,6 @@ package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.ProducerDto;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,7 @@ import org.springframework.util.Assert;
  * Created by antonsavitsky on 27.12.15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:test-spring-service.xml"})
+@ContextConfiguration(locations = {"classpath:test-spring-service.xml"})
 @Transactional()
 public class ProducerServiceImplTest {
     @Autowired

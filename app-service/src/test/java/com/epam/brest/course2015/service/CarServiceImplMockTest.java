@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -115,6 +114,7 @@ public class CarServiceImplMockTest {
 
     @Test
     public void testGetAllCars(){
+
         expect(carMockDao.getAllCars()).andReturn(Arrays.<Car>asList(testCar1,testCar2));
         replay(carMockDao);
         List<Car> resList=carService.getAllCars();
@@ -124,7 +124,6 @@ public class CarServiceImplMockTest {
 
     @Test
     public void testGetCarsDto(){
-        expect(carMockDao.getTotalCountCars()).andReturn(2);
         expect(carMockDao.getAllCars()).andReturn(Arrays.<Car>asList(testCar1,testCar2));
         replay(carMockDao);
         CarDto carDto=carService.getCarsDto();

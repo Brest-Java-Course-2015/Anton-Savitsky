@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--This is a standard Java Web Application configuration file.-->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
@@ -7,6 +8,7 @@
     <servlet>
         <servlet-name>restDispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--the location of the spring context configuration file-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/rest-spring.xml</param-value>
@@ -18,5 +20,4 @@
         <servlet-name>restDispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
 </web-app>

@@ -3,7 +3,7 @@ CAR-PRODUCER
 Version 1.0
 
 This is a short description of how you can run this application.
-1. Software you'll need: Java version 8 or higher, Tomcat server, browser.
+1. Software you'll need: JDK 8 or higher, Tomcat server, browser.
 2. Startup of the application:
 -Download the app
 -Go to the root directory Anton-Savitsky

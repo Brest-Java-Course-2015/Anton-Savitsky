@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
  * Created by antonsavitsky on 09.11.15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
+@ContextConfiguration(locations = {"classpath:test-spring-dao.xml"})
 @Transactional()
 public class CarDaoImplTest  {
     @Autowired

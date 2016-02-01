@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
  * Created by antonsavitsky on 27.12.15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:test-spring-service.xml"})
+@ContextConfiguration(locations = {"classpath:test-spring-service.xml"})
 @Transactional()
 public class CarServiceImplTest {
     @Autowired

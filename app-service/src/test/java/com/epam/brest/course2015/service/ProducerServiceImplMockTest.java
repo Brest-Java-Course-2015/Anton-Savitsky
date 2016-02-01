@@ -1,8 +1,6 @@
 package com.epam.brest.course2015.service;
 
-import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.dao.ProducerDao;
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.ProducerDto;
 import org.junit.After;
@@ -17,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.easymock.EasyMock.*;
@@ -123,7 +121,6 @@ public class ProducerServiceImplMockTest {
 
     @Test
     public void testGetProducersDto(){
-        expect(producerMockDao.getTotalCount()).andReturn(2);
         expect(producerMockDao.getAllProducers()).andReturn(Arrays.<Producer>asList(testProducer1,testProducer2));
         replay(producerMockDao);
         ProducerDto producerDto=producerService.getProducersDto();
@@ -134,7 +131,7 @@ public class ProducerServiceImplMockTest {
 
     @Test
     public void testGetNullProducersDto(){
-        expect(producerMockDao.getTotalCount()).andReturn(0);
+        expect(producerMockDao.getAllProducers()).andReturn(Collections.<Producer>emptyList());
         replay(producerMockDao);
         Assert.isTrue(producerService.getProducersDto().getTotal()==0);
     }

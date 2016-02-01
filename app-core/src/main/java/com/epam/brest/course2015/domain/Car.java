@@ -1,18 +1,14 @@
 package com.epam.brest.course2015.domain;
 
 import com.epam.brest.course2015.test.Loggable;
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.joda.ser.LocalDateSerializer;
 import org.joda.time.LocalDate;
 
 /**
  * Created by antonsavitsky on 09.11.15.
  */
-public class Car {
+public class    Car {
     private Integer carId;
     private Integer producerId;
     private String carName;

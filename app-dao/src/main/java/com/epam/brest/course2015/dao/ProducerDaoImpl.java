@@ -1,6 +1,5 @@
 package com.epam.brest.course2015.dao;
 
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.test.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,30 +46,21 @@ public class ProducerDaoImpl implements ProducerDao {
         return namedParameterJdbcTemplate.queryForObject(selectProducerById, parameterSource, producerMapper);
     }
 
-    private MapSqlParameterSource getParametersMap(Producer producer) {
-        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-        parameterSource.addValue("producerId", producer.getProducerId());
-        parameterSource.addValue("producerName", producer.getProducerName());
-        parameterSource.addValue("country", producer.getCountry());
-        return parameterSource;
-    }
-
-
     @Override
     @Loggable
     public Integer addProducer(Producer producer) {
         KeyHolder keyHolder= new GeneratedKeyHolder();
-        //BeanPropertySqlParameterSource parameterSource=new BeanPropertySqlParameterSource(producer);
-        namedParameterJdbcTemplate.update(insertProducer, getParametersMap(producer),keyHolder);
+        BeanPropertySqlParameterSource parameterSource=new BeanPropertySqlParameterSource(producer);
+        namedParameterJdbcTemplate.update(insertProducer, parameterSource,keyHolder);
         return keyHolder.getKey().intValue();
     }
 
     @Override
     @Loggable
     public void updateProducer(Producer producer) {
-        //BeanPropertySqlParameterSource parameterSource =
-         //       new BeanPropertySqlParameterSource(producer);
-        namedParameterJdbcTemplate.update(updateProducer, getParametersMap(producer));
+        BeanPropertySqlParameterSource parameterSource =
+        new BeanPropertySqlParameterSource(producer);
+        namedParameterJdbcTemplate.update(updateProducer, parameterSource);
     }
 
     @Override

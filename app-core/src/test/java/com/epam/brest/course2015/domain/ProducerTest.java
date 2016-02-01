@@ -1,6 +1,5 @@
 package com.epam.brest.course2015.domain;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +32,11 @@ public class ProducerTest {
     public void testGetCountry(){
         producer.setCountry("Korea");
         assertEquals(producer.getCountry(), "Korea");
+    }
+
+    @Test
+    public void testGetCountOfCars(){
+        producer.setCountOfCars(5);
+        assertEquals(producer.getCountOfCars(), (Integer)5);
     }
 }

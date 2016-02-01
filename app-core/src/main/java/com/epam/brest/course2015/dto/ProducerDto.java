@@ -1,6 +1,5 @@
 package com.epam.brest.course2015.dto;
 
-import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.test.Loggable;
 
@@ -12,6 +11,7 @@ import java.util.List;
 public class ProducerDto {
     private List<Producer> producers;
     private Integer total;
+
     @Loggable
     public Integer getTotal() {
         return total;
