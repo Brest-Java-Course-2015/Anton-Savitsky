@@ -11,7 +11,6 @@ import java.util.List;
 public class CarDto {
     private List<Car> cars;
     private Integer total;
-
     @Loggable
     public Integer getTotal() {
         return total;

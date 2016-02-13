@@ -2,6 +2,7 @@ package com.epam.brest.course2015.rest;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.CarPagingDto;
 import com.epam.brest.course2015.service.CarService;
 import com.epam.brest.course2015.test.Loggable;
 import org.joda.time.LocalDate;
@@ -12,77 +13,100 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.util.List;
-/**
- * Created by juga on 16.10.15.
- */
+
 @CrossOrigin
 @RestController
+@RequestMapping(value = "/car")
 public class CarRestController {
+
     @Autowired
     private CarService carService;
 
-    @RequestMapping(value="/car", method = RequestMethod.PUT)
+
+    @RequestMapping(method = RequestMethod.PUT)
     @Loggable
     public void updateCar(@RequestBody Car car){
         carService.updateCar(car);
     }
 
-    @RequestMapping(value = "/cars", method = RequestMethod.GET)
+
+    @RequestMapping(method = RequestMethod.GET)
     @Loggable
     public  @ResponseBody List<Car> getAllCars() {
         return carService.getAllCars();
     }
 
-    @RequestMapping(value="/car", method = RequestMethod.GET)
+
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     @Loggable
-    public @ResponseBody Car getCarById(@RequestParam(value="id") Integer id){
+    public @ResponseBody Car getCarById(@PathVariable("id") Integer id){
         return carService.getCarById(id);
     }
 
-    @RequestMapping(value = "/car", method = RequestMethod.POST)
+
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     @Loggable
     public Integer addCar(@RequestBody Car car) throws ParseException {
         return carService.addCar(car);
     }
 
-    @RequestMapping(value="/car/date", method = RequestMethod.GET)
+
+    @RequestMapping(value="/date", method = RequestMethod.GET)
     @Loggable
     public @ResponseBody List<Car> getListOfCarsByDateOfCreation(@RequestParam(value = "dateBefore")
                                                                  String dateBefore,
                                                                  @RequestParam(value = "dateAfter")
                                                                  String dateAfter) throws ParseException {
 
-        return carService.getListOfCarsByDateOfCreation(convertToDate(dateBefore), convertToDate(dateAfter));
+        return carService.getListOfCarsByDateOfCreation(convertToDate(dateBefore),
+                convertToDate(dateAfter));
     }
 
-    @RequestMapping(value = "/car",
-            method = RequestMethod.DELETE)
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     @Loggable
-    public void deleteCar(@RequestParam(value = "id")
-                          Integer id) {
+    public void deleteCar(@PathVariable("id") Integer id) {
         carService.deleteCar(id);
     }
 
-    @RequestMapping(value="/carsdto",
-            method = RequestMethod.GET)
+
+    @RequestMapping(value="/dto", method = RequestMethod.GET)
     @Loggable
     public @ResponseBody CarDto getCarsDto(){
         return carService.getCarsDto();
     }
 
-    @RequestMapping(value="/carsdtobydate",
-            method = RequestMethod.GET)
+
+    @RequestMapping(value="/dto/date", method = RequestMethod.GET)
     @Loggable
-    public @ResponseBody CarDto getCarsDtoByDate(@RequestParam(value = "dateBefore")
-                                                 String dateBefore,
-                                                 @RequestParam(value = "dateAfter")
-                                                 String dateAfter) throws ParseException {
+    public @ResponseBody
+    CarDto getCarsDtoByDate(@RequestParam(value = "dateBefore") String dateBefore,
+                            @RequestParam(value = "dateAfter") String dateAfter) throws ParseException {
         return carService.getCarsByDateDto(convertToDate(dateBefore), convertToDate(dateAfter));
     }
+
+
+    @RequestMapping(value="/initpaging", method = RequestMethod.GET)
+    @Loggable
+    public CarPagingDto getInitPaging(@RequestParam(value="from") Integer from,
+                                        @RequestParam(value="to") Integer to)
+    {
+        return  carService.getCarPagingDto(from, to);
+    }
+
+    @RequestMapping(value = "/nextpage", method = RequestMethod.GET)
+    @Loggable
+    public CarPagingDto getNextPage(@RequestParam(value="from") Integer from,
+                                 @RequestParam(value="to") Integer to)
+    {
+        return carService.getCarsByPage(from, to);
+    }
+
 
     public LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
         return DATE_FORMAT.parseLocalDate(s);
     }
+
 }

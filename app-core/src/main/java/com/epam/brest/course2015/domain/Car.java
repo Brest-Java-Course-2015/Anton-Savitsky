@@ -8,7 +8,7 @@ import org.joda.time.LocalDate;
 /**
  * Created by antonsavitsky on 09.11.15.
  */
-public class    Car {
+public class Car {
     private Integer carId;
     private Integer producerId;
     private String carName;
@@ -34,6 +34,7 @@ public class    Car {
         this.producerId=producerId;
         this.dateOfCreation=dateOfCreation;
     }
+
     @Loggable
     public Integer getProducerId() {
         return producerId;
@@ -69,11 +70,11 @@ public class    Car {
 
     @Override
     public String toString() {
-        return String.format("Car: {" +
+        return "Car: {" +
                 "carId=" + carId +
                 ", carName='" + carName +
                 ", producerId=" + producerId +
                 ", dateOfCreation=" + dateOfCreation +
-                '}');
+                '}';
     }
 }

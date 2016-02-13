@@ -10,7 +10,6 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
     <bean id="carService" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.service.CarService"/>
     </bean>

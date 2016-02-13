@@ -2,6 +2,7 @@ package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.CarPagingDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joda.time.LocalDate;
@@ -143,6 +144,7 @@ public class CarServiceImplTest {
         assertEquals(dto.getCars().get(0).getClass(), Car.class);
     }
 
+
     @Test
     public void testGetCarsDto(){
         CarDto dto = carService.getCarsDto();
@@ -151,8 +153,21 @@ public class CarServiceImplTest {
         assertNotNull(dto.getTotal());
         assertEquals(dto.getCars().get(0).getClass(), Car.class);
     }
+
+
     private static LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
         return DATE_FORMAT.parseLocalDate(s);
+    }
+
+
+    @Test
+    public void testGetPagingList(){
+        CarPagingDto carPagingDto=carService.getCarPagingDto(1,7);
+    }
+
+    @Test
+    public void testGetCarsByPage(){
+        carService.getCarsByPage(1,6);
     }
 }

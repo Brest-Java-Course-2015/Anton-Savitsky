@@ -24,6 +24,7 @@ import java.util.List;
  * Created by antonsavitsky on 09.11.15.
  */
 public class CarDaoImpl implements CarDao {
+
     @Value("${car.updateCar}")
     private String updateCar;
     @Value("${car.selectCarById}")
@@ -46,19 +47,31 @@ public class CarDaoImpl implements CarDao {
     private String countCarsById;
     @Value("${car.dateOfCreationById}")
     private String dateOfCreationById;
+    @Value("${car.pagingDto}")
+    private String pagingDto;
+
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    @Override
+    @Loggable
+    public List<Car> getPagingList(Integer min, Integer max){
+        MapSqlParameterSource parameterSource=new MapSqlParameterSource("min", min);
+        parameterSource.addValue("max", max);
+        List<Car> carList=namedParameterJdbcTemplate.query(pagingDto, parameterSource, new CarMapper());
+        return carList;
+    }
+
 
     @Override
     @Loggable
-    public Integer getTotalCountCars(){
-        SqlParameterSource parameterSource=new MapSqlParameterSource();
-        Integer totalCountOfCars=namedParameterJdbcTemplate.queryForObject(countAllCars, parameterSource,Integer.class);
+    public Integer getTotalCount(){
+        Integer totalCountOfCars=namedParameterJdbcTemplate.queryForObject(countAllCars,
+                new MapSqlParameterSource(), Integer.class);
         return totalCountOfCars;
     }
+
 
     @Override
     @Loggable
@@ -67,12 +80,14 @@ public class CarDaoImpl implements CarDao {
         return listOfCars;
     }
 
+
     @Override
     @Loggable
     public Car getCarById(Integer carId) {
-        SqlParameterSource parameterSource=new MapSqlParameterSource("carId",carId);
-        return namedParameterJdbcTemplate.queryForObject(selectCarById, parameterSource, new CarMapper());
+        return namedParameterJdbcTemplate.queryForObject(selectCarById,
+                new MapSqlParameterSource("carId", carId), new CarMapper());
     }
+
 
     @Override
     @Loggable
@@ -81,12 +96,14 @@ public class CarDaoImpl implements CarDao {
         return namedParameterJdbcTemplate.queryForObject(countCarsById, parameterSource, Integer.class);
     }
 
+
     @Override
     @Loggable
     public Integer getCountOfCarsByProducerId(Integer producerId) {
         SqlParameterSource parameterSource=new MapSqlParameterSource("producerId",producerId);
         return namedParameterJdbcTemplate.queryForObject(countOfCarsByProducerId,parameterSource, Integer.class);
     }
+
 
     @Override
     @Loggable
@@ -97,6 +114,7 @@ public class CarDaoImpl implements CarDao {
         return namedParameterJdbcTemplate.query(selectCarsByDateOfCreation, parameterSource, new CarMapper());
     }
 
+
     @Override
     @Loggable
     public Integer addCar(Car car) throws DataAccessException {
@@ -105,14 +123,14 @@ public class CarDaoImpl implements CarDao {
         return keyHolder.getKey().intValue();
     }
 
+
     private MapSqlParameterSource getParametersMap(Car car) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("carId", car.getCarId());
         parameterSource.addValue("carName", car.getCarName());
         parameterSource.addValue("producerId", car.getProducerId());
-        Date date=car.getDateOfCreation().toDateTimeAtStartOfDay().toDate();
-        LOGGER.debug(date.toString());
-        parameterSource.addValue("dateOfCreation", date);
+        parameterSource.addValue("dateOfCreation",
+                car.getDateOfCreation().toDateTimeAtStartOfDay().toDate());
         return parameterSource;
     }
 
@@ -122,11 +140,12 @@ public class CarDaoImpl implements CarDao {
         namedParameterJdbcTemplate.update(updateCar, getParametersMap(car));
     }
 
+
     @Override
     @Loggable
     public void deleteCar(Integer carId) {
-        SqlParameterSource parameterSource=new MapSqlParameterSource("carId",carId);
-        namedParameterJdbcTemplate.update(deleteCar, parameterSource);
+        namedParameterJdbcTemplate.update(deleteCar,
+                new MapSqlParameterSource("carId",carId));
     }
 
     private class CarMapper implements RowMapper<Car> {
@@ -134,11 +153,12 @@ public class CarDaoImpl implements CarDao {
         public Car mapRow(ResultSet resultSet, int i) throws SQLException {
             Date date=resultSet.getTimestamp("dateOfCreation");
             LocalDate lDate=new LocalDate(date);
-            Car car = new Car(resultSet.getInt("carId"),
+            Car car=new Car(resultSet.getInt("carId"),
                     resultSet.getString("carName"),
                     resultSet.getInt("producerId"),
                     lDate);
             return car;
         }
     }
+
 }

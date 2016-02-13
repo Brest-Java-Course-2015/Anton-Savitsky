@@ -390,6 +390,8 @@
     "forms.less",
     "buttons.less",
     "glyphicons.less",
+    "pagination.less",
+    "pager.less",
     "labels.less",
     "alerts.less",
     "list-group.less",
@@ -401,5 +403,5 @@
     "modals.less"
   ],
   "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=b2f9321cccc1b32ed1e6"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=0d28d3460d2b989becd6"
 }

@@ -91,7 +91,7 @@ public class CarRestControllerMockTest {
         replay(carServiceMock);
         String car=new ObjectMapper().writeValueAsString(new Car(1));
         mockMvc.perform(
-                get("/car?id=1")
+                get("/car/1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -104,7 +104,7 @@ public class CarRestControllerMockTest {
         expectLastCall().once();
         replay(carServiceMock);
         mockMvc.perform(
-                delete("/car?id=1")
+                delete("/car/1")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -116,7 +116,7 @@ public class CarRestControllerMockTest {
         replay(carServiceMock);
         String cars="["+new ObjectMapper().writeValueAsString(new Car(0))+","+new ObjectMapper().writeValueAsString(new Car(1))+"]";
         mockMvc.perform(
-                get("/cars")
+                get("/car")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -128,7 +128,7 @@ public class CarRestControllerMockTest {
         expect(carServiceMock.getCarsByDateDto(anyObject(LocalDate.class), anyObject(LocalDate.class))).andReturn(new CarDto());
         replay(carServiceMock);
         mockMvc.perform(
-                get("/carsdtobydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
+                get("/car/dto/date?dateBefore=10/10/2015&dateAfter=15/10/2015")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -140,7 +140,7 @@ public class CarRestControllerMockTest {
         expect(carServiceMock.getCarsDto()).andReturn(new CarDto());
         replay(carServiceMock);
         mockMvc.perform(
-                get("/carsdto")
+                get("/car/dto")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

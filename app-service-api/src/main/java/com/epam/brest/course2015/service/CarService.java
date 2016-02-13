@@ -2,6 +2,7 @@ package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.CarPagingDto;
 import org.joda.time.LocalDate;
 
 import java.util.List;
@@ -19,4 +20,6 @@ public interface CarService {
     List<Car> getAllCars();
     CarDto getCarsDto();
     CarDto getCarsByDateDto(LocalDate dateBefore, LocalDate dateAfter);
+    CarPagingDto getCarPagingDto(Integer min, Integer max);
+    CarPagingDto getCarsByPage(Integer min, Integer max);//changed since 11/02
 }

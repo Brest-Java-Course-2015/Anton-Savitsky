@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -24,6 +25,13 @@ import static org.junit.Assert.assertTrue;
 public class CarDaoImplTest  {
     @Autowired
     private CarDao carDao;
+
+    @Test
+    public void testGetPagingList(){
+        List<Car> list=carDao.getPagingList(1, 2);
+        assertNotNull(list);
+        assertTrue(list.size()==2);
+    }
 
     @Test
     public void testGetCarById(){
@@ -94,16 +102,8 @@ public class CarDaoImplTest  {
     }
 
     @Test
-    public void testGetTotalCountCars(){
-        List<Car> cars=carDao.getAllCars();
-        assertNotNull(cars);
-        int total=carDao.getTotalCountCars();
-        assertTrue(cars.size()==total);
-    }
-
-    @Test
     public void testDeleteCar() throws Exception {
-        int sizeBeforeDelete = carDao.getTotalCountCars();
+        int sizeBeforeDelete = carDao.getAllCars().size();
         assertTrue(sizeBeforeDelete > 0);
         carDao.deleteCar(1);
         assertTrue((sizeBeforeDelete - 1) == carDao.getAllCars().size());

@@ -3,6 +3,7 @@ package com.epam.brest.course2015.service;
 import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
+import com.epam.brest.course2015.dto.CarPagingDto;
 import com.epam.brest.course2015.test.Loggable;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -154,5 +155,21 @@ public class CarServiceImpl implements CarService {
             carDto.setTotal(0);
         }
         return carDto;
+    }
+
+
+    @Loggable
+    @Override
+    public CarPagingDto getCarPagingDto(Integer min, Integer max){
+        List<Car> selectedCarList=carDao.getPagingList(min, max);
+        Integer totalRows=carDao.getTotalCount();
+        return new CarPagingDto(selectedCarList, totalRows);
+    }
+
+
+    @Loggable
+    @Override
+    public CarPagingDto getCarsByPage(Integer min, Integer max){
+        return new CarPagingDto(carDao.getPagingList(min, max), 0);//changed since 11/02
     }
 }
