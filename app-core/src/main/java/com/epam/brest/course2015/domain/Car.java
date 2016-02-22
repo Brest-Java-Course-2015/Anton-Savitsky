@@ -16,11 +16,22 @@ public class Car {
     @JsonSerialize(using=com.epam.brest.course2015.test.JsonDateSerializer.class)
     private LocalDate dateOfCreation;
 
+    private String producerName;
+
+    public Car(Integer carId, String carName, Integer producerId, LocalDate dateOfCreation, String producerName){
+        this.carId=carId;
+        this.producerId=producerId;
+        this.carName=carName;
+        this.dateOfCreation=dateOfCreation;
+        this.producerName=producerName;
+    }
+
     public Car(Integer carId, String carName, Integer producerId, LocalDate dateOfCreation){
         this.carId=carId;
         this.producerId=producerId;
         this.carName=carName;
         this.dateOfCreation=dateOfCreation;
+        this.producerName=producerName;
     }
 
     public Car(){}
@@ -68,6 +79,15 @@ public class Car {
         this.dateOfCreation = dateOfCreation;
     }
 
+
+    public String getProducerName() {
+        return producerName;
+    }
+
+    public void setProducerName(String producerName) {
+        this.producerName = producerName;
+    }
+
     @Override
     public String toString() {
         return "Car: {" +
@@ -75,6 +95,7 @@ public class Car {
                 ", carName='" + carName +
                 ", producerId=" + producerId +
                 ", dateOfCreation=" + dateOfCreation +
+                ", producerName=" + producerName +
                 '}';
     }
 }

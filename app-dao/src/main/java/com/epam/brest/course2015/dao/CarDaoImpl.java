@@ -29,8 +29,6 @@ public class CarDaoImpl implements CarDao {
     private String updateCar;
     @Value("${car.selectCarById}")
     private String selectCarById;
-    @Value("${car.selectCarByName}")
-    private String selectCarByName;
     @Value("${car.countOfCarsByProducerId}")
     private String countOfCarsByProducerId;
     @Value("${car.selectCarsByDateOfCreation}")
@@ -51,6 +49,7 @@ public class CarDaoImpl implements CarDao {
     private String pagingDto;
 
 
+
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -62,7 +61,6 @@ public class CarDaoImpl implements CarDao {
         List<Car> carList=namedParameterJdbcTemplate.query(pagingDto, parameterSource, new CarMapper());
         return carList;
     }
-
 
     @Override
     @Loggable
@@ -79,7 +77,6 @@ public class CarDaoImpl implements CarDao {
         List<Car> listOfCars=namedParameterJdbcTemplate.query(selectAll, new CarMapper());
         return listOfCars;
     }
-
 
     @Override
     @Loggable
@@ -156,7 +153,8 @@ public class CarDaoImpl implements CarDao {
             Car car=new Car(resultSet.getInt("carId"),
                     resultSet.getString("carName"),
                     resultSet.getInt("producerId"),
-                    lDate);
+                    lDate,
+                    resultSet.getString("producerName"));
             return car;
         }
     }

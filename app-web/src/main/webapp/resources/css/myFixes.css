@@ -1,0 +1,28 @@
+.mybutton {
+    -webkit-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.form-group.required .control-label:after {
+    color:red;
+}
+.error input
+{
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+}
+
+.myFooter {
+    display: block;
+    color: white;
+    font-family: sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
  * Created by antonsavitsky on 15.01.16.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(value = ElementType.METHOD)
+@Target(ElementType.METHOD)
 public @interface Loggable {
 }
