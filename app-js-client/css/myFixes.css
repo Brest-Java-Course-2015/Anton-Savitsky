@@ -14,6 +14,8 @@
 }
 
 .error-message {
+    font-family: cursive;
+    font-size: small;
     color: red;
 }
 

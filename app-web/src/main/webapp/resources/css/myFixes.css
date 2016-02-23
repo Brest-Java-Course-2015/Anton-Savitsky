@@ -8,12 +8,14 @@
 .form-group.required .control-label:after {
     color:red;
 }
+
 .error input
 {
     border: 1px solid red;
 }
 
 .error-message {
+    font-size: 10px;
     color: red;
 }
 
@@ -25,4 +27,10 @@
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+}
+
+.addbutton {
+    float: right;
+    position:relative;
+    right: 50px;
 }

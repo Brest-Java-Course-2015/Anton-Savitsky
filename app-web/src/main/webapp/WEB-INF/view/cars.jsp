@@ -7,6 +7,7 @@
 <h1>${mapping}</h1>
 <head>
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet"/>
+    <link href="<c:url value="/resources/css/myFixes.css"/>" rel="stylesheet"/>
 </head>
 <body>
 <div class="table-responsive">
@@ -37,8 +38,8 @@
             </tr>
         </tfoot>
     </table>
+    <button id="addCar" class="addbutton">Добавить автомобиль</button>
 </div>
-
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>
 <script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
 <script src="<c:url value="/resources/js/cars.js" />"></script>

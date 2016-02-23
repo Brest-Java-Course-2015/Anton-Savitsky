@@ -90,15 +90,14 @@ public class TestCarWebController {
         expectLastCall().once();
         replay(carServiceMock);
         mockMvc.perform(
-                delete("/car/delete/1")
-                        .accept(MediaType.APPLICATION_JSON))
+                post("/car/delete/1"))
                 .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(forwardedUrl("/car"));
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/car"));
     }
 
     @Test
-    public void testUpdateCar() throws Exception {
+    public void testUpdateCarForm() throws Exception {
         expect(carServiceMock.getCarById(1)).andReturn(new Car(1));
         replay(carServiceMock);
         mockMvc.perform(
@@ -106,6 +105,31 @@ public class TestCarWebController {
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl("/WEB-INF/view/car.jsp"));
+                .andExpect(forwardedUrl("/WEB-INF/view/updatecar.jsp"));
+    }
+
+    @Test
+    public void testSaveUpdatedCar() throws Exception {
+        carServiceMock.updateCar(anyObject(Car.class));
+        expectLastCall().once();
+        replay(carServiceMock);
+        mockMvc.perform(
+                post("/car/update/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/car"));
+    }
+
+    @Test
+    public void testAddCar() throws Exception {
+        expect(carServiceMock.addCar(anyObject(Car.class))).andReturn(1);
+        replay(carServiceMock);
+        mockMvc.perform(
+                post("/car/add")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/car"));
     }
 }
