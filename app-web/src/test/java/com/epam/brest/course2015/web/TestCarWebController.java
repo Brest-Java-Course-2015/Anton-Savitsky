@@ -3,6 +3,7 @@ package com.epam.brest.course2015.web;
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarService;
+import org.joda.time.LocalDate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +36,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 
-
 /**
  * Created by antonsavitsky on 21.02.16.
  */
@@ -43,8 +43,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @ContextConfiguration(locations = {"classpath:test-config.xml"})
 @WebAppConfiguration
 public class TestCarWebController {
-    private static String restPrefix="http://localhost:8081/rest/";
-
     @Autowired
     private CarWebController carWebController;
 
@@ -105,7 +103,7 @@ public class TestCarWebController {
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl("/WEB-INF/view/updatecar.jsp"));
+                .andExpect(forwardedUrl("/WEB-INF/view/carform.jsp"));
     }
 
     @Test
@@ -131,5 +129,17 @@ public class TestCarWebController {
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/car"));
+    }
+
+    @Test
+    public void testGetCarsByDateDto() throws Exception {
+        expect(carServiceMock.getCarsByDateDto(anyObject(LocalDate.class), anyObject(LocalDate.class))).andReturn(new CarDto());
+        replay(carServiceMock);
+        mockMvc.perform(
+                get("/car/carsbydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(forwardedUrl("/WEB-INF/view/carsbydate.jsp"));
     }
 }

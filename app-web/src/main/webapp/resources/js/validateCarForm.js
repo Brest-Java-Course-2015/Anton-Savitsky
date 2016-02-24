@@ -4,7 +4,7 @@
 $("#carForm").submit(function(event) {
     console.log("validation...");
     if(validate(document.getElementById("carForm"))) {
-        if (confirm("Вы действительно хотите изменить\nданные об автомобиле?")) {
+        if (confirm("Вы действительно хотите сохранить изменения?")) {
             console.log("submitted");
             return true;
         } else event.preventDefault();
