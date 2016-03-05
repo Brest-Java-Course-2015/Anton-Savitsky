@@ -35,10 +35,12 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--
     <jdbc:initialize-database data-source="dataSource">
         <jdbc:script location="classpath:create-tables.sql"/>
         <jdbc:script location="classpath:data-script.sql"/>
     </jdbc:initialize-database>
+    -->
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
@@ -78,4 +80,13 @@
 
     <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
+    <!--Liquid Lib-->
+    <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" ref="dataSource" />
+        <property name="changeLog" value="classpath:db-changelog.xml" />
+        <!--
+        contexts specifies the runtime contexts to use.
+        -->
+        <property name="contexts" value="test, production" />
+    </bean>
 </beans>

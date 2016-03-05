@@ -2,13 +2,27 @@ package com.epam.brest.course2015.domain;
 
 import com.epam.brest.course2015.test.Loggable;
 
+import javax.persistence.*;
+import java.util.List;
+
 /**
  * Created by antonsavitsky on 02.12.15.
  */
+@Entity
+@Table(name = "PRODUCER")
 public class Producer {
+    @Id
+    @Column(name = "producerId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer producerId;
+
+    @Column(name = "producerName")
     private String producerName;
+
+    @Column(name = "country")
     private String country;
+
+    @Transient
     private Integer countOfCars;
 
     public Producer(Integer producerId, String producerName, String country){
@@ -32,6 +46,7 @@ public class Producer {
     public Producer(String producerName){
         this.producerName=producerName;
     }
+
     public Producer(){}
 
     public Producer(Integer producerId){
@@ -75,4 +90,5 @@ public class Producer {
                 ", countOfCars="+ countOfCars+
                 '}');
     }
+
 }

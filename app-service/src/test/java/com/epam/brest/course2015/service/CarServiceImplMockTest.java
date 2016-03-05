@@ -29,7 +29,6 @@ import static org.easymock.EasyMock.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-service-mock-test.xml"})
-@Transactional
 public class CarServiceImplMockTest {
     private  Car testCar1;
     private Car testCar2;

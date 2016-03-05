@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:test-spring-dao.xml"})
-@Transactional()
+@Transactional
 public class ProducerDaoImplTest {
     @Autowired
     private ProducerDao producerDao;

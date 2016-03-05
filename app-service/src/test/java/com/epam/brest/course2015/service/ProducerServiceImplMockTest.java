@@ -26,7 +26,6 @@ import static org.easymock.EasyMock.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-service-mock-test.xml"})
-@Transactional
 public class ProducerServiceImplMockTest {
     private Producer testProducer1;
     private Producer testProducer2;

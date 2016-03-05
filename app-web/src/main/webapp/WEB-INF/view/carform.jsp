@@ -3,6 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html>
 <head>
@@ -24,6 +25,7 @@
         </tr>
         <tr>
           <th><label for="dateOfCreation">Дата создания:</label></th>
+          <tags:localDate date="${car.dateOfCreation}" pattern="dd/MM/yyyy"/>
           <td><span><form:input path="dateOfCreation" size="30" id="dateOfCreation"/></span></td>
         </tr>
         <tr>
