@@ -22,6 +22,9 @@ public class Producer {
     @Column(name = "country")
     private String country;
 
+    @OneToMany(mappedBy = "producer")
+    private List<Car> cars;
+
     @Transient
     private Integer countOfCars;
 

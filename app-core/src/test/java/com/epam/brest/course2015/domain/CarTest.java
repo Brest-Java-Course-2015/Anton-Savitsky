@@ -30,13 +30,13 @@ public class CarTest {
         car.setCarName("5dhr");
         assertEquals("5dhr", car.getCarName());
     }
-
+/*
     @Test
     public void testGetProducerId(){
         car.setProducerId(1);
         assertEquals((Integer)1, car.getProducerId());
     }
-
+*/
     @Test
     public void testGetDateOfCreation(){
         DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy");

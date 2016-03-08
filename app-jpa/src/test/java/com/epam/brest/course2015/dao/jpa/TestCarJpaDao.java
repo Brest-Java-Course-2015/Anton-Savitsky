@@ -2,6 +2,7 @@ package com.epam.brest.course2015.dao.jpa;
 
 import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -22,8 +23,8 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:test-spring-jpa-config.xml"})
 @Transactional
 public class TestCarJpaDao {
-    public static Car testAddCar = new Car("newCar", 1, convertToDate("23/06/2015"));
-    public static Car testUpdateCar = new Car(1,"updatedCar", 0, convertToDate("23/02/2013"));
+    public static Car testAddCar = new Car("newCar", convertToDate("23/06/2015"), new Producer());
+    public static Car testUpdateCar = new Car(1,"updatedCar", convertToDate("23/02/2013"), new Producer());
 
     @Autowired
     private CarDao carDao;
@@ -66,12 +67,12 @@ public class TestCarJpaDao {
         Assert.isTrue(i.equals(3));
     }
 
-    /*@Test
+    @Test
     public void testGetAllCars(){
         List<Car> cars=carDao.getAllCars();
         Assert.notNull(cars);
         Assert.isTrue(cars.size()==3);
-    }*/
+    }
 
     @Test
     public void testGetCountById(){
