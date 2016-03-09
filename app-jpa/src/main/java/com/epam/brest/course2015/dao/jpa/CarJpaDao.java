@@ -2,6 +2,7 @@ package com.epam.brest.course2015.dao.jpa;
 
 import com.epam.brest.course2015.dao.CarDao;
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.test.Loggable;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +27,8 @@ public class CarJpaDao implements CarDao{
     private String getAll;
     @Value("${car.getCountById}")
     private String getCountById;
+    @Value("${car.getListOfCarsByDateOfCreation}")
+    private String getListOfCarsByDateOfCreation;;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -39,14 +42,16 @@ public class CarJpaDao implements CarDao{
     }
 
     @Override
+    @Loggable
     public List<Car> getPagingList(Integer min,
                                    Integer max) {
-        return null;
+        return entityManager.createQuery(getAll).setFirstResult(min).setMaxResults(max-min+1).getResultList();
     }
 
     @Loggable
     @Override
     public Car getCarById(Integer carId) {
+        //uses caching
         return entityManager.find(Car.class, carId);
     }
 
@@ -60,20 +65,22 @@ public class CarJpaDao implements CarDao{
     }
 
     @Override
+    @Loggable
     public List<Car> getListOfCarsByDateOfCreation(LocalDate dateBefore,
                                                    LocalDate dateAfter) {
-        //entityManager.createQuery()
-        return null;
+        return entityManager.createQuery(getListOfCarsByDateOfCreation)
+                .setParameter("dateBefore", dateBefore)
+                .setParameter("dateAfter", dateAfter)
+                .getResultList();
     }
-
 
     @Override
     @Loggable
     public Integer addCar(Car car) {
         entityManager.persist(car);
-        return entityManager.merge(car).getCarId();
+        car.setProducer(entityManager.find(Producer.class, car.getProducer().getProducerId()));
+        return car.getCarId();
     }
-
 
     @Override
     @Loggable
@@ -81,11 +88,10 @@ public class CarJpaDao implements CarDao{
         entityManager.merge(car);
     }
 
-
     @Override
     @Loggable
     public void deleteCar(Integer carId) {
-        entityManager.remove(getCarById(carId));
+            entityManager.remove(getCarById(carId));
     }
 
 

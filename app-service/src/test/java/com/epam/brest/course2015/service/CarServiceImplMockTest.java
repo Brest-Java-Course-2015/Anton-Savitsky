@@ -42,8 +42,8 @@ public class CarServiceImplMockTest {
 
     @Before
     public void setUp() throws ParseException {
-        testCar1=new Car(1,"name1",1,convertToDate("11/11/2011"));
-        testCar2=new Car("name2",1,convertToDate("11/11/2012"));
+        testCar1=new Car(1,"name1",convertToDate("11/11/2011"),new Producer(1));
+        testCar2=new Car("name2",convertToDate("11/11/2012"),new Producer(1));
         testProducer1=new Producer(1, "producer1", "country1");
     }
 
@@ -113,7 +113,6 @@ public class CarServiceImplMockTest {
 
     @Test
     public void testGetAllCars(){
-
         expect(carMockDao.getAllCars()).andReturn(Arrays.<Car>asList(testCar1,testCar2));
         replay(carMockDao);
         List<Car> resList=carService.getAllCars();

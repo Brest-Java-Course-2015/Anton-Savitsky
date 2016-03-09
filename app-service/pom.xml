@@ -18,6 +18,10 @@
         </dependency>
         <dependency>
             <groupId>com.epam.brest.course2015</groupId>
+            <artifactId>app-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.brest.course2015</groupId>
             <artifactId>app-service-api</artifactId>
         </dependency>
         <dependency>

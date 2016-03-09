@@ -33,10 +33,4 @@ public class ProducerTest {
         producer.setCountry("Korea");
         assertEquals(producer.getCountry(), "Korea");
     }
-
-    @Test
-    public void testGetCountOfCars(){
-        producer.setCountOfCars(5);
-        assertEquals(producer.getCountOfCars(), (Integer)5);
-    }
 }

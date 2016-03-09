@@ -16,6 +16,9 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by antonsavitsky on 02.03.16.
  */
@@ -23,8 +26,8 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:test-spring-jpa-config.xml"})
 @Transactional
 public class TestCarJpaDao {
-    public static Car testAddCar = new Car("newCar", convertToDate("23/06/2015"), new Producer());
-    public static Car testUpdateCar = new Car(1,"updatedCar", convertToDate("23/02/2013"), new Producer());
+    public static Car testAddCar = new Car("newCar", convertToDate("23/06/2015"), new Producer(1));
+    public static Car testUpdateCar = new Car(1,"updatedCar", convertToDate("23/02/2013"), new Producer(1));
 
     @Autowired
     private CarDao carDao;
@@ -38,7 +41,7 @@ public class TestCarJpaDao {
     @Test
     public void testUpdateCar(){
         carDao.updateCar(testUpdateCar);
-        //Assert.isTrue(carDao.);
+        Assert.isTrue(carDao.getCarById(testUpdateCar.getCarId()).getCarName().equals("updatedCar"));
     }
 
     @Test
@@ -50,7 +53,7 @@ public class TestCarJpaDao {
     @Test
     public void testDeleteCar(){
         carDao.deleteCar(1);
-        System.out.println(carDao.getCarById(1));
+        Assert.isNull(carDao.getCarById(1));
     }
 
     @Test
@@ -79,6 +82,18 @@ public class TestCarJpaDao {
         Integer i=carDao.getCountCarsById(0);
         Assert.notNull(i);
         Assert.isTrue(i.equals(1));
+    }
+
+    @Test
+    public void testGetListOfCarsByDate(){
+        carDao.getListOfCarsByDateOfCreation(convertToDate("12/10/2015"), convertToDate("15/10/2015"));
+    }
+
+    @Test
+    public void testGetPagingList(){
+        List<Car> list=carDao.getPagingList(1, 2);
+        Assert.notNull(list);
+        Assert.isTrue(list.size() == 2);
     }
 
     private static LocalDate convertToDate(String s){

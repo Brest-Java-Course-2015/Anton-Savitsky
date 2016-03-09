@@ -85,7 +85,7 @@ public class CarServiceImpl implements CarService {
     public Integer addCar(Car car) throws DataAccessException {
         Assert.notNull(car, carNotNull);
         Assert.isNull(car.getCarId(), carIdNull);
-        Assert.notNull(car.getProducerId(), producerIdNotNull);
+        Assert.notNull(car.getProducer().getProducerId(), producerIdNotNull);
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
         return carDao.addCar(car);
@@ -104,7 +104,7 @@ public class CarServiceImpl implements CarService {
         }
         Assert.hasText(car.getCarName(), carNameNotNull);
         Assert.notNull(car.getDateOfCreation(), dateNotNull);
-        Assert.notNull(car.getProducerId(), producerIdNotNull);
+        Assert.notNull(car.getProducer().getProducerId(), producerIdNotNull);
         carDao.updateCar(car);
     }
 

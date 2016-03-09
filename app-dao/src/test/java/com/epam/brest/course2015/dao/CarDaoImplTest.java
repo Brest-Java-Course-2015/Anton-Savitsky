@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -70,14 +71,14 @@ public class CarDaoImplTest  {
 
     @Test
     public void testAddCar() throws Exception {
-        Car car=new Car("9rt", 0, convertToDate("11/12/2015"));
+        Car car=new Car("9rt", convertToDate("11/12/2015"), new Producer(0));
         Integer carId = carDao.addCar(car);
         assertNotNull(carId);
         Car addedCar = carDao.getCarById(carId);
         assertNotNull(addedCar);
         assertTrue(carId.equals(addedCar.getCarId()));
         assertTrue(car.getCarName().equals(addedCar.getCarName()));
-        assertTrue(car.getProducerId().equals(addedCar.getProducerId()));
+        assertTrue(car.getProducer().getProducerId().equals(addedCar.getProducer().getProducerId()));
         assertNotNull(car.getDateOfCreation());
     }
 
@@ -96,7 +97,7 @@ public class CarDaoImplTest  {
         Car updatedCar = carDao.getCarById(car.getCarId());
         assertTrue(car.getCarId().equals(updatedCar.getCarId()));
         assertTrue(car.getCarName().equals(updatedCar.getCarName()));
-        assertTrue(car.getProducerId().equals(updatedCar.getProducerId()));
+        assertTrue(car.getProducer().getProducerId().equals(updatedCar.getProducer().getProducerId()));
         assertTrue(car.getDateOfCreation().equals(updatedCar.getDateOfCreation()));
     }
 

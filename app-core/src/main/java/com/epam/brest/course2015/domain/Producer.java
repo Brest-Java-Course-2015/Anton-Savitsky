@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.domain;
 
 import com.epam.brest.course2015.test.Loggable;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,11 +23,18 @@ public class Producer {
     @Column(name = "country")
     private String country;
 
-    @OneToMany(mappedBy = "producer")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "producer", cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
     private List<Car> cars;
 
-    @Transient
-    private Integer countOfCars;
+    public Producer(Integer producerId){
+        this.producerId=producerId;
+    }
+
+    public Producer(Integer producerId, String producerName){
+        this.producerId=producerId;
+        this.producerName=producerName;
+    }
 
     public Producer(Integer producerId, String producerName, String country){
         this.producerId=producerId;
@@ -34,11 +42,11 @@ public class Producer {
         this.country=country;
     }
 
-    public Producer(Integer producerId, String producerName, String country, Integer countOfCars){
+    public Producer(Integer producerId, String producerName, String country, List<Car> cars){
         this.producerId=producerId;
         this.producerName=producerName;
         this.country=country;
-        this.countOfCars=countOfCars;
+        this.cars=cars;
     }
 
     public Producer(String producerName, String country){
@@ -52,9 +60,14 @@ public class Producer {
 
     public Producer(){}
 
-    public Producer(Integer producerId){
-        this.producerId=producerId;
+    public List<Car> getCars() {
+        return cars;
     }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     @Loggable
     public Integer getProducerId() {
         return producerId;
@@ -79,10 +92,6 @@ public class Producer {
     public void setCountry(String country) {
         this.country = country;
     }
-    @Loggable
-    public Integer getCountOfCars(){ return countOfCars;}
-    @Loggable
-    public void setCountOfCars(Integer countOfCars){this.countOfCars=countOfCars;}
 
     @Override
     public String toString() {
@@ -90,8 +99,8 @@ public class Producer {
                 "producerId=" + producerId +
                 ", producerName='" + producerName +
                 ", country=" + country +
-                ", countOfCars="+ countOfCars+
+                ", countOfCars="+ (cars==null ? 0: cars.size())+
+                //"\nCars: "+ (cars==null ? "null" : cars.toString())+
                 '}');
     }
-
 }

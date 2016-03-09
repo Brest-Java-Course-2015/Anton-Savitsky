@@ -16,48 +16,44 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
+@RequestMapping(value="/producer")
 public class ProducerRestController {
     @Autowired
     private ProducerService producerService;
 
-    @RequestMapping(value="/producers",
-            method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @Loggable
     public @ResponseBody
     List<Producer> getAllProducers(){
         return producerService.getAllProducers();
     }
 
-    @RequestMapping(value="/producer",
-            method = RequestMethod.GET)
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     @Loggable
-    public @ResponseBody Producer getProducerById(@RequestParam(value="id") Integer id){
+    public @ResponseBody Producer getProducerById(@PathVariable("id") Integer id){
         return producerService.getProducerById(id);
     }
 
-    @RequestMapping(value = "/producer",
-            method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     @Loggable
     public Integer addProducer(@RequestBody Producer producer) throws ParseException {
         return producerService.addProducer(producer);
     }
 
-    @RequestMapping(value="/producer", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     @Loggable
     public void updateProducer(@RequestBody Producer producer){
         producerService.updateProducer(producer);
     }
 
-    @RequestMapping(value = "/producer",
-            method = RequestMethod.DELETE)
+    @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
     @Loggable
-    public void deleteProducer(@RequestParam(value = "id")
-                               Integer id) {
+    public void deleteProducer(@PathVariable("id") Integer id) {
         producerService.deleteProducer(id);
     }
 
-    @RequestMapping(value="/producersdto",
+    @RequestMapping(value="/dto",
             method = RequestMethod.GET)
     @Loggable
     public @ResponseBody

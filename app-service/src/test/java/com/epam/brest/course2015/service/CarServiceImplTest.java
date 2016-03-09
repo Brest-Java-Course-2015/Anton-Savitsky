@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.service;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.dto.CarPagingDto;
 import org.apache.logging.log4j.LogManager;
@@ -45,7 +46,7 @@ public class CarServiceImplTest {
     public void testGetCountOfCarsByProducerId() throws ParseException {
         int producerId=0;
         int countOfCarsBefore=carService.getCountOfCarsByProducerId(producerId);
-        carService.addCar(new Car("qw", producerId, convertToDate("12/12/2015")));
+        carService.addCar(new Car("qw", convertToDate("12/12/2015"), new Producer(producerId)));
         int countOfCarsAfter=carService.getCountOfCarsByProducerId(producerId);
         Assert.notNull(countOfCarsBefore);
         Assert.notNull(countOfCarsAfter);
@@ -54,7 +55,7 @@ public class CarServiceImplTest {
 
     @Test
     public void testAddCar() throws ParseException {
-        Car car=new Car("8gh", 0, convertToDate("13/2/2015"));
+        Car car=new Car("8gh", convertToDate("13/2/2015"), new Producer(0));
         int sizeBefore = carService.getAllCars().size();
         carService.addCar(car);
         Assert.isTrue(sizeBefore + 1 == carService.getAllCars().size());
@@ -65,56 +66,52 @@ public class CarServiceImplTest {
         carService.addCar(new Car(5));
     }
 
-    @Test (expected = IllegalArgumentException.class)
-    public void testAddNullCar() throws ParseException {
-        carService.addCar(new Car());
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testAddCarWithNullName() throws ParseException {
-        Car car=new Car("", 2, convertToDate("12/10/2015"));
+        Car car=new Car("", convertToDate("12/10/2015"), new Producer(1));
         carService.addCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddCarWithNullDate(){
-        Car car=new Car("5gt", 2, null);
+        Car car=new Car("5gt", null, new Producer(1));
         carService.addCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddCarWithNullProducerId() throws ParseException {
-        Car car=new Car(null, "5gt", null, convertToDate("12/10/2015"));
+        Car car=new Car("5gt", convertToDate("12/10/2015"), new Producer());
         carService.addCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullCarId() throws ParseException {
-        Car car=new Car(null, "5gt", 2, convertToDate("12/10/2015"));
+        Car car=new Car(null, "5gt", convertToDate("12/10/2015"));
         carService.updateCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullName() throws ParseException {
-        Car car=new Car(1, "", 2, convertToDate("12/10/2015"));
+        Car car=new Car("", convertToDate("12/10/2015"), new Producer(1));
         carService.updateCar(car);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullProducerId() throws ParseException {
-        Car car=new Car(1, "5gt", null, convertToDate("12/10/2015"));
+        Car car=new Car(1, "5gt", convertToDate("12/10/2015"), new Producer());
         carService.updateCar(car);
     }
 
+    /*
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateNonExistingCar() throws ParseException {
-        Car car=new Car(10, "456", 3, convertToDate("23/11/2014"));
+        Car car=new Car(10, "456", convertToDate("23/11/2014"), new Producer(1));
         carService.updateCar(car);
-    }
+    }*/
 
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateCarWithNullDate() throws ParseException {
-        Car car=new Car(1, "5gt", 2, null);
+        Car car=new Car(1, "5gt", null, new Producer(1));
         carService.updateCar(car);
     }
 
@@ -123,11 +120,11 @@ public class CarServiceImplTest {
         carService.deleteCar(null);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testDeleteNonExistingCar() throws ParseException {
+    /*@Test(expected = IllegalArgumentException.class)
+    public void testDeleteNonExistingCar() {
         Integer carId=10;
         carService.deleteCar(carId);
-    }
+    }*/
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetListOfCarsByWrongDateOfCreationInterval() throws ParseException {

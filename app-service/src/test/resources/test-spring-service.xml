@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath*:test-spring-db.xml"/>
+    <import resource="classpath:test-spring-jpa-config.xml"/>
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -14,12 +14,14 @@
                 <value>classpath:service.properties</value>
             </list>
         </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 
-    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl"/>
+    <!--<bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoImpl"/>
 
     <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoImpl"/>
 
+    -->
     <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
         <property name="carDao" ref="carDao"/>
     </bean>
@@ -27,6 +29,4 @@
     <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
         <property name="producerDao" ref="producerDao"/>
     </bean>
-
-
 </beans>

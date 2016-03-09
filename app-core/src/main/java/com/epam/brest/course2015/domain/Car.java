@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.domain;
 
 import com.epam.brest.course2015.test.Loggable;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.annotations.Type;
@@ -20,17 +21,10 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer carId;
 
-    @ManyToOne(optional = false)
+    @JsonBackReference
+    @ManyToOne(optional = false, cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name="producerId")
     private Producer producer;
-
-    public Producer getProducer() {
-        return producer;
-    }
-
-    public void setProducer(Producer producer) {
-        this.producer = producer;
-    }
 
     @Column(name = "carName")
     private String carName;
@@ -41,7 +35,12 @@ public class Car {
     @Column(name="dateOfCreation")
     private LocalDate dateOfCreation;
 
+    public Car(String carName, LocalDate dateOfCreation){
+        this.carName=carName;
+        this.dateOfCreation=dateOfCreation;
+    }
 
+    //main constructor
     public Car(Integer carId, String carName, LocalDate dateOfCreation, Producer producer){
         this.carId=carId;
         this.producer=producer;
@@ -65,6 +64,16 @@ public class Car {
         this.carName=carName;
         this.producer=producer;
         this.dateOfCreation=dateOfCreation;
+    }
+
+    @Loggable
+    public Producer getProducer() {
+        return producer;
+    }
+
+    @Loggable
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 
     @Loggable
@@ -98,9 +107,7 @@ public class Car {
                 "carId=" + carId +
                 ", carName='" + carName +
                 ", dateOfCreation=" + dateOfCreation +
-                ", producerId=" + producer.getProducerId() +
-                ", producerName=" + producer.getProducerName() +
-                ", country="+producer.getCountry()+
+                //", producer="+ producer +
                 '}';
     }
 }

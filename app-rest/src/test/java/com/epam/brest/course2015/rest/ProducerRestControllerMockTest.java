@@ -88,7 +88,7 @@ public class ProducerRestControllerMockTest {
         replay(producerServiceMock);
         String producer=new ObjectMapper().writeValueAsString(new Producer(0));
         mockMvc.perform(
-                get("/producer?id=0")
+                get("/producer/0")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -101,7 +101,7 @@ public class ProducerRestControllerMockTest {
         expectLastCall().once();
         replay(producerServiceMock);
         mockMvc.perform(
-                delete("/producer?id=0")
+                delete("/producer/0")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -112,7 +112,7 @@ public class ProducerRestControllerMockTest {
         expect(producerServiceMock.getProducersDto()).andReturn(new ProducerDto());
         replay(producerServiceMock);
         mockMvc.perform(
-                get("/producersdto")
+                get("/producer/dto")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -125,7 +125,7 @@ public class ProducerRestControllerMockTest {
         replay(producerServiceMock);
         String producers="["+new ObjectMapper().writeValueAsString(new Producer(0))+"]";
         mockMvc.perform(
-                get("/producers")
+                get("/producer")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.test.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +15,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -126,7 +126,7 @@ public class CarDaoImpl implements CarDao {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("carId", car.getCarId());
         parameterSource.addValue("carName", car.getCarName());
-        parameterSource.addValue("producerId", car.getProducerId());
+        parameterSource.addValue("producerId", car.getProducer().getProducerId());
         parameterSource.addValue("dateOfCreation",
                 car.getDateOfCreation().toDateTimeAtStartOfDay().toDate());
         return parameterSource;
@@ -134,7 +134,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     @Loggable
-    public void updateCar(Car car){
+    public void updateCar(Car car) {
         namedParameterJdbcTemplate.update(updateCar, getParametersMap(car));
     }
 
@@ -153,9 +153,8 @@ public class CarDaoImpl implements CarDao {
             LocalDate lDate=new LocalDate(date);
             Car car=new Car(resultSet.getInt("carId"),
                     resultSet.getString("carName"),
-                    resultSet.getInt("producerId"),
                     lDate,
-                    resultSet.getString("producerName"));
+                    new Producer(resultSet.getInt("producerId")));
             return car;
         }
     }

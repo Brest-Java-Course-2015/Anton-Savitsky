@@ -1,6 +1,7 @@
 package com.epam.brest.course2015.rest;
 
 import com.epam.brest.course2015.domain.Car;
+import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -59,7 +60,7 @@ public class CarRestControllerMockTest {
     public void testAddCar() throws Exception {
         expect(carServiceMock.addCar(anyObject(Car.class))).andReturn(3);
         replay(carServiceMock);
-        String car = new ObjectMapper().writeValueAsString(new Car("ert",2,DATE_FORMAT.parseLocalDate("15/09/2013")));
+        String car = new ObjectMapper().writeValueAsString(new Car("ert",DATE_FORMAT.parseLocalDate("15/09/2013"),new Producer(1)));
         mockMvc.perform(
                 post("/car")
                         .accept(MediaType.APPLICATION_JSON)
@@ -75,7 +76,7 @@ public class CarRestControllerMockTest {
         carServiceMock.updateCar(anyObject(Car.class));
         expectLastCall().once();
         replay(carServiceMock);
-        String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",2,DATE_FORMAT.parseLocalDate("15/09/2013")));
+        String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",DATE_FORMAT.parseLocalDate("15/09/2013"), new Producer(1)));
         mockMvc.perform(
                 put("/car")
                 .accept(MediaType.APPLICATION_JSON)

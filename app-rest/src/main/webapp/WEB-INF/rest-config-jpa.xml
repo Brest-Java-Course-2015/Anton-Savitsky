@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+       <mvc:annotation-driven/>
 
        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
               <property name="locations">
                      <list>
                             <value>classpath:database.properties</value>
                             <value>classpath:jpa.properties</value>
+                            <value>classpath:dao.properties</value>
+                            <value>classpath:service.properties</value>
                      </list>
               </property>
+              <property name="ignoreUnresolvablePlaceholders" value="true"/>
        </bean>
 
        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -23,12 +32,6 @@
               <property name="password" value="${jdbc.password}"/>
        </bean>
 
-       <!--
-       <jdbc:initialize-database data-source="dataSource">
-              <jdbc:script location="classpath:create-tables.sql"/>
-              <jdbc:script location="classpath:data-script.sql"/>
-       </jdbc:initialize-database>-->
-
        <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
               <property name="database" value="HSQL"/>
               <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
@@ -36,7 +39,7 @@
               <property name="showSql" value="true"/>
        </bean>
 
-       <bean id="entityManagerFactory" 
+       <bean id="entityManagerFactory"
              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
               <property name="dataSource" ref="dataSource"/>
               <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
@@ -47,6 +50,14 @@
 
        <bean id="producerDao" class="com.epam.brest.course2015.dao.jpa.ProducerJpaDao"/>
 
+       <bean id="carService" class="com.epam.brest.course2015.service.CarServiceImpl">
+              <property name="carDao" ref="carDao"/>
+       </bean>
+
+       <bean id="producerService" class="com.epam.brest.course2015.service.ProducerServiceImpl">
+              <property name="producerDao" ref="producerDao"/>
+       </bean>
+
        <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
        <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
@@ -54,6 +65,21 @@
        <bean id="transactionManagerUser" class="org.springframework.orm.jpa.JpaTransactionManager">
               <property name="entityManagerFactory" ref="entityManagerFactory" />
        </bean>
+
+       <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+              <property name="supportedMediaTypes" value="application/json" />
+              <property name="prettyPrint" value="true" />
+       </bean>
+
+       <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+              <property name="messageConverters">
+                     <list>
+                            <ref bean="jsonConverter"/>
+                     </list>
+              </property>
+       </bean>
+
+       <context:component-scan base-package="com.epam.brest.course2015.rest"/>
 
        <aop:aspectj-autoproxy/>
 
