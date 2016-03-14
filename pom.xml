@@ -8,15 +8,17 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>app-core</module>
-        <module>app-dao-api</module>
-        <module>app-dao</module>
-        <module>app-test</module>
-        <module>app-service-api</module>
-        <module>app-service</module>
-        <module>app-rest</module>
-        <module>app-web</module>
-        <module>app-jpa</module>
+        <module>core</module>
+        <module>dao-api</module>
+        <module>dao-jpa-impl</module>
+        <module>dao-jdbc-template-impl</module>
+        <module>consumer-api</module>
+        <module>consumer-rest-impl</module>
+        <module>transactions-level-api</module>
+        <module>transactions-level-impl</module>
+        <module>test</module>
+        <module>web-app</module>
+        <module>rest-service-provider</module>
     </modules>
 
     <properties>
@@ -32,37 +34,57 @@
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-core</artifactId>
+                <artifactId>core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-dao-api</artifactId>
+                <artifactId>dao-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-dao</artifactId>
+                <artifactId>dao-jdbc-template-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-test</artifactId>
+                <artifactId>dao-jpa-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-service</artifactId>
+                <artifactId>test</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-service-api</artifactId>
+                <artifactId>consumer-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>app-jpa</artifactId>
+                <artifactId>consumer-rest-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>transactions-level-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>transactions-level-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>web-app</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>rest-service-provider</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -158,10 +180,6 @@
                 <artifactId>spring-orm</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-            <!--<dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hiberna</artifactId>
-            </dependency>-->
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
