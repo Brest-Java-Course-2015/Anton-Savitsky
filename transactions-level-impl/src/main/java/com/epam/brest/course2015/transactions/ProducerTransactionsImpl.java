@@ -32,11 +32,8 @@ public class ProducerTransactionsImpl implements ProducerTransactions {
     @Value("${producer.CountryNotNull}")
     private String producerCountryNotNull;
 
-    private ProducerDao producerDao;
     @Autowired
-    public void setProducerDao(ProducerDao producerDao) {
-        this.producerDao = producerDao;
-    }
+    private ProducerDao producerDao;
 
     @Loggable
     @Override

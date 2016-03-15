@@ -39,11 +39,8 @@ public class CarTransactionsImpl implements CarTransactions {
     @Value("${car.DateNotNull}")
     private String dateNotNull;
 
-    private CarDao carDao;
     @Autowired
-    public void setCarDao(CarDao carDao) {
-        this.carDao = carDao;
-    }
+    private CarDao carDao;
 
     @Loggable
     @Override

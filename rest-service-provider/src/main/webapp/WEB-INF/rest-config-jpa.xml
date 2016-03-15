@@ -50,13 +50,9 @@
 
        <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoJpaImpl"/>
 
-       <bean id="carTransactions" class="com.epam.brest.course2015.transactions.CarTransactionsImpl">
-              <property name="carDao" ref="carDao"/>
-       </bean>
+       <bean id="carTransactions" class="com.epam.brest.course2015.transactions.CarTransactionsImpl"/>
 
-       <bean id="producerTransactions" class="com.epam.brest.course2015.transactions.ProducerTransactionsImpl">
-              <property name="producerDao" ref="producerDao"/>
-       </bean>
+       <bean id="producerTransactions" class="com.epam.brest.course2015.transactions.ProducerTransactionsImpl"/>
 
        <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 

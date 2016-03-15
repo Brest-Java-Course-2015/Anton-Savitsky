@@ -42,7 +42,7 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <aop:aspectj-autoproxy/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
