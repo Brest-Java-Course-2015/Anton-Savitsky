@@ -27,4 +27,12 @@ public class CarDto {
     public void setCars(List<Car> cars) {
         this.cars = cars;
     }
+
+    @Override
+    public String toString() {
+        return "CarDto{" +
+                "cars=" + cars +
+                ", total=" + total +
+                '}';
+    }
 }

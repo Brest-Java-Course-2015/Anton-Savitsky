@@ -37,11 +37,9 @@ public class CarPagingDto {
 
     @Override
     public String toString() {
-        String toOutput=new String();
-        ListIterator li=pageList.listIterator();
-        while (li.hasNext())
-            toOutput+=li.next().toString()+", ";
-        toOutput+="total = "+total;
-        return toOutput;
+        return "CarPagingDto{" +
+                "total=" + total +
+                ", pageList=" + pageList +
+                '}';
     }
 }

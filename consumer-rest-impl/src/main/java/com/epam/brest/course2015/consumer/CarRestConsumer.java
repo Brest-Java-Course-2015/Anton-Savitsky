@@ -37,8 +37,9 @@ public class CarRestConsumer implements CarServiceConsumer {
     }
 
     @Override
+    @Loggable
     public List<Car> getAllCars() {
-        return null;
+        return restTemplate.getForObject(restServicesPrefix+"/car",List.class);
     }
 
     @Override
@@ -50,8 +51,9 @@ public class CarRestConsumer implements CarServiceConsumer {
     }
 
     @Override
+    @Loggable
     public Integer addCar(Car car) {
-        return null;
+        return restTemplate.postForObject(restServicesPrefix+"/car", car, Car.class).getCarId();
     }
 
     @Override
@@ -60,27 +62,38 @@ public class CarRestConsumer implements CarServiceConsumer {
     }
 
     @Override
+    @Loggable
     public void deleteCar(Integer id) {
-
+        restTemplate.delete(restServicesPrefix+"/car/{id}", id);
     }
 
     @Override
+    @Loggable
     public CarDto getCarsDto() {
-        return null;
+        return restTemplate.getForObject(restServicesPrefix+"/car/dto", CarDto.class);
     }
 
     @Override
+    @Loggable
     public CarDto getCarsDtoByDate(String dateBefore, String dateAfter) {
-        return null;
+        return restTemplate.getForObject(restServicesPrefix+
+                "/car/dto/date?dateBefore={dateBefore}&dateAfter={dateAfter}",
+                CarDto.class, dateBefore, dateAfter);
     }
 
     @Override
+    @Loggable
     public CarPagingDto getInitPaging(Integer from, Integer to) {
-        return null;
+        return restTemplate.getForObject(restServicesPrefix+
+                "/car/initpaging?from={from}&to={to}", CarPagingDto.class,
+                from, to);
     }
 
     @Override
+    @Loggable
     public CarPagingDto getNextPage(Integer from, Integer to) {
-        return null;
+        return restTemplate.getForObject(restServicesPrefix+
+                "/car/nextpage?from={from}&to={to}", CarPagingDto.class,
+                from, to);
     }
 }

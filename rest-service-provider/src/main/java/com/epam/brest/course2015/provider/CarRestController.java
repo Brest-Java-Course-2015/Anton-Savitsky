@@ -105,5 +105,4 @@ public class CarRestController{
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
         return DATE_FORMAT.parseLocalDate(s);
     }
-
 }

@@ -28,4 +28,12 @@ public class ProducerDto {
     public void setProducers(List<Producer> producers) {
         this.producers = producers;
     }
+
+    @Override
+    public String toString() {
+        return "ProducerDto{" +
+                "producers=" + producers +
+                ", total=" + total +
+                '}';
+    }
 }
