@@ -16,6 +16,7 @@
     <tr>
       <th>Имя</th>
       <th>Страна</th>
+      <th>Кол-во моделей</th>
       <th>Удалить</th>
       <th>Изменить</th>
     </tr>
@@ -24,9 +25,14 @@
     <c:forEach var="producer" items="${dto.producers}">
       <tr>
         <td><c:out value="${producer.producerName}"/></td>
-        <td><c:out value="${producer.country}"/> </td>
-        <td><button id="delete${producer.producerId}" class="mybutton" onclick="deleteProducer(${producer.producerId})"><span class="glyphicon glyphicon-trash"></span></button></td>
-        <td><button id="update${producer.producerId}" class="mybutton" onclick="gotoUpdateProducer(${producer.producerId})"><span class="glyphicon glyphicon-pencil"></span></button></td>
+        <td><c:out value="${producer.country}"/></td>
+        <td><c:out value="${producer.countOfCars}"/></td>
+        <td><button id="delete${producer.producerId}" class="mybutton"
+                    onclick="deleteProducer(${producer.producerId})">
+          <span class="glyphicon glyphicon-trash"></span></button></td>
+        <td><button id="update${producer.producerId}" class="mybutton"
+                    onclick="gotoUpdateProducer(${producer.producerId})">
+          <span class="glyphicon glyphicon-pencil"></span></button></td>
       </tr>
     </c:forEach>
     </tbody>

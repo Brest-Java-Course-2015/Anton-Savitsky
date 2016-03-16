@@ -19,6 +19,7 @@
         <module>test</module>
         <module>web-app</module>
         <module>rest-service-provider</module>
+        <module>soap-service-provider</module>
     </modules>
 
     <properties>

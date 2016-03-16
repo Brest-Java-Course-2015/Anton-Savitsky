@@ -21,10 +21,14 @@ import java.util.List;
 /**
  * Created by antonsavitsky on 3/15/16.
  */
+
+/*
+ use -PnoTest option to skip these integration tests
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:test-rest-consumer-config.xml"})
 @Transactional
-public class TestCarRestConsumer {
+public class TestCarRestConsumerIT {
 
     private static Car updateCar;
     private static Car addCar;

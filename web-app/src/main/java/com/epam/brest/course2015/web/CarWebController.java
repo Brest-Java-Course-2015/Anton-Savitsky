@@ -2,8 +2,8 @@ package com.epam.brest.course2015.web;
 
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
-import com.epam.brest.course2015.transactions.CarTransactions;
-import com.epam.brest.course2015.transactions.ProducerTransactions;
+import com.epam.brest.course2015.provider.CarServiceConsumer;
+import com.epam.brest.course2015.provider.ProducerServiceConsumer;
 import com.epam.brest.course2015.test.Loggable;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
@@ -20,44 +20,40 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/car")
 @CrossOrigin
 public class CarWebController {
-    /*@Autowired
-    private carTransactions carTransactions;
 
     @Autowired
-    private producerTransactions producerTransactions;*/
+    private CarServiceConsumer carServiceConsumer;
 
     @Autowired
-    private CarTransactions carTransactions;
+    private ProducerServiceConsumer producerServiceConsumer;
 
-    @Autowired
-    private ProducerTransactions producerTransactions;
 
     @Loggable
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getCarDto() {
-        CarDto dto = carTransactions.getCarsDto();
+        CarDto dto = carServiceConsumer.getCarsDto();
         return new ModelAndView("cars", "dto", dto);
     }
 
     @Loggable
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String deleteCar(@PathVariable(value ="id") Integer carId){
-        carTransactions.deleteCar(carId);
+        carServiceConsumer.deleteCar(carId);
         return "redirect:/car";
     }
 
     @Loggable
     @RequestMapping(value="/update/{id}", method = RequestMethod.GET)
     public ModelAndView updateCarForm(@PathVariable(value = "id") Integer carId){
-        ModelAndView modelAndView=new ModelAndView("carform", "car", carTransactions.getCarById(carId));
-        modelAndView.addObject("producersdto", producerTransactions.getProducersDto());
+        ModelAndView modelAndView=new ModelAndView("carform", "car", carServiceConsumer.getCarById(carId));
+        modelAndView.addObject("producersdto", producerServiceConsumer.getProducersDto());
         return modelAndView;
     }
 
     @Loggable
     @RequestMapping(value = "/update/{id}", method=RequestMethod.POST)
     public String saveUpdatedCar(Car car) {
-        carTransactions.updateCar(car);
+        carServiceConsumer.updateCar(car);
         return "redirect:/car";
     }
 
@@ -65,7 +61,7 @@ public class CarWebController {
     @RequestMapping(value="/add", method=RequestMethod.GET)
     public ModelAndView carAddingForm(){
         ModelAndView modelAndView=new ModelAndView("carform", "car", new Car());
-        modelAndView.addObject("producersdto", producerTransactions.getProducersDto());
+        modelAndView.addObject("producersdto", producerServiceConsumer.getProducersDto());
         return modelAndView;
     }
 
@@ -74,7 +70,7 @@ public class CarWebController {
     public String addCar(Car car) {
         //adding as new car so setting id to null
         car.setCarId(null);
-        carTransactions.addCar(car);
+        carServiceConsumer.addCar(car);
         return "redirect:/car";
     }
 
@@ -82,13 +78,7 @@ public class CarWebController {
     @RequestMapping(value = "/carsbydate", method = RequestMethod.GET)
     public ModelAndView getCarByDateDto(@RequestParam(value="dateBefore") String dateBefore,
                                         @RequestParam(value="dateAfter") String dateAfter){
-        CarDto dto = carTransactions.getCarsDtoByDate(convertToDate(dateBefore), convertToDate(dateAfter));
+        CarDto dto = carServiceConsumer.getCarsDtoByDate(dateBefore, dateAfter);
         return new ModelAndView("carsbydate", "dto", dto);
     }
-
-    public LocalDate convertToDate(String s){
-        DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
-        return DATE_FORMAT.parseLocalDate(s);
-    }
-
 }

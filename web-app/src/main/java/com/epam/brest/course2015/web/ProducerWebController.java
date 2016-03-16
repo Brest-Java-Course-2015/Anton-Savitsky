@@ -2,8 +2,8 @@ package com.epam.brest.course2015.web;
 
 import com.epam.brest.course2015.domain.Producer;
 import com.epam.brest.course2015.dto.ProducerDto;
+import com.epam.brest.course2015.provider.ProducerServiceConsumer;
 import com.epam.brest.course2015.test.Loggable;
-import com.epam.brest.course2015.transactions.ProducerTransactions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,41 +21,43 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProducerWebController {
 
     @Autowired
-    private ProducerTransactions producerTransactions;
+    private ProducerServiceConsumer producerServiceConsumer;
 
     @Loggable
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getProducerDto(){
-        ProducerDto producerDto= producerTransactions.getProducersDto();
+        ProducerDto producerDto= producerServiceConsumer.getProducersDto();
         return new ModelAndView("producers","dto",producerDto);
     }
 
     @Loggable
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String deleteProducer(@PathVariable(value = "id") Integer producerId){
-        producerTransactions.deleteProducer(producerId);
+        producerServiceConsumer.deleteProducer(producerId);
         return "redirect:/producer";
     }
 
     @Loggable
     @RequestMapping(value="/update/{id}", method = RequestMethod.GET)
     public ModelAndView updateProducerForm(@PathVariable(value = "id") Integer producerId){
-        ModelAndView modelAndView=new ModelAndView("producerform", "producer", producerTransactions.getProducerById(producerId));
+        ModelAndView modelAndView=new ModelAndView("producerform", "producer",
+                producerServiceConsumer.getProducerById(producerId));
         return modelAndView;
     }
 
     @Loggable
     @RequestMapping(value = "/update/{id}", method=RequestMethod.POST)
     public String saveUpdatedProducer(Producer producer) {
-        producerTransactions.updateProducer(producer);
+        producerServiceConsumer.updateProducer(producer);
         return "redirect:/producer";
     }
 
     @Loggable
     @RequestMapping(value="/add", method=RequestMethod.GET)
     public ModelAndView producerAddingForm(){
-        ModelAndView modelAndView=new ModelAndView("producerform", "producer", new Producer());
-        modelAndView.addObject("producersdto", producerTransactions.getProducersDto());
+        ModelAndView modelAndView=new ModelAndView("producerform",
+                "producer", new Producer());
+        modelAndView.addObject("producersdto", producerServiceConsumer.getProducersDto());
         return modelAndView;
     }
 
@@ -64,7 +66,7 @@ public class ProducerWebController {
     public String addProducer(Producer producer) {
         //adding as new producer so setting id to null
         producer.setProducerId(null);
-        producerTransactions.addProducer(producer);
+        producerServiceConsumer.addProducer(producer);
         return "redirect:/producer";
     }
 

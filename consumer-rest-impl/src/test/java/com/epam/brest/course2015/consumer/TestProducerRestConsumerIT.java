@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:test-rest-consumer-config.xml"})
 @Transactional
-public class TestProducerRestConsumer {
+public class TestProducerRestConsumerIT {
 
     private static Producer updateProducer;
     private static Producer addProducer;

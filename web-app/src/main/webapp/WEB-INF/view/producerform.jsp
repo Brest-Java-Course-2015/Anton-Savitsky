@@ -9,7 +9,7 @@
   <link href="<c:url value="/resources/css/myFixes.css"/>" rel="stylesheet"/>
 </head>
 <body>
-<h1><a href="<c:url value="/car"/>">Модели</a>/Производители<a href="<c:url value="/producer"/>"></a></h1>
+<h1><a href="<c:url value="/car"/>">Модели</a>/<a href="<c:url value="/producer"/>">Производители</a></h1>
 <div>
   <sf:form id="producerForm" method="POST" modelAttribute="producer"><!-- Связать форму -->
     <fieldset>                                <!-- с атрибутом модели -->

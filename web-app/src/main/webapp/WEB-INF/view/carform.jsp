@@ -11,7 +11,7 @@
   <link href="<c:url value="/resources/css/myFixes.css"/>" rel="stylesheet"/>
 </head>
 <body>
-<h1><a href="<c:url value="/car"/>">Модели</a>/Производители<a href="<c:url value="/producer"/>"></a></h1>
+<h1><a href="<c:url value="/car"/>">Модели</a>/<a href="<c:url value="/producer"/>">Производители</a></h1>
 <div>
   <form:form id="carForm" method="POST" modelAttribute="car">   <!-- Связать форму -->
     <fieldset>                                <!-- с атрибутом модели -->
@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <th><label for="producerId">Имя производителя:</label></th>
-          <td><span><form:select path="producerId" id="producerId">
+          <td><span><form:select path="producer.producerId" id="producerId">
             <c:forEach var="producer" items="${producersdto.producers}">
               <form:option value="${producer.producerId}">${producer.producerName}</form:option>
             </c:forEach>
