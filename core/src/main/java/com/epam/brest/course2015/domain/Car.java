@@ -15,8 +15,6 @@ import javax.persistence.*;
  * Created by antonsavitsky on 09.11.15.
  */
 @Entity
-//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class)
-//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class)
 @Table(name = "CAR")
 public class Car {
     //!!!NEW
@@ -37,7 +35,6 @@ public class Car {
 
     @ManyToOne(optional = false, cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name="producerId")
-    //@JsonManagedReference
     private Producer producer;
 
     public Car(String carName, LocalDate dateOfCreation){
@@ -45,7 +42,6 @@ public class Car {
         this.dateOfCreation=dateOfCreation;
     }
 
-    //main constructor
     public Car(Integer carId, String carName, LocalDate dateOfCreation, Producer producer){
         this.carId=carId;
         this.producer=producer;
