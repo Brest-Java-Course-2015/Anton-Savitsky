@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/cache
+       http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+       <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+              <property name="locations">
+                     <list>
+                            <value>classpath:prefix.properties</value>
+                     </list>
+              </property>
+              <property name="ignoreUnresolvablePlaceholders" value="true"/>
+       </bean>
+
+       <bean id="carRestConsumer" class="com.epam.brest.course2015.consumer.CarRestConsumer"/>
+
+       <bean id="producerRestConsumer" class="com.epam.brest.course2015.consumer.ProducerRestConsumer"/>
+
+       <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+
+       <aop:aspectj-autoproxy/>
+       <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:database.properties</value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+
+    <!-- alternatives here are "Apache Jakarta Commons DBCP" and "C3P0"
+    Springs implementation "DriverManagerDataSource" is for testing purposes only-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+<!--
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:create-tables.sql"/>
+        <jdbc:script location="classpath:data-script.sql"/>
+    </jdbc:initialize-database>
+    -->
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+
+    <!--Liquid Lib-->
+    <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="changeLog" value="classpath:db-changelog.xml" />
+        <!--
+        contexts specifies the runtime contexts to use.
+        -->
+        <property name="contexts" value="test, production" />
+    </bean>
+
+
+    <bean id="carDao" class="com.epam.brest.course2015.dao.ProducerDaoJdbcImpl"/>
+
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.CarDaoJdbcImpl"/>
+</beans>

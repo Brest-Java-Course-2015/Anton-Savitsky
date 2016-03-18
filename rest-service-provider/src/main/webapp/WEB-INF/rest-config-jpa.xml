@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+       <mvc:annotation-driven/>
+
+       <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+              <property name="locations">
+                     <list>
+                            <value>classpath:database.properties</value>
+                            <value>classpath:jpa.properties</value>
+                            <value>classpath:dao.properties</value>
+                            <value>classpath:service.properties</value>
+                     </list>
+              </property>
+              <property name="ignoreUnresolvablePlaceholders" value="true"/>
+       </bean>
+
+       <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+              <property name="driverClassName" value="${jdbc.driverClassName}"/>
+              <property name="url" value="${jdbc.url}"/>
+              <property name="username" value="${jdbc.username}"/>
+              <property name="password" value="${jdbc.password}"/>
+       </bean>
+
+       <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+              <property name="database" value="HSQL"/>
+              <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
+              <property name="generateDdl" value="false"/>
+              <property name="showSql" value="true"/>
+       </bean>
+
+       <bean id="entityManagerFactory"
+             class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+              <property name="dataSource" ref="dataSource"/>
+              <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+              <property name="packagesToScan" value="com.epam.brest.course2015.domain"/>
+       </bean>
+
+       <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoJpaImpl"/>
+
+       <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoJpaImpl"/>
+
+       <bean id="carTransactions" class="com.epam.brest.course2015.transactions.CarTransactionsImpl"/>
+
+       <bean id="producerTransactions" class="com.epam.brest.course2015.transactions.ProducerTransactionsImpl"/>
+
+       <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+       <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+       <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+              <property name="entityManagerFactory" ref="entityManagerFactory" />
+       </bean>
+
+       <tx:annotation-driven transaction-manager="transactionManager"/>
+
+       <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+              <property name="supportedMediaTypes" value="application/json" />
+              <property name="prettyPrint" value="true" />
+       </bean>
+
+       <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+              <property name="messageConverters">
+                     <list>
+                            <ref bean="jsonConverter"/>
+                     </list>
+              </property>
+       </bean>
+
+       <context:component-scan base-package="com.epam.brest.course2015.provider"/>
+
+       <aop:aspectj-autoproxy/>
+
+       <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+
+       <!--Liquid Lib-->
+       <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+              <property name="dataSource" ref="dataSource" />
+              <property name="changeLog" value="classpath:db-changelog.xml" />
+              <!--
+              contexts specifies the runtime contexts to use.
+              -->
+              <property name="contexts" value="test, production" />
+       </bean>
+</beans>

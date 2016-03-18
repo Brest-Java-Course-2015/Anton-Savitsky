@@ -1,0 +1,19 @@
+SET DATABASE SQL SYNTAX ORA TRUE;
+DROP TABLE CAR IF EXISTS;
+DROP TABLE PRODUCER IF EXISTS;
+
+CREATE TABLE PRODUCER (
+    producerId INT IDENTITY primary key NOT NULL,
+    producerName VARCHAR(30) NOT NULL,
+    country VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE CAR (
+    carId INT IDENTITY primary key NOT NULL,
+    carName VARCHAR(30) NOT NULL,
+    producerId INT NOT NULL,
+    dateOfCreation DATE NOT NULL,
+    FOREIGN KEY (producerId) REFERENCES PRODUCER(producerId)
+);
+
+
