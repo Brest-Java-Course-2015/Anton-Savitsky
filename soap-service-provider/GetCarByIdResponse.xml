@@ -1,0 +1,12 @@
+<GetCarByIdResponse>
+    <car>
+        <carId>1</carId>
+        <carName>car</carName>
+        <dateOfCreation>10/10/2015</dateOfCreation>
+        <producer>
+            <producerId>1</producerId>
+            <producerName>producer</producerName>
+            <country>country</country>
+        </producer>
+    </car>
+</GetCarByIdResponse>

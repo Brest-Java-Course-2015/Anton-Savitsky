@@ -1,0 +1,5 @@
+<GetCarByIdRequest>
+    <carId>
+        1
+    </carId>
+</GetCarByIdRequest>

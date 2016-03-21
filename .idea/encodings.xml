@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-rest-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dao-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dao-jdbc-template-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dao-jpa-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soap-service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.dtd" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transactions-level-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transactions-level-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-app" charset="UTF-8" />
+  </component>
+</project>

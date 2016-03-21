@@ -11,8 +11,6 @@ import java.util.List;
  */
 @Entity
 @Table(name = "PRODUCER")
-//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property = "producerId")
-//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class)
 public class Producer {
     @Id
     @Column(name = "producerId")
@@ -26,7 +24,6 @@ public class Producer {
     private String country;
 
     @OneToMany(mappedBy = "producer", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    //@JsonBackReference
     @Transient
     @JsonIgnore
     private List<Car> cars;
