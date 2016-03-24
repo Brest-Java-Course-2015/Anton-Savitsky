@@ -10,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/dao-jpa-impl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rest-service-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/soap-service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.dtd" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/transactions-level-api" charset="UTF-8" />

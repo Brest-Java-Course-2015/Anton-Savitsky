@@ -1,4 +1,4 @@
-<GetCarByIdResponse>
+<GetCarByIdResponse xmlns="http://epam.com/brest/course2015/soap">
     <car>
         <carId>1</carId>
         <carName>car</carName>

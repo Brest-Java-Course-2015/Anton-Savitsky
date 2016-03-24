@@ -43,7 +43,6 @@
           <element id="archive" name="consumer-rest-impl-1.0-SNAPSHOT.jar">
             <element id="module-output" name="consumer-rest-impl" />
           </element>
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.2.1.RELEASE" />
