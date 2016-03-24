@@ -41,7 +41,6 @@ public class Car {
         this.dateOfCreation=dateOfCreation;
     }
 
-    //main constructor
     public Car(Integer carId, String carName, LocalDate dateOfCreation, Producer producer){
         this.carId=carId;
         this.producer=producer;
