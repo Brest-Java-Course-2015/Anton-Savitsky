@@ -1,0 +1,5 @@
+com/epam/brest/course2015/domain/Car.class
+com/epam/brest/course2015/dto/CarDto.class
+com/epam/brest/course2015/domain/Producer.class
+com/epam/brest/course2015/dto/CarPagingDto.class
+com/epam/brest/course2015/dto/ProducerDto.class

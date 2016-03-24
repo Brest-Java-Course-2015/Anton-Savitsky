@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/car_producer.iml" filepath="$PROJECT_DIR$/car_producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumer-api/consumer-api.iml" filepath="$PROJECT_DIR$/consumer-api/consumer-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumer-rest-impl/consumer-rest-impl.iml" filepath="$PROJECT_DIR$/consumer-rest-impl/consumer-rest-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dao-api/dao-api.iml" filepath="$PROJECT_DIR$/dao-api/dao-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dao-jdbc-template-impl/dao-jdbc-template-impl.iml" filepath="$PROJECT_DIR$/dao-jdbc-template-impl/dao-jdbc-template-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dao-jpa-impl/dao-jpa-impl.iml" filepath="$PROJECT_DIR$/dao-jpa-impl/dao-jpa-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-service-provider/rest-service-provider.iml" filepath="$PROJECT_DIR$/rest-service-provider/rest-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soap-service-provider/soap-service-provider.iml" filepath="$PROJECT_DIR$/soap-service-provider/soap-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transactions-level-api/transactions-level-api.iml" filepath="$PROJECT_DIR$/transactions-level-api/transactions-level-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transactions-level-impl/transactions-level-impl.iml" filepath="$PROJECT_DIR$/transactions-level-impl/transactions-level-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-app/web-app.iml" filepath="$PROJECT_DIR$/web-app/web-app.iml" />
+    </modules>
+  </component>
+</project>

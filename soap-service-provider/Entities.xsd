@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://epam.com/brest/course2015/core"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="producerId" type="xs:int"/>
+  <xs:element name="carId" type="xs:int"/>
+  <xs:element name="dateOfCreation" type="xs:date"/>
+  <xs:element name="country" type="xs:string"/>
+  <xs:element name="producerName" type="xs:string"/>
+  <xs:element name="carName" type="xs:string"/>
+
+  <xs:element name="producer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="core:producerId" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:producerName" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:country" xmlns:core="http://epam.com/brest/course2015/core"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="car">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="core:carId" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:carName" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:dateOfCreation" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:producerType" xmlns:core="http://epam.com/brest/course2015/core"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
