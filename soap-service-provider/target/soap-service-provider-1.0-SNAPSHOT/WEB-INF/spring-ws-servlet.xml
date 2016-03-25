@@ -91,8 +91,6 @@
 
     <context:component-scan base-package="com.epam.brest.course2015.soap"/>
 
-    <context:component-scan base-package="com.epam.brest.course2015.core"/>
-
     <!--<bean id="getCarByIdEndpoint" class="com.epam.brest.course2015.soap.GetCarByIdEndpoint">
            <property name="marshaller" ref="marshaller"/>
            <property name="unmarshaller" ref="marshaller"/>

@@ -1,0 +1,12 @@
+<soap:GetCarByIdResponse xmlns:core="http://epam.com/brest/course2015/core"
+                         xmlns:soap="http://epam.com/brest/course2015/soap">
+    <core:car>
+        <core:carId>2</core:carId>
+        <core:carName>6ks</core:carName>
+        <core:dateOfCreation>2015-10-11+03:00</core:dateOfCreation>
+        <core:producer>
+            <core:producerId>0</core:producerId>
+            <core:producerName>toyota</core:producerName>
+        </core:producer>
+    </core:car>
+</soap:GetCarByIdResponse>

@@ -1,0 +1,64 @@
+25 Mar 2016 20:53:19,962[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 128 ms
+25 Mar 2016 20:53:19,964[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 141 ms
+25 Mar 2016 20:53:19,966[main] DEBUG - carId: 0
+25 Mar 2016 20:53:19,980[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@39008c9f]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@162b3d47 in 187 ms
+25 Mar 2016 20:57:14,200[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 132 ms
+25 Mar 2016 20:57:14,203[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 152 ms
+25 Mar 2016 20:57:14,204[main] DEBUG - carId: 0
+25 Mar 2016 20:57:14,215[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@47b179d7]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@39008c9f in 216 ms
+25 Mar 2016 21:04:04,945[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 149 ms
+25 Mar 2016 21:04:04,951[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 171 ms
+25 Mar 2016 21:04:04,953[main] DEBUG - carId: 0
+25 Mar 2016 21:04:04,963[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@39008c9f]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@162b3d47 in 219 ms
+25 Mar 2016 21:23:08,419[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 213 ms
+25 Mar 2016 21:23:08,422[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 235 ms
+25 Mar 2016 21:23:08,424[main] DEBUG - carId: 0
+25 Mar 2016 21:23:08,449[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@7dff6d05]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@45d64d27 in 341 ms
+25 Mar 2016 21:29:56,308[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 118 ms
+25 Mar 2016 21:29:56,311[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 137 ms
+25 Mar 2016 21:29:56,313[main] DEBUG - carId: 0
+25 Mar 2016 21:29:56,323[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 180 ms
+25 Mar 2016 21:30:36,246[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 121 ms
+25 Mar 2016 21:30:36,248[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([0]): Car:Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota} in 135 ms
+25 Mar 2016 21:30:36,250[main] DEBUG - carId: 0
+25 Mar 2016 21:30:36,260[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 176 ms
+25 Mar 2016 21:43:23,891[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 141 ms
+25 Mar 2016 21:43:23,894[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 163 ms
+25 Mar 2016 21:43:23,896[main] DEBUG - carId: 2
+25 Mar 2016 21:43:23,906[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@56681eaf]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@72d0f2b4 in 209 ms
+25 Mar 2016 21:45:26,680[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 136 ms
+25 Mar 2016 21:45:26,682[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 154 ms
+25 Mar 2016 21:45:26,684[main] DEBUG - carId: 2
+25 Mar 2016 21:45:26,695[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 202 ms
+25 Mar 2016 21:46:33,742[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 137 ms
+25 Mar 2016 21:46:33,745[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 156 ms
+25 Mar 2016 21:46:33,747[main] DEBUG - carId: 2
+25 Mar 2016 21:46:33,758[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@7e1f584d]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@7dff6d05 in 218 ms
+25 Mar 2016 21:48:18,109[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 123 ms
+25 Mar 2016 21:48:18,111[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 141 ms
+25 Mar 2016 21:48:18,113[main] DEBUG - carId: 2
+25 Mar 2016 21:48:18,123[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@7e1f584d]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@7dff6d05 in 187 ms
+25 Mar 2016 21:49:40,761[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 121 ms
+25 Mar 2016 21:49:40,764[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 139 ms
+25 Mar 2016 21:49:40,766[main] DEBUG - carId: 2
+25 Mar 2016 21:49:40,776[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 184 ms
+25 Mar 2016 21:50:27,755[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 167 ms
+25 Mar 2016 21:50:27,757[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 182 ms
+25 Mar 2016 21:50:27,758[main] DEBUG - carId: 2
+25 Mar 2016 21:50:27,766[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 227 ms
+25 Mar 2016 23:10:52,231[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 125 ms
+25 Mar 2016 23:10:52,234[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 145 ms
+25 Mar 2016 23:10:52,235[main] DEBUG - carId: 2
+25 Mar 2016 23:10:52,247[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@45d64d27]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@34fe326d in 200 ms
+26 Mar 2016 00:03:37,786[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 110 ms
+26 Mar 2016 00:03:37,788[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 127 ms
+26 Mar 2016 00:03:37,798[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@1da4b6b3]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@b2f4ece in 181 ms
+26 Mar 2016 00:16:42,386[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 140 ms
+26 Mar 2016 00:16:42,389[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 157 ms
+26 Mar 2016 00:16:42,399[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@a33b4e3]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@c6da8bb in 200 ms
+26 Mar 2016 00:20:25,319[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 192 ms
+26 Mar 2016 00:20:25,322[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 213 ms
+26 Mar 2016 00:20:25,337[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@7e736350]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@36b310aa in 262 ms
+26 Mar 2016 00:21:27,851[main] INFO  - com.epam.brest.course2015.dao.CarDao #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 131 ms
+26 Mar 2016 00:21:27,857[main] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 155 ms
+26 Mar 2016 00:21:27,869[main] INFO  - com.epam.brest.course2015.soap.CarEndpoint #getCarById([com.epam.brest.course2015.soap.GetCarByIdRequest@7e736350]): GetCarByIdResponse:com.epam.brest.course2015.soap.GetCarByIdResponse@36b310aa in 201 ms

@@ -1,0 +1,3 @@
+<soap:GetCarByIdRequest xmlns:soap="http://epam.com/brest/course2015/soap">
+    <soap:carId>2</soap:carId>
+</soap:GetCarByIdRequest>

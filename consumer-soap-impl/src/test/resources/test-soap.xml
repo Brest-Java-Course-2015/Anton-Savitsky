@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="carSoapConsumer"
+             class="com.epam.brest.course2015.consumer.CarSoapConsumer">
+              <property name="webServiceTemplate" ref="webServiceTemplate"/>
+       </bean>
+
+       <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory"/>
+
+       <bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+              <constructor-arg ref="messageFactory"/>
+              <property name="defaultUri"
+                        value="http://localhost:8080/soap-service-provider-1.0-SNAPSHOT/services"/>
+              <!--<property name="marshaller" ref="castorMarshaller"/>
+              <property name="unmarshaller" ref="castorMarshaller"/>-->
+       </bean>
+
+       <!--<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller"/>-->
+
+</beans>

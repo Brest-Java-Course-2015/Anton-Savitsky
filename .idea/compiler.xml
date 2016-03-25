@@ -101,11 +101,19 @@
         <processorPath useClasspath="true" />
         <module name="dao-api" />
       </profile>
+      <profile default="false" name="Annotation profile for consumer-soap-impl" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="consumer-soap-impl" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="car_producer" target="1.8" />
       <module name="consumer-api" target="1.8" />
       <module name="consumer-rest-impl" target="1.8" />
+      <module name="consumer-soap-impl" target="1.8" />
       <module name="core" target="1.8" />
       <module name="dao-api" target="1.8" />
       <module name="dao-jdbc-template-impl" target="1.8" />

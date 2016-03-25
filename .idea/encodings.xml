@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consumer-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consumer-rest-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-soap-impl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dao-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dao-jdbc-template-impl" charset="UTF-8" />

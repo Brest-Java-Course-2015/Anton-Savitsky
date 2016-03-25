@@ -6,18 +6,96 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="carTransactions" class="org.easymock.EasyMock" factory-method="createMock">
-        <constructor-arg value="com.epam.brest.course2015.transactions.CarTransactions"/>
+    <!-- Configuration of DAO, Transactions levels-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:database.properties</value>
+                <value>classpath:dao.properties</value>
+                <value>classpath:service.properties</value>
+            </list>
+        </property>
     </bean>
 
-    <bean id="producerTransactions" class="org.easymock.EasyMock" factory-method="createMock">
-        <constructor-arg value="com.epam.brest.course2015.transactions.ProducerTransactions"/>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
+
+    <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" ref="dataSource" />
+        <property name="changeLog" value="classpath:db-changelog.xml" />
+        <!--
+        contexts specifies the runtime contexts to use.
+        -->
+        <property name="contexts" value="test, production" />
+    </bean>
+
+    <!--
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:create-tables.sql"/>
+        <jdbc:script location="classpath:data-script.sql"/>
+    </jdbc:initialize-database>
+    -->
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoJdbcImpl"/>
+
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoJdbcImpl"/>
+
+    <bean id="carTransactions" class="com.epam.brest.course2015.transactions.CarTransactionsImpl"/>
+
+    <bean id="producerTransactions" class="com.epam.brest.course2015.transactions.ProducerTransactionsImpl"/>
 
     <context:component-scan base-package="com.epam.brest.course2015.soap"/>
     <!--<context:component-scan base-package="com.epam.brest.course2015.service.consumer"/>-->
+
+    <bean id="endpointExceptionResolver"
+          class="org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.oxm.UnmarshallingFailureException">
+                    SENDER, Invalid message received from sender
+                </prop>
+                <prop key="org.springframework.oxm.ValidationFailureException">
+                    SENDER, Invalid message received from sender
+                </prop>
+            </props>
+        </property>
+        <property name="defaultFault" value="RECEIVER, Server side error"/>
+    </bean>
+
+    <bean id="car" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition" lazy-init="true">
+
+        <property name="schemaCollection">
+            <bean class="org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection">
+                <property name="inline" value="true" />
+                <property name="xsds">
+                    <list>
+                        <value>classpath:Operations.xsd</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+
+        <property name="portTypeName" value="ws-service"/>
+        <property name="serviceName" value="ws-service" />
+        <property name="locationUri" value="/services"/>
+    </bean>
+
     <aop:aspectj-autoproxy/>
 
     <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>

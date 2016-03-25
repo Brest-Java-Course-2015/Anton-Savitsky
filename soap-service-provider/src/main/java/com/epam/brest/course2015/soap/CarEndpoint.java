@@ -32,6 +32,7 @@ public class CarEndpoint {
 
     private final Logger LOGGER = LogManager.getLogger();
 
+
     /*
         process service requests with the XML root element
         matching that defined by the localPart attribute
@@ -39,30 +40,41 @@ public class CarEndpoint {
     @PayloadRoot(localPart = "GetCarByIdRequest", namespace = TARGET_NAMESPACE)
     @Loggable
     public @ResponsePayload GetCarByIdResponse getCarById(@RequestPayload GetCarByIdRequest getCarByIdRequest){
-
-        Car carType=new Car();
         com.epam.brest.course2015.domain.Car car=
                 carTransactions.getCarById(getCarByIdRequest.getCarId());
 
-        LOGGER.debug("carId: "+getCarByIdRequest.getCarId());
-        carType.setCarId(car.getCarId());
-        carType.setCarName(car.getCarName());
-        carType.setDateOfCreation(asXMLGregorianCalendar(car.getDateOfCreation()));
-
-        com.epam.brest.course2015.domain.Producer producer=car.getProducer();
-        Producer producerType=new Producer();
-
-        producerType.setProducerId(producer.getProducerId());
-        producerType.setProducerName(producer.getProducerName());
-        producerType.setCountry(producer.getCountry());
-
-        carType.setProducer(producerType);
+        Car carXmlType=convertCarToCarXmlType(car);
 
         GetCarByIdResponse getCarByIdResponse=new GetCarByIdResponse();
-        getCarByIdResponse.setCar(carType);
+        getCarByIdResponse.setCar(carXmlType);
 
         return getCarByIdResponse;
     }
+
+
+    public static Car convertCarToCarXmlType(com.epam.brest.course2015.domain.Car car){
+        Car carXmlType=new Car();
+
+        carXmlType.setCarId(car.getCarId());
+        carXmlType.setCarName(car.getCarName());
+        carXmlType.setDateOfCreation(asXMLGregorianCalendar(car.getDateOfCreation()));
+
+        carXmlType.setProducer(convertProducerToProducerXmlType(car.getProducer()));
+
+        return carXmlType;
+    }
+
+
+    public static Producer convertProducerToProducerXmlType(com.epam.brest.course2015.domain.Producer producer){
+        Producer producerXmlType=new Producer();
+
+        producerXmlType.setProducerId(producer.getProducerId());
+        producerXmlType.setProducerName(producer.getProducerName());
+        producerXmlType.setCountry(producer.getCountry());
+
+        return producerXmlType;
+    }
+
 
     public static XMLGregorianCalendar asXMLGregorianCalendar(LocalDate date) {
         DatatypeFactory df= null;

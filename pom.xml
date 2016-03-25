@@ -20,6 +20,7 @@
         <module>web-app</module>
         <module>rest-service-provider</module>
         <module>soap-service-provider</module>
+        <module>consumer-soap-impl</module>
     </modules>
 
     <properties>
@@ -255,6 +256,16 @@
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
                 <version>2.2.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcomponents-core</artifactId>
+                <version>4.5.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
