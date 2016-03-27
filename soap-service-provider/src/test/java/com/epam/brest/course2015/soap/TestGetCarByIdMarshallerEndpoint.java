@@ -39,12 +39,6 @@ public class TestGetCarByIdMarshallerEndpoint {
 
     @Test
     public void testGetCarById() throws IOException {
-        /*Source requestPayload=new StreamSource(
-                "<soap:GetCarByIdRequest " +
-                        "xmlns:soap=\"http://epam.com/brest/course2015/soap\">"+
-                        "<soap:carId>2</soap:carId>"+
-                "</soap:GetCarByIdRequest>");*/
-
         Source requestPayload=new StreamSource(new ClassPathResource("soap-messages/GetCarByIdRequestTestMessage.xml").getFile());
 
         Source responsePayload=new StreamSource(new ClassPathResource("soap-messages/GetCarByIdResponseTestMessage.xml").getFile());
@@ -52,4 +46,15 @@ public class TestGetCarByIdMarshallerEndpoint {
         mockClient.sendRequest(withPayload(requestPayload))
                 .andExpect(payload(responsePayload));
     }
+
+    @Test
+    public void testUpdateCarById() throws IOException {
+        Source requestPayload=new StreamSource(new ClassPathResource("soap-messages/UpdateCarRequestTestMessage.xml").getFile());
+
+        Source responsePayload=new StreamSource(new ClassPathResource("soap-messages/UpdateCarResponseTestMessage.xml").getFile());
+
+        mockClient.sendRequest(withPayload(requestPayload))
+                .andExpect(payload(responsePayload));
+    }
+
 }

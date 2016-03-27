@@ -18,6 +18,9 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.GregorianCalendar;
 
+import static com.epam.brest.course2015.soap.Helper.convertCarToCarXmlType;
+import static com.epam.brest.course2015.soap.Helper.convertCarXmlTypeToCar;
+
 /**
  * Created by antonsavitsky on 3/22/16.
  */
@@ -40,6 +43,8 @@ public class CarEndpoint {
     @PayloadRoot(localPart = "GetCarByIdRequest", namespace = TARGET_NAMESPACE)
     @Loggable
     public @ResponsePayload GetCarByIdResponse getCarById(@RequestPayload GetCarByIdRequest getCarByIdRequest){
+
+        System.out.println();
         com.epam.brest.course2015.domain.Car car=
                 carTransactions.getCarById(getCarByIdRequest.getCarId());
 
@@ -51,44 +56,11 @@ public class CarEndpoint {
         return getCarByIdResponse;
     }
 
-
-    public static Car convertCarToCarXmlType(com.epam.brest.course2015.domain.Car car){
-        Car carXmlType=new Car();
-
-        carXmlType.setCarId(car.getCarId());
-        carXmlType.setCarName(car.getCarName());
-        carXmlType.setDateOfCreation(asXMLGregorianCalendar(car.getDateOfCreation()));
-
-        carXmlType.setProducer(convertProducerToProducerXmlType(car.getProducer()));
-
-        return carXmlType;
+    @PayloadRoot(localPart = "UpdateCarRequest", namespace = TARGET_NAMESPACE)
+    public @ResponsePayload UpdateCarResponse updateCar(@RequestPayload UpdateCarRequest updateCarRequest){
+        carTransactions.updateCar(convertCarXmlTypeToCar(updateCarRequest.getCar()));
+        return new UpdateCarResponse();
     }
 
 
-    public static Producer convertProducerToProducerXmlType(com.epam.brest.course2015.domain.Producer producer){
-        Producer producerXmlType=new Producer();
-
-        producerXmlType.setProducerId(producer.getProducerId());
-        producerXmlType.setProducerName(producer.getProducerName());
-        producerXmlType.setCountry(producer.getCountry());
-
-        return producerXmlType;
-    }
-
-
-    public static XMLGregorianCalendar asXMLGregorianCalendar(LocalDate date) {
-        DatatypeFactory df= null;
-        try {
-            df = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
-        if(date == null) {
-            return null;
-        } else {
-            GregorianCalendar gc = new GregorianCalendar();
-            gc.setTimeInMillis(date.toDateTimeAtStartOfDay().toDate().getTime());
-            return df.newXMLGregorianCalendar(gc);
-        }
-    }
 }

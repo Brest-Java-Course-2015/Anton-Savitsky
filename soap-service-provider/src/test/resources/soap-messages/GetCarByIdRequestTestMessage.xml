@@ -1,3 +1,4 @@
-<soap:GetCarByIdRequest xmlns:soap="http://epam.com/brest/course2015/soap">
-    <soap:carId>2</soap:carId>
+<soap:GetCarByIdRequest xmlns:soap="http://epam.com/brest/course2015/soap"
+                        xmlns:core="http://epam.com/brest/course2015/core">
+    <core:carId>2</core:carId>
 </soap:GetCarByIdRequest>

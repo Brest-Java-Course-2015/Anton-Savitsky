@@ -3,7 +3,7 @@
     <core:car>
         <core:carId>2</core:carId>
         <core:carName>6ks</core:carName>
-        <core:dateOfCreation>2015-10-11+03:00</core:dateOfCreation>
+        <core:dateOfCreation>2015-10-11</core:dateOfCreation>
         <core:producer>
             <core:producerId>0</core:producerId>
             <core:producerName>toyota</core:producerName>

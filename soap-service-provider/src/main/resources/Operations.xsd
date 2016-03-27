@@ -20,9 +20,24 @@
   <xs:element name="GetCarByIdRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="carId" type="xs:int"/>
+        <xs:element ref="core:carId" xmlns:core="http://epam.com/brest/course2015/core"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+    <xs:element name="UpdateCarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="core:car" xmlns:core="http://epam.com/brest/course2015/core"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

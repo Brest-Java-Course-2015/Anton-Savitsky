@@ -2,7 +2,8 @@
 <!DOCTYPE mapping PUBLIC
         "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
         "http://castor.exolab.org/mapping.dtd">
-<mapping>
+
+<mapping xmlns="http://castor.exolab.org/">
 
     <class name="com.epam.brest.course2015.soap.GetCarByIdRequest">
         <map-to xml="GetCarByIdRequest"/>

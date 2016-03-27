@@ -2,7 +2,20 @@
 <xs:schema attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            targetNamespace="http://epam.com/brest/course2015/core"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <jaxb:globalBindings>
+        <jaxb:javaType name="org.joda.time.LocalDate" parseMethod="com.epam.brest.course2015.soap.DateAdapter.parseDate"
+                       printMethod="com.epam.brest.course2015.soap.DateAdapter.printDate" xmlType="xs:date"/>
+        <xjc:noValidator/>
+      </jaxb:globalBindings>
+    </xs:appinfo>
+  </xs:annotation>
 
   <xs:element name="producerId" type="xs:int"/>
   <xs:element name="carId" type="xs:int"/>
@@ -14,7 +27,8 @@
   <xs:element name="producer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="core:producerId" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:producerId"
+                    xmlns:core="http://epam.com/brest/course2015/core"/>
         <xs:element ref="core:producerName" xmlns:core="http://epam.com/brest/course2015/core"/>
         <xs:element ref="core:country" xmlns:core="http://epam.com/brest/course2015/core"/>
       </xs:sequence>
@@ -24,7 +38,8 @@
   <xs:element name="car">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="core:carId" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:carId"
+                    xmlns:core="http://epam.com/brest/course2015/core"/>
         <xs:element ref="core:carName" xmlns:core="http://epam.com/brest/course2015/core"/>
         <xs:element ref="core:dateOfCreation" xmlns:core="http://epam.com/brest/course2015/core"/>
         <xs:element ref="core:producer" xmlns:core="http://epam.com/brest/course2015/core"/>

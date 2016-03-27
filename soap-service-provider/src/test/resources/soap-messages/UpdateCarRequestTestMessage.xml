@@ -1,0 +1,13 @@
+<soap:UpdateCarRequest xmlns:soap="http://epam.com/brest/course2015/soap"
+                       xmlns:core="http://epam.com/brest/course2015/core">
+    <core:car>
+        <core:carId>0</core:carId>
+        <core:carName>newname</core:carName>
+        <core:dateOfCreation>2015-10-10</core:dateOfCreation>
+        <core:producer>
+            <core:producerId>0</core:producerId>
+            <core:producerName></core:producerName>
+            <core:country></core:country>
+        </core:producer>
+    </core:car>
+</soap:UpdateCarRequest>
