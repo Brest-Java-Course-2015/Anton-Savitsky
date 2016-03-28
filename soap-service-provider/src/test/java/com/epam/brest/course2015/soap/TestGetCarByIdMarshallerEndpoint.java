@@ -57,4 +57,14 @@ public class TestGetCarByIdMarshallerEndpoint {
                 .andExpect(payload(responsePayload));
     }
 
+    @Test
+    public void testGetCarDto() throws IOException {
+        Source requestPayload=new StreamSource(new ClassPathResource("soap-messages/GetCarDtoRequestTestMessage.xml").getFile());
+
+        Source responsePayload=new StreamSource(new ClassPathResource("soap-messages/GetCarDtoResponseTestMessage.xml").getFile());
+
+        mockClient.sendRequest(withPayload(requestPayload))
+                .andExpect(payload(responsePayload));
+    }
+
 }

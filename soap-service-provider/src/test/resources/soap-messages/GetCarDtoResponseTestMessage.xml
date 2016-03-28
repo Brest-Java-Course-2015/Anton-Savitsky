@@ -1,0 +1,40 @@
+<soap:GetCarDtoResponse xmlns:core="http://epam.com/brest/course2015/core"
+                         xmlns:soap="http://epam.com/brest/course2015/soap">
+    <core:cardto>
+        <core:cars>
+
+            <core:car>
+                <core:carId>0</core:carId>
+                <core:carName>5dr</core:carName>
+                <core:dateOfCreation>2015-10-14</core:dateOfCreation>
+                <core:producer>
+                    <core:producerId>0</core:producerId>
+                    <core:producerName>toyota</core:producerName>
+                </core:producer>
+            </core:car>
+
+            <core:car>
+                <core:carId>1</core:carId>
+                <core:carName>3hr</core:carName>
+                <core:dateOfCreation>2015-10-13</core:dateOfCreation>
+                <core:producer>
+                    <core:producerId>0</core:producerId>
+                    <core:producerName>toyota</core:producerName>
+                </core:producer>
+            </core:car>
+
+            <core:car>
+                <core:carId>2</core:carId>
+                <core:carName>6ks</core:carName>
+                <core:dateOfCreation>2015-10-11</core:dateOfCreation>
+                <core:producer>
+                    <core:producerId>0</core:producerId>
+                    <core:producerName>toyota</core:producerName>
+                </core:producer>
+            </core:car>
+        </core:cars>
+
+        <core:total>3</core:total>
+
+    </core:cardto>
+</soap:GetCarDtoResponse>

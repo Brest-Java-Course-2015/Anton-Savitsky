@@ -5,10 +5,14 @@
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Producer.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/package-info.java
+/home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarDtoRequest.java
+/home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Cars.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdRequest.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/ObjectFactory.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdResponse.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java
+/home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Cardto.java
+/home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarDtoResponse.java
 /home/antonsavitsky/development/GitMergingJPA/Anton-Savitsky/soap-service-provider/src/main/java/com/epam/brest/course2015/core/package-info.java

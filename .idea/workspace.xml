@@ -26,21 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfbb67f2-4306-4e67-b943-05d98275411d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/Entities.xsd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/UpdateCarRequest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/UpdateCarRequestTestMessage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/UpdateCarResponseTestMessage.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/mapping.dtd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/mapping.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/soap-service-provider/Operations.xsd" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/Operations.xsd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/core/Car.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/core/Car.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/core/Car.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/core/Car.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoRequestTestMessage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoResponseTestMessage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/car.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/soap-service-provider/cardto.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/websocket-service-provider/pom.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/soap-service-provider/Entities.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/soap-service-provider/GetCarByIdRequest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/soap-service-provider/GetCarByIdResponse.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/soap-service-provider/UpdateCarRequest.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/CarEndpoint.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/CarEndpoint.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/soap/CarEndpoint.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/soap/CarEndpoint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/GetCarByIdRequest.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/GetCarByIdRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/soap/GetCarByIdRequest.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/soap/GetCarByIdRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/core/ObjectFactory.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/core/ObjectFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/ObjectFactory.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/com/epam/brest/course2015/soap/ObjectFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/core/ObjectFactory.class" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/com/epam/brest/course2015/core/ObjectFactory.class" />
@@ -78,15 +74,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/CarSoapServiceConsumerIT.java" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/CarSoapServiceConsumerIT.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/Entities.xsd" afterPath="$PROJECT_DIR$/soap-service-provider/Entities.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/Entities.xsd" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/Entities.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/Entities.xsd" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/Entities.xsd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdRequest.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdRequestTestMessage.xml" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdRequestTestMessage.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdResponse.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdResponseTestMessage.xml" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdResponseTestMessage.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/ObjectFactory.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/ObjectFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/ObjectFactory.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/ObjectFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd" />
@@ -95,12 +89,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Producer.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Producer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/core.iml" afterPath="$PROJECT_DIR$/core/core.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/soap-service-provider/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/soap-service-provider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.xml" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/classes/mapping.xml" afterPath="$PROJECT_DIR$/soap-service-provider/target/classes/mapping.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/mapping.xml" afterPath="$PROJECT_DIR$/soap-service-provider/target/soap-service-provider-1.0-SNAPSHOT/WEB-INF/classes/mapping.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/package-info.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/package-info.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/package-info.java" afterPath="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/package-info.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consumer-api/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/consumer-api/target/maven-archiver/pom.properties" />
@@ -116,10 +109,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transactions-level-impl/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/transactions-level-impl/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/web-app/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consumer-soap-impl/pom.xml" afterPath="$PROJECT_DIR$/consumer-soap-impl/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/pom.xml" afterPath="$PROJECT_DIR$/soap-service-provider/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soap-service-provider/logs/server.log" afterPath="$PROJECT_DIR$/soap-service-provider/logs/server.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/test-soap.xml" afterPath="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/test-soap.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="car_producer.iws" />
@@ -139,6 +129,7 @@
     <ignored path="$PROJECT_DIR$/core/target/" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/consumer-soap-impl/target/" />
+    <ignored path="$PROJECT_DIR$/websocket-service-provider/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,67 +147,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CarSoapServiceConsumerIT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/CarSoapServiceConsumerIT.java">
+      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DateAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarSoapConsumer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java">
+      <file leaf-file-name="Cars.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Cars.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Entities.xsd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="278" column="25" selection-start-line="278" selection-start-column="25" selection-end-line="278" selection-end-column="25" />
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap-service-provider/pom.xml">
+      <file leaf-file-name="GetCarDtoResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarDtoResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer-soap-impl/pom.xml">
+      <file leaf-file-name="GetCarDtoRequestTestMessage.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoRequestTestMessage.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29094827">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -226,27 +214,7 @@
         <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarRestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-service-provider/src/main/java/com/epam/brest/course2015/provider/CarRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="106" selection-end-column="5" />
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -256,7 +224,27 @@
         <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCarDtoResponseTestMessage.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoResponseTestMessage.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/websocket-service-provider/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4525862">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -283,20 +271,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarByIdRequest.java" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/consumer-rest-impl/pom.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/CarEntity.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/CarEntity.xsd" />
-        <option value="$PROJECT_DIR$/soap-service-provider/GetCarByIdResponse.xsd" />
-        <option value="$PROJECT_DIR$/soap-service-provider/GetCarByIdRequest.xsd" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/CarType.java" />
         <option value="$USER_HOME$/jdk1.8.0_65/src.zip!/java/lang/ApplicationShutdownHooks.java" />
         <option value="$USER_HOME$/jdk1.8.0_65/src.zip!/java/util/concurrent/locks/ReentrantReadWriteLock.java" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/binding.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/binding.xjb" />
-        <option value="$PROJECT_DIR$/soap-service-provider/Entities.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/Entities1.xsd" />
         <option value="$PROJECT_DIR$/soap-service-provider/Operations.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/GetCarByIdRequest.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/GetCarByIdResponse.xml" />
@@ -308,32 +287,41 @@
         <option value="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/GetCarByIdRequestTestMessage.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/GetCarByIdResponseTestMessage.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/GetAllCarsRequest.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/Entities.xsd" />
         <option value="$PROJECT_DIR$/soap-service-provider/UpdateCarRequest.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/Operations.xsd" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/UpdateCarRequestTestMessage.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/UpdateCatResponseTestMessage.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdRequestTestMessage.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/UpdateCarResponseTestMessage.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/localdate_schemalet.xsd" />
         <option value="$PROJECT_DIR$/soap-service-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java" />
         <option value="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/mapping.xml" />
         <option value="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/test-soap.xml" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java" />
         <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdResponseTestMessage.xml" />
         <option value="$PROJECT_DIR$/dao-jdbc-template-impl/src/main/java/com/epam/brest/course2015/dao/CarDaoJdbcImpl.java" />
         <option value="$PROJECT_DIR$/consumer-soap-impl/src/test/resources/Entities.xsd" />
-        <option value="$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java" />
         <option value="$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/CarSoapServiceConsumerIT.java" />
-        <option value="$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java" />
         <option value="$PROJECT_DIR$/consumer-soap-impl/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java" />
+        <option value="$PROJECT_DIR$/soap-service-provider/Entities1.xsd" />
+        <option value="$PROJECT_DIR$/soap-service-provider/Entities.xsd" />
+        <option value="$PROJECT_DIR$/soap-service-provider/Entities.xml" />
+        <option value="$PROJECT_DIR$/consumer-soap-impl/car.xml" />
+        <option value="$PROJECT_DIR$/soap-service-provider/car.xml" />
+        <option value="$PROJECT_DIR$/soap-service-provider/cardto.xml" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoRequest.xml" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoResponse.xml" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java" />
+        <option value="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoResponseTestMessage.xml" />
+        <option value="$PROJECT_DIR$/websocket-service-provider/pom.xml" />
       </list>
     </option>
   </component>
@@ -449,6 +437,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_producer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Anton-Savitsky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="websocket-service-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_producer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Anton-Savitsky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="websocket-service-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="car_producer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Anton-Savitsky" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="websocket-service-provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -476,17 +518,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/soap-service-provider" />
       <recent name="$PROJECT_DIR$/consumer-soap-impl/src/test/resources" />
       <recent name="$PROJECT_DIR$/soap-service-provider/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/soap-service-provider" />
       <recent name="$PROJECT_DIR$/soap-service-provider/src/main/resources" />
       <recent name="$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages" />
       <recent name="$PROJECT_DIR$/soap-service-provider/src/test/resources" />
       <recent name="$PROJECT_DIR$/soap-service-provider/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CarSoapServiceConsumerIT.testUpdateCar">
+  <component name="RunManager" selected="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarDto">
     <configuration default="false" name="TestGetCarByIdMarshallerEndpoint.testGetCarById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -565,32 +609,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestGetCarByIdMarshallerEndpoint.testUpdateCarById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.epam.brest.course2015.soap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="soap-service-provider" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.epam.brest.course2015.soap" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.brest.course2015.soap.TestGetCarByIdMarshallerEndpoint" />
-      <option name="METHOD_NAME" value="testUpdateCarById" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="CarSoapServiceConsumerIT.testUpdateCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -604,6 +622,32 @@
       <option name="PACKAGE_NAME" value="com.epam.brest.course2015.consumer" />
       <option name="MAIN_CLASS_NAME" value="com.epam.brest.course2015.consumer.CarSoapServiceConsumerIT" />
       <option name="METHOD_NAME" value="testUpdateCar" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestGetCarByIdMarshallerEndpoint.testGetCarDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.epam.brest.course2015.soap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="soap-service-provider" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.epam.brest.course2015.soap" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.brest.course2015.soap.TestGetCarByIdMarshallerEndpoint" />
+      <option name="METHOD_NAME" value="testGetCarDto" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -946,16 +990,16 @@
       <item index="2" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarById" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testGetCarById" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testUpdateCarById" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testUpdateCar" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testUpdateCar" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarDto" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testUpdateCar" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testGetCarById" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarById" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testUpdateCarById" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarDto" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testUpdateCar" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT.testGetCarById" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CarSoapServiceConsumerIT" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestGetCarByIdMarshallerEndpoint.testGetCarById" />
       </list>
     </recent_temporary>
   </component>
@@ -985,7 +1029,7 @@
       <workItem from="1458929814506" duration="15036000" />
       <workItem from="1458993228869" duration="9867000" />
       <workItem from="1459015371033" duration="3668000" />
-      <workItem from="1459056604396" duration="20434000" />
+      <workItem from="1459056604396" duration="30330000" />
     </task>
     <task id="LOCAL-00001" summary="partly implemented soap service provider">
       <created>1458577540174</created>
@@ -1005,11 +1049,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458942458398</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="consumer service: getCarById and updateCar was implemented">
+      <created>1459098804940</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1459098804940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141736000" />
+    <option name="totallyTimeSpent" value="151632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1031,14 +1081,14 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.685" sideWeight="0.11706948" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10725076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11329305" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.275" sideWeight="0.8829305" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.8829305" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.49697885" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.75838417" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11" sideWeight="0.75838417" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31646526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3134441" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1072,7 +1122,9 @@
     <MESSAGE value="first endpoint method of soap service provider is implemented" />
     <MESSAGE value="server side spring-ws integration test was implemented" />
     <MESSAGE value="soap consumer service was started" />
-    <option name="LAST_COMMIT_MESSAGE" value="soap consumer service was started" />
+    <MESSAGE value="consumer service: getCarById and updateCar was implemented" />
+    <MESSAGE value="a bit of addition on to soap consumer" />
+    <option name="LAST_COMMIT_MESSAGE" value="a bit of addition on to soap consumer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1094,94 +1146,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/MockCarSoapConsumerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer-rest-impl/src/test/java/com/epam/brest/course2015/consumer/TestCarRestConsumerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer-rest-impl/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/src/test/java/com/epam/brest/course2015/web/TestProducerWebController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/src/test/java/com/epam/brest/course2015/web/TestCarWebController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/src/main/java/com/epam/brest/course2015/web/CarWebController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3461537">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao-jpa-impl/src/test/java/com/epam/brest/course2015/dao/TestCarDaoJpaImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/GetCarByIdRequest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="64" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/GetCarByIdResponse.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-service-provider/src/test/java/com/epam/brest/course2015/provider/CarRestControllerMockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer-rest-impl/src/main/java/com/epam/brest/course2015/consumer/CarRestConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao-jdbc-template-impl/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/java/com/epam/brest/course2015/consumer/MockProducerSoapConsumerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1198,34 +1162,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/UpdateCarRequest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/UpdateCarRequest.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/resources/mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3461537">
           <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/Entities.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1286,22 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/UpdateCarResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1314,38 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdRequestTestMessage.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdResponseTestMessage.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1398,48 +1290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/resources/Entities.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rest-service-provider/src/main/java/com/epam/brest/course2015/provider/CarRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1453,20 +1303,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#996#997#0" expanded="false" />
+            <element signature="e#1041#1042#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,8 +1338,216 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29094827">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/epam/brest/course2015/domain/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29094827">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/epam/brest/course2015/dto/CarDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/car.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/cardto.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/UpdateCarResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/CarSoapConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/main/java/com/epam/brest/course2015/consumer/ProducerSoapConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/Entities.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer-soap-impl/src/test/resources/Entities.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdResponseTestMessage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/main/resources/data-script.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarByIdRequestTestMessage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Operations.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/resources/Entities.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Cars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/GetCarDtoResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/core/Cardto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33264464">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/DateAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/main/java/com/epam/brest/course2015/soap/CarEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoRequestTestMessage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/java/com/epam/brest/course2015/soap/TestGetCarByIdMarshallerEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soap-service-provider/src/test/resources/soap-messages/GetCarDtoResponseTestMessage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/websocket-service-provider/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4525862">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>

@@ -29,7 +29,6 @@ import org.springframework.ws.soap.client.core.SoapActionCallback;
  * Created by antonsavitsky on 3/25/16.
  */
 public class CarSoapConsumer implements CarServiceConsumer {
-    private static final String SERVICE_PREFIX="http://localhost:8080/";
     @Autowired
     private org.springframework.oxm.Marshaller marshaller;
 
@@ -81,8 +80,6 @@ public class CarSoapConsumer implements CarServiceConsumer {
         StreamResult result = new StreamResult(byteArrayOutputStream);
         webServiceTemplate.sendSourceAndReceiveToResult(sourceToSend, result);
         final String reply = new String(byteArrayOutputStream.toByteArray());
-
-        System.out.println(reply);
 
         StreamSource sourceToReceive=new StreamSource(new StringReader(reply));
         GetCarByIdResponse getCarByIdResponse=new GetCarByIdResponse();

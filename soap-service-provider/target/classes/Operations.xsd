@@ -40,4 +40,16 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="GetCarDtoRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetCarDtoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="core:cardto" xmlns:core="http://epam.com/brest/course2015/core"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>

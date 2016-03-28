@@ -2,13 +2,17 @@ com/epam/brest/course2015/core/package-info.class
 com/epam/brest/course2015/core/Car.class
 com/epam/brest/course2015/soap/UpdateCarResponse.class
 com/epam/brest/course2015/soap/ObjectFactory.class
+com/epam/brest/course2015/soap/GetCarDtoResponse.class
 org/w3/_2001/xmlschema/Adapter1.class
 com/epam/brest/course2015/soap/DateAdapter.class
 com/epam/brest/course2015/soap/Helper.class
 com/epam/brest/course2015/core/ObjectFactory.class
 com/epam/brest/course2015/soap/UpdateCarRequest.class
+com/epam/brest/course2015/soap/GetCarDtoRequest.class
 com/epam/brest/course2015/soap/package-info.class
 com/epam/brest/course2015/soap/GetCarByIdResponse.class
 com/epam/brest/course2015/soap/GetCarByIdRequest.class
+com/epam/brest/course2015/core/Cars.class
 com/epam/brest/course2015/core/Producer.class
+com/epam/brest/course2015/core/Cardto.class
 com/epam/brest/course2015/soap/CarEndpoint.class

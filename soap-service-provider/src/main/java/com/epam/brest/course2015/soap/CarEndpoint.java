@@ -2,6 +2,7 @@ package com.epam.brest.course2015.soap;
 
 import com.epam.brest.course2015.core.Car;
 import com.epam.brest.course2015.core.Producer;
+import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.test.Loggable;
 import com.epam.brest.course2015.transactions.CarTransactions;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +21,7 @@ import java.util.GregorianCalendar;
 
 import static com.epam.brest.course2015.soap.Helper.convertCarToCarXmlType;
 import static com.epam.brest.course2015.soap.Helper.convertCarXmlTypeToCar;
+import static com.epam.brest.course2015.soap.Helper.convertCardtoToCardtoXml;
 
 /**
  * Created by antonsavitsky on 3/22/16.
@@ -62,5 +64,13 @@ public class CarEndpoint {
         return new UpdateCarResponse();
     }
 
+    @PayloadRoot(localPart = "GetCarDtoRequest", namespace = TARGET_NAMESPACE)
+    public @ResponsePayload GetCarDtoResponse getCarDtoRequest(@RequestPayload GetCarDtoRequest getCarDtoRequest){
+        CarDto carDto=carTransactions.getCarsDto();
 
+        GetCarDtoResponse getCarDtoResponse=new GetCarDtoResponse();
+        getCarDtoResponse.setCardto(convertCardtoToCardtoXml(carDto));
+
+        return getCarDtoResponse;
+    }
 }

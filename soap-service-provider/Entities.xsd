@@ -32,4 +32,25 @@
     </xs:complexType>
   </xs:element>
 
+
+  <xs:element name="cars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="core:car" maxOccurs="unbounded" minOccurs="0"
+                    xmlns:core="http://epam.com/brest/course2015/core"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="total" type="xs:int"/>
+
+  <xs:element name="cardto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="core:cars" xmlns:core="http://epam.com/brest/course2015/core"/>
+        <xs:element ref="core:total" xmlns:core="http://epam.com/brest/course2015/core"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
 </xs:schema>

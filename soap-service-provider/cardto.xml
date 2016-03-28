@@ -1,0 +1,25 @@
+<cardto xmlns="http://epam.com/brest/course2015/core">
+    <cars>
+        <car>
+            <carId>1</carId>
+            <carName>car</carName>
+            <dateOfCreation>2015-10-10</dateOfCreation>
+            <producer>
+                <producerId>1</producerId>
+                <producerName>producer</producerName>
+                <country>country</country>
+            </producer>
+        </car>
+        <car>
+            <carId>1</carId>
+            <carName>car</carName>
+            <dateOfCreation>2015-10-10</dateOfCreation>
+            <producer>
+                <producerId>1</producerId>
+                <producerName>producer</producerName>
+                <country>country</country>
+            </producer>
+        </car>
+    </cars>
+    <total>2</total>
+</cardto>

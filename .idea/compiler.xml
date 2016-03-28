@@ -108,6 +108,13 @@
         <processorPath useClasspath="true" />
         <module name="soap-service-provider" />
       </profile>
+      <profile default="false" name="Annotation profile for websocket-service-provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="websocket-service-provider" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="car_producer" target="1.8" />
@@ -124,6 +131,7 @@
       <module name="transactions-level-api" target="1.8" />
       <module name="transactions-level-impl" target="1.8" />
       <module name="web-app" target="1.8" />
+      <module name="websocket-service-provider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

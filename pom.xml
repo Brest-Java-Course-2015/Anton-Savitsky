@@ -21,6 +21,7 @@
         <module>rest-service-provider</module>
         <module>soap-service-provider</module>
         <module>consumer-soap-impl</module>
+        <module>websocket-service-provider</module>
     </modules>
 
     <properties>

@@ -1,5 +1,0 @@
-<GetCarByIdRequest xmlns="http://epam.com/brest/course2015/soap">
-    <carId>
-        1
-    </carId>
-</GetCarByIdRequest>
