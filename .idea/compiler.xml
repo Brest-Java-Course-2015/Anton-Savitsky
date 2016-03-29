@@ -115,6 +115,20 @@
         <processorPath useClasspath="true" />
         <module name="websocket-service-provider" />
       </profile>
+      <profile default="false" name="Annotation profile for websocket-service-provider-stomp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="websocket-service-provider-stomp" />
+      </profile>
+      <profile default="false" name="Annotation profile for websocket-service-provider-without-stomp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="websocket-service-provider-without-stomp" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="car_producer" target="1.8" />
@@ -132,6 +146,8 @@
       <module name="transactions-level-impl" target="1.8" />
       <module name="web-app" target="1.8" />
       <module name="websocket-service-provider" target="1.8" />
+      <module name="websocket-service-provider-stomp" target="1.8" />
+      <module name="websocket-service-provider-without-stomp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

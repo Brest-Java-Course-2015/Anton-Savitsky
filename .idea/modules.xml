@@ -16,7 +16,8 @@
       <module fileurl="file://$PROJECT_DIR$/transactions-level-api/transactions-level-api.iml" filepath="$PROJECT_DIR$/transactions-level-api/transactions-level-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/transactions-level-impl/transactions-level-impl.iml" filepath="$PROJECT_DIR$/transactions-level-impl/transactions-level-impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-app/web-app.iml" filepath="$PROJECT_DIR$/web-app/web-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/websocket-service-provider/websocket-service-provider.iml" filepath="$PROJECT_DIR$/websocket-service-provider/websocket-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket-service-provider-stomp/websocket-service-provider-stomp.iml" filepath="$PROJECT_DIR$/websocket-service-provider-stomp/websocket-service-provider-stomp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket-service-provider-without-stomp/websocket-service-provider-without-stomp.iml" filepath="$PROJECT_DIR$/websocket-service-provider-without-stomp/websocket-service-provider-without-stomp.iml" />
     </modules>
   </component>
 </project>

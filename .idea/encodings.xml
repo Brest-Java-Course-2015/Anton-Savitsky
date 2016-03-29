@@ -20,6 +20,7 @@
     <file url="file://$PROJECT_DIR$/transactions-level-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/transactions-level-impl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web-app" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/websocket-service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/websocket-service-provider-stomp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/websocket-service-provider-without-stomp" charset="UTF-8" />
   </component>
 </project>

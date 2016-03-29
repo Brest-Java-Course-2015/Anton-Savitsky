@@ -21,7 +21,8 @@
         <module>rest-service-provider</module>
         <module>soap-service-provider</module>
         <module>consumer-soap-impl</module>
-        <module>websocket-service-provider</module>
+        <module>websocket-service-provider-without-stomp</module>
+        <module>websocket-service-provider-stomp</module>
     </modules>
 
     <properties>
@@ -292,6 +293,11 @@
                 <groupId>org.eclipse.jetty.websocket</groupId>
                 <artifactId>websocket-server</artifactId>
                 <version>9.3.4.v20151007</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>${spring.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
