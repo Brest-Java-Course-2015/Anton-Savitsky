@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class CarWebsocketController {
 
-    @Loggable
+    /*@Loggable
     @MessageMapping("/message")
     @SendTo("/topic/greetings")
     public Shout getCarById(Shout message){
@@ -20,6 +20,13 @@ public class CarWebsocketController {
         Shout sendMessage=new Shout();
         sendMessage.setMessage("Hello "+message.getMessage());
         return sendMessage;
+    }*/
+
+    @Loggable
+    @MessageMapping("/message")
+    //@SendTo("/topic/greetings")
+    public void getCarById(String message){
+        System.out.println("Received message: "+message);
     }
 
 
