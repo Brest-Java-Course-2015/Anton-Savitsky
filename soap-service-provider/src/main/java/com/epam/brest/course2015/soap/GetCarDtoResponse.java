@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.epam.brest.course2015.core.Car;
+import com.epam.brest.course2015.core.Cardto;
 
 
 /**
@@ -26,7 +26,7 @@ import com.epam.brest.course2015.core.Car;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://epam.com/brest/course2015/core}car"/>
+ *         &lt;element ref="{http://epam.com/brest/course2015/core}cardto"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,36 +37,36 @@ import com.epam.brest.course2015.core.Car;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "car"
+    "cardto"
 })
-@XmlRootElement(name = "GetCarByIdResponse")
-public class GetCarByIdResponse {
+@XmlRootElement(name = "GetCarDtoResponse")
+public class GetCarDtoResponse {
 
     @XmlElement(namespace = "http://epam.com/brest/course2015/core", required = true)
-    protected Car car;
+    protected Cardto cardto;
 
     /**
-     * Gets the value of the car property.
+     * Gets the value of the cardto property.
      * 
      * @return
      *     possible object is
-     *     {@link Car }
+     *     {@link Cardto }
      *     
      */
-    public Car getCar() {
-        return car;
+    public Cardto getCardto() {
+        return cardto;
     }
 
     /**
-     * Sets the value of the car property.
+     * Sets the value of the cardto property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Car }
+     *     {@link Cardto }
      *     
      */
-    public void setCar(Car value) {
-        this.car = value;
+    public void setCardto(Cardto value) {
+        this.cardto = value;
     }
 
 }

@@ -39,8 +39,8 @@ import com.epam.brest.course2015.core.Car;
 @XmlType(name = "", propOrder = {
     "car"
 })
-@XmlRootElement(name = "GetCarByIdResponse")
-public class GetCarByIdResponse {
+@XmlRootElement(name = "UpdateCarRequest")
+public class UpdateCarRequest {
 
     @XmlElement(namespace = "http://epam.com/brest/course2015/core", required = true)
     protected Car car;

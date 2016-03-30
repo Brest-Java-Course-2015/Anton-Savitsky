@@ -13,4 +13,11 @@ public class Shout {
     public void setMessage(String message){
         this.message=message;
     }
+
+    @Override
+    public String toString() {
+        return "Shout{" +
+                "message='" + message + '\'' +
+                '}';
+    }
 }

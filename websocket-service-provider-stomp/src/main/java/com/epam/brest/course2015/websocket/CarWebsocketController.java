@@ -1,6 +1,8 @@
 package com.epam.brest.course2015.websocket;
 
+import com.epam.brest.course2015.test.Loggable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 
@@ -10,13 +12,24 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class CarWebsocketController {
 
+    @Loggable
     @MessageMapping("/message")
-    public void getCarById(Shout message){
+    @SendTo("/topic/greetings")
+    public Shout getCarById(Shout message){
         System.out.println("Received message: "+message.getMessage());
+        Shout sendMessage=new Shout();
+        sendMessage.setMessage("Hello "+message.getMessage());
+        return sendMessage;
     }
 
-    @SubscribeMapping("/submessage")
-    public Shout subscibe(Shout message){
-        return message;
-    }
+
+    /*
+    @SubscribeMapping("/topic/greetings")
+    @SendTo("/topic/greetings")
+    public Shout subscribeToTopicGreeting() {
+        Shout newShout = new Shout();
+        System.out.println("Somebody subscribed!");
+        newShout.setMessage("Subscribed");
+        return newShout;
+    }*/
 }

@@ -62,6 +62,7 @@ public class CarRestController{
 
 
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+
     @Loggable
     public void deleteCar(@PathVariable("id") Integer id) {
         carTransactions.deleteCar(id);

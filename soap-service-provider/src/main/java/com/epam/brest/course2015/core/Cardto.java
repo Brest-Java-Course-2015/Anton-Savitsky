@@ -6,14 +6,13 @@
 //
 
 
-package com.epam.brest.course2015.soap;
+package com.epam.brest.course2015.core;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.epam.brest.course2015.core.Car;
 
 
 /**
@@ -26,7 +25,8 @@ import com.epam.brest.course2015.core.Car;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://epam.com/brest/course2015/core}car"/>
+ *         &lt;element ref="{http://epam.com/brest/course2015/core}cars"/>
+ *         &lt;element ref="{http://epam.com/brest/course2015/core}total"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,36 +37,54 @@ import com.epam.brest.course2015.core.Car;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "car"
+    "cars",
+    "total"
 })
-@XmlRootElement(name = "GetCarByIdResponse")
-public class GetCarByIdResponse {
+@XmlRootElement(name = "cardto")
+public class Cardto {
 
-    @XmlElement(namespace = "http://epam.com/brest/course2015/core", required = true)
-    protected Car car;
+    @XmlElement(required = true)
+    protected Cars cars;
+    protected int total;
 
     /**
-     * Gets the value of the car property.
+     * Gets the value of the cars property.
      * 
      * @return
      *     possible object is
-     *     {@link Car }
+     *     {@link Cars }
      *     
      */
-    public Car getCar() {
-        return car;
+    public Cars getCars() {
+        return cars;
     }
 
     /**
-     * Sets the value of the car property.
+     * Sets the value of the cars property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Car }
+     *     {@link Cars }
      *     
      */
-    public void setCar(Car value) {
-        this.car = value;
+    public void setCars(Cars value) {
+        this.cars = value;
+    }
+
+    /**
+     * Gets the value of the total property.
+     * 
+     */
+    public int getTotal() {
+        return total;
+    }
+
+    /**
+     * Sets the value of the total property.
+     * 
+     */
+    public void setTotal(int value) {
+        this.total = value;
     }
 
 }

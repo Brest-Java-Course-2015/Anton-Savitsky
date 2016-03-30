@@ -3,10 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:websocket="http://www.springframework.org/schema/websocket"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/websocket
-       http://www.springframework.org/schema/websocket/spring-websocket.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/websocket/spring-websocket.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
        <context:component-scan base-package="com.epam.brest.course2015.websocket"/>
 
@@ -16,12 +17,16 @@
                      <websocket:sockjs/>
               </websocket:stomp-endpoint>
 
-              <websocket:simple-broker prefix="/topic, /queue"/>
+              <websocket:simple-broker prefix="/topic"/>
 
               <websocket:message-converters>
                      <bean class="org.springframework.messaging.converter.MappingJackson2MessageConverter"/>
               </websocket:message-converters>
 
        </websocket:message-broker>
+
+       <aop:aspectj-autoproxy/>
+
+       <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
 </beans>
