@@ -2,8 +2,14 @@ package com.epam.brest.course2015.consumer;
 
 import org.springframework.messaging.converter.StringMessageConverter;
 import org.springframework.messaging.simp.stomp.*;
+import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
+import org.springframework.web.socket.CloseStatus;
+import org.springframework.web.socket.WebSocketHandler;
+import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.client.WebSocketClient;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
+import org.springframework.web.socket.handler.AbstractWebSocketHandler;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 
 /**
@@ -12,11 +18,10 @@ import org.springframework.web.socket.messaging.WebSocketStompClient;
 public class CarWebsocketConsumer {
 
     WebSocketClient transport = new StandardWebSocketClient();
-    WebSocketStompClient stompClient = new WebSocketStompClient(transport);
     String url="ws://localhost:8888/jetty/websocket/endpoint";
 
     public void sendMessageToProvider(){
-        stompClient.setMessageConverter(new StringMessageConverter());
+
 
         StompSessionHandler handler=new StompSessionHandlerAdapter() {
             @Override
@@ -37,7 +42,31 @@ public class CarWebsocketConsumer {
                 System.out.println("Is connected: "+session.isConnected());
             }
         };
+/*
+        WebSocketHandler webSocketHandler=new AbstractWebSocketHandler() {
+            @Override
+            public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
+                System.out.println("AbstractWebSocketHandler: ");
+                exception.printStackTrace();
+            }
 
+            @Override
+            public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+                System.out.println("Connected to server!!!");
+            }
+
+            @Override
+            public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+                System.out.println("Closed connection to server!!!");
+            }
+        };
+
+*/
+        //transport.doHandshake(webSocketHandler, url);
+
+        WebSocketStompClient stompClient = new WebSocketStompClient(transport);
+        stompClient.setMessageConverter(new StringMessageConverter());
+        stompClient.setTaskScheduler(new ConcurrentTaskScheduler());
         stompClient.connect(url, handler);
         try {
             Thread.sleep(5000);
