@@ -7,6 +7,8 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <import resource="websocket-support.xml"/>
+
     <bean id="carTransactions" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.transactions.CarTransactions"/>
     </bean>
@@ -21,4 +23,6 @@
     <aop:aspectj-autoproxy/>
 
     <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+
+    <bean id="subscribeForUpdatesHandler" class="com.epam.brest.course2015.provider.SubscribeForUpdatesHandler"/>
 </beans>

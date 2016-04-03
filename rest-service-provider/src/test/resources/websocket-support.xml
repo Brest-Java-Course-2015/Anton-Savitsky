@@ -2,14 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:websocket="http://www.springframework.org/schema/websocket"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/websocket
-       http://www.springframework.org/schema/websocket/spring-websocket.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
-       <context:component-scan base-package="com.epam.brest.course2015.websocket"/>
 
        <websocket:message-broker application-destination-prefix="/app">
 
@@ -22,7 +16,7 @@
               <websocket:stomp-broker-relay prefix="/topic"
                                             relay-host="localhost" relay-port="61613"
                                             heartbeat-send-interval="20000" heartbeat-receive-interval="20000"
-                      client-passcode="mypass" client-login="anton"/>
+                                            client-passcode="mypass" client-login="anton"/>
 
               <websocket:message-converters>
                      <bean class="org.springframework.messaging.converter.MappingJackson2MessageConverter"/>
@@ -30,8 +24,6 @@
 
        </websocket:message-broker>
 
-       <aop:aspectj-autoproxy/>
 
-       <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
 </beans>

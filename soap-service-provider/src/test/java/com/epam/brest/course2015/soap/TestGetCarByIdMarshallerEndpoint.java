@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ws.test.server.MockWebServiceClient;
 
 import javax.xml.transform.Source;
@@ -24,6 +25,7 @@ import static org.springframework.ws.test.server.ResponseMatchers.payload;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:endpoint-mock-test.xml"})
+@Transactional
 public class TestGetCarByIdMarshallerEndpoint {
 
     @Autowired

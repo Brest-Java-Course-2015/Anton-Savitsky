@@ -148,3 +148,123 @@ Cars: null}]): Integer:2 in 1 ms
 23 мар 2016 13:47:20,845[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:3 in 1 ms
 23 мар 2016 13:47:20,854[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([1]): Producer:Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
 Cars: null} in 1 ms
+03 Apr 2016 16:55:41,519[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountOfCarsByProducerId([0]): Integer:3 in 58 ms
+03 Apr 2016 16:55:41,655[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getPagingList([1, 2]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 93 ms
+03 Apr 2016 16:55:41,664[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 2 ms
+03 Apr 2016 16:55:41,671[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #updateCar([Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}]): void in 6 ms
+03 Apr 2016 16:55:41,673[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 16:55:41,683[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 3 ms
+03 Apr 2016 16:55:41,692[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 1 ms
+03 Apr 2016 16:55:41,693[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #deleteCar([1]): void in 1 ms
+03 Apr 2016 16:55:41,695[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 1 ms
+03 Apr 2016 16:55:41,704[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([1]): Car:Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 16:55:41,730[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #addCar([Car: {carId=null, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=null}]): Integer:3 in 6 ms
+03 Apr 2016 16:55:41,732[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([3]): Car:Car: {carId=3, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 16:55:41,741[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountCarsById([1]): Integer:1 in 1 ms
+03 Apr 2016 16:55:41,750[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getListOfCarsByDateOfCreation([2015-10-12, 2015-10-15]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 16:55:41,839[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #updateProducer([Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null}]): void in 26 ms
+03 Apr 2016 16:55:41,858[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([0]): Producer:Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null} in 18 ms
+03 Apr 2016 16:55:41,865[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:2 in 1 ms
+03 Apr 2016 16:55:41,867[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #deleteProducer([0]): void in 2 ms
+03 Apr 2016 16:55:41,868[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:0 in 1 ms
+03 Apr 2016 16:55:41,870[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:1 in 0 ms
+03 Apr 2016 16:55:41,878[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='toyota, country=Korea, countOfCars=0
+Cars: null}, Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null}] in 2 ms
+03 Apr 2016 16:55:41,886[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #addProducer([Producer: {producerId=null, producerName='toyota, country=korea, countOfCars=0
+Cars: null}]): Integer:2 in 1 ms
+03 Apr 2016 16:55:41,893[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:3 in 1 ms
+03 Apr 2016 16:55:41,901[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([1]): Producer:Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null} in 2 ms
+03 Apr 2016 17:02:32,580[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountOfCarsByProducerId([0]): Integer:3 in 68 ms
+03 Apr 2016 17:02:32,698[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getPagingList([1, 2]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 105 ms
+03 Apr 2016 17:02:32,713[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 2 ms
+03 Apr 2016 17:02:32,723[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #updateCar([Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}]): void in 9 ms
+03 Apr 2016 17:02:32,725[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:02:32,751[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:02:32,774[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 1 ms
+03 Apr 2016 17:02:32,776[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #deleteCar([1]): void in 0 ms
+03 Apr 2016 17:02:32,779[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:02:32,809[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([1]): Car:Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota} in 11 ms
+03 Apr 2016 17:02:32,860[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #addCar([Car: {carId=null, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=null}]): Integer:3 in 10 ms
+03 Apr 2016 17:02:32,869[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([3]): Car:Car: {carId=3, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=toyota} in 8 ms
+03 Apr 2016 17:02:32,894[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountCarsById([1]): Integer:1 in 3 ms
+03 Apr 2016 17:02:32,928[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getListOfCarsByDateOfCreation([2015-10-12, 2015-10-15]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 9 ms
+03 Apr 2016 17:02:33,052[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #updateProducer([Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null}]): void in 26 ms
+03 Apr 2016 17:02:33,069[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([0]): Producer:Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null} in 15 ms
+03 Apr 2016 17:02:33,079[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:2 in 2 ms
+03 Apr 2016 17:02:33,082[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #deleteProducer([0]): void in 2 ms
+03 Apr 2016 17:02:33,084[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:0 in 1 ms
+03 Apr 2016 17:02:33,086[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:1 in 1 ms
+03 Apr 2016 17:02:33,108[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='toyota, country=Korea, countOfCars=0
+Cars: null}, Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null}] in 4 ms
+03 Apr 2016 17:02:33,137[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #addProducer([Producer: {producerId=null, producerName='toyota, country=korea, countOfCars=0
+Cars: null}]): Integer:2 in 5 ms
+03 Apr 2016 17:02:33,163[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:3 in 2 ms
+03 Apr 2016 17:02:33,186[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([1]): Producer:Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null} in 3 ms
+03 Apr 2016 17:09:07,560[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountOfCarsByProducerId([0]): Integer:3 in 62 ms
+03 Apr 2016 17:09:07,667[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getPagingList([1, 2]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 98 ms
+03 Apr 2016 17:09:07,674[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:09:07,683[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #updateCar([Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}]): void in 8 ms
+03 Apr 2016 17:09:07,685[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:09:07,699[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:09:07,712[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:09:07,714[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #deleteCar([1]): void in 1 ms
+03 Apr 2016 17:09:07,715[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 1 ms
+03 Apr 2016 17:09:07,723[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([1]): Car:Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:09:07,777[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #addCar([Car: {carId=null, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=null}]): Integer:3 in 9 ms
+03 Apr 2016 17:09:07,783[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([3]): Car:Car: {carId=3, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=toyota} in 5 ms
+03 Apr 2016 17:09:07,790[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountCarsById([1]): Integer:1 in 1 ms
+03 Apr 2016 17:09:07,797[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getListOfCarsByDateOfCreation([2015-10-12, 2015-10-15]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 1 ms
+03 Apr 2016 17:09:07,883[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #updateProducer([Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null}]): void in 29 ms
+03 Apr 2016 17:09:07,900[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([0]): Producer:Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null} in 14 ms
+03 Apr 2016 17:09:07,908[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:2 in 0 ms
+03 Apr 2016 17:09:07,909[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #deleteProducer([0]): void in 1 ms
+03 Apr 2016 17:09:07,910[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:0 in 1 ms
+03 Apr 2016 17:09:07,911[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:1 in 0 ms
+03 Apr 2016 17:09:07,918[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='toyota, country=Korea, countOfCars=0
+Cars: null}, Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null}] in 1 ms
+03 Apr 2016 17:09:07,923[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #addProducer([Producer: {producerId=null, producerName='toyota, country=korea, countOfCars=0
+Cars: null}]): Integer:2 in 1 ms
+03 Apr 2016 17:09:07,929[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:3 in 1 ms
+03 Apr 2016 17:09:07,939[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([1]): Producer:Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null} in 3 ms
+03 Apr 2016 17:32:02,624[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountOfCarsByProducerId([0]): Integer:3 in 61 ms
+03 Apr 2016 17:32:02,788[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getPagingList([1, 2]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 126 ms
+03 Apr 2016 17:32:02,798[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:32:02,811[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #updateCar([Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}]): void in 12 ms
+03 Apr 2016 17:32:02,816[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([2]): Car:Car: {carId=2, carName='6yu, dateOfCreation=2015-10-11, producerId=0, producerName=toyota} in 3 ms
+03 Apr 2016 17:32:02,829[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:32:02,839[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 2 ms
+03 Apr 2016 17:32:02,843[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #deleteCar([1]): void in 3 ms
+03 Apr 2016 17:32:02,849[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 4 ms
+03 Apr 2016 17:32:02,871[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([1]): Car:Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota} in 7 ms
+03 Apr 2016 17:32:02,910[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #addCar([Car: {carId=null, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=null}]): Integer:3 in 15 ms
+03 Apr 2016 17:32:02,913[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCarById([3]): Car:Car: {carId=3, carName='9rt, dateOfCreation=2015-12-11, producerId=0, producerName=toyota} in 1 ms
+03 Apr 2016 17:32:02,941[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getCountCarsById([1]): Integer:1 in 3 ms
+03 Apr 2016 17:32:02,964[main] INFO  - com.epam.brest.course2015.dao.CarDaoJdbcImpl #getListOfCarsByDateOfCreation([2015-10-12, 2015-10-15]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}] in 4 ms
+03 Apr 2016 17:32:03,064[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #updateProducer([Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null}]): void in 32 ms
+03 Apr 2016 17:32:03,089[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([0]): Producer:Producer: {producerId=0, producerName='newname!, country=newcountry!, countOfCars=0
+Cars: null} in 23 ms
+03 Apr 2016 17:32:03,101[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:2 in 0 ms
+03 Apr 2016 17:32:03,104[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #deleteProducer([0]): void in 3 ms
+03 Apr 2016 17:32:03,106[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:0 in 1 ms
+03 Apr 2016 17:32:03,107[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getTotalCount([]): Integer:1 in 1 ms
+03 Apr 2016 17:32:03,130[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='toyota, country=Korea, countOfCars=0
+Cars: null}, Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null}] in 3 ms
+03 Apr 2016 17:32:03,169[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #addProducer([Producer: {producerId=null, producerName='toyota, country=korea, countOfCars=0
+Cars: null}]): Integer:2 in 2 ms
+03 Apr 2016 17:32:03,180[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #countCarsByProducerId([0]): Integer:3 in 1 ms
+03 Apr 2016 17:32:03,224[main] INFO  - com.epam.brest.course2015.dao.ProducerDaoJdbcImpl #getProducerById([1]): Producer:Producer: {producerId=1, producerName='toyot, country=Kor, countOfCars=0
+Cars: null} in 2 ms

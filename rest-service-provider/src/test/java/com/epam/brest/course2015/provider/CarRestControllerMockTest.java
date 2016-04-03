@@ -18,6 +18,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import static org.easymock.EasyMock.*;
@@ -33,6 +34,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:rest-spring-mock-test.xml"})
+@Transactional
 public class CarRestControllerMockTest {
     @Autowired
     private CarRestController carRestController;

@@ -10,6 +10,10 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -21,10 +25,12 @@ public class CarRestController{
     @Autowired
     private CarTransactions carTransactions;
 
+    @SubscribeForUpdates
     @RequestMapping(method = RequestMethod.PUT)
-    @Loggable
+    //@Loggable
     public void updateCar(@RequestBody Car car){
         carTransactions.updateCar(car);
+        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
     }
 
 
@@ -42,11 +48,14 @@ public class CarRestController{
     }
 
 
+    @SubscribeForUpdates
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    @Loggable
+    //@Loggable
     public Integer addCar(@RequestBody Car car) {
-        return carTransactions.addCar(car);
+        int carId=carTransactions.addCar(car);
+        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
+        return carId;
     }
 
 
@@ -61,11 +70,12 @@ public class CarRestController{
     }
 
 
+    @SubscribeForUpdates
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
-
-    @Loggable
+    //@Loggable
     public void deleteCar(@PathVariable("id") Integer id) {
         carTransactions.deleteCar(id);
+        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
     }
 
 

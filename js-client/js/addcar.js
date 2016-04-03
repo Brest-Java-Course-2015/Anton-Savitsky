@@ -1,5 +1,8 @@
 // The root URL for the RESTful services
-$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
+//$("head").append($('<script type="text/javascript" src="js/properties.js"></script>'));
+var PREFIX_URL = "http://localhost:8080/rest-service-provider-1.0-SNAPSHOT";
+
+
 var CAR_URL = "/car";
 var PRODUCER_URL = "/producer";
 var PRODUCER_DTO="/dto";

@@ -4,12 +4,15 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+       <import resource="websocket-support.xml"/>
 
        <mvc:annotation-driven/>
 
@@ -83,6 +86,9 @@
 
        <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
+       <bean id="subscribeForUpdatesHandler" class="com.epam.brest.course2015.provider.SubscribeForUpdatesHandler"/>
+
+
        <!--Liquid Lib-->
        <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
               <property name="dataSource" ref="dataSource" />
@@ -92,4 +98,5 @@
               -->
               <property name="contexts" value="test, production" />
        </bean>
+
 </beans>
