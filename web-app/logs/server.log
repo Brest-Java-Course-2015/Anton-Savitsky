@@ -259,3 +259,32 @@ Cars: null}]): String:redirect:/producer in 27 ms
 Cars: null}]): Integer:3 in 1 ms
 03 Apr 2016 17:32:19,916[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #addProducer([Producer: {producerId=null, producerName='null, country=null, countOfCars=0
 Cars: null}]): String:redirect:/producer in 5 ms
+04 Apr 2016 21:46:06,442[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #getCarsDtoByDate([10/10/2015, 15/10/2015]): void in 334 ms
+04 Apr 2016 21:46:06,469[main] INFO  - com.epam.brest.course2015.web.CarWebController #getCarByDateDto([10/10/2015, 15/10/2015]): ModelAndView:ModelAndView: reference to view with name 'carsbydate'; model is {dto=null} in 466 ms
+04 Apr 2016 21:46:06,753[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #deleteCar([1]): void in 0 ms
+04 Apr 2016 21:46:06,754[main] INFO  - com.epam.brest.course2015.web.CarWebController #deleteCar([1]): String:redirect:/car in 5 ms
+04 Apr 2016 21:46:07,137[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #getCarById([1]): Car:Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no} in 98 ms
+04 Apr 2016 21:46:07,190[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #getProducersDto([]): ProducerDto:ProducerDto{producers=null, total=null} in 48 ms
+04 Apr 2016 21:46:07,195[main] INFO  - com.epam.brest.course2015.web.CarWebController #updateCarForm([1]): ModelAndView:ModelAndView: reference to view with name 'carform'; model is {car=Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no}, producersdto=ProducerDto{producers=null, total=null}} in 163 ms
+04 Apr 2016 21:46:07,806[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #updateCar([Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no}]): void in 104 ms
+04 Apr 2016 21:46:07,808[main] INFO  - com.epam.brest.course2015.web.CarWebController #saveUpdatedCar([Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no}]): String:redirect:/car in 110 ms
+04 Apr 2016 21:46:08,090[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #getCarsDto([]): CarDto:CarDto{cars=null, total=null} in 2 ms
+04 Apr 2016 21:46:08,092[main] INFO  - com.epam.brest.course2015.web.CarWebController #getCarDto([]): ModelAndView:ModelAndView: reference to view with name 'cars'; model is {dto=CarDto{cars=null, total=null}} in 13 ms
+04 Apr 2016 21:46:08,454[main] INFO  - com.epam.brest.course2015.provider.CarServiceConsumer #addCar([Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no}]): Integer:3 in 17 ms
+04 Apr 2016 21:46:08,460[main] INFO  - com.epam.brest.course2015.web.CarWebController #addCar([Car: {carId=null, carName='null, dateOfCreation=null, producerId=no, producerName=no}]): String:redirect:/car in 34 ms
+04 Apr 2016 21:46:09,591[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #getProducerById([1]): Producer:Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null} in 5 ms
+04 Apr 2016 21:46:09,592[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #updateProducerForm([1]): ModelAndView:ModelAndView: reference to view with name 'producerform'; model is {producer=Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null}} in 51 ms
+04 Apr 2016 21:46:09,731[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #updateProducer([Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null}]): void in 56 ms
+04 Apr 2016 21:46:09,732[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #saveUpdatedProducer([Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null}]): String:redirect:/producer in 58 ms
+04 Apr 2016 21:46:09,796[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #deleteProducer([1]): void in 0 ms
+04 Apr 2016 21:46:09,798[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #deleteProducer([1]): String:redirect:/producer in 4 ms
+04 Apr 2016 21:46:09,906[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #getProducersDto([]): ProducerDto:ProducerDto{producers=null, total=null} in 9 ms
+04 Apr 2016 21:46:09,907[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #getProducerDto([]): ModelAndView:ModelAndView: reference to view with name 'producers'; model is {dto=ProducerDto{producers=null, total=null}} in 11 ms
+04 Apr 2016 21:46:09,961[main] INFO  - com.epam.brest.course2015.provider.ProducerServiceConsumer #addProducer([Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null}]): Integer:3 in 3 ms
+04 Apr 2016 21:46:09,962[main] INFO  - com.epam.brest.course2015.web.ProducerWebController #addProducer([Producer: {producerId=null, producerName='null, country=null, countOfCars=0
+Cars: null}]): String:redirect:/producer in 7 ms

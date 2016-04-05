@@ -23,14 +23,19 @@ import java.util.List;
 public class CarRestController{
 
     @Autowired
+    private DbUpdatedEventPublisher dbUpdatedEventPublisher;
+
+    @Autowired
     private CarTransactions carTransactions;
 
-    @SubscribeForUpdates
+
     @RequestMapping(method = RequestMethod.PUT)
-    //@Loggable
+    @Loggable
     public void updateCar(@RequestBody Car car){
         carTransactions.updateCar(car);
-        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
+
+        Thread thread=new Thread(dbUpdatedEventPublisher);
+        thread.start();
     }
 
 
@@ -48,13 +53,15 @@ public class CarRestController{
     }
 
 
-    @SubscribeForUpdates
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    //@Loggable
+    @Loggable
     public Integer addCar(@RequestBody Car car) {
         int carId=carTransactions.addCar(car);
-        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
+
+        Thread thread=new Thread(dbUpdatedEventPublisher);
+        thread.start();
+
         return carId;
     }
 
@@ -70,12 +77,13 @@ public class CarRestController{
     }
 
 
-    @SubscribeForUpdates
+    //@SubscribeForUpdates
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
-    //@Loggable
+    @Loggable
     public void deleteCar(@PathVariable("id") Integer id) {
         carTransactions.deleteCar(id);
-        //simpMessagingTemplate.convertAndSend("/topic/update", carTransactions.getCarsDto());
+        Thread thread=new Thread(dbUpdatedEventPublisher);
+        thread.start();
     }
 
 

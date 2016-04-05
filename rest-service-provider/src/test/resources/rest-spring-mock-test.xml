@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
     <import resource="websocket-support.xml"/>
 
@@ -24,5 +24,16 @@
 
     <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 
-    <bean id="subscribeForUpdatesHandler" class="com.epam.brest.course2015.provider.SubscribeForUpdatesHandler"/>
+
+    <bean id="dbUpdatedEventHandler" class="com.epam.brest.course2015.provider.DbUpdatedEventHandler"/>
+
+    <bean id="dbUpdatedEventPublisher" class="com.epam.brest.course2015.provider.DbUpdatedEventPublisher"/>
+
+    <task:executor id='pool' pool-size='10'/>
+
+    <bean id='applicationEventMulticaster'
+          class='org.springframework.context.event.SimpleApplicationEventMulticaster'>
+        <property name='taskExecutor' ref='pool'/>
+    </bean>
+
 </beans>

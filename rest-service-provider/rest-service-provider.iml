@@ -90,10 +90,10 @@
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-net:2.0.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: io.projectreactor:reactor-bus:2.0.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.goldmansachs:gs-collections:5.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.goldmansachs:gs-collections-api:5.1.0" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-stream:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.30.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-bus:2.0.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.goldmansachs:gs-collections:5.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.goldmansachs:gs-collections-api:5.1.0" level="project" />
   </component>
 </module>
