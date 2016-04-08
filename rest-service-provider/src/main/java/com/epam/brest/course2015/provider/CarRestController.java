@@ -33,9 +33,10 @@ public class CarRestController{
     @Loggable
     public void updateCar(@RequestBody Car car){
         carTransactions.updateCar(car);
-
+/*
         Thread thread=new Thread(dbUpdatedEventPublisher);
         thread.start();
+        */
     }
 
 
@@ -59,8 +60,8 @@ public class CarRestController{
     public Integer addCar(@RequestBody Car car) {
         int carId=carTransactions.addCar(car);
 
-        Thread thread=new Thread(dbUpdatedEventPublisher);
-        thread.start();
+        /*Thread thread=new Thread(dbUpdatedEventPublisher);
+        thread.start();*/
 
         return carId;
     }
@@ -82,8 +83,8 @@ public class CarRestController{
     @Loggable
     public void deleteCar(@PathVariable("id") Integer id) {
         carTransactions.deleteCar(id);
-        Thread thread=new Thread(dbUpdatedEventPublisher);
-        thread.start();
+        /*Thread thread=new Thread(dbUpdatedEventPublisher);
+        thread.start();*/
     }
 
 
