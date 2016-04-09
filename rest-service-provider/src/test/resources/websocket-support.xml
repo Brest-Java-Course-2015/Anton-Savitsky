@@ -11,12 +11,12 @@
                      <websocket:sockjs/>
               </websocket:stomp-endpoint>
 
-              <!--<websocket:simple-broker prefix="/topic"/>-->
+              <websocket:simple-broker prefix="/topic"/>
 
-              <websocket:stomp-broker-relay prefix="/topic"
+              <!--<websocket:stomp-broker-relay prefix="/topic"
                                             relay-host="localhost" relay-port="61613"
                                             heartbeat-send-interval="20000" heartbeat-receive-interval="20000"
-                                            client-passcode="mypass" client-login="anton"/>
+                                            client-passcode="mypass" client-login="anton"/>-->
 
               <websocket:message-converters>
                      <bean class="org.springframework.messaging.converter.MappingJackson2MessageConverter"/>

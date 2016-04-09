@@ -6,6 +6,7 @@ import com.epam.brest.course2015.transactions.ProducerTransactions;
 import com.epam.brest.course2015.test.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -16,6 +17,9 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/producer")
 public class ProducerRestController{
+
+    @Autowired
+    private SimpMessagingTemplate simpMessagingTemplate;
 
     @Autowired
     private ProducerTransactions producerTransactions;
@@ -37,19 +41,24 @@ public class ProducerRestController{
     @ResponseStatus(value = HttpStatus.CREATED)
     @Loggable
     public Integer addProducer(@RequestBody Producer producer){
-        return producerTransactions.addProducer(producer);
+        int id = producerTransactions.addProducer(producer);
+        producer.setProducerId(id);
+        simpMessagingTemplate.convertAndSend("/topic/producer/add", producer);
+        return id;
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @Loggable
     public void updateProducer(@RequestBody Producer producer){
         producerTransactions.updateProducer(producer);
+        simpMessagingTemplate.convertAndSend("/topic/producer/update", producer);
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
     @Loggable
     public void deleteProducer(@PathVariable("id") Integer id) {
         producerTransactions.deleteProducer(id);
+        simpMessagingTemplate.convertAndSend("/topic/producer/delete", id);
     }
 
     @RequestMapping(value="/dto",

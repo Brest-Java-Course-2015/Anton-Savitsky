@@ -388,3 +388,65 @@ Cars: null} in 0 ms
 06 Apr 2016 22:30:35,702[qtp805690186-22] INFO  - com.epam.brest.course2015.dao.CarDao #getAllCars([]): ArrayList:[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}] in 8 ms
 06 Apr 2016 22:30:35,706[qtp805690186-22] INFO  - com.epam.brest.course2015.transactions.CarTransactions #getCarsDto([]): CarDto:CarDto{cars=[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}], total=3} in 12 ms
 06 Apr 2016 22:30:35,708[qtp805690186-22] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDto([]): CarDto:CarDto{cars=[Car: {carId=0, carName='5dr, dateOfCreation=2015-10-14, producerId=0, producerName=toyota}, Car: {carId=1, carName='3hr, dateOfCreation=2015-10-13, producerId=0, producerName=toyota}, Car: {carId=2, carName='6ks, dateOfCreation=2015-10-11, producerId=0, producerName=toyota}], total=3} in 18 ms
+09 Apr 2016 16:11:40,225[main] ERROR - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): org.springframework.messaging.MessageDeliveryException: Message broker not active. Consider subscribing to receive BrokerAvailabilityEvent's from an ApplicationListener Spring bean.
+09 Apr 2016 16:11:40,287[main] ERROR - catching
+09 Apr 2016 16:11:40,452[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 0 ms
+09 Apr 2016 16:11:40,604[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:11:40,746[main] ERROR - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): org.springframework.messaging.MessageDeliveryException: Message broker not active. Consider subscribing to receive BrokerAvailabilityEvent's from an ApplicationListener Spring bean.
+09 Apr 2016 16:11:40,747[main] ERROR - catching
+09 Apr 2016 16:12:18,700[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 113 ms
+09 Apr 2016 16:12:18,896[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 1 ms
+09 Apr 2016 16:12:19,062[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:12:19,156[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 1 ms
+09 Apr 2016 16:13:19,921[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDto([]): CarDto:CarDto{cars=null, total=null} in 36 ms
+09 Apr 2016 16:13:31,404[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getListOfCarsByDateOfCreation([10/10/2015, 15/10/2015]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 115 ms
+09 Apr 2016 16:13:43,864[main] INFO  - com.epam.brest.course2015.provider.CarRestController #addCar([Car: {carId=3, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): Integer:3 in 60 ms
+09 Apr 2016 16:13:57,893[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 60 ms
+09 Apr 2016 16:14:09,238[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 72 ms
+09 Apr 2016 16:14:09,338[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 1 ms
+09 Apr 2016 16:14:09,447[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 1 ms
+09 Apr 2016 16:14:09,583[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 7 ms
+09 Apr 2016 16:14:25,409[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 68 ms
+09 Apr 2016 16:14:25,587[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 1 ms
+09 Apr 2016 16:14:25,729[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:14:25,850[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 4 ms
+09 Apr 2016 16:14:41,745[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #updateProducer([Producer: {producerId=0, producerName='name1, country=country1, countOfCars=0
+Cars: null}]): void in 72 ms
+09 Apr 2016 16:14:41,829[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #deleteProducer([0]): void in 2 ms
+09 Apr 2016 16:14:41,883[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+09 Apr 2016 16:14:41,955[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #addProducer([Producer: {producerId=1, producerName='name1, country=country1, countOfCars=0
+Cars: null}]): Integer:1 in 0 ms
+09 Apr 2016 16:14:42,007[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getProducerById([0]): Producer:Producer: {producerId=0, producerName='null, country=null, countOfCars=0
+Cars: null} in 0 ms
+09 Apr 2016 16:14:42,066[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getProducersDto([]): ProducerDto:ProducerDto{producers=null, total=null} in 1 ms
+09 Apr 2016 16:16:29,759[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 79 ms
+09 Apr 2016 16:16:29,855[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 1 ms
+09 Apr 2016 16:16:29,926[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:16:29,994[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 1 ms
+09 Apr 2016 16:17:17,173[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 112 ms
+09 Apr 2016 16:17:17,294[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 0 ms
+09 Apr 2016 16:17:17,383[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:17:17,467[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 1 ms
+09 Apr 2016 16:17:17,527[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getListOfCarsByDateOfCreation([10/10/2015, 15/10/2015]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 1 ms
+09 Apr 2016 16:17:17,613[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarById([1]): Car:Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no} in 0 ms
+09 Apr 2016 16:17:17,681[main] INFO  - com.epam.brest.course2015.provider.CarRestController #addCar([Car: {carId=3, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): Integer:3 in 0 ms
+09 Apr 2016 16:17:17,753[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDto([]): CarDto:CarDto{cars=null, total=null} in 0 ms
+09 Apr 2016 16:19:30,381[main] INFO  - com.epam.brest.course2015.provider.CarRestController #updateCar([Car: {carId=0, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): void in 58 ms
+09 Apr 2016 16:19:30,470[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDtoByDate([10/10/2015, 15/10/2015]): CarDto:CarDto{cars=null, total=null} in 1 ms
+09 Apr 2016 16:19:30,575[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getAllCars([]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:19:30,646[main] INFO  - com.epam.brest.course2015.provider.CarRestController #deleteCar([1]): void in 1 ms
+09 Apr 2016 16:19:30,705[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getListOfCarsByDateOfCreation([10/10/2015, 15/10/2015]): ArrayList:[Car: {carId=0, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+09 Apr 2016 16:19:30,757[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarById([1]): Car:Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no} in 0 ms
+09 Apr 2016 16:19:30,808[main] INFO  - com.epam.brest.course2015.provider.CarRestController #addCar([Car: {carId=3, carName='ert, dateOfCreation=2013-09-15, producerId=1, producerName=null}]): Integer:3 in 0 ms
+09 Apr 2016 16:19:30,852[main] INFO  - com.epam.brest.course2015.provider.CarRestController #getCarsDto([]): CarDto:CarDto{cars=null, total=null} in 0 ms
+09 Apr 2016 16:19:30,924[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #updateProducer([Producer: {producerId=0, producerName='name1, country=country1, countOfCars=0
+Cars: null}]): void in 17 ms
+09 Apr 2016 16:19:30,954[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #deleteProducer([0]): void in 1 ms
+09 Apr 2016 16:19:30,987[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getAllProducers([]): ArrayList:[Producer: {producerId=0, producerName='null, country=null, countOfCars=0
+Cars: null}] in 1 ms
+09 Apr 2016 16:19:31,029[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #addProducer([Producer: {producerId=1, producerName='name1, country=country1, countOfCars=0
+Cars: null}]): Integer:1 in 1 ms
+09 Apr 2016 16:19:31,067[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getProducerById([0]): Producer:Producer: {producerId=0, producerName='null, country=null, countOfCars=0
+Cars: null} in 0 ms
+09 Apr 2016 16:19:31,108[main] INFO  - com.epam.brest.course2015.provider.ProducerRestController #getProducersDto([]): ProducerDto:ProducerDto{producers=null, total=null} in 1 ms
