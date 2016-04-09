@@ -1,5 +1,7 @@
 # Anton-Savitsky
 
+New!!! Added angular-js client with websockets support
+
 CAR-PRODUCER
 
 Version 1.0
@@ -14,8 +16,8 @@ This is a short description of how you can run this application.
 
 - Go to the root directory Anton-Savitsky
 
-- Run the command: mvn clean install -PnoTest
-(-PnoTest needed to not run integration tests in the consumer-rest-impl module)
+- Run the command: mvn clean install -PnoITest
+(-PnoITest needed to not run integration tests in the consumer-rest-impl module)
 
 1) If you want to run JavaScript version of the UI:
 
@@ -25,7 +27,7 @@ This is a short description of how you can run this application.
 
 - restart tomcat
 
-- go to app-js-client and open index.html in a browser
+- go to app-js-client and open index.html in a browser (alternatively you may use angular-js version of client)
 
 The default URI for the REST service (PREFIX_URL) is http://localhost:8080/app-rest-1.0-SNAPSHOT/
 
