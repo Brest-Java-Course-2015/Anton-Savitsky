@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <import resource="websocket-support.xml"/>
+
+    <mvc:annotation-driven/>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:dao-mysql.properties</value>
+                <value>classpath:service.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="java:comp/env/jdbc/car_producer_db"/>
+        <property name="lookupOnStartup" value="true"/>
+        <property name="cache" value="true"/>
+        <property name="proxyInterface" value="javax.sql.DataSource"/>
+    </bean>
+
+    <!--
+           <jee:jndi-lookup id="dataSource" jndi-name="jdbc/car_producer_db"
+                            expected-type="org.springframework.jdbc.datasource.DriverManagerDataSource" />-->
+
+    <!--
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:create-tables.sql"/>
+        <jdbc:script location="classpath:data-script.sql"/>
+    </jdbc:initialize-database>
+    -->
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="carDao" class="com.epam.brest.course2015.dao.CarDaoJdbcImpl"/>
+    <bean id="producerDao" class="com.epam.brest.course2015.dao.ProducerDaoJdbcImpl"/>
+
+    <bean id="carTransactions" class="com.epam.brest.course2015.transactions.CarTransactionsImpl"/>
+
+    <bean id="producerTransactions" class="com.epam.brest.course2015.transactions.ProducerTransactionsImpl"/>
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes" value="application/json"/>
+        <property name="prettyPrint" value="true"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="com.epam.brest.course2015.provider"/>
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
+
+
+    <!--Liquid Lib-->
+    <!--
+    <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+           <property name="dataSource" ref="dataSource" />
+           <property name="changeLog" value="classpath:db-changelog.xml" />
+           <property name="contexts" value="test, production" />
+    </bean>-->
+</beans>

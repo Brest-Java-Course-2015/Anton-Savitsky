@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context>
+    <Resource name="jdbc/car_producer_db"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="henry8tudor"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/car_producer_db"
+              maxActive="15"
+              maxIdle="3"/>
+</Context>
