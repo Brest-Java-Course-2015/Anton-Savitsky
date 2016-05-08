@@ -38,4 +38,11 @@ public class CarTest {
         car.setDateOfCreation(ld);
         assertEquals(ld, car.getDateOfCreation());
     }
+
+    @Test
+    public void testGetPic() {
+        byte[] pic = new byte[100];
+        car.setPicture(pic);
+        assertEquals(pic, car.getPicture());
+    }
 }

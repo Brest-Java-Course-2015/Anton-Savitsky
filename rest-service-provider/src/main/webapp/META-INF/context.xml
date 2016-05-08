@@ -1,7 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <Context>
-    <Resource name="jdbc/car_producer_db"
+    <!-- Openshift tomcat-->
+    <Resource name="jdbc/carproducer"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="adminVzh4BDP"
+              password="7SbiyhiLV4U4"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://570cc9e50c1e66790a0000d8-e5am.rhcloud.com:63976/carproducer"
+              maxActive="10"
+              maxIdle="3"/>
+    <!--Local Tomcat-->
+    <!--<Resource name="jdbc/car_producer_db"
               auth="Container"
               type="javax.sql.DataSource"
               username="root"
@@ -9,5 +20,5 @@
               driverClassName="com.mysql.jdbc.Driver"
               url="jdbc:mysql://localhost:3306/car_producer_db"
               maxActive="15"
-              maxIdle="3"/>
+              maxIdle="3"/>-->
 </Context>

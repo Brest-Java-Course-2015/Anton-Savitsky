@@ -1,0 +1,39 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+			 http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    		 http://www.springframework.org/schema/security
+   			 http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <http auto-config="true">
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <!--<intercept-url pattern="/user**" access="hasRole('ROLE_USER')" />-->
+        <form-login
+                login-page="/login"
+                default-target-url="/admin/car"
+                authentication-failure-url="/login?error"
+                username-parameter="username"
+                password-parameter="password"
+                login-processing-url="/j_spring_security_check"/>
+        <logout logout-success-url="/login?logout"
+                logout-url="/j_spring_security_logout"/>
+        <csrf disabled="true"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+                <!--<user name="user" password="user" authorities="ROLE_USER"/>-->
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+    <!--<authentication-manager alias="authenticationManager">
+           <authentication-provider user-service-ref="userServiceManager"/>
+    </authentication-manager>
+
+    <beans:bean id="userServiceManager" class="com.epam.brest.course2015.web.UserServiceManager"/>-->
+
+</beans:beans>

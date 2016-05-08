@@ -1,12 +1,13 @@
 /**
  * Created by antonsavitsky on 4/5/16.
  */
-var PREFIX_URL="http://localhost:8080/rest-service-provider-1.0-SNAPSHOT";
+var PREFIX_URL = "/rest-service-provider-1.0-SNAPSHOT";
+//var PREFIX_URL="http://localhost:8080/rest-service-provider-1.0-SNAPSHOT";
 //var PREFIX_URL="http://localhost:8081/rest";
 var CAR_DTO_URL="/car/dto";
 var PRODUCER_DTO_URL="/producer/dto";
 var CAR_URL="/car";
-var WEBSOCKET_ENDPOINT_URL = 'http://localhost:8080/rest-service-provider-1.0-SNAPSHOT/endpoint';
+var WEBSOCKET_ENDPOINT_URL = PREFIX_URL + '/endpoint';
 
 
 var app = angular.module('cars-module', ['ngStomp', 'ngRoute']);

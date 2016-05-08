@@ -36,6 +36,9 @@ public class Car {
     @JoinColumn(name="producerId")
     private Producer producer;
 
+    @Column(name = "picture")
+    private byte[] picture;
+
     public Car(String carName, LocalDate dateOfCreation){
         this.carName=carName;
         this.dateOfCreation=dateOfCreation;
@@ -46,6 +49,14 @@ public class Car {
         this.producer=producer;
         this.carName=carName;
         this.dateOfCreation=dateOfCreation;
+    }
+
+    public Car(Integer carId, String carName, LocalDate dateOfCreation, Producer producer, byte[] picture) {
+        this.carId = carId;
+        this.producer = producer;
+        this.carName = carName;
+        this.dateOfCreation = dateOfCreation;
+        this.picture = picture;
     }
 
     public Car(Integer carId, String carName, LocalDate dateOfCreation){
@@ -64,6 +75,13 @@ public class Car {
         this.carName=carName;
         this.producer=producer;
         this.dateOfCreation=dateOfCreation;
+    }
+
+    public Car(String carName, LocalDate dateOfCreation, Producer producer, byte[] picture) {
+        this.carName = carName;
+        this.producer = producer;
+        this.dateOfCreation = dateOfCreation;
+        this.picture = picture;
     }
 
     @Loggable
@@ -99,6 +117,16 @@ public class Car {
     @Loggable
     public void setDateOfCreation(LocalDate dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
+    }
+
+    @Loggable
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    @Loggable
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
     }
 
     @Override

@@ -165,4 +165,11 @@ public class CarTransactionsImplTest {
     public void testGetCarsByPage(){
         carTransactions.getCarsByPage(0,2);
     }
+
+    @Test
+    public void testSaveUpload() {
+        byte[] data = new byte[100];
+        carTransactions.saveUpload(data, 0);
+        System.out.println(carTransactions.getCarById(0).getPicture());
+    }
 }

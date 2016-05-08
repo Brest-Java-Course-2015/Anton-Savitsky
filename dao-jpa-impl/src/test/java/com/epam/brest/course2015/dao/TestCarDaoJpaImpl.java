@@ -25,8 +25,8 @@ import static org.junit.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath:test-spring-jpa-config.xml"})
 @Transactional
 public class TestCarDaoJpaImpl {
-    public static Car testAddCar = new Car("newCar", convertToDate("23/06/2015"), new Producer(1));
-    public static Car testUpdateCar = new Car(0,"updatedCar", convertToDate("23/02/2013"), new Producer(2));
+    public static Car testAddCar = new Car("newCar", convertToDate("23/06/2015"), new Producer(1), new byte[100]);
+    public static Car testUpdateCar = new Car(0, "updatedCar", convertToDate("23/02/2013"), new Producer(2), new byte[100]);
 
     @Autowired
     private CarDao carDao;
@@ -99,5 +99,13 @@ public class TestCarDaoJpaImpl {
     private static LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");
         return DATE_FORMAT.parseLocalDate(s);
+    }
+
+    @Test
+    public void testSaveUpload() {
+        byte[] data = new byte[100];
+        carDao.saveUpload(data, 0);
+        Assert.isTrue(carDao.getCarById(0).getPicture() == data);
+        System.out.println(carDao.getCarById(0).getPicture());
     }
 }

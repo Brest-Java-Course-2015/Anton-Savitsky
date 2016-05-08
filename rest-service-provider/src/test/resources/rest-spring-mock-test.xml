@@ -2,12 +2,13 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="websocket-support.xml"/>
+    <!--<import resource="websocket-support.xml"/>-->
 
     <bean id="carTransactions" class="org.easymock.EasyMock" factory-method="createMock">
         <constructor-arg value="com.epam.brest.course2015.transactions.CarTransactions"/>
@@ -17,8 +18,12 @@
         <constructor-arg value="com.epam.brest.course2015.transactions.ProducerTransactions"/>
     </bean>
 
+    <bean id="simpMessagingTemplate" class="org.easymock.EasyMock" factory-method="createMock">
+        <constructor-arg value="org.springframework.messaging.simp.SimpMessagingTemplate"/>
+    </bean>
+
     <bean id="carRestController" class="com.epam.brest.course2015.provider.CarRestController"/>
-    <!--<context:component-scan base-package="com.epam.brest.course2015.service.consumer"/>-->
+
     <bean id="producerRestController" class="com.epam.brest.course2015.provider.ProducerRestController"/>
     <aop:aspectj-autoproxy/>
 

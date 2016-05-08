@@ -8,8 +8,12 @@
   <title>Производитель</title>
   <link href="<c:url value="/resources/css/myFixes.css"/>" rel="stylesheet"/>
 </head>
+
+
 <body>
-<h1><a href="<c:url value="/car"/>">Модели</a>/<a href="<c:url value="/producer"/>">Производители</a></h1>
+<h1><a href="${pageContext.request.contextPath}/${pageContext.request.userPrincipal.name}/car">Модели</a>/<a
+        href="${pageContext.request.contextPath}/${pageContext.request.userPrincipal.name}/producer">Производители</a>
+</h1>
 <div>
   <sf:form id="producerForm" method="POST" modelAttribute="producer"><!-- Связать форму -->
     <fieldset>                                <!-- с атрибутом модели -->
@@ -33,4 +37,5 @@
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>
 <script src="<c:url value="/resources/js/validateProducerForm.js"/>"></script>
 </body>
+
 </html>

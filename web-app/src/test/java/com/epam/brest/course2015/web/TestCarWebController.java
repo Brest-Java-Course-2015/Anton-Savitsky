@@ -73,14 +73,14 @@ public class TestCarWebController {
 
     @Test
     public void testGetCarDto() throws Exception {
-        mockServer.expect(requestTo(restServicesPrefix+"/car/dto"))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/car/dto"))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess(
                                 "{\"cars\":null,\"total\":null}",
                                 MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                get("/car")
+                get("/admin/car/dto")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -89,14 +89,14 @@ public class TestCarWebController {
 
     @Test
     public void testDeleteCar() throws Exception {
-        mockServer.expect(requestTo(restServicesPrefix+"/car/1"))
-                .andExpect(method(HttpMethod.DELETE))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/car/delete/1"))
+                .andExpect(method(HttpMethod.POST))
                 .andRespond(withSuccess(
-                        "redirect:/car",
+                        "redirect:/admin/car",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/car/delete/1"))
+                post("/admin/car/delete/1"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/car"));
@@ -105,18 +105,18 @@ public class TestCarWebController {
 
     @Test
     public void testUpdateCarForm() throws Exception {
-        mockServer.expect(requestTo(restServicesPrefix+"/car/1"))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/car/1"))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess("{\"carId\":null,\"carName\":null," +
                         "\"dateOfCreation\":null}", MediaType.APPLICATION_JSON));
 
-        mockServer.expect(requestTo(restServicesPrefix+"/producer/dto"))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/producer/dto"))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess("{\"producers\":null,\"total\":null}",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-               get("/car/update/1")
+                get("/admin/car/update/1")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -125,17 +125,17 @@ public class TestCarWebController {
 
     @Test
     public void testSaveUpdatedCar() throws Exception {
-        mockServer.expect(requestTo(restServicesPrefix+"/car"))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/car"))
                 .andExpect(method(HttpMethod.PUT))
-                .andRespond(withSuccess("redirect:/car",
+                .andRespond(withSuccess("redirect:/admin/car",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/car/update/1")
+                post("/admin/car/update/1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/car"));
+                .andExpect(redirectedUrl("/admin/car"));
     }
 
 
@@ -144,30 +144,30 @@ public class TestCarWebController {
         String car = new ObjectMapper()
                 .writeValueAsString(new Car());
 
-        mockServer.expect(requestTo(restServicesPrefix+"/car"))
+        mockServer.expect(requestTo(restServicesPrefix + "/admin/car"))
                 .andExpect(method(HttpMethod.POST))
                 .andRespond(withSuccess("3",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/car/add")
+                post("/admin/car/add")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(car))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/car"));
+                .andExpect(redirectedUrl("/admin/car"));
     }
 
     @Test
     public void testGetCarsByDateDto() throws Exception {
         mockServer.expect(requestTo(restServicesPrefix+
-                "/car/dto/date?dateBefore=10/10/2015&dateAfter=15/10/2015"))
+                "/admin/car/dto/date?dateBefore=10/10/2015&dateAfter=15/10/2015"))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess());
 
         mockMvc.perform(
-                get("/car/carsbydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
+                get("/admin/car/carsbydate?dateBefore=10/10/2015&dateAfter=15/10/2015")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

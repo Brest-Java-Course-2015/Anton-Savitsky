@@ -2,6 +2,7 @@ package com.epam.brest.course2015.dao;
 
 import com.epam.brest.course2015.domain.Car;
 import org.joda.time.LocalDate;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface CarDao {
     void deleteCar(Integer carId);
     List<Car> getAllCars();
     Integer getCountCarsById(Integer carId);
+
+    void saveUpload(byte[] data, Integer id);
 }

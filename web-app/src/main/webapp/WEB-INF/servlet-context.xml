@@ -31,7 +31,12 @@
               <beans:property name="suffix" value=".jsp" />
        </beans:bean>
 
-       <aop:aspectj-autoproxy/>
+    <beans:bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="1048576"/>
+    </beans:bean>
+
+    <aop:aspectj-autoproxy/>
 
        <beans:bean id="myLogger" class="com.epam.brest.course2015.test.MyLogger"/>
 

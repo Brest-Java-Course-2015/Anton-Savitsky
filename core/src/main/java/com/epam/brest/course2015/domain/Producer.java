@@ -40,6 +40,11 @@ public class Producer {
         this.producerName=producerName;
     }
 
+    public void change(String producerName) {
+        String str = null;
+        str.length();
+    }
+
     public Producer(Integer producerId, String producerName, String country){
         this.producerId=producerId;
         this.producerName=producerName;

@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -44,6 +45,9 @@ public class CarRestControllerMockTest {
     @Autowired
     private CarTransactions carTransactionsMock;
 
+    @Autowired
+    private SimpMessagingTemplate simpMessagingTemplateMock;
+
     @Before
     public void setUp() {
         mockMvc = standaloneSetup(carRestController)
@@ -54,15 +58,19 @@ public class CarRestControllerMockTest {
     public void tearDown() {
         verify(carTransactionsMock);
         reset(carTransactionsMock);
+
+        verify(simpMessagingTemplateMock);
+        reset(simpMessagingTemplateMock);
     }
 
 
     @Test
     public void testAddCar() throws Exception {
         expect(carTransactionsMock.addCar(anyObject(Car.class))).andReturn(3);
-        replay(carTransactionsMock);
+        simpMessagingTemplateMock.convertAndSend(anyObject(String.class), anyObject(Car.class));
+        expectLastCall().once();
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         String car = new ObjectMapper().writeValueAsString(new Car("ert",convertToDate("15/09/2013"),new Producer(1)));
-        System.out.println(car);
         mockMvc.perform(
                 post("/car")
                         .accept(MediaType.APPLICATION_JSON)
@@ -78,7 +86,9 @@ public class CarRestControllerMockTest {
     public void testUpdateCar() throws Exception {
         carTransactionsMock.updateCar(anyObject(Car.class));
         expectLastCall().once();
-        replay(carTransactionsMock);
+        simpMessagingTemplateMock.convertAndSend(anyObject(String.class), anyObject(Car.class));
+        expectLastCall().once();
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         String car=new ObjectMapper().writeValueAsString(new Car(0,"ert",convertToDate("15/09/2013"), new Producer(1)));
         System.out.println(car);
         mockMvc.perform(
@@ -93,7 +103,7 @@ public class CarRestControllerMockTest {
     @Test
     public void testGetCarById() throws Exception {
         expect(carTransactionsMock.getCarById(1)).andReturn(new Car(1));
-        replay(carTransactionsMock);
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         String car=new ObjectMapper().writeValueAsString(new Car(1));
         mockMvc.perform(
                 get("/car/1")
@@ -108,7 +118,9 @@ public class CarRestControllerMockTest {
     public void testDeleteCar() throws Exception {
         carTransactionsMock.deleteCar(1);
         expectLastCall().once();
-        replay(carTransactionsMock);
+        simpMessagingTemplateMock.convertAndSend(anyObject(String.class), anyObject(Car.class));
+        expectLastCall().once();
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         mockMvc.perform(
                 delete("/car/1")
                 .accept(MediaType.APPLICATION_JSON))
@@ -119,7 +131,7 @@ public class CarRestControllerMockTest {
     @Test
     public void testGetAllCars() throws Exception {
         expect(carTransactionsMock.getAllCars()).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
-        replay(carTransactionsMock);
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         mockMvc.perform(
                 get("/car")
                 .accept(MediaType.APPLICATION_JSON))
@@ -130,7 +142,7 @@ public class CarRestControllerMockTest {
     @Test
     public void testGetCarsByDateDto() throws Exception {
         expect(carTransactionsMock.getCarsDtoByDate(anyObject(LocalDate.class), anyObject(LocalDate.class))).andReturn(new CarDto());
-        replay(carTransactionsMock);
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         mockMvc.perform(
                 get("/car/dto/date?dateBefore=10/10/2015&dateAfter=15/10/2015")
                 .accept(MediaType.APPLICATION_JSON))
@@ -142,7 +154,7 @@ public class CarRestControllerMockTest {
     @Test
     public void getCarsDto() throws Exception {
         expect(carTransactionsMock.getCarsDto()).andReturn(new CarDto());
-        replay(carTransactionsMock);
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         mockMvc.perform(
                 get("/car/dto")
                         .accept(MediaType.APPLICATION_JSON))
@@ -153,13 +165,16 @@ public class CarRestControllerMockTest {
     @Test
     public void getCarsByDateOfCreation() throws Exception {
         expect(carTransactionsMock.getListOfCarsByDateOfCreation(anyObject(LocalDate.class),anyObject(LocalDate.class))).andReturn(Arrays.<Car>asList(new Car(0), new Car(1)));
-        replay(carTransactionsMock);
+        replay(carTransactionsMock, simpMessagingTemplateMock);
         mockMvc.perform(
                 get("/car/date?dateBefore=10/10/2015&dateAfter=15/10/2015")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
+
+    @Test
+    public void testS
 
     public LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");

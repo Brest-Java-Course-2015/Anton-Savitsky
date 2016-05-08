@@ -7,6 +7,7 @@ import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -110,5 +111,13 @@ public class CarDaoJpaImpl implements CarDao {
                 .createQuery(getCountById)
                 .setParameter("carId", carId)
                 .getSingleResult()).intValue();
+    }
+
+    @Override
+    @Loggable
+    public void saveUpload(byte[] data, Integer id) {
+        Car car = entityManager.find(Car.class, id);
+        car.setPicture(data);
+        entityManager.merge(car);
     }
 }

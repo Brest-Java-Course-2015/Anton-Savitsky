@@ -15,6 +15,8 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 import java.util.List;
 
 @CrossOrigin
@@ -113,6 +115,12 @@ public class CarRestController{
         return carTransactions.getCarsByPage(from, to);
     }
 
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @Loggable
+    public void uploadFile(@RequestParam CommonsMultipartFile file, @RequestParam(value = "id") Integer id) {
+        if (file != null)
+            carTransactions.saveUpload(file.getBytes(), id);
+    }
 
     public LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");

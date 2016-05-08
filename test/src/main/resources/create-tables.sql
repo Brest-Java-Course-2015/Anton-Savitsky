@@ -13,6 +13,7 @@ CREATE TABLE CAR (
     carName VARCHAR(30) NOT NULL,
     producerId INT NOT NULL,
     dateOfCreation DATE NOT NULL,
+    picture BLOB,
     FOREIGN KEY (producerId) REFERENCES PRODUCER(producerId)
 );
 

@@ -11,9 +11,11 @@
   <link href="<c:url value="/resources/css/myFixes.css"/>" rel="stylesheet"/>
 </head>
 <body>
-<h1><a href="<c:url value="/car"/>">Модели</a>/<a href="<c:url value="/producer"/>">Производители</a></h1>
+<h1><a href="${pageContext.request.contextPath}/${pageContext.request.userPrincipal.name}/car">Модели</a>/<a
+        href="${pageContext.request.contextPath}/${pageContext.request.userPrincipal.name}/producer">Производители</a>
+</h1>
 <div>
-  <form:form id="carForm" method="POST" modelAttribute="car">   <!-- Связать форму -->
+  <form:form id="carForm" method="POST" commandName="car"> <!-- Связать форму -->
     <fieldset>                                <!-- с атрибутом модели -->
       <table cellspacing="10">
         <tr>
@@ -25,8 +27,7 @@
         </tr>
         <tr>
           <th><label for="dateOfCreation">Дата создания:</label></th>
-          <tags:localDate date="${car.dateOfCreation}" pattern="dd/MM/yyyy"/>
-          <td><span><form:input path="dateOfCreation" size="30" id="dateOfCreation"/></span></td>
+          <td><span><form:input size="30" id="dateOfCreation" value="${date}" path="dateOfCreation"/></span></td>
         </tr>
         <tr>
           <th><label for="producerId">Имя производителя:</label></th>

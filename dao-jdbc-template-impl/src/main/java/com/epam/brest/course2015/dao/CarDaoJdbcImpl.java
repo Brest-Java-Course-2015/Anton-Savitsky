@@ -90,6 +90,11 @@ public class CarDaoJdbcImpl implements CarDao {
         return namedParameterJdbcTemplate.queryForObject(countCarsById, parameterSource, Integer.class);
     }
 
+    @Override
+    public void saveUpload(byte[] data, Integer id) {
+        //TODO
+    }
+
 
     @Override
     @Loggable

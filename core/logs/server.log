@@ -862,3 +862,683 @@ Cars: null}] in 0 ms
 10 Apr 2016 15:00:08,940[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
 10 Apr 2016 15:00:08,942[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
 10 Apr 2016 15:00:08,943[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 22:13:45,450[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 22 ms
+12 Apr 2016 22:13:45,486[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 22:13:45,491[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 22:13:45,492[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 22:13:45,572[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 43 ms
+12 Apr 2016 22:13:45,574[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 1 ms
+12 Apr 2016 22:13:45,589[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 22:13:45,592[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 22:13:45,664[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 32 ms
+12 Apr 2016 22:13:45,665[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+12 Apr 2016 22:13:45,672[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 22:13:45,675[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+12 Apr 2016 22:13:45,691[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 22:13:45,692[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 22:13:45,755[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 33 ms
+12 Apr 2016 22:13:45,760[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 1 ms
+12 Apr 2016 22:13:45,939[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 22:13:45,940[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 22:13:45,943[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 22:13:45,944[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 22:24:16,566[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 21 ms
+12 Apr 2016 22:24:16,567[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 22:24:16,575[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 22:24:16,576[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 22:24:16,614[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+12 Apr 2016 22:24:16,615[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 1 ms
+12 Apr 2016 22:24:16,618[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 22:24:16,619[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 22:24:16,653[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 17 ms
+12 Apr 2016 22:24:16,653[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 22:24:16,656[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 22:24:16,657[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+12 Apr 2016 22:24:16,659[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 22:24:16,660[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 22:24:16,704[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 16 ms
+12 Apr 2016 22:24:16,705[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 22:24:16,793[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 22:24:16,794[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 22:24:16,796[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 22:24:16,797[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 22:32:58,509[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 20 ms
+12 Apr 2016 22:32:58,511[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 22:32:58,516[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 22:32:58,517[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 22:32:58,564[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+12 Apr 2016 22:32:58,565[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 22:32:58,574[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 22:32:58,575[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 22:32:58,626[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 18 ms
+12 Apr 2016 22:32:58,627[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 22:32:58,631[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 1 ms
+12 Apr 2016 22:32:58,632[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+12 Apr 2016 22:32:58,634[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 22:32:58,635[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 22:32:58,664[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 13 ms
+12 Apr 2016 22:32:58,665[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 22:32:58,739[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 22:32:58,740[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 22:32:58,742[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 22:32:58,743[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:05:12,124[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 19 ms
+12 Apr 2016 23:05:12,127[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:05:12,131[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 23:05:12,132[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 1 ms
+12 Apr 2016 23:05:12,164[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 13 ms
+12 Apr 2016 23:05:12,165[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:05:12,167[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:05:12,168[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:05:12,201[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 18 ms
+12 Apr 2016 23:05:12,202[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+12 Apr 2016 23:05:12,204[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:05:12,204[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:05:12,206[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:05:12,207[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:05:12,241[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 16 ms
+12 Apr 2016 23:05:12,242[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:05:12,306[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:05:12,307[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 23:05:12,309[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:05:12,310[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:11:31,361[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 21 ms
+12 Apr 2016 23:11:31,363[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:11:31,368[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 23:11:31,369[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:11:31,403[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+12 Apr 2016 23:11:31,404[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:11:31,407[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:11:31,409[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:11:31,442[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 19 ms
+12 Apr 2016 23:11:31,443[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 23:11:31,446[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:11:31,446[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:11:31,449[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:11:31,450[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:11:31,488[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 23 ms
+12 Apr 2016 23:11:31,490[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:11:31,565[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:11:31,566[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 23:11:31,568[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:11:31,569[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:23:57,476[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 20 ms
+12 Apr 2016 23:23:57,477[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:23:57,482[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 23:23:57,482[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:23:57,515[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 15 ms
+12 Apr 2016 23:23:57,516[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:23:57,519[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:23:57,520[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:23:57,569[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 18 ms
+12 Apr 2016 23:23:57,570[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 23:23:57,573[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:23:57,574[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:23:57,577[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:23:57,578[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:23:57,613[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 15 ms
+12 Apr 2016 23:23:57,614[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:23:57,677[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:23:57,678[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 23:23:57,680[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:23:57,681[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:29:12,032[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 23 ms
+12 Apr 2016 23:29:12,035[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:29:12,042[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 23:29:12,044[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:29:12,082[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 20 ms
+12 Apr 2016 23:29:12,083[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:29:12,089[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:29:12,090[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:29:12,127[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 19 ms
+12 Apr 2016 23:29:12,128[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 23:29:12,132[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:29:12,133[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:29:12,135[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:29:12,137[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:29:12,168[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 12 ms
+12 Apr 2016 23:29:12,169[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:29:12,264[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:29:12,265[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 1 ms
+12 Apr 2016 23:29:12,267[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:29:12,268[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:32:36,909[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 29 ms
+12 Apr 2016 23:32:36,910[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:32:36,915[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 1 ms
+12 Apr 2016 23:32:36,915[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:32:36,951[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 17 ms
+12 Apr 2016 23:32:36,952[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:32:36,955[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:32:36,956[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:32:37,001[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 23 ms
+12 Apr 2016 23:32:37,002[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 23:32:37,004[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:32:37,005[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:32:37,007[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:32:37,008[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:32:37,045[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 18 ms
+12 Apr 2016 23:32:37,046[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:32:37,161[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:32:37,162[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 23:32:37,165[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:32:37,166[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:51:15,420[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 22 ms
+12 Apr 2016 23:51:15,422[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:51:15,428[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+12 Apr 2016 23:51:15,429[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:51:15,465[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 17 ms
+12 Apr 2016 23:51:15,466[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:51:15,469[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+12 Apr 2016 23:51:15,470[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 1 ms
+12 Apr 2016 23:51:15,516[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 27 ms
+12 Apr 2016 23:51:15,517[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+12 Apr 2016 23:51:15,521[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:51:15,522[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:51:15,526[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:51:15,527[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:51:15,573[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 24 ms
+12 Apr 2016 23:51:15,574[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:51:15,671[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 1 ms
+12 Apr 2016 23:51:15,672[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 1 ms
+12 Apr 2016 23:51:15,674[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+12 Apr 2016 23:51:15,675[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+12 Apr 2016 23:56:05,108[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 22 ms
+12 Apr 2016 23:56:05,109[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:56:05,114[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 1 ms
+12 Apr 2016 23:56:05,114[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+12 Apr 2016 23:56:05,152[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+12 Apr 2016 23:56:05,153[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+12 Apr 2016 23:56:05,156[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 1 ms
+12 Apr 2016 23:56:05,156[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+12 Apr 2016 23:56:05,193[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 19 ms
+12 Apr 2016 23:56:05,194[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+12 Apr 2016 23:56:05,196[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+12 Apr 2016 23:56:05,197[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+12 Apr 2016 23:56:05,200[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+12 Apr 2016 23:56:05,200[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+12 Apr 2016 23:56:05,237[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+12 Apr 2016 23:56:05,238[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+12 Apr 2016 23:56:05,314[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+12 Apr 2016 23:56:05,315[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+12 Apr 2016 23:56:05,318[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 1 ms
+12 Apr 2016 23:56:05,318[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 01:27:06,082[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 23 ms
+13 Apr 2016 01:27:06,084[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 01:27:06,087[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 01:27:06,088[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 01:27:06,122[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+13 Apr 2016 01:27:06,122[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 01:27:06,125[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 01:27:06,126[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 01:27:06,170[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 25 ms
+13 Apr 2016 01:27:06,172[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+13 Apr 2016 01:27:06,176[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 01:27:06,177[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 01:27:06,181[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 01:27:06,182[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 01:27:06,220[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+13 Apr 2016 01:27:06,221[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 01:27:06,312[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 01:27:06,313[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 01:27:06,316[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 01:27:06,317[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 01:38:53,261[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 21 ms
+13 Apr 2016 01:38:53,263[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 01:38:53,266[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 01:38:53,267[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 01:38:53,296[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 14 ms
+13 Apr 2016 01:38:53,297[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 01:38:53,299[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 01:38:53,300[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 01:38:53,335[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 19 ms
+13 Apr 2016 01:38:53,336[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 01:38:53,338[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 01:38:53,339[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 01:38:53,341[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 01:38:53,342[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 01:38:53,381[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+13 Apr 2016 01:38:53,382[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 01:38:53,464[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 01:38:53,465[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 01:38:53,467[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 01:38:53,468[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 02:03:24,121[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 34 ms
+13 Apr 2016 02:03:24,124[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:03:24,130[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 02:03:24,141[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 02:03:24,189[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 23 ms
+13 Apr 2016 02:03:24,190[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:03:24,195[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 1 ms
+13 Apr 2016 02:03:24,197[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 02:03:24,254[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 31 ms
+13 Apr 2016 02:03:24,255[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+13 Apr 2016 02:03:24,258[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 02:03:24,259[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 02:03:24,262[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 02:03:24,263[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 02:03:24,308[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 22 ms
+13 Apr 2016 02:03:24,309[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 02:03:24,401[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 02:03:24,402[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 02:03:24,406[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 02:03:24,407[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 02:05:43,433[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 25 ms
+13 Apr 2016 02:05:43,435[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:05:43,439[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 02:05:43,440[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 02:05:43,474[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 17 ms
+13 Apr 2016 02:05:43,475[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:05:43,479[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 02:05:43,479[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 02:05:43,533[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 31 ms
+13 Apr 2016 02:05:43,534[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 02:05:43,538[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 02:05:43,539[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 02:05:43,542[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 02:05:43,543[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 02:05:43,594[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 24 ms
+13 Apr 2016 02:05:43,595[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 02:05:43,697[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 02:05:43,698[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 02:05:43,701[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 02:05:43,701[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 02:20:26,705[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 26 ms
+13 Apr 2016 02:20:26,707[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:20:26,711[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 02:20:26,711[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 02:20:26,743[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+13 Apr 2016 02:20:26,743[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:20:26,746[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 02:20:26,747[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 02:20:26,789[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 25 ms
+13 Apr 2016 02:20:26,790[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 02:20:26,794[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 02:20:26,795[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 02:20:26,798[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 02:20:26,799[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 02:20:26,836[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+13 Apr 2016 02:20:26,837[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 02:20:26,915[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 02:20:26,915[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 02:20:26,919[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 02:20:26,920[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 1 ms
+13 Apr 2016 02:23:29,316[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 25 ms
+13 Apr 2016 02:23:29,318[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:23:29,322[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 02:23:29,322[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 02:23:29,357[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 19 ms
+13 Apr 2016 02:23:29,357[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:23:29,360[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 02:23:29,361[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 02:23:29,406[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 23 ms
+13 Apr 2016 02:23:29,407[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 02:23:29,409[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 02:23:29,410[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 02:23:29,412[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 02:23:29,413[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 02:23:29,450[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+13 Apr 2016 02:23:29,451[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 02:23:29,554[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 02:23:29,555[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 02:23:29,558[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 02:23:29,559[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 1 ms
+13 Apr 2016 02:51:35,945[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 20 ms
+13 Apr 2016 02:51:35,946[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:51:35,950[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 02:51:35,950[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 02:51:35,980[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 15 ms
+13 Apr 2016 02:51:36,003[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 02:51:36,006[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 02:51:36,007[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 02:51:36,045[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 20 ms
+13 Apr 2016 02:51:36,046[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 02:51:36,050[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 02:51:36,051[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 02:51:36,054[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 02:51:36,055[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 02:51:36,092[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 17 ms
+13 Apr 2016 02:51:36,093[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 02:51:36,175[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 02:51:36,176[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 02:51:36,178[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 02:51:36,179[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 1 ms
+13 Apr 2016 14:46:33,423[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 21 ms
+13 Apr 2016 14:46:33,450[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 1 ms
+13 Apr 2016 14:46:33,454[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 14:46:33,455[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 14:46:33,501[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 13 ms
+13 Apr 2016 14:46:33,501[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 14:46:33,504[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 1 ms
+13 Apr 2016 14:46:33,504[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 14:46:33,540[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 19 ms
+13 Apr 2016 14:46:33,540[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 14:46:33,543[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 14:46:33,544[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+13 Apr 2016 14:46:33,547[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 14:46:33,548[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 14:46:33,584[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 15 ms
+13 Apr 2016 14:46:33,586[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 14:46:33,674[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 14:46:33,675[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 14:46:33,677[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 14:46:33,678[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 12:31:14,215[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 21 ms
+13 Apr 2016 12:31:14,239[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 12:31:14,244[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 12:31:14,245[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 12:31:14,280[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 10 ms
+13 Apr 2016 12:31:14,281[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 12:31:14,284[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 12:31:14,285[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 12:31:14,316[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 14 ms
+13 Apr 2016 12:31:14,316[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 12:31:14,319[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 1 ms
+13 Apr 2016 12:31:14,319[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 12:31:14,329[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 12:31:14,330[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 12:31:14,363[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 17 ms
+13 Apr 2016 12:31:14,364[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 12:31:14,469[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 12:31:14,469[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 12:31:14,472[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 12:31:14,473[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 20:43:11,373[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 16 ms
+13 Apr 2016 20:43:11,404[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 20:43:11,409[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 20:43:11,410[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 20:43:11,452[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 22 ms
+13 Apr 2016 20:43:11,453[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 20:43:11,462[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 20:43:11,463[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 20:43:11,507[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 16 ms
+13 Apr 2016 20:43:11,508[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 20:43:11,511[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 20:43:11,512[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 20:43:11,515[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 20:43:11,515[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 20:43:11,553[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 14 ms
+13 Apr 2016 20:43:11,554[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 20:43:11,648[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 20:43:11,649[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 20:43:11,651[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 20:43:11,652[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 20:48:05,320[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 19 ms
+13 Apr 2016 20:48:05,323[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 20:48:05,327[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 20:48:05,328[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 1 ms
+13 Apr 2016 20:48:05,359[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 14 ms
+13 Apr 2016 20:48:05,360[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 1 ms
+13 Apr 2016 20:48:05,363[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 20:48:05,365[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 20:48:05,415[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 15 ms
+13 Apr 2016 20:48:05,415[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 20:48:05,418[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 20:48:05,419[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 20:48:05,421[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 20:48:05,421[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 20:48:05,453[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 15 ms
+13 Apr 2016 20:48:05,454[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 20:48:05,528[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 20:48:05,528[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 20:48:05,530[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 20:48:05,531[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 22:19:05,961[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 20 ms
+13 Apr 2016 22:19:05,963[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 22:19:05,968[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 22:19:05,969[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 22:19:06,003[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 16 ms
+13 Apr 2016 22:19:06,004[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 1 ms
+13 Apr 2016 22:19:06,007[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 22:19:06,008[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 22:19:06,043[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 17 ms
+13 Apr 2016 22:19:06,044[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 22:19:06,047[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 22:19:06,048[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+13 Apr 2016 22:19:06,051[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 22:19:06,052[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 22:19:06,087[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 16 ms
+13 Apr 2016 22:19:06,088[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 22:19:06,204[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 22:19:06,205[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 22:19:06,208[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 22:19:06,209[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 23:28:15,063[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 24 ms
+13 Apr 2016 23:28:15,087[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 23:28:15,092[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 23:28:15,093[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 23:28:15,132[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 20 ms
+13 Apr 2016 23:28:15,133[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 23:28:15,139[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 23:28:15,145[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 23:28:15,186[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 23 ms
+13 Apr 2016 23:28:15,187[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 1 ms
+13 Apr 2016 23:28:15,190[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 1 ms
+13 Apr 2016 23:28:15,190[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 23:28:15,192[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 23:28:15,193[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 23:28:15,236[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 19 ms
+13 Apr 2016 23:28:15,238[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 23:28:15,311[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 23:28:15,312[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 23:28:15,314[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 23:28:15,315[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+13 Apr 2016 23:34:33,390[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 16 ms
+13 Apr 2016 23:34:33,392[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 23:34:33,397[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+13 Apr 2016 23:34:33,400[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+13 Apr 2016 23:34:33,463[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 15 ms
+13 Apr 2016 23:34:33,464[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+13 Apr 2016 23:34:33,470[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+13 Apr 2016 23:34:33,471[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+13 Apr 2016 23:34:33,509[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 17 ms
+13 Apr 2016 23:34:33,510[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+13 Apr 2016 23:34:33,513[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+13 Apr 2016 23:34:33,513[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+13 Apr 2016 23:34:33,522[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+13 Apr 2016 23:34:33,524[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+13 Apr 2016 23:34:33,563[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 17 ms
+13 Apr 2016 23:34:33,565[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+13 Apr 2016 23:34:33,650[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+13 Apr 2016 23:34:33,650[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+13 Apr 2016 23:34:33,652[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+13 Apr 2016 23:34:33,653[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+14 Apr 2016 00:16:48,034[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 19 ms
+14 Apr 2016 00:16:48,037[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+14 Apr 2016 00:16:48,041[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+14 Apr 2016 00:16:48,042[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+14 Apr 2016 00:16:48,101[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 14 ms
+14 Apr 2016 00:16:48,102[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+14 Apr 2016 00:16:48,112[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+14 Apr 2016 00:16:48,113[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+14 Apr 2016 00:16:48,154[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 24 ms
+14 Apr 2016 00:16:48,154[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+14 Apr 2016 00:16:48,157[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 1 ms
+14 Apr 2016 00:16:48,157[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+14 Apr 2016 00:16:48,160[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+14 Apr 2016 00:16:48,161[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+14 Apr 2016 00:16:48,195[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 16 ms
+14 Apr 2016 00:16:48,199[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+14 Apr 2016 00:16:48,283[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+14 Apr 2016 00:16:48,284[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+14 Apr 2016 00:16:48,293[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+14 Apr 2016 00:16:48,294[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+14 Apr 2016 00:20:33,524[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 28 ms
+14 Apr 2016 00:20:33,526[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+14 Apr 2016 00:20:33,531[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+14 Apr 2016 00:20:33,532[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+14 Apr 2016 00:20:33,581[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 17 ms
+14 Apr 2016 00:20:33,582[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+14 Apr 2016 00:20:33,598[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+14 Apr 2016 00:20:33,602[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+14 Apr 2016 00:20:33,676[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 30 ms
+14 Apr 2016 00:20:33,677[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+14 Apr 2016 00:20:33,682[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+14 Apr 2016 00:20:33,683[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 0 ms
+14 Apr 2016 00:20:33,691[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+14 Apr 2016 00:20:33,692[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+14 Apr 2016 00:20:33,761[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 34 ms
+14 Apr 2016 00:20:33,763[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+14 Apr 2016 00:20:33,884[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 1 ms
+14 Apr 2016 00:20:33,885[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+14 Apr 2016 00:20:33,889[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+14 Apr 2016 00:20:33,890[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 1 ms
+07 May 2016 11:37:45,266[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 23 ms
+07 May 2016 11:37:45,284[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+07 May 2016 11:37:45,288[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+07 May 2016 11:37:45,289[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 0 ms
+07 May 2016 11:37:45,335[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 21 ms
+07 May 2016 11:37:45,335[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 0 ms
+07 May 2016 11:37:45,338[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+07 May 2016 11:37:45,339[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+07 May 2016 11:37:45,411[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 20 ms
+07 May 2016 11:37:45,412[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+07 May 2016 11:37:45,414[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+07 May 2016 11:37:45,415[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+07 May 2016 11:37:45,417[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+07 May 2016 11:37:45,418[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+07 May 2016 11:37:45,455[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 17 ms
+07 May 2016 11:37:45,456[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+07 May 2016 11:37:45,551[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+07 May 2016 11:37:45,552[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 1 ms
+07 May 2016 11:37:45,554[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 1 ms
+07 May 2016 11:37:45,554[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+07 May 2016 11:50:04,952[main] INFO  - com.epam.brest.course2015.dto.CarDto #setTotal([2]): void in 25 ms
+07 May 2016 11:50:04,955[main] INFO  - com.epam.brest.course2015.dto.CarDto #getTotal([]): Integer:2 in 0 ms
+07 May 2016 11:50:04,960[main] INFO  - com.epam.brest.course2015.dto.CarDto #setCars([[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}]]): void in 0 ms
+07 May 2016 11:50:04,961[main] INFO  - com.epam.brest.course2015.dto.CarDto #getCars([]): ArrayList:[Car: {carId=1, carName='null, dateOfCreation=null, producerId=no, producerName=no}, Car: {carId=2, carName='null, dateOfCreation=null, producerId=no, producerName=no}] in 1 ms
+07 May 2016 11:50:05,007[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setTotal([2]): void in 21 ms
+07 May 2016 11:50:05,008[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getTotal([]): Integer:2 in 1 ms
+07 May 2016 11:50:05,011[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #setProducers([[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}]]): void in 0 ms
+07 May 2016 11:50:05,012[main] INFO  - com.epam.brest.course2015.dto.ProducerDto #getProducers([]): ArrayList:[Producer: {producerId=1, producerName='null, country=null, countOfCars=0
+Cars: null}, Producer: {producerId=2, producerName='null, country=null, countOfCars=0
+Cars: null}] in 0 ms
+07 May 2016 11:50:05,053[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerId([1]): void in 20 ms
+07 May 2016 11:50:05,054[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerId([]): Integer:1 in 0 ms
+07 May 2016 11:50:05,056[main] INFO  - com.epam.brest.course2015.domain.Producer #setCountry([Korea]): void in 0 ms
+07 May 2016 11:50:05,057[main] INFO  - com.epam.brest.course2015.domain.Producer #getCountry([]): String:Korea in 1 ms
+07 May 2016 11:50:05,059[main] INFO  - com.epam.brest.course2015.domain.Producer #setProducerName([Toyota]): void in 0 ms
+07 May 2016 11:50:05,060[main] INFO  - com.epam.brest.course2015.domain.Producer #getProducerName([]): String:Toyota in 0 ms
+07 May 2016 11:50:05,109[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 17 ms
+07 May 2016 11:50:05,110[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+07 May 2016 11:50:05,197[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 1 ms
+07 May 2016 11:50:05,198[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 1 ms
+07 May 2016 11:50:05,200[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+07 May 2016 11:50:05,201[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+08 May 2016 09:30:56,260[main] INFO  - com.epam.brest.course2015.domain.Car #setCarId([1]): void in 32 ms
+08 May 2016 09:30:56,282[main] INFO  - com.epam.brest.course2015.domain.Car #getCarId([]): Integer:1 in 0 ms
+08 May 2016 09:30:56,407[main] INFO  - com.epam.brest.course2015.domain.Car #setDateOfCreation([2015-10-10]): void in 0 ms
+08 May 2016 09:30:56,408[main] INFO  - com.epam.brest.course2015.domain.Car #getDateOfCreation([]): LocalDate:2015-10-10 in 0 ms
+08 May 2016 09:30:56,411[main] INFO  - com.epam.brest.course2015.domain.Car #setCarName([5dhr]): void in 0 ms
+08 May 2016 09:30:56,411[main] INFO  - com.epam.brest.course2015.domain.Car #getCarName([]): String:5dhr in 0 ms
+08 May 2016 09:36:39,491[main] INFO  - com.epam.brest.course2015.domain.Car #setPicture([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]): void in 29 ms
+08 May 2016 09:36:39,493[main] INFO  - com.epam.brest.course2015.domain.Car #getPicture([]): byte[]:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] in 0 ms

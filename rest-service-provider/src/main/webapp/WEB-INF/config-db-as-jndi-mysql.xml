@@ -28,7 +28,7 @@
     </bean>
 
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName" value="java:comp/env/jdbc/car_producer_db"/>
+        <property name="jndiName" value="java:comp/env/jdbc/carproducer"/>
         <property name="lookupOnStartup" value="true"/>
         <property name="cache" value="true"/>
         <property name="proxyInterface" value="javax.sql.DataSource"/>

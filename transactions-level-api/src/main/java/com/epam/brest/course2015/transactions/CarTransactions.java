@@ -22,4 +22,6 @@ public interface CarTransactions {
     CarDto getCarsDtoByDate(LocalDate dateBefore, LocalDate dateAfter);
     CarPagingDto getCarPagingDto(Integer min, Integer max);
     CarPagingDto getCarsByPage(Integer min, Integer max);//changed since 11/02
+
+    void saveUpload(byte[] data, Integer id);
 }

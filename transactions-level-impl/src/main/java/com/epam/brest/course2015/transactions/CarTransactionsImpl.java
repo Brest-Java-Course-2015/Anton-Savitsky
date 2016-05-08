@@ -169,4 +169,10 @@ public class CarTransactionsImpl implements CarTransactions {
     public CarPagingDto getCarsByPage(Integer min, Integer max){
         return new CarPagingDto(carDao.getPagingList(min, max), 0);//changed since 11/02
     }
+
+    @Loggable
+    @Override
+    public void saveUpload(byte[] data, Integer id) {
+        carDao.saveUpload(data, id);
+    }
 }
