@@ -2,6 +2,8 @@ package com.epam.brest.course2015.provider;
 import com.epam.brest.course2015.domain.Car;
 import com.epam.brest.course2015.dto.CarDto;
 import com.epam.brest.course2015.dto.CarPagingDto;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 import java.util.List;
 
 /**
@@ -18,4 +20,5 @@ public interface CarServiceConsumer {
     CarDto getCarsDtoByDate(String dateBefore, String dateAfter);
     CarPagingDto getInitPaging(Integer from, Integer to);
     CarPagingDto getNextPage(Integer from, Integer to);
+    void saveUpload(CommonsMultipartFile file, Integer id);
 }

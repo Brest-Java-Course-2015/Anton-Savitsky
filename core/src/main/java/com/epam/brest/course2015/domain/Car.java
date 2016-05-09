@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.Base64;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
@@ -138,5 +139,12 @@ public class Car {
                 ", producerId="+ (producer==null ? "no": producer.getProducerId())+
                 ", producerName=" +(producer==null ? "no": producer.getProducerName())+
                 '}';
+    }
+
+    @Loggable
+    public String getBase64EncodedPicture(){
+        if(picture!=null)
+         return new String(Base64.getEncoder().encode(picture));
+        return "Nothing to display";
     }
 }

@@ -117,9 +117,9 @@ public class CarRestController{
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @Loggable
-    public void uploadFile(@RequestParam CommonsMultipartFile file, @RequestParam(value = "id") Integer id) {
-        if (file != null)
-            carTransactions.saveUpload(file.getBytes(), id);
+    public void uploadFile(@RequestBody byte[] data, @RequestParam(value = "id") Integer id) {
+        if (data != null)
+            carTransactions.saveUpload(data, id);
     }
 
     public LocalDate convertToDate(String s){

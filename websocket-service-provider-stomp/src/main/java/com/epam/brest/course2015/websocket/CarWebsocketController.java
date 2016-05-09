@@ -21,22 +21,4 @@ public class CarWebsocketController {
         sendMessage.setMessage("Hello "+message.getMessage());
         return sendMessage;
     }
-
-    /*@Loggable
-    @MessageMapping("/message")
-    @SendTo("/topic/greetings")
-    public void getCarById(String message){
-        System.out.println("Received message: "+message);
-    }*/
-
-
-    /*
-    @SubscribeMapping("/topic/greetings")
-    @SendTo("/topic/greetings")
-    public Shout subscribeToTopicGreeting() {
-        Shout newShout = new Shout();
-        System.out.println("Somebody subscribed!");
-        newShout.setMessage("Subscribed");
-        return newShout;
-    }*/
 }

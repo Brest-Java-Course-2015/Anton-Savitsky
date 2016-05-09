@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -95,5 +96,12 @@ public class CarRestConsumer implements CarServiceConsumer {
         return restTemplate.getForObject(restServicesPrefix+
                 "/car/nextpage?from={from}&to={to}", CarPagingDto.class,
                 from, to);
+    }
+
+    @Override
+    @Loggable
+    public void saveUpload(CommonsMultipartFile data, Integer id){
+        System.out.println("File: "+data.getBytes());
+        restTemplate.postForObject(restServicesPrefix+"/car/upload?id={id}", data.getBytes(), byte[].class, id);
     }
 }

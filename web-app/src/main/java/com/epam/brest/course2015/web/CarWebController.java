@@ -10,6 +10,7 @@ import com.epam.brest.course2015.test.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -125,5 +126,10 @@ public class CarWebController {
         return new ModelAndView("cars", "dto", dto);
     }
 
-
+    @Loggable
+    @RequestMapping(value = "/admin/car/upload", method = RequestMethod.POST)
+    public String saveUpload(@RequestParam CommonsMultipartFile file, @RequestParam(value = "id") Integer id){
+        carServiceConsumer.saveUpload(file, id);
+        return "redirect:/admin/car";
+    }
 }

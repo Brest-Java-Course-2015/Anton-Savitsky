@@ -140,7 +140,7 @@
                     <clearOutputDir>false</clearOutputDir>
                 </configuration>
             </plugin>
-
+            <!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
@@ -161,7 +161,7 @@
                         </property>
                     </properties>
                 </configuration>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

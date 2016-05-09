@@ -75,6 +75,14 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -84,7 +92,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>8.1.16.v20140903</version>
                 <configuration>
-                    <stopPort>9091</stopPort>
+                    <stopPort>9092</stopPort>
                     <stopKey>STOP</stopKey>
                     <webAppConfig>
                         <contextPath>/rest</contextPath>
@@ -93,7 +101,7 @@
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>8081</port>
+                            <port>8082</port>
                         </connector>
                     </connectors>
                 </configuration>

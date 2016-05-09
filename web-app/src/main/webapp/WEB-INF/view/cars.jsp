@@ -17,14 +17,14 @@
 </h1>
 
 <div id="date">
-    <!--<form>-->
+    <form>
         <label>C</label>
     <input id="dateBefore" name="dateBefore" type="text" placeholder="dd/MM/yyyy"/>
         <label>По</label>
-    <input id="dateAfter" name="dateAfter" type="text" placeholder="dd/MM/yyyy"/>
-        <button type="button" onclick="lookupCarsByDate()">Найти</button>
-        <button type="button" onclick="undoLookUp()">Сброс</button>
-    <!--</form>-->
+            <input id="dateAfter" name="dateAfter" type="text" placeholder="dd/MM/yyyy"/>
+            <button type="button" onclick="lookupCarsByDate()">Найти</button>
+            <button type="button" onclick="undoLookUp()">Сброс</button>
+    </form>
 </div>
 <jsp:include page="templates/carstable.jsp"/>
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>

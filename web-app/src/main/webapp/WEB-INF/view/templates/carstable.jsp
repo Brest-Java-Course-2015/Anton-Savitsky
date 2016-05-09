@@ -8,6 +8,7 @@
 
     <thead>
     <tr>
+      <th>Изображение</th>
       <th>Модель</th>
       <th>Производитель</th>
       <th>Дата выпуска</th>
@@ -21,6 +22,16 @@
     <tbody id="carList">
     <c:forEach var="car" items="${dto.cars}">
       <tr>
+        <td>
+            <c:if test="${pageContext.request.userPrincipal.name != null}">
+                <form action="car/upload?id=${car.carId}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" value="choose"/>
+                    <input type="submit" value="Upload"/>
+                </form>
+            </c:if>
+            <img src="data:image/jpg;base64,<c:out value='${car.base64EncodedPicture}'/>"
+                 onerror="this.src='${pageContext.request.contextPath}/resources/img/noPhoto-icon.png'" width="200" height="200">
+        </td>
         <td><c:out value="${car.carName}"/></td>
         <td><c:out value="${car.producer.producerName}"/> </td>
         <td><tags:localDate date="${car.dateOfCreation}" pattern="dd/MM/yyyy"/></td>
