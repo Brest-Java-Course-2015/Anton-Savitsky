@@ -360,6 +360,15 @@
             </dependency>
            </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <site>
+            <id>${project.artifactId}</id>
+            <name>${project.name}</name>
+            <url>${project.url}</url>
+        </site>
+    </distributionManagement>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -368,12 +377,11 @@
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.4</version>
                 </plugin>
-                <!--
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>cobertura-maven-plugin</artifactId>
                     <version>2.7</version>
-                </plugin>-->
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -388,8 +396,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -397,7 +405,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.5</version>
                 <configuration>
-                    <targetJdk>1.7</targetJdk>
+                    <targetJdk>1.8</targetJdk>
                     <minimumTokens>100</minimumTokens>
                     <failOnViolation>false</failOnViolation>
                 </configuration>
@@ -410,7 +418,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
@@ -427,7 +435,7 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -489,14 +497,7 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <site>
-            <id>${project.artifactId}</id>
-            <name>${project.name}</name>
-            <url>${project.baseUri}</url>
-        </site>
-    </distributionManagement>
-    <!--
+
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <outputDirectory>${project.build.directory}/site</outputDirectory>
@@ -531,7 +532,7 @@
                 <version>2.7</version>
             </plugin>
         </plugins>
-    </reporting> -->
+    </reporting>
 
     <profiles>
         <profile>

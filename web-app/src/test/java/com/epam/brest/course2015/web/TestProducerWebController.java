@@ -96,14 +96,14 @@ public class TestProducerWebController {
         mockServer.expect(requestTo(restServicesPrefix+"/producer/1"))
                 .andExpect(method(HttpMethod.DELETE))
                 .andRespond(withSuccess(
-                        "redirect:/producer",
+                        "redirect:/admin/producer",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/producer/delete/1"))
+                post("/admin/producer/delete/1"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/producer"));
+                .andExpect(redirectedUrl("/admin/producer"));
     }
 
 
@@ -120,7 +120,7 @@ public class TestProducerWebController {
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                get("/producer/update/1")
+                get("/admin/producer/update/1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -132,15 +132,15 @@ public class TestProducerWebController {
     public void testSaveUpdatedProducer() throws Exception {
         mockServer.expect(requestTo(restServicesPrefix+"/producer"))
                 .andExpect(method(HttpMethod.PUT))
-                .andRespond(withSuccess("redirect:/producer",
+                .andRespond(withSuccess("redirect:/admin/producer",
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/producer/update/1")
+                post("/admin/producer/update/1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/producer"));
+                .andExpect(redirectedUrl("/admin/producer"));
     }
 
     @Test
@@ -154,12 +154,12 @@ public class TestProducerWebController {
                         MediaType.APPLICATION_JSON));
 
         mockMvc.perform(
-                post("/producer/add")
+                post("/admin/producer/add")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(producer))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/producer"));
+                .andExpect(redirectedUrl("/admin/producer"));
     }
 }

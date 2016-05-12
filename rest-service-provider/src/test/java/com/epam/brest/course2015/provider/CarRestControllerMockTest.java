@@ -173,8 +173,6 @@ public class CarRestControllerMockTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void testS
 
     public LocalDate convertToDate(String s){
         DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd/MM/yyyy");

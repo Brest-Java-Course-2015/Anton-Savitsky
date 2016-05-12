@@ -30,10 +30,6 @@
         </dependency>
         <dependency>
             <groupId>com.epam.brest.course2015</groupId>
-            <artifactId>dao-jpa-impl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.epam.brest.course2015</groupId>
             <artifactId>test</artifactId>
         </dependency>
         <dependency>
