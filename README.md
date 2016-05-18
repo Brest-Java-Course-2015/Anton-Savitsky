@@ -2,7 +2,7 @@
 
 New!!! Added angular-js client with websockets support
 
-AngularJS version of UI is now available online on http://dev4e5am.tk
+AngularJS version of UI is now available online on http://carproducer-e5am.rhcloud.com/angular-js/html/cars.main.html
 
 CAR-PRODUCER
 
