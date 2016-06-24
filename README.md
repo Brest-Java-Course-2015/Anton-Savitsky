@@ -1,5 +1,7 @@
 # Anton-Savitsky
 
+New feature!!! Added lazy loading of cars list to angular-js webclient UI, new UI available in angular-js-lazy-loading directory
+
 New!!! Added angular-js client with websockets support
 
 AngularJS version of UI is now available online on http://carproducer-e5am.rhcloud.com/angular-js/html/cars.main.html
