@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cars-module">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/cars.custom.css" rel="stylesheet">
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/sockjs.min.js"></script>
+    <script src="../js/stomp.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/ng-stomp.min.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/angular-virtual-scroll.js"></script>
+
+    <title>Автомобильный каталог</title>
+</head>
+
+<body>
+<h1><a href="cars.main.html">Автомобили</a> / <a href="producers.main.html">Производители</a></h1>
+
+    <div ng-controller="CarsTableController as carsTab">
+
+            <div class="container">
+                <div class="row">
+                    <div class="row ">
+                        <div class="col-md-2 tableHeading">name</div>
+                        <div class="col-md-2 tableHeading">date of creation</div>
+                        <div class="col-md-2 tableHeading">producer name</div>
+                        <div class="col-md-2 tableHeading">E</div>
+                        <div class="col-md-2 tableHeading">D</div>
+                    </div>
+                </div>
+
+
+                <div class="tbody" uponscroll>
+                    <div id="allrows" ng-repeat="n in pages" ng-style="{height: {{rowHeightPx*step}}+'px' }" >
+                        <div class="row th" ng-if="n == currentPageNum" ng-repeat="car in carsTab.cars"  ng-click="setClickedRow($index)" ng-class="{'selected': $index == currentSelectedRow }" >
+                            <div class="col-md-2"><input class="transparent" ng-model="car.carName" value="{{car.carName}}" required></div>
+                            <div class="col-md-2"><input class="transparent" ng-model="car.dateOfCreation" value="{{car.dateOfCreation}}" required></div>
+                            <div class="col-md-2"><select ng-options="producer.producerName for producer
+                            in carsTab.producers track by producer.producerId" ng-model="car.producer" required></select></div>
+                            <div class="col-md-2"><input id="editbut" value="edit" type="button"
+                                                         ng-click="carsTab.updateCar(car)"></div>
+                            <div class="col-md-2"><input id="delbut" value="x" type="button" ng-click="carsTab.deleteCar(car)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div style="margin-left: 5%;"><p>Total count of cars: {{carsTab.total}}</p></div>
+        <div>Detailed info: {{carsTab.detailedInfoForSelectedCar.carName}}</div>
+        <form class="smallform" name="submitcar" ng-submit="submitcar.$valid && carsTab.addCar()" novalidate>
+
+
+                <label for="input-car-name">Name</label>
+                <input id="input-car-name" class="form-control" type="text"
+                       ng-model="carsTab.carName" required>
+
+                <label for="input-date">Date of creation</label>
+                <input id="input-date" type="text" class="form-control" ng-model="carsTab.dateOfCreation"
+                   placeholder="dd/MM/yyyy" required>
+
+                <label for="input-producer-id">Producer name</label>
+                <select id="input-producer-id" ng-model="carsTab.producerId" class="form-control" required>
+                    <option ng-repeat="producer in carsTab.producers"
+                            value="{{producer.producerId}}">{{carsTab.producerName=producer.producerName}}</option>
+                </select>
+
+            <input class="btn-primary submitbutton" type="submit" value="Add">
+
+            <input type="reset" value="Clear">
+        </form>
+
+        </div>
+<script src="../js/cars-module.js"></script>
+</body>
+</html>
