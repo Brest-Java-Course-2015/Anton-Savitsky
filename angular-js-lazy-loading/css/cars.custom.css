@@ -1,0 +1,52 @@
+.ng-invalid.ng-dirty{
+    border-color: mediumvioletred;
+}
+
+.ng-valid.ng-dirty{
+    border-color: green;
+}
+
+.transparent{
+    border: none;
+    background: transparent;
+}
+
+.tablediv{
+    margin: 30px;
+    height: 250px;
+    overflow: auto;
+}
+
+.smallform{
+    width: 30%;
+    margin: auto;
+}
+
+.submitbutton{
+    width: 20%;
+    margin: 5% 0 0 5%;
+
+}
+
+#delbut{
+    background-color: red;
+}
+
+#editbut{
+    background-color: greenyellow;
+}
+
+thead { background: lightgray; align-content: center; width: 200px;}
+.tbody { display: block; overflow: auto; height: 350px; border-collapse: collapse; width: auto;}
+th { width: auto; border: 1px solid black; text-align: center; }
+td { width: auto; margin: 0px; padding: 5px; border: 1px solid black;}
+.th{
+    height: 40px;
+}
+.tableHeading {   	display: table-header-group;   	background-color: #ddd; font-weight: bold;}
+
+.selected {
+    background-color:black;
+    color:white;
+    font-weight:bold;
+}

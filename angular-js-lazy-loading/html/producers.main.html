@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="producers-module">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/producers.custom.css" rel="stylesheet">
+
+    <script src="../js/sockjs.min.js"></script>
+    <script src="../js/stomp.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/producers-module.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/ng-stomp.min.js"></script>
+
+
+    <title>Автомобильный каталог</title>
+</head>
+
+<body>
+<h1><a href="cars.main.html">Автомобили</a> / <a href="producers.main.html">Производители</a></h1>
+
+<div ng-controller="ProducersTableController as producersTab">
+
+    <div class="tablediv">
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>name</th>
+                <th>country</th>
+                <th>count of cars</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="producer in producersTab.producers">
+                <td><input class="transparent" ng-model="producer.producerName" value="{{producer.producerName}}" required></td>
+                <td><input class="transparent" ng-model="producer.country" value="{{producer.country}}" required></td>
+                <td>{{producer.countOfCars}}</td>
+                <td><input id="editbut" value="edit" type="button"
+                           ng-click="producersTab.updateProducer(producer)"></td>
+                <td><input id="delbut" value="x" type="button" ng-click="producersTab.deleteProducer(producer)"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-left: 5%;"><p>Total count of producers: {{producersTab.total}}</p></div>
+    <form class="smallform" name="submitproducer" ng-submit="submitproducer.$valid && producersTab.addProducer()" novalidate>
+
+        <label for="input-producer-name">Name</label>
+        <input id="input-producer-name" class="form-control" type="text"
+               ng-model="producersTab.producerName" required>
+
+        <label for="input-country">Country</label>
+        <input id="input-country" type="text" class="form-control" ng-model="producersTab.country" required>
+
+        <input class="btn-primary submitbutton" type="submit" value="Add">
+
+        <input type="reset" value="Clear">
+
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "PREFIX_URL": "http://localhost:8080/rest-service-provider-1.0-SNAPSHOT",
+  "PREFIX_URL": "http://localhost:8081/rest"
+}
