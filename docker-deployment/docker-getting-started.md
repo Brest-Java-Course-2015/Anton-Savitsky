@@ -7,6 +7,7 @@ https://docs.docker.com/engine/installation/
 Suppose you have proper .war file in current directory ready for deployment.
 
 1.Image building process
+
 Nice approach provided by Docker is Dockerfile, where you can easily describe your image and provide instructions for
 its configuration. Here is an example of Dockerfile:
 
@@ -93,6 +94,7 @@ this will return low level container info in JSON
 (will be described later)
 
 5.Stopping/removing
+
 ```
 $ docker stop container-name
 ```
@@ -100,6 +102,7 @@ $ docker stop container-name
 $ docker rm container-name
 ```
 6.Persisting container
+
 Sometimes it is beneficial to save changes made to the container.
 There are 2 ways to do so:
     
