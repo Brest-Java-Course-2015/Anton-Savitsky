@@ -1,0 +1,23 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "mysql-service"
+    },
+    "spec": {
+        "selector": {
+            "app": "mysqlserver"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 3366,
+                "targetPort": 3306
+            }
+        ],
+        "type": "LoadBalancer",
+        "externalIPs" : [
+            "10.26.11.12"
+        ]
+    }
+}

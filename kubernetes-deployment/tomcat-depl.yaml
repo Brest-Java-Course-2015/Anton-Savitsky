@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-depl
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat-app
+    spec:
+      containers:
+      - name: tomcat
+        image: docam/tomcat
+        ports:
+        - containerPort: 8080
+      

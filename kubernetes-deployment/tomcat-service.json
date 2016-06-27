@@ -1,0 +1,23 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "tomcat-service"
+    },
+    "spec": {
+        "selector": {
+            "app": "tomcat-app"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 8091,
+                "targetPort": 8080
+            }
+        ],
+        "type": "LoadBalancer",
+        "externalIPs" : [
+            "10.26.11.12"
+        ]
+    }
+}

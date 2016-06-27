@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mysql-depl
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysqlserver
+    spec:
+      containers:
+      - name: mysql
+        image: docam/mysql-cont
+        ports:
+        - containerPort: 3306
+        env: 
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "pswd"
