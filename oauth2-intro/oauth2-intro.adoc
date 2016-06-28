@@ -12,5 +12,4 @@ image::overview-1.png[GitHub mascot]
 4.The user accesses the page located at the redirect URI in the client application. In the background the client application contacts the authenticating application and sends client id, client password and the authentication code received in the redirect request parameters. The authenticating application sends back an access token.
 
 Once the client application has obtained an access token, this access token can be sent to the Facebook, Google, Twitter etc. to access resources in these systems, related to the user who logged in.
-
 This material is taken from http://tutorials.jenkov.com/oauth2/overview.html[http://tutorials.jenkov.com/oauth2/overview.html].
