@@ -23,6 +23,7 @@
         <!--<module>consumer-soap-impl</module>-->
         <module>websocket-service-provider-stomp</module>
         <module>consumer-websocket-impl</module>
+        <module>spark-example</module>
     </modules>
 
     <properties>

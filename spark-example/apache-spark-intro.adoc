@@ -1,0 +1,163 @@
+**This is a short intro to Apache Spark framework and how it may be useful.**
+ 
+Apache Spark is a "fast and general-purpose cluster computing system. It provides 
+high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general 
+execution graphs. It also supports a rich set of higher-level tools including Spark SQL for 
+SQL and structured data processing, MLlib for machine learning, GraphX for graph processing, and Spark Streaming.
+
+Apache Spark can be easily used on a local machines using multithreading and multiprocessing
+for highly parallelized tasks such as sorting, counting, searching etc. But the most of its computational power
+you get when you use it on distributed, powerful clusters.
+
+**Components of Spark enabled Clusters.**
+
+Spark applications run as independent sets of processes on a cluster, coordinated by the SparkContext object in your main program (called the driver program).
+
+Specifically, to run on a cluster, the SparkContext can connect to several types of cluster managers (either Spark’s own standalone cluster manager, Mesos or YARN), 
+which allocate resources across applications. Once connected, Spark acquires executors on nodes in the cluster, which are processes that run computations and store data for your application. 
+Next, it sends your application code (defined by JAR or Python files passed to SparkContext) to the executors. Finally, SparkContext sends tasks to the executors to run.
+
+image::cluster-overview.png[GitHub mascot]
+
+**Cluster managers**
+
+The system currently supports three cluster managers:
+
+1.Standalone – a simple cluster manager included with Spark that makes it easy to set up a cluster.
+
+2.Apache Mesos – a general cluster manager that can also run Hadoop MapReduce and service applications.
+
+3.Hadoop YARN – the resource manager in Hadoop 2.
+
+4.In addition, Spark’s EC2 launch scripts make it easy to launch a standalone cluster on Amazon EC2.
+
+**Starting up a cluster**
+
+For now we will go for Spark's Standalone cluster manager.
+
+**Prerequisites**: installed Hadoop and configured datanode and namenode properly(please refer to https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-common/SingleCluster.html#Prerequisites),
+Apache Spark framework (http://spark.apache.org/downloads.html - Choose "pre-build for Hadoop").
+
+
+
+In order to start your Spark standalone cluster start up master and slave nodes with:
+```
+$ ./sbin/start-master.sh
+```
+By default it will start up master node on spark://HOST:7077, this uri can be used to connect worker nodes to it.
+Now you also have Web UI on localhost:8080 for observing state of the Cluster.
+
+```
+$ ./sbin/start-slaves.sh spark://HOST:7077
+```
+With this you start worker nodes and allocate them to master.
+
+Now you have 1 master and 1 worker. In order to have more than one workers you need to modify defaults in conf/spark-env.sh and
+add there export SPARK_WORKER_INSTANCES=<Number of workers you want>.
+
+Ok, so now we may move to solve some problem using our cluster and Apache Spark framework.
+
+**Programming with Spark**
+
+Apache Spark provides APIs for Scala, Python, R and Java.  We'll be using Java API.
+
+First of all we need to choose how we are going to package our app with all needed libs. I'll go for Maven. In Scala you can use sbt.
+
+So generate empty Maven project with the structure predefined. Add dependency on Apache Spark core library:
+
+```
+<dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_2.10</artifactId>
+      <version>1.6.2</version>
+</dependency>
+```
+**Motivation**
+
+I chose to solve a quite simple task on first look - count words in a text file. This task can be solved quite straightforward:
+just iterate through a text, collect all words into hash and add up all occurrences of words into certain entries in hash.
+That sounds fine when you have small enough file to have it all in memory. But what if we talk about Terabytes of data.
+Well, it's certainly not a solution this way.
+
+In this situation we need some solution in which we may parallelize, distribute and therefore divide the task into pieces between
+huge amount of servers.
+
+One algorithm to work this problem out is MapReduce, which is basically algorithm consisting of 2 parts:
+
+1.Map - phase of splitting a huge task into parts, and later delegating them to cluster nodes
+
+2.Reduce - collecting data from nodes and giving final result.
+
+Add java class to src/main/java folder:
+
+```
+public final class JavaWordCount {
+  private static final Pattern SPACE = Pattern.compile(" ");
+
+  public static void main(String[] args) throws Exception {
+
+    if (args.length < 1) {
+      System.err.println("Usage: JavaWordCount <file>");
+      System.exit(1);
+    }
+
+    SparkConf sparkConf = new SparkConf().setAppName("JavaWordCount");
+    JavaSparkContext ctx = new JavaSparkContext(sparkConf);
+    JavaRDD<String> lines = ctx.textFile(args[0], 1);
+
+    JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
+      @Override
+      public Iterable<String> call(String s) {
+        return Arrays.asList(SPACE.split(s));
+      }
+    });
+
+    JavaPairRDD<String, Integer> ones = words.mapToPair(new PairFunction<String, String, Integer>() {
+      @Override
+      public Tuple2<String, Integer> call(String s) {
+        return new Tuple2<String, Integer>(s, 1);
+      }
+    });
+
+    JavaPairRDD<String, Integer> counts = ones.reduceByKey(new Function2<Integer, Integer, Integer>() {
+      @Override
+      public Integer call(Integer i1, Integer i2) {
+        return i1 + i2;
+      }
+    });
+
+    List<Tuple2<String, Integer>> output = counts.collect();
+    for (Tuple2<?,?> tuple : output) {
+      System.out.println(tuple._1() + ": " + tuple._2());
+    }
+    ctx.stop();
+  }
+}
+
+```
+
+Here our algorithm is split into following stages:
+
+1. Split text into words with flatMap method passed with function Arrays.asList
+
+2. This list of words is mapped to ones, meaning that for the beginning each word count is 1. Thus we preparing data for reduce stage.
+Example: ("word1", 1), ("word2", 2) ...
+
+3. All key(word),value(count) pairs now are split between computational units and reduceByKey will add up all these pair's values for same keys.
+Example: ("word1", 4), ("word2", 7) ...
+
+4.Collect phase gets final map and prints it out.
+
+What's nice about Spark here is that methods like mapToPair, reduceByKey are not executed immediately, they are just scheduled for execution,
+so valuable computational resources are not eaten up.
+
+In order to start this application on Spark cluster execute this:
+```
+~/spark-1.6.1-bin-hadoop2.6/bin/spark-submit --class JavaWordCount --master local[*] target/spark-example-1.0.jar /big.txt > report.txt
+```
+where __~/spark-1.6.1-bin-hadoop2.6 __ is where my spark is installed and spark-submit is a utility to run Spark apps on clusters,
+--master local[*] - saying to run app on local Spark standalone cluster, it can also specify the url to some __cluster manager's(YARN, MESOS)__ master
+node, in our case can be __spark://HOST:7077__.
+next is jar of app we want to run and parameters to it.
+
+After running that command we have our words' counts in report.txt file.
