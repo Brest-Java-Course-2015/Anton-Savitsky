@@ -160,4 +160,9 @@ where __~/spark-1.6.1-bin-hadoop2.6 __ is where my spark is installed and spark-
 node, in our case can be __spark://HOST:7077__.
 next is jar of app we want to run and parameters to it.
 
+Note that you must have your /big.txt in HDFS (is installed across with Hadoop). You may copy big.txt from local FS to HDFS with:
+```
+$ hadoop fs -put big.txt /
+```
+
 After running that command we have our words' counts in report.txt file.
